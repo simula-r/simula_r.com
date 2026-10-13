@@ -2,16 +2,40 @@ import { Fragment } from "react/jsx-runtime";
 import { Sidebar } from "./Icons";
 import { DropdownButton } from "./MenuButton";
 
+function ARBall({ className = "w-6 h-6" }) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+      viewBox="0 0 300 300"
+    >
+      <defs>
+        <radialGradient
+          id="highlight"
+          cx="182"
+          cy="88"
+          r="120"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop offset="0" stopColor="#FFD9BC" stopOpacity="1" />
+          <stop offset="0.15" stopColor="#FFCDA6" stopOpacity="1" />
+          <stop offset="0.45" stopColor="#FFA764" stopOpacity="0.75" />
+          <stop offset="1" stopColor="#FF7200" stopOpacity="0" />
+        </radialGradient>
+      </defs>
+      <circle cx="150" cy="150" r="150" fill="#FF7200" />
+      <circle cx="150" cy="150" r="150" fill="url(#highlight)" />
+    </svg>
+  );
+}
+
 function Navigation() {
   return (
     <>
       <div className="absolute p-4 top-0 left-0 z-10">
         <div className="flex space-x-6 items-center border border-shell bg-shell p-1 rounded-sm">
           <DropdownButton>
-            <img
-              src="/simula_r.png"
-              className="w-6 h-6 rounded-full border border-[#919191]"
-            />
+            <ARBall />
             <div>Simula_r Portfolio</div>
           </DropdownButton>
           <button className="h-8 w-8 rounded-sm hover:bg-shell-hover grid place-items-center">

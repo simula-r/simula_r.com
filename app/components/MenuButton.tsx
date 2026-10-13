@@ -40,7 +40,7 @@ function SplitButton({
       <button
         onClick={onClick}
         className={cn(
-          "font-mono flex items-center space-x-2 text-xs h-8 pl-2 pr-2 group-hover:bg-shell-hover hover:bg-shell-hover-2 rounded-l-md",
+          "font-mono flex items-center space-x-2 text-xs h-8 px-2 group-hover:bg-shell-hover hover:bg-shell-hover-2 rounded-l-md",
           className,
         )}
       >

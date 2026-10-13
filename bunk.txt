@@ -1,0 +1,79 @@
+Ok so here is the most useful rules of thumb / things to do for the gym/weight loss... I have been going to the gym off and on for like 10 years now lol. Luckily rn I got the time so I am properly back into it.
+
+1. Diet is probably 80% of it. The gym is 20%. If your Diet is wrong you won't see a huge difference. But Diet doesn't need to be hard/scary.
+2. Consistency is the most important thing. Whatever you end up doing it should be a daily weekly monthly practice. Most people go wrong because they go hard for 3 weeks and then burn out.
+3. Girls usually shy away from lifting weights because they think it will make them bulky. It won't. It is actually a weight loss tool, and it just makes your natural shape more solid... in a good way. (Yes some girls take it too far/do body building but that is different)
+4. After Diet cardio is the most important. Most people hate it. The goal is to just find something you actually like doing. For me its pickleball. For you maybe its swimming, treadmill with an audiobook, etc. But it has to be something you can easily do, ideally everyday... and it should be FUN! 
+
+
+Ok so here it is, cook all your food. Your meals should be high protein. That is the most important thing. Ideally 1 gram of protein per body lb. Try to minimize carbs. You can still eat them but they should be things like desert/sweets and not main courses/bread, pasta, etc. So meat and veggies is the way to go. Just start eating mainly that. Then once a week you can cheat and get something that is high carb like ice cream or something you crave. Keep the cheat minimal tho, like yes cheat but don't over do it. The goal with diet is what can I do that I like for years to come. If you do this, after 3 months you will look very different. Even 1 month at your size/age probably 2 weeks you will see a change.
+
+Then, start excercising daily. Ideally lifting weights for 20-30 minutes 2-3x a week, and then doing some form of cardio for 1hr everyday. If you find something you really have fun with you might end up doing cardio for hours! I play pickelball for like 4 hrs at a time some days. For lifting weights do 1 excercise per body part. Arms, back, abs, legs... and glutes (0_o) Thats it. You can look up "full body split 2-3x a week weight lifting for women" or I can give you something simple to follow.
+
+That is really it. It does not need to be more complicated if your goal is losing weight and really just looking and feeling healthy. The fun part is with the diet you can also save a lot of money and generally eat better foods that make you feel great instantly. I eat a lot of avacados which are cheap and are super foods. They make my skin look super healthy.
+
+
+I want to be clear that the types of roles I want to work as is basically, here we have some infinite canvas, we
+  have some browser based rendering tool like figma, we have some heavy graphics product of some kind 2D, 3D, doesn't
+  matter but it is a startup and this guy
+
+
+  {
+  /* <div className="flex items-center justify-center">
+        <h1 className="text-5xl text-black absolute font-handwritten">
+          Start here
+        </h1>
+        <img src="/sticky-note.svg" className="select-none" />
+      </div> */
+}
+So I want to plan out this feature. Essentially we will have a very small editor. A sidebar with the few DOM
+  elements/react components to render and then a save file we can make to encode the positions in.
+
+   There is an issue with the drag on an svg element
+
+
+  Lets change gears I will fix that issue later. I looked at the Worksapce, I do not like this naming convention and it makes
+  me wonder how we will structure the read only vs edit mode functionality.
+
+  
+<div class="hide_bottom_overflow--overflowMask--auWyR">
+
+</div>
+
+
+// Blocked region: inside the sidebar, or to its left within the sidebar's
+// vertical span. The chip is centered on the cursor, so its nearest edges
+// (left, top, bottom) can reach half its size past the cursor - pad the
+// sidebar's bounds by half the chip's size so the whole chip has to clear
+// the sidebar, not just its center point.
+
+The functionality
+  should be as follows the preview should be
+
+  I am not that interested in AI what do I do then? I am a software engineer and just not really very curious about context engineering prompt engineering, model harnesses, etc. I find it just idk... annoying. I want to know about what it is we are building an AI for, and I like things like graphics, audio, etc. actual
+
+  export { TextSidebarIcon, TextPreviewElement, TextCanvasElement };
+
+   question, the elements.map currently creates a div element with absolute left top and translate -50% -50% which
+  would create a layout wouldnt it? Or would the transform tranlsate skip layout and promote to the same layer that is
+  already just compositing? The next thing is how can we use css transform on selected elements to move them around
+  the canvas? I would assume because the DOM will handle the mouse hit test/interaction for us and we already have the
+  initial position all we have to do is have the element itself offset its own position. That way we do not have to
+  an additional look up in the elements array and drive the placement via a function that changes the element that
+  would be O(n) and so instead we could simply have the element itself (text, stickynote, etc.) and probably wrap them
+  with a shared placement component that would handle the selection state, and then also handle the repositioning,
+  not by changing the left or top which would cause reflow but instead by changing the transform individually relative
+  to the parent div which handles the entire drag to pan, zoom to
+
+   The one thing I should think through is the idea of what if we just have a
+
+  Before we had an issue with CanvasSelection.tsx where we used an svg which caused layout reflow. Since then we discovered an approach in
+  CanvasItemSelection.tsx which works.
+
+  Currently we have a selection system that uses an ID lookup and ClientBoundingRect in order to select Ids. The way I think this should work
+  is as follows: We are using the DOM/HTML/CSS to draw graphics. This means our constraint is the browser render pipeline. This means that
+  the DOM structure is a tree structure we can utilize. This means if we want to do selection we already have the information, however it is
+  slow to access and does not give us a data structure we can query easily. Therefore if we want to build a DOM based infinte canvas
+  place-element and select-element system
+
+  Draw a rect.

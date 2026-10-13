@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useEffectEvent, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 import { CanvasItem } from "./CanvasItem";
 import { StickyNoteCanvasElement } from "./StickyNote";
@@ -8,6 +8,7 @@ import { TextCanvasElement } from "./Text";
 import { CanvasSelection, type CanvasSelectionHandle } from "./CanvasSelection";
 import { CanvasItemSelection } from "./CanvasItemSelection";
 import { FakeCursor } from "./FakeCursor";
+import { useCanvasInteraction } from "./useCanvasInteraction";
 
 type Camera = { x: number; y: number; zoom: number };
 type ElementBase = { id: string; x: number; y: number };
@@ -31,6 +32,7 @@ function Canvas({
   onMoveElements,
   selectedIds,
   onSelectElement,
+  onInteract,
   mode = "edit",
 }: {
   camera: Camera;
@@ -39,10 +41,13 @@ function Canvas({
   onMoveElements: (ids: string[], dx: number, dy: number) => void;
   selectedIds: string[];
   onSelectElement: (ids: string[]) => void;
+  onInteract?: () => void;
   mode?: CanvasMode;
 }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const containerRect = useRef<DOMRect | null>(null);
+
+  useCanvasInteraction(containerRef, () => onInteract?.());
 
   useEffect(() => {
     const node = containerRef.current;
@@ -58,6 +63,38 @@ function Canvas({
       observer.disconnect();
       window.removeEventListener("resize", updateRect);
     };
+  }, []);
+
+  const zoomAt = useEffectEvent((e: WheelEvent) => {
+    const node = containerRef.current;
+    if (!node) return;
+    const rect = containerRect.current ?? node.getBoundingClientRect();
+    const px = e.clientX - rect.left - rect.width / 2;
+    const py = e.clientY - rect.top - rect.height / 2;
+    setCamera((c) => {
+      const zoom = Math.min(4, Math.max(0.1, c.zoom - e.deltaY * 0.001));
+      const scale = zoom / c.zoom;
+      return {
+        zoom,
+        x: px - (px - c.x) * scale,
+        y: py - (py - c.y) * scale,
+      };
+    });
+  });
+
+  useEffect(() => {
+    const node = containerRef.current;
+    if (!node) return;
+    const controller = new AbortController();
+    node.addEventListener(
+      "wheel",
+      (e) => {
+        e.preventDefault();
+        zoomAt(e);
+      },
+      { passive: false, signal: controller.signal },
+    );
+    return () => controller.abort();
   }, []);
 
   const pan = useRef<{ x: number; y: number } | null>(null);
@@ -214,21 +251,6 @@ function Canvas({
         marqueeRef.current?.cancel();
         pan.current = null;
         setIsPanning(false);
-      }}
-      onWheel={(e) => {
-        const rect =
-          containerRect.current ?? e.currentTarget.getBoundingClientRect();
-        const px = e.clientX - rect.left - rect.width / 2;
-        const py = e.clientY - rect.top - rect.height / 2;
-        setCamera((c) => {
-          const zoom = Math.min(4, Math.max(0.1, c.zoom - e.deltaY * 0.001));
-          const scale = zoom / c.zoom;
-          return {
-            zoom,
-            x: px - (px - c.x) * scale,
-            y: py - (py - c.y) * scale,
-          };
-        });
       }}
     >
       <div

@@ -11,6 +11,7 @@ import { Sidebar } from "./components/Sidebar";
 import { Instructions } from "./components/Instructions";
 import { Navigation } from "./components/Navigation";
 import { SpotlightTour } from "./components/SpotlightTour";
+import { ActiveBorder } from "./components/ActiveBorder";
 
 export default function Home() {
   const [camera, setCamera] = useState<Camera>({ x: 0, y: 0, zoom: 1 });
@@ -18,6 +19,7 @@ export default function Home() {
     { id: "seed", type: "sticky", x: 0, y: 0, text: "Hello World!" },
   ]);
   const [selectedIds, setSelectedIds] = useState<string[]>([]);
+  const [active, setActive] = useState(false);
 
   const createNote = (clientX: number, clientY: number) => {
     setElements((els) => [
@@ -63,6 +65,7 @@ export default function Home() {
         onMoveElements={moveElements}
         selectedIds={selectedIds}
         onSelectElement={setSelectedIds}
+        onInteract={() => setActive(false)}
       />
       <Sidebar
         zoom={camera.zoom}
@@ -70,9 +73,9 @@ export default function Home() {
         onCreateText={createText}
       />
       <Navigation />
-      <SpotlightTour />
+      <SpotlightTour active={active} onActiveChange={setActive} />
       <Instructions />
-      <ARDude />
+      <ActiveBorder active={active} />
     </div>
   );
 }
