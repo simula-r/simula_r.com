@@ -1,38 +1,1674 @@
 {
   "version": 1,
   "camera": {
-    "zoom": 0.9999999999999999,
-    "x": -331.464985144989,
-    "y": 138.9485618170828
+    "x": 0,
+    "y": 0,
+    "zoom": 0.45
   },
   "elements": [
     {
-      "id": "seed",
+      "id": "start.rule-top",
+      "type": "image",
+      "x": 0,
+      "y": 72,
+      "src": "/canvas/accents/start-rule-top.svg",
+      "width": 900,
+      "height": 4,
+      "variant": "bare"
+    },
+    {
+      "id": "start.rule-bottom",
+      "type": "image",
+      "x": 0,
+      "y": 292,
+      "src": "/canvas/accents/start-rule-bottom.svg",
+      "width": 900,
+      "height": 4,
+      "variant": "bare"
+    },
+    {
+      "id": "work.timeline",
+      "type": "image",
+      "x": 0,
+      "y": -3710,
+      "src": "/canvas/accents/work-timeline.svg",
+      "width": 3000,
+      "height": 40,
+      "variant": "bare"
+    },
+    {
+      "id": "projects.terminal",
+      "type": "image",
+      "x": 5150,
+      "y": -617,
+      "src": "/canvas/accents/projects-terminal.svg",
+      "width": 900,
+      "height": 506,
+      "variant": "bare"
+    },
+    {
+      "id": "thinking.bar",
+      "type": "image",
+      "x": -5396,
+      "y": -786,
+      "src": "/canvas/accents/thinking-bar.svg",
+      "width": 8,
+      "height": 160,
+      "variant": "bare"
+    },
+    {
+      "id": "thinking.bs-divider",
+      "type": "image",
+      "x": -3368,
+      "y": -350,
+      "src": "/canvas/accents/thinking-bs-divider.svg",
+      "width": 4,
+      "height": 220,
+      "variant": "bare"
+    },
+    {
+      "id": "inspiration.shelf1",
+      "type": "image",
+      "x": -2862,
+      "y": 3036,
+      "src": "/canvas/accents/inspiration-shelf1.svg",
+      "width": 2076,
+      "height": 4,
+      "variant": "bare"
+    },
+    {
+      "id": "inspiration.shelf2",
+      "type": "image",
+      "x": -2876,
+      "y": 3416,
+      "src": "/canvas/accents/inspiration-shelf2.svg",
+      "width": 2047,
+      "height": 4,
+      "variant": "bare"
+    },
+    {
+      "id": "inspiration.shelf3",
+      "type": "image",
+      "x": -2898,
+      "y": 3756,
+      "src": "/canvas/accents/inspiration-shelf3.svg",
+      "width": 2003,
+      "height": 4,
+      "variant": "bare"
+    },
+    {
+      "id": "life.route",
+      "type": "image",
+      "x": 2626,
+      "y": 2720,
+      "src": "/canvas/accents/life-route.svg",
+      "width": 2251,
+      "height": 40,
+      "variant": "bare"
+    },
+    {
+      "id": "work.comfy",
+      "type": "image",
+      "x": -850,
+      "y": -2983,
+      "src": "/canvas/work/comfyui.png",
+      "width": 1300,
+      "height": 493
+    },
+    {
+      "id": "projects.teapot",
+      "type": "image",
+      "x": 3050,
+      "y": -617,
+      "src": "/canvas/graphics/utah-teapot.png",
+      "width": 900,
+      "height": 506
+    },
+    {
+      "id": "projects.myst",
+      "type": "image",
+      "x": 3775,
+      "y": -514,
+      "src": "/canvas/games/myst.png",
+      "width": 250,
+      "height": 300
+    },
+    {
+      "id": "projects.jsr",
+      "type": "image",
+      "x": 4080,
+      "y": -514,
+      "src": "/canvas/games/jet-set-radio.jpg",
+      "width": 299,
+      "height": 300
+    },
+    {
+      "id": "projects.winamp",
+      "type": "image",
+      "x": 3750,
+      "y": 314,
+      "src": "/canvas/games/winamp.png",
+      "width": 200,
+      "height": 316
+    },
+    {
+      "id": "inspiration.books.algernon",
+      "type": "image",
+      "x": -3650,
+      "y": 2890,
+      "src": "/canvas/shelf/algernon.jpg",
+      "width": 180,
+      "height": 260
+    },
+    {
+      "id": "inspiration.books.hitchhiker",
+      "type": "image",
+      "x": -3457,
+      "y": 2890,
+      "src": "/canvas/shelf/hitchhiker.jpg",
+      "width": 149,
+      "height": 260
+    },
+    {
+      "id": "inspiration.books.the-stand",
+      "type": "image",
+      "x": -3272,
+      "y": 2890,
+      "src": "/canvas/shelf/the-stand.png",
+      "width": 166,
+      "height": 260
+    },
+    {
+      "id": "inspiration.books.neuromancer",
+      "type": "image",
+      "x": -3082,
+      "y": 2890,
+      "src": "/canvas/shelf/neuromancer.jpg",
+      "width": 157,
+      "height": 260
+    },
+    {
+      "id": "inspiration.screen.matrix",
+      "type": "image",
+      "x": -2594,
+      "y": 2890,
+      "src": "/canvas/shelf/matrix.png",
+      "width": 180,
+      "height": 260
+    },
+    {
+      "id": "inspiration.screen.ghost-in-the-shell",
+      "type": "image",
+      "x": -2384,
+      "y": 2890,
+      "src": "/canvas/shelf/ghost-in-the-shell.jpg",
+      "width": 183,
+      "height": 260
+    },
+    {
+      "id": "inspiration.screen.x-files",
+      "type": "image",
+      "x": -2044,
+      "y": 2890,
+      "src": "/canvas/shelf/x-files.webp",
+      "width": 441,
+      "height": 260
+    },
+    {
+      "id": "inspiration.cartoons.spongebob",
+      "type": "image",
+      "x": -3532,
+      "y": 3290,
+      "src": "/canvas/shelf/spongebob.png",
+      "width": 416,
+      "height": 220
+    },
+    {
+      "id": "inspiration.cartoons.simpsons",
+      "type": "image",
+      "x": -3100,
+      "y": 3290,
+      "src": "/canvas/shelf/simpsons.png",
+      "width": 391,
+      "height": 220
+    },
+    {
+      "id": "inspiration.games.cod4",
+      "type": "image",
+      "x": -2509,
+      "y": 3290,
+      "src": "/canvas/shelf/cod4.jpg",
+      "width": 151,
+      "height": 220
+    },
+    {
+      "id": "inspiration.games.mw2",
+      "type": "image",
+      "x": -2330,
+      "y": 3290,
+      "src": "/canvas/shelf/mw2.png",
+      "width": 151,
+      "height": 220
+    },
+    {
+      "id": "inspiration.games.gw2",
+      "type": "image",
+      "x": -2135,
+      "y": 3290,
+      "src": "/canvas/shelf/gw2.png",
+      "width": 183,
+      "height": 220
+    },
+    {
+      "id": "inspiration.games.halo",
+      "type": "image",
+      "x": -1934,
+      "y": 3290,
+      "src": "/canvas/shelf/halo.jpg",
+      "width": 163,
+      "height": 220
+    },
+    {
+      "id": "inspiration.repeat.discovery",
+      "type": "image",
+      "x": -3650,
+      "y": 3650,
+      "src": "/canvas/music/discovery.jpg",
+      "width": 180,
+      "height": 180
+    },
+    {
+      "id": "inspiration.repeat.ok-computer",
+      "type": "image",
+      "x": -3442,
+      "y": 3650,
+      "src": "/canvas/music/ok-computer.png",
+      "width": 180,
+      "height": 180
+    },
+    {
+      "id": "inspiration.repeat.mhtrtc",
+      "type": "image",
+      "x": -3234,
+      "y": 3650,
+      "src": "/canvas/music/mhtrtc.jpg",
+      "width": 180,
+      "height": 180
+    },
+    {
+      "id": "inspiration.repeat.saw-85-92",
+      "type": "image",
+      "x": -3026,
+      "y": 3650,
+      "src": "/canvas/music/saw-85-92.png",
+      "width": 180,
+      "height": 180
+    },
+    {
+      "id": "inspiration.repeat.demon-days",
+      "type": "image",
+      "x": -2818,
+      "y": 3650,
+      "src": "/canvas/music/demon-days.png",
+      "width": 180,
+      "height": 180
+    },
+    {
+      "id": "inspiration.repeat.hybrid-theory",
+      "type": "image",
+      "x": -2610,
+      "y": 3650,
+      "src": "/canvas/music/hybrid-theory.jpg",
+      "width": 180,
+      "height": 180
+    },
+    {
+      "id": "inspiration.repeat.modal-soul",
+      "type": "image",
+      "x": -2402,
+      "y": 3650,
+      "src": "/canvas/music/modal-soul.jpg",
+      "width": 180,
+      "height": 180
+    },
+    {
+      "id": "inspiration.repeat.cross",
+      "type": "image",
+      "x": -2194,
+      "y": 3650,
+      "src": "/canvas/music/cross.jpg",
+      "width": 179,
+      "height": 180
+    },
+    {
+      "id": "inspiration.repeat.dive",
+      "type": "image",
+      "x": -1987,
+      "y": 3650,
+      "src": "/canvas/music/dive.jpg",
+      "width": 180,
+      "height": 180
+    },
+    {
+      "id": "life.london",
+      "type": "image",
+      "x": 1785,
+      "y": 3000,
+      "src": "/canvas/life/london.jpg",
+      "width": 569,
+      "height": 320
+    },
+    {
+      "id": "life.dubai",
+      "type": "image",
+      "x": 2371,
+      "y": 3000,
+      "src": "/canvas/life/dubai.jpg",
+      "width": 463,
+      "height": 320
+    },
+    {
+      "id": "life.paris",
+      "type": "image",
+      "x": 2928,
+      "y": 3000,
+      "src": "/canvas/life/paris.jpg",
+      "width": 512,
+      "height": 320
+    },
+    {
+      "id": "life.san-francisco",
+      "type": "image",
+      "x": 3468,
+      "y": 3000,
+      "src": "/canvas/life/san-francisco.jpg",
+      "width": 427,
+      "height": 320
+    },
+    {
+      "id": "life.bigsur",
+      "type": "image",
+      "x": 1777,
+      "y": 3600,
+      "src": "/canvas/life/big-sur.jpg",
+      "width": 553,
+      "height": 360
+    },
+    {
+      "id": "life.sierra",
+      "type": "image",
+      "x": 2201,
+      "y": 3600,
+      "src": "/canvas/life/sierra-nevada.jpg",
+      "width": 240,
+      "height": 360
+    },
+    {
+      "id": "life.fallingwater",
+      "type": "image",
+      "x": 3234,
+      "y": 3620,
+      "src": "/canvas/life/fallingwater.jpg",
+      "width": 305,
+      "height": 200
+    },
+    {
+      "id": "life.salk",
+      "type": "image",
+      "x": 3548,
+      "y": 3620,
+      "src": "/canvas/life/salk.jpg",
+      "width": 267,
+      "height": 200
+    },
+    {
+      "id": "life.katsura",
+      "type": "image",
+      "x": 3910,
+      "y": 3620,
+      "src": "/canvas/life/katsura.jpg",
+      "width": 402,
+      "height": 200
+    },
+    {
+      "id": "life.barcelona-pavilion",
+      "type": "image",
+      "x": 4289,
+      "y": 3620,
+      "src": "/canvas/life/barcelona-pavilion.jpg",
+      "width": 299,
+      "height": 200
+    },
+    {
+      "id": "start.ar",
       "type": "sticky",
-      "x": -0.6666259765625001,
-      "y": 0,
-      "text": "Yo yo."
+      "x": 760,
+      "y": -230,
+      "text": "hi from a_r,\nthe little face\nfollowing you"
     },
     {
-      "id": "fa2ed60a-d339-446e-b50e-b8bcfd7af532",
+      "id": "work.halves",
       "type": "sticky",
-      "x": 374.7300487699963,
-      "y": -120.41667683919268,
-      "text": "Cool New note\n bro..."
+      "x": -200,
+      "y": -3420,
+      "text": "both halves:\ndesign school +\nreal engineering"
     },
     {
-      "id": "3b3106c5-37c0-4775-96fa-a7254e4936d7",
-      "type": "text",
-      "x": -92.33333333333329,
-      "y": -181.3055674235026,
-      "text": "It's a_r"
+      "id": "work.same-pr",
+      "type": "sticky",
+      "x": 1260,
+      "y": -3130,
+      "text": "design + code,\nsame PR"
     },
     {
-      "id": "b9a98d52-153d-4ff2-bd4c-0aba6d6f6303",
+      "id": "projects.g.pixels",
+      "type": "sticky",
+      "x": 3360,
+      "y": 36,
+      "text": "pixels are\nthe product"
+    },
+    {
+      "id": "projects.c.look",
+      "type": "sticky",
+      "x": 4410,
+      "y": -174,
+      "text": "I make the part\nof games you\nlook at"
+    },
+    {
+      "id": "thinking.loose",
+      "type": "sticky",
+      "x": -4250,
+      "y": -780,
+      "text": "opinions,\nloosely held"
+    },
+    {
+      "id": "inspiration.mulder",
+      "type": "sticky",
+      "x": -1624,
+      "y": 2890,
+      "text": "Mulder was\nright"
+    },
+    {
+      "id": "inspiration.cod",
+      "type": "sticky",
+      "x": -1653,
+      "y": 3290,
+      "text": "COD4 lobbies\nraised me"
+    },
+    {
+      "id": "life.family",
+      "type": "sticky",
+      "x": 2531,
+      "y": 3780,
+      "text": "family >\neverything"
+    },
+    {
+      "id": "life.fengshui",
+      "type": "sticky",
+      "x": 4586,
+      "y": 3620,
+      "text": "feng shui is\nUX for rooms"
+    },
+    {
+      "id": "start.kicker",
       "type": "text",
-      "x": 532.4649851449891,
-      "y": 94.88481220635471,
-      "text": "I like potatoes."
+      "x": 0,
+      "y": -622,
+      "text": "SIMULA_R.COM   ·   A WHITEBOARD   ·   EST. 1999",
+      "font": "mono",
+      "fontSize": 14
+    },
+    {
+      "id": "start.hello",
+      "type": "text",
+      "x": 0,
+      "y": -492,
+      "text": "Hi, I'm Jake.",
+      "font": "sans",
+      "fontSize": 64
+    },
+    {
+      "id": "start.sub",
+      "type": "text",
+      "x": 0,
+      "y": -372,
+      "text": "Design engineer. Obsessed with pixels.",
+      "font": "sans",
+      "fontSize": 24
+    },
+    {
+      "id": "start.letter",
+      "type": "text",
+      "x": 1,
+      "y": -200,
+      "text": "This is my portfolio, but it's also a whiteboard I\nbuilt from scratch. It's laid out the way I'd sketch\nit for you in person: work up top, the things I make\nto the right, what I believe to the left, and the\nstuff that shaped me down below. Wander around, or\npress play and I'll walk you through it in 5 minutes.",
+      "font": "sans",
+      "fontSize": 16
+    },
+    {
+      "id": "start.signature",
+      "type": "text",
+      "x": 208,
+      "y": -46,
+      "text": "— jake",
+      "font": "handwritten",
+      "fontSize": 40
+    },
+    {
+      "id": "start.index",
+      "type": "text",
+      "x": -84,
+      "y": 184,
+      "text": "↑  WORK          1999 → now, ComfyUI\n→  PROJECTS      graphics, games, this site\n←  THINKING      a thesis, and what's BS\n↙  INSPIRATION   books, screens, music\n↘  LIFE          London → Dubai → California",
+      "font": "mono",
+      "fontSize": 14
+    },
+    {
+      "id": "start.controls",
+      "type": "text",
+      "x": 0,
+      "y": 336,
+      "text": "DRAG  pan     SCROLL  zoom     ▶  5-min tour, top right",
+      "font": "mono",
+      "fontSize": 12
+    },
+    {
+      "id": "start.to-work",
+      "type": "text",
+      "x": 0,
+      "y": -882,
+      "text": "WORK ↑",
+      "font": "mono",
+      "fontSize": 14
+    },
+    {
+      "id": "start.to-projects",
+      "type": "text",
+      "x": 1236,
+      "y": -2,
+      "text": "PROJECTS →",
+      "font": "mono",
+      "fontSize": 14
+    },
+    {
+      "id": "start.to-thinking",
+      "type": "text",
+      "x": -1284,
+      "y": -2,
+      "text": "← THINKING",
+      "font": "mono",
+      "fontSize": 14
+    },
+    {
+      "id": "start.to-inspiration",
+      "type": "text",
+      "x": -950,
+      "y": 658,
+      "text": "↙ INSPIRATION",
+      "font": "mono",
+      "fontSize": 14
+    },
+    {
+      "id": "start.to-life",
+      "type": "text",
+      "x": 950,
+      "y": 658,
+      "text": "LIFE ↘",
+      "font": "mono",
+      "fontSize": 14
+    },
+    {
+      "id": "work.kicker",
+      "type": "text",
+      "x": -1450,
+      "y": -4132,
+      "text": "01 — WORK",
+      "font": "mono",
+      "fontSize": 14
+    },
+    {
+      "id": "work.title",
+      "type": "text",
+      "x": -1125,
+      "y": -4042,
+      "text": "Work, 1999 → now",
+      "font": "sans",
+      "fontSize": 64
+    },
+    {
+      "id": "work.dek",
+      "type": "text",
+      "x": -1078,
+      "y": -3918,
+      "text": "Twenty-seven years of putting pixels on screens.\nThe latest stretch: ComfyUI, in San Francisco.",
+      "font": "sans",
+      "fontSize": 24
+    },
+    {
+      "id": "work.m0.year",
+      "type": "text",
+      "x": -1440,
+      "y": -3762,
+      "text": "1999",
+      "font": "mono",
+      "fontSize": 14
+    },
+    {
+      "id": "work.m0.label",
+      "type": "text",
+      "x": -1440,
+      "y": -3650,
+      "text": "Press start",
+      "font": "sans",
+      "fontSize": 16
+    },
+    {
+      "id": "work.m0.meta",
+      "type": "text",
+      "x": -1440,
+      "y": -3609,
+      "text": "first computer, first opinions",
+      "font": "mono",
+      "fontSize": 12
+    },
+    {
+      "id": "work.m1.year",
+      "type": "text",
+      "x": -1085,
+      "y": -3762,
+      "text": "{{yr}}",
+      "font": "mono",
+      "fontSize": 14
+    },
+    {
+      "id": "work.m1.label",
+      "type": "text",
+      "x": -1085,
+      "y": -3650,
+      "text": "Business cards",
+      "font": "sans",
+      "fontSize": 16
+    },
+    {
+      "id": "work.m1.meta",
+      "type": "text",
+      "x": -1085,
+      "y": -3609,
+      "text": "first paid design gig",
+      "font": "mono",
+      "fontSize": 12
+    },
+    {
+      "id": "work.m2.year",
+      "type": "text",
+      "x": -730,
+      "y": -3762,
+      "text": "{{yr}}",
+      "font": "mono",
+      "fontSize": 14
+    },
+    {
+      "id": "work.m2.label",
+      "type": "text",
+      "x": -730,
+      "y": -3650,
+      "text": "Video + internships",
+      "font": "sans",
+      "fontSize": 16
+    },
+    {
+      "id": "work.m2.meta",
+      "type": "text",
+      "x": -730,
+      "y": -3609,
+      "text": "{{where}}",
+      "font": "mono",
+      "fontSize": 12
+    },
+    {
+      "id": "work.m3.year",
+      "type": "text",
+      "x": -375,
+      "y": -3762,
+      "text": "{{yr}}",
+      "font": "mono",
+      "fontSize": 14
+    },
+    {
+      "id": "work.m3.label",
+      "type": "text",
+      "x": -375,
+      "y": -3650,
+      "text": "Parsons",
+      "font": "sans",
+      "fontSize": 16
+    },
+    {
+      "id": "work.m3.meta",
+      "type": "text",
+      "x": -375,
+      "y": -3609,
+      "text": "design school",
+      "font": "mono",
+      "fontSize": 12
+    },
+    {
+      "id": "work.m4.year",
+      "type": "text",
+      "x": -20,
+      "y": -3762,
+      "text": "{{yr}}",
+      "font": "mono",
+      "fontSize": 14
+    },
+    {
+      "id": "work.m4.label",
+      "type": "text",
+      "x": -20,
+      "y": -3650,
+      "text": "{{Eng school}}",
+      "font": "sans",
+      "fontSize": 16
+    },
+    {
+      "id": "work.m4.meta",
+      "type": "text",
+      "x": -20,
+      "y": -3609,
+      "text": "SWE + UX",
+      "font": "mono",
+      "fontSize": 12
+    },
+    {
+      "id": "work.m5.year",
+      "type": "text",
+      "x": 335,
+      "y": -3762,
+      "text": "{{yr}}",
+      "font": "mono",
+      "fontSize": 14
+    },
+    {
+      "id": "work.m5.label",
+      "type": "text",
+      "x": 335,
+      "y": -3650,
+      "text": "Early startups",
+      "font": "sans",
+      "fontSize": 16
+    },
+    {
+      "id": "work.m5.meta",
+      "type": "text",
+      "x": 335,
+      "y": -3609,
+      "text": "logo to prod deploy",
+      "font": "mono",
+      "fontSize": 12
+    },
+    {
+      "id": "work.m6.year",
+      "type": "text",
+      "x": 690,
+      "y": -3762,
+      "text": "{{yr}}",
+      "font": "mono",
+      "fontSize": 14
+    },
+    {
+      "id": "work.m6.label",
+      "type": "text",
+      "x": 690,
+      "y": -3650,
+      "text": "{{SV startup}}",
+      "font": "sans",
+      "fontSize": 16
+    },
+    {
+      "id": "work.m6.meta",
+      "type": "text",
+      "x": 690,
+      "y": -3609,
+      "text": "London · Dubai · Europe",
+      "font": "mono",
+      "fontSize": 12
+    },
+    {
+      "id": "work.m7.year",
+      "type": "text",
+      "x": 1045,
+      "y": -3762,
+      "text": "{{yr}}",
+      "font": "mono",
+      "fontSize": 14
+    },
+    {
+      "id": "work.m7.label",
+      "type": "text",
+      "x": 1045,
+      "y": -3650,
+      "text": "ComfyUI",
+      "font": "sans",
+      "fontSize": 16
+    },
+    {
+      "id": "work.m7.meta",
+      "type": "text",
+      "x": 1045,
+      "y": -3609,
+      "text": "San Francisco",
+      "font": "mono",
+      "fontSize": 12
+    },
+    {
+      "id": "work.m8.year",
+      "type": "text",
+      "x": 1400,
+      "y": -3762,
+      "text": "2026",
+      "font": "mono",
+      "fontSize": 14
+    },
+    {
+      "id": "work.m8.label",
+      "type": "text",
+      "x": 1400,
+      "y": -3650,
+      "text": "What's next",
+      "font": "sans",
+      "fontSize": 16
+    },
+    {
+      "id": "work.m8.meta",
+      "type": "text",
+      "x": 1400,
+      "y": -3609,
+      "text": "{{what I'm looking for}}",
+      "font": "mono",
+      "fontSize": 12
+    },
+    {
+      "id": "work.featured",
+      "type": "text",
+      "x": -5,
+      "y": -3212,
+      "text": "FEATURED",
+      "font": "mono",
+      "fontSize": 14
+    },
+    {
+      "id": "work.name",
+      "type": "text",
+      "x": 53,
+      "y": -3151,
+      "text": "ComfyUI",
+      "font": "sans",
+      "fontSize": 40
+    },
+    {
+      "id": "work.facts",
+      "type": "text",
+      "x": 213,
+      "y": -3040,
+      "text": "ROLE    {{role}}\nWHEN    {{dates}}\nWHERE   San Francisco\nREPO    ~75th most-starred on GitHub {{verify}}",
+      "font": "mono",
+      "fontSize": 14
+    },
+    {
+      "id": "work.bullets",
+      "type": "text",
+      "x": 226,
+      "y": -2898,
+      "text": "— {{The biggest thing I shipped, in one line.}}\n— {{The system I owned end to end.}}\n— {{The number that moved.}}",
+      "font": "sans",
+      "fontSize": 16
+    },
+    {
+      "id": "work.links",
+      "type": "text",
+      "x": 90,
+      "y": -2802,
+      "text": "[resume.pdf ↗](/resume.pdf)     [github ↗](https://github.com/comfyanonymous/ComfyUI)",
+      "font": "mono",
+      "fontSize": 14
+    },
+    {
+      "id": "work.before",
+      "type": "text",
+      "x": -1106,
+      "y": -2684,
+      "text": "BEFORE   {{SV startup}} · {{early startups}} · internships in design, video, print",
+      "font": "mono",
+      "fontSize": 12
+    },
+    {
+      "id": "projects.kicker",
+      "type": "text",
+      "x": 2673,
+      "y": -1232,
+      "text": "02 — PROJECTS",
+      "font": "mono",
+      "fontSize": 14
+    },
+    {
+      "id": "projects.title",
+      "type": "text",
+      "x": 2905,
+      "y": -1142,
+      "text": "Things I make",
+      "font": "sans",
+      "fontSize": 64
+    },
+    {
+      "id": "projects.dek",
+      "type": "text",
+      "x": 3110,
+      "y": -1018,
+      "text": "Graphics from first principles, games that are mostly art,\nand the board you're standing on.",
+      "font": "sans",
+      "fontSize": 24
+    },
+    {
+      "id": "projects.g.label",
+      "type": "text",
+      "x": 2662,
+      "y": -304,
+      "text": "01 / GRAPHICS",
+      "font": "mono",
+      "fontSize": 12
+    },
+    {
+      "id": "projects.g.title",
+      "type": "text",
+      "x": 2882,
+      "y": -254,
+      "text": "A renderer, from scratch",
+      "font": "sans",
+      "fontSize": 32
+    },
+    {
+      "id": "projects.g.body",
+      "type": "text",
+      "x": 2858,
+      "y": -148,
+      "text": "I like knowing where every pixel comes from.\nSo I write the renderer in C and push bytes\ninto the framebuffer myself.",
+      "font": "sans",
+      "fontSize": 16
+    },
+    {
+      "id": "projects.g.code",
+      "type": "text",
+      "x": 2806,
+      "y": 48,
+      "text": "void blit(u32 *fb, int fbw, const u32 *src,\n          int w, int h, int dx, int dy) {\n  for (int y = 0; y < h; y++) {\n    u32 *row = fb + (dy + y) * fbw + dx;\n    const u32 *s = src + y * w;\n    for (int x = 0; x < w; x++)\n      if (s[x] >> 24) row[x] = s[x];\n  }\n}",
+      "font": "mono",
+      "fontSize": 12
+    },
+    {
+      "id": "projects.g.figma",
+      "type": "text",
+      "x": 2864,
+      "y": 232,
+      "text": "Also: reverse-engineering Figma's C++ engine,\njust to see how it stays that fast.",
+      "font": "sans",
+      "fontSize": 16
+    },
+    {
+      "id": "projects.heroes",
+      "type": "text",
+      "x": 4365,
+      "y": -388,
+      "text": "← art direction heroes",
+      "font": "mono",
+      "fontSize": 12
+    },
+    {
+      "id": "projects.c.label",
+      "type": "text",
+      "x": 3698,
+      "y": -304,
+      "text": "02 / GAMES",
+      "font": "mono",
+      "fontSize": 12
+    },
+    {
+      "id": "projects.c.title",
+      "type": "text",
+      "x": 3791,
+      "y": -254,
+      "text": "Compact Disc",
+      "font": "sans",
+      "fontSize": 32
+    },
+    {
+      "id": "projects.c.body",
+      "type": "text",
+      "x": 3914,
+      "y": -164,
+      "text": "A web game where everything you see is 3D art\nI made: models, levels, lighting, the mood.",
+      "font": "sans",
+      "fontSize": 16
+    },
+    {
+      "id": "projects.c.link",
+      "type": "text",
+      "x": 3700,
+      "y": -96,
+      "text": "[play it ↗](https://{{url}})",
+      "font": "mono",
+      "fontSize": 14
+    },
+    {
+      "id": "projects.w.title",
+      "type": "text",
+      "x": 3849,
+      "y": 2,
+      "text": "{{Winamp walker}}",
+      "font": "sans",
+      "fontSize": 32
+    },
+    {
+      "id": "projects.w.body",
+      "type": "text",
+      "x": 3908,
+      "y": 92,
+      "text": "A strange 3D walking simulator that lives\ninside a Winamp skin. All art, no apologies.",
+      "font": "sans",
+      "fontSize": 16
+    },
+    {
+      "id": "projects.w.ref",
+      "type": "text",
+      "x": 3962,
+      "y": 318,
+      "text": "← the reference",
+      "font": "mono",
+      "fontSize": 12
+    },
+    {
+      "id": "projects.terminal.text",
+      "type": "text",
+      "x": 5029,
+      "y": -648,
+      "text": "$ cat details.txt\n\n· playback is a pure function of time\n· zoom lerps in log space, feels linear\n· tours contain-fit to any screen\n· grab it mid-tour: pause. play: ease back\n· frames skip React, commit at rest\n· the CMS is one JSON file",
+      "font": "mono",
+      "fontSize": 16
+    },
+    {
+      "id": "projects.s.label",
+      "type": "text",
+      "x": 4767,
+      "y": -304,
+      "text": "03 / THIS SITE",
+      "font": "mono",
+      "fontSize": 12
+    },
+    {
+      "id": "projects.s.title",
+      "type": "text",
+      "x": 4876,
+      "y": -254,
+      "text": "This whiteboard",
+      "font": "sans",
+      "fontSize": 32
+    },
+    {
+      "id": "projects.s.body",
+      "type": "text",
+      "x": 4987,
+      "y": -148,
+      "text": "A DOM infinite canvas, an editor that saves to\none JSON file, and a tour that's camera keyframes\nriding an audio clock. Built from scratch.",
+      "font": "sans",
+      "fontSize": 16
+    },
+    {
+      "id": "projects.s.link",
+      "type": "text",
+      "x": 4790,
+      "y": -56,
+      "text": "[try the editor ↗](/edit)",
+      "font": "mono",
+      "fontSize": 14
+    },
+    {
+      "id": "thinking.kicker",
+      "type": "text",
+      "x": -5327,
+      "y": -1232,
+      "text": "03 — THINKING",
+      "font": "mono",
+      "fontSize": 14
+    },
+    {
+      "id": "thinking.title",
+      "type": "text",
+      "x": -5142,
+      "y": -1142,
+      "text": "How I think",
+      "font": "sans",
+      "fontSize": 64
+    },
+    {
+      "id": "thinking.dek",
+      "type": "text",
+      "x": -4951,
+      "y": -1018,
+      "text": "Design engineering in the AI era, in five opinions.\nLoosely held, loudly stated.",
+      "font": "sans",
+      "fontSize": 24
+    },
+    {
+      "id": "thinking.quote",
+      "type": "text",
+      "x": -5052,
+      "y": -786,
+      "text": "AI made average free.\nTaste is the moat.",
+      "font": "sans",
+      "fontSize": 40
+    },
+    {
+      "id": "thinking.t0.n",
+      "type": "text",
+      "x": -5381,
+      "y": -562,
+      "text": "01",
+      "font": "mono",
+      "fontSize": 24
+    },
+    {
+      "id": "thinking.t0.a",
+      "type": "text",
+      "x": -5064,
+      "y": -562,
+      "text": "Taste is the bottleneck now.",
+      "font": "sans",
+      "fontSize": 24
+    },
+    {
+      "id": "thinking.t0.b",
+      "type": "text",
+      "x": -5034,
+      "y": -512,
+      "text": "Generation is cheap. Knowing what's good isn't.",
+      "font": "sans",
+      "fontSize": 16
+    },
+    {
+      "id": "thinking.t1.n",
+      "type": "text",
+      "x": -5381,
+      "y": -422,
+      "text": "02",
+      "font": "mono",
+      "fontSize": 24
+    },
+    {
+      "id": "thinking.t1.a",
+      "type": "text",
+      "x": -5134,
+      "y": -422,
+      "text": "The handoff is dead.",
+      "font": "sans",
+      "fontSize": 24
+    },
+    {
+      "id": "thinking.t1.b",
+      "type": "text",
+      "x": -5028,
+      "y": -372,
+      "text": "Mocks thrown over a wall lose half their intent.",
+      "font": "sans",
+      "fontSize": 16
+    },
+    {
+      "id": "thinking.t2.n",
+      "type": "text",
+      "x": -5381,
+      "y": -282,
+      "text": "03",
+      "font": "mono",
+      "fontSize": 24
+    },
+    {
+      "id": "thinking.t2.a",
+      "type": "text",
+      "x": -5028,
+      "y": -282,
+      "text": "Design engineers close the loop.",
+      "font": "sans",
+      "fontSize": 24
+    },
+    {
+      "id": "thinking.t2.b",
+      "type": "text",
+      "x": -4981,
+      "y": -232,
+      "text": "Feel it, find what's wrong, fix it in the real material.",
+      "font": "sans",
+      "fontSize": 16
+    },
+    {
+      "id": "thinking.t3.n",
+      "type": "text",
+      "x": -5381,
+      "y": -142,
+      "text": "04",
+      "font": "mono",
+      "fontSize": 24
+    },
+    {
+      "id": "thinking.t3.a",
+      "type": "text",
+      "x": -5020,
+      "y": -142,
+      "text": "Product engineering ate the mock.",
+      "font": "sans",
+      "fontSize": 24
+    },
+    {
+      "id": "thinking.t3.b",
+      "type": "text",
+      "x": -5040,
+      "y": -92,
+      "text": "The prototype is the product now, so craft it.",
+      "font": "sans",
+      "fontSize": 16
+    },
+    {
+      "id": "thinking.t4.n",
+      "type": "text",
+      "x": -5381,
+      "y": -2,
+      "text": "05",
+      "font": "mono",
+      "fontSize": 24
+    },
+    {
+      "id": "thinking.t4.a",
+      "type": "text",
+      "x": -5134,
+      "y": -2,
+      "text": "Ship the real thing.",
+      "font": "sans",
+      "fontSize": 24
+    },
+    {
+      "id": "thinking.t4.b",
+      "type": "text",
+      "x": -5163,
+      "y": 48,
+      "text": "Nobody uses a Figma file.",
+      "font": "sans",
+      "fontSize": 16
+    },
+    {
+      "id": "thinking.why.title",
+      "type": "text",
+      "x": -3621,
+      "y": -834,
+      "text": "Why I build",
+      "font": "sans",
+      "fontSize": 32
+    },
+    {
+      "id": "thinking.why.body",
+      "type": "text",
+      "x": -3474,
+      "y": -712,
+      "text": "I want work that's hard and real: a team with\nactual initiative, building something that\nshould exist. That's where the interesting\nproblems are, and where craft actually matters.",
+      "font": "sans",
+      "fontSize": 16
+    },
+    {
+      "id": "thinking.bs.title",
+      "type": "text",
+      "x": -3621,
+      "y": -514,
+      "text": "BS / not BS",
+      "font": "sans",
+      "fontSize": 32
+    },
+    {
+      "id": "thinking.bs",
+      "type": "text",
+      "x": -3621,
+      "y": -372,
+      "text": "BS\n\nvelocity theater\nmocks nobody builds\n\"AI will replace taste\"\nmeetings about meetings",
+      "font": "mono",
+      "fontSize": 14
+    },
+    {
+      "id": "thinking.notbs",
+      "type": "text",
+      "x": -3201,
+      "y": -372,
+      "text": "NOT BS\n\nshipping\nreading the source\nsweating 1px\nsmall teams, big swings",
+      "font": "mono",
+      "fontSize": 14
+    },
+    {
+      "id": "thinking.argue",
+      "type": "text",
+      "x": -3606,
+      "y": -146,
+      "text": "(argue with me)",
+      "font": "handwritten",
+      "fontSize": 40
+    },
+    {
+      "id": "inspiration.kicker",
+      "type": "text",
+      "x": -3810,
+      "y": 2318,
+      "text": "04 — INSPIRATION",
+      "font": "mono",
+      "fontSize": 14
+    },
+    {
+      "id": "inspiration.title",
+      "type": "text",
+      "x": -3571,
+      "y": 2408,
+      "text": "What shaped me",
+      "font": "sans",
+      "fontSize": 64
+    },
+    {
+      "id": "inspiration.dek",
+      "type": "text",
+      "x": -3390,
+      "y": 2508,
+      "text": "Books, screens, cartoons, games, and whatever's on repeat.",
+      "font": "sans",
+      "fontSize": 24
+    },
+    {
+      "id": "inspiration.books.label",
+      "type": "text",
+      "x": -3872,
+      "y": 3008,
+      "text": "BOOKS",
+      "font": "mono",
+      "fontSize": 14
+    },
+    {
+      "id": "inspiration.screen.label",
+      "type": "text",
+      "x": -2810,
+      "y": 3008,
+      "text": "SCREEN",
+      "font": "mono",
+      "fontSize": 14
+    },
+    {
+      "id": "inspiration.cartoons.label",
+      "type": "text",
+      "x": -3855,
+      "y": 3388,
+      "text": "CARTOONS",
+      "font": "mono",
+      "fontSize": 14
+    },
+    {
+      "id": "inspiration.games.label",
+      "type": "text",
+      "x": -2717,
+      "y": 3388,
+      "text": "GAMES",
+      "font": "mono",
+      "fontSize": 14
+    },
+    {
+      "id": "inspiration.repeat.label",
+      "type": "text",
+      "x": -3850,
+      "y": 3728,
+      "text": "ON REPEAT",
+      "font": "mono",
+      "fontSize": 14
+    },
+    {
+      "id": "inspiration.tracks0",
+      "type": "text",
+      "x": -3538,
+      "y": 3830,
+      "text": "▶ [Daft Punk — Discovery](https://open.spotify.com/search/Daft%20Punk%20Discovery)\n▶ [Radiohead — OK Computer](https://open.spotify.com/search/Radiohead%20OK%20Computer)\n▶ [Boards of Canada — Music Has the Right …](https://open.spotify.com/search/Boards%20of%20Canada%20Music%20Has%20the%20Right%20to%20Children)",
+      "font": "mono",
+      "fontSize": 12
+    },
+    {
+      "id": "inspiration.tracks1",
+      "type": "text",
+      "x": -2927,
+      "y": 3830,
+      "text": "▶ [Aphex Twin — Selected Ambient Wor…](https://open.spotify.com/search/Aphex%20Twin%20Selected%20Ambient%20Works%2085%E2%80%9392)\n▶ [Gorillaz — Demon Days](https://open.spotify.com/search/Gorillaz%20Demon%20Days)\n▶ [Linkin Park — Hybrid Theory](https://open.spotify.com/search/Linkin%20Park%20Hybrid%20Theory)",
+      "font": "mono",
+      "fontSize": 12
+    },
+    {
+      "id": "inspiration.tracks2",
+      "type": "text",
+      "x": -2354,
+      "y": 3830,
+      "text": "▶ [Nujabes — Modal Soul](https://open.spotify.com/search/Nujabes%20Modal%20Soul)\n▶ [Justice — †](https://open.spotify.com/search/Justice%20%E2%80%A0)\n▶ [Tycho — Dive](https://open.spotify.com/search/Tycho%20Dive)",
+      "font": "mono",
+      "fontSize": 12
+    },
+    {
+      "id": "inspiration.listen",
+      "type": "text",
+      "x": -1712,
+      "y": 3714,
+      "text": "click a title\nto listen ↓",
+      "font": "handwritten",
+      "fontSize": 40
+    },
+    {
+      "id": "life.kicker",
+      "type": "text",
+      "x": 1550,
+      "y": 2318,
+      "text": "05 — LIFE",
+      "font": "mono",
+      "fontSize": 14
+    },
+    {
+      "id": "life.title",
+      "type": "text",
+      "x": 1805,
+      "y": 2408,
+      "text": "Life & places",
+      "font": "sans",
+      "fontSize": 64
+    },
+    {
+      "id": "life.dek",
+      "type": "text",
+      "x": 2063,
+      "y": 2508,
+      "text": "London, Dubai, a startup across Europe, then home to California.",
+      "font": "sans",
+      "fontSize": 24
+    },
+    {
+      "id": "life.london.coord",
+      "type": "text",
+      "x": 1785,
+      "y": 2786,
+      "text": "51.51°N  0.13°W",
+      "font": "mono",
+      "fontSize": 12
+    },
+    {
+      "id": "life.london.name",
+      "type": "text",
+      "x": 1553,
+      "y": 3218,
+      "text": "London",
+      "font": "sans",
+      "fontSize": 24
+    },
+    {
+      "id": "life.london.meta",
+      "type": "text",
+      "x": 1654,
+      "y": 3266,
+      "text": "{{years}} · {{what I was doing}}",
+      "font": "mono",
+      "fontSize": 12
+    },
+    {
+      "id": "life.dubai.coord",
+      "type": "text",
+      "x": 2371,
+      "y": 2786,
+      "text": "25.20°N  55.27°E",
+      "font": "mono",
+      "fontSize": 12
+    },
+    {
+      "id": "life.dubai.name",
+      "type": "text",
+      "x": 2183,
+      "y": 3218,
+      "text": "Dubai",
+      "font": "sans",
+      "fontSize": 24
+    },
+    {
+      "id": "life.dubai.meta",
+      "type": "text",
+      "x": 2293,
+      "y": 3266,
+      "text": "{{years}} · {{what I was doing}}",
+      "font": "mono",
+      "fontSize": 12
+    },
+    {
+      "id": "life.paris.coord",
+      "type": "text",
+      "x": 2928,
+      "y": 2786,
+      "text": "48.86°N  2.35°E",
+      "font": "mono",
+      "fontSize": 12
+    },
+    {
+      "id": "life.paris.name",
+      "type": "text",
+      "x": 2848,
+      "y": 3218,
+      "text": "Europe, w/ a startup",
+      "font": "sans",
+      "fontSize": 24
+    },
+    {
+      "id": "life.paris.meta",
+      "type": "text",
+      "x": 2854,
+      "y": 3266,
+      "text": "{{cities}} · working out of a backpack",
+      "font": "mono",
+      "fontSize": 12
+    },
+    {
+      "id": "life.san-francisco.coord",
+      "type": "text",
+      "x": 3468,
+      "y": 2786,
+      "text": "37.77°N  122.42°W",
+      "font": "mono",
+      "fontSize": 12
+    },
+    {
+      "id": "life.san-francisco.name",
+      "type": "text",
+      "x": 3368,
+      "y": 3218,
+      "text": "San Francisco",
+      "font": "sans",
+      "fontSize": 24
+    },
+    {
+      "id": "life.san-francisco.meta",
+      "type": "text",
+      "x": 3427,
+      "y": 3266,
+      "text": "{{years}} · ComfyUI, too much coffee",
+      "font": "mono",
+      "fontSize": 12
+    },
+    {
+      "id": "life.home.title",
+      "type": "text",
+      "x": 2428,
+      "y": 3456,
+      "text": "Home",
+      "font": "sans",
+      "fontSize": 32
+    },
+    {
+      "id": "life.home.body",
+      "type": "text",
+      "x": 2598,
+      "y": 3562,
+      "text": "California, close to family, close to\nmountains. Someday: a small old cabin\nin the woods.",
+      "font": "sans",
+      "fontSize": 16
+    },
+    {
+      "id": "life.spaces.title",
+      "type": "text",
+      "x": 3151,
+      "y": 3456,
+      "text": "Spaces",
+      "font": "sans",
+      "fontSize": 32
+    },
+    {
+      "id": "life.fallingwater.cap",
+      "type": "text",
+      "x": 3182,
+      "y": 3756,
+      "text": "Fallingwater · Wright",
+      "font": "mono",
+      "fontSize": 12
+    },
+    {
+      "id": "life.salk.cap",
+      "type": "text",
+      "x": 3515,
+      "y": 3756,
+      "text": "Salk Institute · Kahn",
+      "font": "mono",
+      "fontSize": 12
+    },
+    {
+      "id": "life.katsura.cap",
+      "type": "text",
+      "x": 3771,
+      "y": 3756,
+      "text": "Katsura Villa",
+      "font": "mono",
+      "fontSize": 12
+    },
+    {
+      "id": "life.barcelona-pavilion.cap",
+      "type": "text",
+      "x": 4259,
+      "y": 3756,
+      "text": "Barcelona Pavilion · Mies",
+      "font": "mono",
+      "fontSize": 12
+    },
+    {
+      "id": "life.arch.note",
+      "type": "text",
+      "x": 3513,
+      "y": 3844,
+      "text": "architecture is the design I can't ship (yet)",
+      "font": "handwritten",
+      "fontSize": 40
     }
   ]
 }

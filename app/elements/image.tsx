@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { cn } from "@/lib/utils";
 import type { ElementDefinition, ImageElementData } from "./types";
 import { uploadImage } from "./uploadImage";
 
@@ -97,7 +98,11 @@ function ImageCanvasElement({ element }: { element: ImageElementData }) {
     return <ImagePlaceholder width={element.width} height={element.height} />;
   }
   return (
-    <div className="outline-8 outline-shell rounded-xl">
+    <div
+      className={cn(
+        element.variant !== "bare" && "outline-8 outline-shell rounded-xl",
+      )}
+    >
       <Image
         src={element.src}
         width={element.width}

@@ -12,6 +12,7 @@ type ImageElementData = ElementBase & {
   src: string;
   width: number;
   height: number;
+  variant?: "bare";
 };
 type CanvasElementData = StickyElementData | TextElementData | ImageElementData;
 
