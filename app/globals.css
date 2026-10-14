@@ -13,25 +13,13 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-brand: #F8640F;
+  --color-shell: var(--shellPlasticBg);
+  --color-shell-border: var(--shellPlasticBorder);
+  --color-shell-hover: var(--shellPlasticHover);
+  --color-shell-hover-2: var(--shellPlasticHover2);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-berkeley-mono);
   --font-handwritten: var(--font-reenie-beanie);
-}
-
-@utility bg-shell {
-  background-color: var(--shellPlasticBg);
-}
-
-@utility border-shell {
-  border-color: var(--shellPlasticBorder);
-}
-
-@utility bg-shell-hover {
-  background-color: var(--shellPlasticHover);
-}
-
-@utility bg-shell-hover-2 {
-  background-color: var(--shellPlasticHover2);
 }
 
 @media (prefers-color-scheme: dark) {

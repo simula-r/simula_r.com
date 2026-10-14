@@ -1,5 +1,4 @@
-import { Fragment } from "react/jsx-runtime";
-import { Sidebar } from "./Icons";
+import type { ReactNode } from "react";
 import { DropdownButton } from "./MenuButton";
 
 function ARBall({ className = "w-6 h-6" }) {
@@ -29,21 +28,17 @@ function ARBall({ className = "w-6 h-6" }) {
   );
 }
 
-function Navigation() {
+function Navigation({ children }: { children?: ReactNode }) {
   return (
-    <>
-      <div className="absolute p-4 top-0 left-0 z-10">
-        <div className="flex space-x-6 items-center border border-shell bg-shell p-1 rounded-sm">
-          <DropdownButton>
-            <ARBall />
-            <div>Simula_r Portfolio</div>
-          </DropdownButton>
-          <button className="h-8 w-8 rounded-sm hover:bg-shell-hover grid place-items-center">
-            <Sidebar className="w-4 h-4" />
-          </button>
-        </div>
+    <div className="absolute p-4 top-0 left-0 z-10">
+      <div className="flex space-x-6 items-center border border-shell-border bg-shell p-1 rounded-sm">
+        <DropdownButton>
+          <ARBall />
+          <div>Simula_r Portfolio</div>
+        </DropdownButton>
+        {children}
       </div>
-    </>
+    </div>
   );
 }
 

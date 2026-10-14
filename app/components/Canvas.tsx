@@ -1,20 +1,22 @@
 "use client";
 
-import { useEffect, useEffectEvent, useRef, useState } from "react";
+import {
+  useEffect,
+  useEffectEvent,
+  useLayoutEffect,
+  useRef,
+  useState,
+  type Ref,
+} from "react";
+import { flushSync } from "react-dom";
 import { cn } from "@/lib/utils";
-import { CanvasItem } from "./CanvasItem";
-import { StickyNoteCanvasElement } from "./StickyNote";
-import { TextCanvasElement } from "./Text";
+import { paneTransform } from "@/lib/camera";
+import { CanvasItem, type CanvasItemInteraction } from "./CanvasItem";
+import { definitionFor } from "@/app/elements/registry";
+import type { Camera, CanvasElementData } from "@/app/elements/types";
 import { CanvasSelection, type CanvasSelectionHandle } from "./CanvasSelection";
 import { CanvasItemSelection } from "./CanvasItemSelection";
-import { FakeCursor } from "./FakeCursor";
 import { useCanvasInteraction } from "./useCanvasInteraction";
-
-type Camera = { x: number; y: number; zoom: number };
-type ElementBase = { id: string; x: number; y: number };
-type StickyElementData = ElementBase & { type: "sticky"; text: string };
-type TextElementData = ElementBase & { type: "text"; text: string };
-type CanvasElementData = StickyElementData | TextElementData;
 
 type CanvasMode = "edit" | "view";
 
@@ -30,18 +32,22 @@ function Canvas({
   setCamera,
   elements,
   onMoveElements,
-  selectedIds,
+  onUpdateElement,
+  selectedIds = [],
   onSelectElement,
   onInteract,
+  paneRef,
   mode = "edit",
 }: {
   camera: Camera;
   setCamera: (update: (c: Camera) => Camera) => void;
   elements: CanvasElementData[];
-  onMoveElements: (ids: string[], dx: number, dy: number) => void;
-  selectedIds: string[];
-  onSelectElement: (ids: string[]) => void;
+  onMoveElements?: (ids: string[], dx: number, dy: number) => void;
+  onUpdateElement?: (id: string, patch: Partial<CanvasElementData>) => void;
+  selectedIds?: string[];
+  onSelectElement?: (ids: string[]) => void;
   onInteract?: () => void;
+  paneRef?: Ref<HTMLDivElement>;
   mode?: CanvasMode;
 }) {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -100,6 +106,7 @@ function Canvas({
   const pan = useRef<{ x: number; y: number } | null>(null);
   const panButton = panButtonForMode(mode);
   const [isPanning, setIsPanning] = useState(false);
+  const [editingId, setEditingId] = useState<string | null>(null);
   const [selectedSizes, setSelectedSizes] = useState(
     new Map<string, { width: number; height: number }>(),
   );
@@ -119,19 +126,31 @@ function Canvas({
   const itemDragDelta = useRef({ dx: 0, dy: 0 });
   const itemDragFrame = useRef<number | null>(null);
 
-  const selectElements = (ids: string[]) => {
-    const sizes = new Map<string, { width: number; height: number }>();
-    for (const id of ids) {
+  const selectedKey = mode === "edit" ? selectedIds.join(",") : "";
+
+  useLayoutEffect(() => {
+    if (!selectedKey) return;
+    const ids = new Map<Element, string>();
+    for (const id of selectedKey.split(",")) {
       const node = itemNodes.current.get(id);
-      if (!node) continue;
-      const rect = node.getBoundingClientRect();
-      sizes.set(id, {
-        width: rect.width / camera.zoom,
-        height: rect.height / camera.zoom,
-      });
+      if (node) ids.set(node, id);
     }
-    setSelectedSizes(sizes);
-    onSelectElement(ids);
+    const sizes = new Map<string, { width: number; height: number }>();
+    const observer = new ResizeObserver((entries) => {
+      for (const entry of entries) {
+        const id = ids.get(entry.target);
+        const box = entry.borderBoxSize[0];
+        if (!id || !box) continue;
+        sizes.set(id, { width: box.inlineSize, height: box.blockSize });
+      }
+      flushSync(() => setSelectedSizes(new Map(sizes)));
+    });
+    for (const node of ids.keys()) observer.observe(node);
+    return () => observer.disconnect();
+  }, [selectedKey]);
+
+  const selectElements = (ids: string[]) => {
+    onSelectElement?.(ids);
   };
 
   const applyDragTransform = (dx: number, dy: number) => {
@@ -191,7 +210,7 @@ function Canvas({
     }
     resetDragTransforms(drag.nodes);
     itemDrag.current = null;
-    if (dx !== 0 || dy !== 0) onMoveElements(drag.ids, dx, dy);
+    if (dx !== 0 || dy !== 0) onMoveElements?.(drag.ids, dx, dy);
     else if (drag.ids.length > 1) selectElements([drag.id]);
   };
 
@@ -219,28 +238,25 @@ function Canvas({
       onPointerDown={(e) => {
         if (e.button === MOUSE_BUTTON_LEFT && mode === "edit") {
           e.preventDefault();
+          setEditingId(null);
           e.currentTarget.setPointerCapture(e.pointerId);
           marqueeRef.current?.start(e.clientX, e.clientY);
           return;
         }
-        if (e.button === MOUSE_BUTTON_LEFT && mode === "view") {
-          selectElements([]);
-        }
         if (e.button !== panButton) return;
         e.preventDefault();
         e.currentTarget.setPointerCapture(e.pointerId);
-        pan.current = { x: e.clientX - camera.x, y: e.clientY - camera.y };
+        pan.current = { x: e.clientX, y: e.clientY };
         setIsPanning(true);
       }}
       onPointerMove={(e) => {
         marqueeRef.current?.move(e.clientX, e.clientY);
-        const start = pan.current;
-        if (!start) return;
-        setCamera((c) => ({
-          ...c,
-          x: e.clientX - start.x,
-          y: e.clientY - start.y,
-        }));
+        const last = pan.current;
+        if (!last) return;
+        const dx = e.clientX - last.x;
+        const dy = e.clientY - last.y;
+        pan.current = { x: e.clientX, y: e.clientY };
+        setCamera((c) => ({ ...c, x: c.x + dx, y: c.y + dy }));
       }}
       onPointerUp={() => {
         marqueeRef.current?.end();
@@ -254,54 +270,69 @@ function Canvas({
       }}
     >
       <div
+        ref={paneRef}
         id="transform-pane"
         className="absolute left-1/2 top-1/2 origin-top-left"
-        style={{
-          transform: `translate(${camera.x}px, ${camera.y}px) scale(${camera.zoom})`,
-        }}
+        style={{ transform: paneTransform(camera) }}
       >
-        {elements.map((el) => (
-          <CanvasItem
-            key={el.id}
-            x={el.x}
-            y={el.y}
-            selected={selectedSet.has(el.id)}
-            elRef={(node) => {
-              if (node) itemNodes.current.set(el.id, node);
-              else itemNodes.current.delete(el.id);
-            }}
-            onDragStart={(clientX, clientY) =>
-              startItemDrag(el.id, clientX, clientY)
-            }
-            onDragMove={moveItemDrag}
-            onDragEnd={endItemDrag}
-            onDragCancel={cancelItemDrag}
-          >
-            {el.type === "text" ? (
-              <TextCanvasElement text={el.text} />
-            ) : (
-              <StickyNoteCanvasElement text={el.text} />
-            )}
-          </CanvasItem>
-        ))}
+        {elements.map((el) => {
+          const definition = definitionFor(el);
+          const editing = mode === "edit" && editingId === el.id;
+          const interaction: CanvasItemInteraction =
+            mode === "view" ? "inert" : editing ? "editing" : "drag";
+          return (
+            <CanvasItem
+              key={el.id}
+              x={el.x}
+              y={el.y}
+              selected={selectedSet.has(el.id)}
+              interaction={interaction}
+              elRef={(node) => {
+                if (node) itemNodes.current.set(el.id, node);
+                else itemNodes.current.delete(el.id);
+              }}
+              onDragStart={(clientX, clientY) =>
+                startItemDrag(el.id, clientX, clientY)
+              }
+              onDragMove={moveItemDrag}
+              onDragEnd={endItemDrag}
+              onDragCancel={cancelItemDrag}
+              onEdit={
+                definition.editable ? () => setEditingId(el.id) : undefined
+              }
+            >
+              {editing ? (
+                <definition.Editor
+                  element={el}
+                  onChange={(patch) => onUpdateElement?.(el.id, patch)}
+                  onDone={() => setEditingId(null)}
+                />
+              ) : (
+                <definition.Render element={el} />
+              )}
+            </CanvasItem>
+          );
+        })}
       </div>
-      <CanvasItemSelection
-        camera={camera}
-        elements={elements}
-        selectedIds={selectedIds}
-        selectedSizes={selectedSizes}
-        dragNodeRef={selectionDragNode}
-      />
-      <FakeCursor camera={camera} x={100} y={200} name="Simula_r" />
-      <CanvasSelection
-        ref={marqueeRef}
-        itemNodes={itemNodes}
-        containerRect={containerRect}
-        onSelect={selectElements}
-      />
+      {mode === "edit" && (
+        <>
+          <CanvasItemSelection
+            camera={camera}
+            elements={elements}
+            selectedIds={selectedIds}
+            selectedSizes={selectedSizes}
+            dragNodeRef={selectionDragNode}
+          />
+          <CanvasSelection
+            ref={marqueeRef}
+            itemNodes={itemNodes}
+            containerRect={containerRect}
+            onSelect={selectElements}
+          />
+        </>
+      )}
     </div>
   );
 }
 
 export { Canvas };
-export type { Camera, CanvasElementData, CanvasMode };

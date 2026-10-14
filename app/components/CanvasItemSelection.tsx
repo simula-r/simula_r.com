@@ -1,7 +1,7 @@
 "use client";
 
 import { memo } from "react";
-import type { Camera, CanvasElementData } from "./Canvas";
+import type { Camera, CanvasElementData } from "@/app/elements/types";
 
 const EDGE_LENGTH = 4096;
 const EDGE_THICKNESS = 4;

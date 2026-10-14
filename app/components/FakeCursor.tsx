@@ -1,11 +1,15 @@
-import type { Camera } from "./Canvas";
+import type { Ref } from "react";
+import type { Camera } from "@/app/elements/types";
+import { pointTransform } from "@/lib/camera";
 
 function FakeCursor({
   camera,
   x,
   y,
   name,
+  ref,
 }: {
+  ref?: Ref<HTMLDivElement>;
   camera: Camera;
   x: number;
   y: number;
@@ -13,10 +17,9 @@ function FakeCursor({
 }) {
   return (
     <div
+      ref={ref}
       className="absolute left-1/2 top-1/2 pointer-events-none select-none z-10"
-      style={{
-        transform: `translate(${x * camera.zoom + camera.x}px, ${y * camera.zoom + camera.y}px)`,
-      }}
+      style={{ transform: pointTransform(camera, { x, y }) }}
     >
       <svg width="18" height="22" viewBox="0 0 18 22">
         <path

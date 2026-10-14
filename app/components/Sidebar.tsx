@@ -2,8 +2,8 @@
 
 import { useRef } from "react";
 import { SidebarItem } from "./SidebarItem";
-import { StickyNoteBaseSVG, StickyNoteSidebarIcon } from "./StickyNote";
-import { TextPreviewElement, TextSidebarIcon } from "./Text";
+import { definitionOf, sidebarKinds } from "@/app/elements/registry";
+import type { ElementKind } from "@/app/elements/types";
 
 function SidebarKnurling() {
   return (
@@ -102,42 +102,38 @@ function SidebarKnurling() {
 
 type SidebarProps = {
   zoom: number;
-  onCreateNote: (clientX: number, clientY: number) => void;
-  onCreateText: (clientX: number, clientY: number) => void;
+  onCreate: (kind: ElementKind, clientX: number, clientY: number) => void;
 };
 
-function Sidebar({ zoom, onCreateNote, onCreateText }: SidebarProps) {
+function Sidebar({ zoom, onCreate }: SidebarProps) {
   const panelRef = useRef<HTMLDivElement>(null);
 
   return (
     <div className="fixed left-4 top-1/2 -translate-y-1/2">
       <div
         ref={panelRef}
-        className="relative border border-shell bg-shell rounded-sm flex flex-col items-center justify-center p-4 space-y-4 pt-8"
+        className="relative border border-shell-border bg-shell rounded-sm flex flex-col items-center justify-center p-4 space-y-4 pt-8"
       >
         <div className="absolute top-2">
           <SidebarKnurling />
         </div>
-        <div className="flex items-center flex-col space-y-2">
-          <SidebarItem
-            panelRef={panelRef}
-            icon={<StickyNoteSidebarIcon />}
-            preview={<StickyNoteBaseSVG />}
-            zoom={zoom}
-            onCreate={onCreateNote}
-          />
-          <div className="text-xl font-handwritten select-none">Note</div>
-        </div>
-        <div className="flex items-center flex-col space-y-2">
-          <SidebarItem
-            panelRef={panelRef}
-            icon={<TextSidebarIcon />}
-            preview={<TextPreviewElement />}
-            zoom={zoom}
-            onCreate={onCreateText}
-          />
-          <div className="text-xl font-handwritten select-none">Text</div>
-        </div>
+        {sidebarKinds.map((kind) => {
+          const definition = definitionOf(kind);
+          return (
+            <div key={kind} className="flex items-center flex-col space-y-2">
+              <SidebarItem
+                panelRef={panelRef}
+                icon={<definition.Icon />}
+                preview={<definition.Preview />}
+                zoom={zoom}
+                onCreate={(clientX, clientY) => onCreate(kind, clientX, clientY)}
+              />
+              <div className="text-xl font-handwritten select-none">
+                {definition.label}
+              </div>
+            </div>
+          );
+        })}
       </div>
     </div>
   );

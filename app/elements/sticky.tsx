@@ -1,3 +1,8 @@
+"use client";
+
+import type { ElementDefinition, StickyElementData } from "./types";
+import { EditableTextarea } from "./EditableTextarea";
+
 function StickyNoteBaseSVG({ className }: { className?: string }) {
   return (
     <svg
@@ -119,15 +124,57 @@ function StickyNoteSidebarIcon() {
   );
 }
 
-function StickyNoteCanvasElement({ text }: { text: string }) {
+const STICKY_TEXT_CLASS =
+  "absolute w-[200px] text-center whitespace-pre-wrap wrap-break-word text-4xl font-handwritten text-black font-bold";
+
+function StickyNoteCanvasElement({ element }: { element: StickyElementData }) {
   return (
     <div className="flex items-center justify-center select-none">
-      <div className="absolute text-4xl font-handwritten text-black font-bold">
-        {text}
+      <div className={STICKY_TEXT_CLASS}>
+        {element.text}
       </div>
       <StickyNoteBaseSVG />
     </div>
   );
 }
 
-export { StickyNoteBaseSVG, StickyNoteSidebarIcon, StickyNoteCanvasElement };
+function StickyNoteEditor({
+  element,
+  onChange,
+  onDone,
+}: {
+  element: StickyElementData;
+  onChange: (patch: Partial<StickyElementData>) => void;
+  onDone: () => void;
+}) {
+  return (
+    <div className="flex items-center justify-center">
+      <EditableTextarea
+        value={element.text}
+        className={STICKY_TEXT_CLASS}
+        onChange={(text) => onChange({ text })}
+        onDone={onDone}
+      />
+      <StickyNoteBaseSVG />
+    </div>
+  );
+}
+
+const stickyDefinition: ElementDefinition<StickyElementData> = {
+  kind: "sticky",
+  label: "Note",
+  editable: true,
+  Icon: StickyNoteSidebarIcon,
+  Preview: StickyNoteBaseSVG,
+  Render: StickyNoteCanvasElement,
+  Editor: StickyNoteEditor,
+  create: (x, y) => ({
+    id: crypto.randomUUID(),
+    type: "sticky",
+    x,
+    y,
+    text: "New note",
+  }),
+};
+
+export { stickyDefinition };

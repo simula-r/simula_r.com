@@ -1,81 +1,87 @@
 "use client";
 
-import { useState } from "react";
-import { ARDude } from "./components/ARDude";
-import {
-  Canvas,
-  type Camera,
-  type CanvasElementData,
-} from "./components/Canvas";
-import { Sidebar } from "./components/Sidebar";
+import { useEffect, useRef, useState } from "react";
+import { Canvas } from "./components/Canvas";
 import { Instructions } from "./components/Instructions";
 import { Navigation } from "./components/Navigation";
 import { SpotlightTour } from "./components/SpotlightTour";
 import { ActiveBorder } from "./components/ActiveBorder";
+import { FakeCursor } from "./components/FakeCursor";
+import { loadDriveManifest } from "./drive/load";
+import { useDrivePlayer } from "./drive/useDrivePlayer";
+import type { DriveManifest } from "./drive/types";
+import { loadGraph } from "./graph/load";
+import type { Camera } from "./elements/types";
+import { paneTransform, pointTransform } from "@/lib/camera";
+
+const SHOW_CURSOR = true;
+const RESTING_POINTER = { x: 100, y: 200 };
+
+const graph = loadGraph();
 
 export default function Home() {
-  const [camera, setCamera] = useState<Camera>({ x: 0, y: 0, zoom: 1 });
-  const [elements, setElements] = useState<CanvasElementData[]>([
-    { id: "seed", type: "sticky", x: 0, y: 0, text: "Hello World!" },
-  ]);
-  const [selectedIds, setSelectedIds] = useState<string[]>([]);
-  const [active, setActive] = useState(false);
+  const [camera, setCamera] = useState<Camera>(graph.camera);
+  const [manifest, setManifest] = useState<DriveManifest | null>(null);
+  const player = useDrivePlayer({ manifest, camera, setCamera });
+  const paneRef = useRef<HTMLDivElement>(null);
+  const cursorRef = useRef<HTMLDivElement>(null);
+  const { subscribe } = player;
 
-  const createNote = (clientX: number, clientY: number) => {
-    setElements((els) => [
-      ...els,
-      {
-        id: crypto.randomUUID(),
-        type: "sticky",
-        x: (clientX - window.innerWidth / 2 - camera.x) / camera.zoom,
-        y: (clientY - window.innerHeight / 2 - camera.y) / camera.zoom,
-        text: "New note",
-      },
-    ]);
+  useEffect(() => {
+    loadDriveManifest().then(setManifest);
+  }, []);
+
+  useEffect(
+    () =>
+      subscribe((frame) => {
+        const pane = paneRef.current;
+        if (pane) pane.style.transform = paneTransform(frame.camera);
+        const cursor = cursorRef.current;
+        if (cursor) {
+          cursor.style.transform = pointTransform(
+            frame.camera,
+            frame.pointer ?? RESTING_POINTER,
+          );
+        }
+      }),
+    [subscribe],
+  );
+
+  const updateCamera = (update: (c: Camera) => Camera) => {
+    if (!player.isPlaying()) setCamera(update);
   };
 
-  const createText = (clientX: number, clientY: number) => {
-    setElements((els) => [
-      ...els,
-      {
-        id: crypto.randomUUID(),
-        type: "text",
-        x: (clientX - window.innerWidth / 2 - camera.x) / camera.zoom,
-        y: (clientY - window.innerHeight / 2 - camera.y) / camera.zoom,
-        text: "Add text",
-      },
-    ]);
-  };
-
-  const moveElements = (ids: string[], dx: number, dy: number) => {
-    const moving = new Set(ids);
-    setElements((els) =>
-      els.map((el) =>
-        moving.has(el.id) ? { ...el, x: el.x + dx, y: el.y + dy } : el,
-      ),
-    );
-  };
+  const following = player.status !== "idle";
+  const pointer = player.pointer ?? RESTING_POINTER;
 
   return (
-    <div className="w-full h-full relative">
+    <div className="w-full h-full relative overflow-hidden">
       <Canvas
+        mode="view"
         camera={camera}
-        setCamera={setCamera}
-        elements={elements}
-        onMoveElements={moveElements}
-        selectedIds={selectedIds}
-        onSelectElement={setSelectedIds}
-        onInteract={() => setActive(false)}
+        setCamera={updateCamera}
+        paneRef={paneRef}
+        elements={graph.elements}
+        onInteract={player.interrupt}
       />
-      <Sidebar
-        zoom={camera.zoom}
-        onCreateNote={createNote}
-        onCreateText={createText}
-      />
+      {SHOW_CURSOR && (
+        <FakeCursor
+          ref={cursorRef}
+          camera={camera}
+          x={pointer.x}
+          y={pointer.y}
+          name="a_r"
+        />
+      )}
       <Navigation />
-      <SpotlightTour active={active} onActiveChange={setActive} />
+      <SpotlightTour
+        active={following}
+        chapters={player.chapters}
+        onToggle={player.toggle}
+        onSelectChapter={player.playChapter}
+      />
       <Instructions />
-      <ActiveBorder active={active} />
+      <ActiveBorder player={player} />
     </div>
   );
 }

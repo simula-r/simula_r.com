@@ -1,6 +1,8 @@
-import { cn } from "@/lib/utils";
+"use client";
+
 import { parseTextMarkup } from "@/lib/parseTextMarkup";
-import { useEffect, useState } from "react";
+import type { ElementDefinition, TextElementData } from "./types";
+import { EditableTextarea } from "./EditableTextarea";
 
 function TextSidebarIcon() {
   return (
@@ -34,40 +36,61 @@ function TextSidebarIcon() {
   );
 }
 
+
 function TextPreviewElement() {
   return (
-    <div className={cn("py-1 pointer-events-none")}>
+    <div className="py-1 pointer-events-none">
       <p className="m-0 p-0 block text-base">Add text</p>
     </div>
   );
 }
 
-function TextCanvasElement({ text }: { text: string }) {
-  const [isEditing, setIsEditing] = useState(false);
-  // const [textArea]
+function TextCanvasElement({ element }: { element: TextElementData }) {
   return (
-    <div className={cn("cursor-text py-1")}>
-      {isEditing ? (
-        <textarea
-          autoFocus
-          rows={1}
-          className="border border-blue-400"
-          onBlur={() => {
-            setIsEditing(false);
-          }}
-        ></textarea>
-      ) : (
-        <p
-          className="m-0 p-0 block text-base pointer-events-auto"
-          onClick={() => {
-            setIsEditing(true);
-          }}
-        >
-          {parseTextMarkup(text)}
-        </p>
-      )}
+    <div className="py-1">
+      <p className="m-0 p-0 block text-base whitespace-nowrap">
+        {parseTextMarkup(element.text)}
+      </p>
     </div>
   );
 }
 
-export { TextSidebarIcon, TextPreviewElement, TextCanvasElement };
+function TextEditor({
+  element,
+  onChange,
+  onDone,
+}: {
+  element: TextElementData;
+  onChange: (patch: Partial<TextElementData>) => void;
+  onDone: () => void;
+}) {
+  return (
+    <div className="py-1">
+      <EditableTextarea
+        value={element.text}
+        className="m-0 p-0 block text-base whitespace-nowrap"
+        onChange={(text) => onChange({ text })}
+        onDone={onDone}
+      />
+    </div>
+  );
+}
+
+const textDefinition: ElementDefinition<TextElementData> = {
+  kind: "text",
+  label: "Text",
+  editable: true,
+  Icon: TextSidebarIcon,
+  Preview: TextPreviewElement,
+  Render: TextCanvasElement,
+  Editor: TextEditor,
+  create: (x, y) => ({
+    id: crypto.randomUUID(),
+    type: "text",
+    x,
+    y,
+    text: "Add text",
+  }),
+};
+
+export { textDefinition };
