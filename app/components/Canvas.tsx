@@ -1,6 +1,7 @@
 "use client";
 
 import {
+  useCallback,
   useEffect,
   useEffectEvent,
   useLayoutEffect,
@@ -128,6 +129,19 @@ function Canvas({
 
   const selectedKey = mode === "edit" ? selectedIds.join(",") : "";
 
+  const toolbarElement =
+    mode === "edit" && selectedIds.length === 1
+      ? elements.find((el) => el.id === selectedIds[0])
+      : undefined;
+  const ElementToolbar = toolbarElement
+    ? definitionFor(toolbarElement).Toolbar
+    : undefined;
+  const toolbarId = toolbarElement?.id;
+  const getToolbarAnchor = useCallback(
+    () => (toolbarId ? (itemNodes.current.get(toolbarId) ?? null) : null),
+    [toolbarId],
+  );
+
   useLayoutEffect(() => {
     if (!selectedKey) return;
     const ids = new Map<Element, string>();
@@ -170,6 +184,7 @@ function Canvas({
   };
 
   const startItemDrag = (id: string, clientX: number, clientY: number) => {
+    if (id !== editingId) setEditingId(null);
     const alreadySelected = selectedSet.has(id);
     if (!alreadySelected) selectElements([id]);
     const ids = alreadySelected ? selectedIds : [id];
@@ -316,6 +331,14 @@ function Canvas({
       </div>
       {mode === "edit" && (
         <>
+          {toolbarElement && ElementToolbar && (
+            <ElementToolbar
+              key={toolbarElement.id}
+              element={toolbarElement}
+              getAnchor={getToolbarAnchor}
+              onChange={(patch) => onUpdateElement?.(toolbarElement.id, patch)}
+            />
+          )}
           <CanvasItemSelection
             camera={camera}
             elements={elements}

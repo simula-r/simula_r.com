@@ -3,6 +3,9 @@
 import { parseTextMarkup } from "@/lib/parseTextMarkup";
 import type { ElementDefinition, TextElementData } from "./types";
 import { EditableTextarea } from "./EditableTextarea";
+import { textStyleProps } from "./textStyle";
+import { TextToolbar } from "./TextToolbar";
+import { cn } from "@/lib/utils";
 
 function TextSidebarIcon() {
   return (
@@ -36,7 +39,6 @@ function TextSidebarIcon() {
   );
 }
 
-
 function TextPreviewElement() {
   return (
     <div className="py-1 pointer-events-none">
@@ -46,9 +48,13 @@ function TextPreviewElement() {
 }
 
 function TextCanvasElement({ element }: { element: TextElementData }) {
+  const { className, style } = textStyleProps(element);
   return (
     <div className="py-1">
-      <p className="m-0 p-0 block text-base whitespace-nowrap">
+      <p
+        className={cn("m-0 p-0 block text-base whitespace-nowrap", className)}
+        style={style}
+      >
         {parseTextMarkup(element.text)}
       </p>
     </div>
@@ -64,11 +70,13 @@ function TextEditor({
   onChange: (patch: Partial<TextElementData>) => void;
   onDone: () => void;
 }) {
+  const { className, style } = textStyleProps(element);
   return (
     <div className="py-1">
       <EditableTextarea
         value={element.text}
-        className="m-0 p-0 block text-base whitespace-nowrap"
+        className={cn("m-0 p-0 block text-base whitespace-nowrap", className)}
+        style={style}
         onChange={(text) => onChange({ text })}
         onDone={onDone}
       />
@@ -84,6 +92,7 @@ const textDefinition: ElementDefinition<TextElementData> = {
   Preview: TextPreviewElement,
   Render: TextCanvasElement,
   Editor: TextEditor,
+  Toolbar: TextToolbar,
   create: (x, y) => ({
     id: crypto.randomUUID(),
     type: "text",

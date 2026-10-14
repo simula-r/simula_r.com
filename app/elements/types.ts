@@ -3,8 +3,10 @@ import type { ComponentType } from "react";
 type Camera = { x: number; y: number; zoom: number };
 
 type ElementBase = { id: string; x: number; y: number };
+type TextFont = "handwritten" | "mono" | "sans";
+type TextStyle = { font?: TextFont; fontSize?: number };
 type StickyElementData = ElementBase & { type: "sticky"; text: string };
-type TextElementData = ElementBase & { type: "text"; text: string };
+type TextElementData = ElementBase & TextStyle & { type: "text"; text: string };
 type ImageElementData = ElementBase & {
   type: "image";
   src: string;
@@ -22,6 +24,12 @@ type ElementEditorProps<T extends CanvasElementData> = {
   onDone: () => void;
 };
 
+type ElementToolbarProps<T extends CanvasElementData> = {
+  element: T;
+  getAnchor: () => HTMLElement | null;
+  onChange: (patch: Partial<T>) => void;
+};
+
 type ElementDefinition<T extends CanvasElementData> = {
   kind: T["type"];
   label: string;
@@ -30,6 +38,7 @@ type ElementDefinition<T extends CanvasElementData> = {
   Preview: ComponentType;
   Render: ComponentType<{ element: T }>;
   Editor: ComponentType<ElementEditorProps<T>>;
+  Toolbar?: ComponentType<ElementToolbarProps<T>>;
   create: (x: number, y: number) => T;
   fill?: (element: T) => Promise<Partial<T> | null>;
 };
@@ -43,4 +52,6 @@ export type {
   ElementKind,
   ElementOf,
   ElementDefinition,
+  TextFont,
+  TextStyle,
 };
