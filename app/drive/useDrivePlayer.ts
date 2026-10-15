@@ -4,9 +4,10 @@ import { fitCamera, mixCamera, windowSize, type Point } from "@/lib/camera";
 import { sampleCamera, samplePointer } from "./sample";
 import type { Chapter, DriveManifest } from "./types";
 
-const HANDOFF_SECONDS = 0.4;
+const HANDOFF_SECONDS = 0.6;
+const REWIND_SECONDS = 2;
 
-type PlayerStatus = "idle" | "playing" | "paused" | "interrupted";
+type PlayerStatus = "idle" | "playing" | "interrupted" | "ended";
 type Handoff = { from: Camera; chapter: number; t0: number };
 type DriveFrame = {
   chapter: number;
@@ -43,7 +44,7 @@ function useDrivePlayer({
   setCamera: (camera: Camera) => void;
 }) {
   const [status, setStatus] = useState<PlayerStatus>("idle");
-  const [chapterIndex, setChapterIndex] = useState(0);
+  const [muted, setMuted] = useState(false);
   const [pointer, setPointer] = useState<Point | null>(null);
   const committed = useRef(camera);
   const audios = useRef<HTMLAudioElement[]>([]);
@@ -96,36 +97,38 @@ function useDrivePlayer({
   const switchChapter = (next: number, at: number) => {
     if (next !== index.current) audios.current[index.current]?.pause();
     index.current = next;
-    setChapterIndex(next);
     handoff.current = null;
     const audio = audios.current[next];
     if (audio) audio.currentTime = at;
   };
 
-  const finish = (camera = frame.current?.camera ?? committed.current) => {
+  const halt = (next: PlayerStatus) => {
     audios.current[index.current]?.pause();
     playing.current = false;
+    renderFrame();
     handoff.current = null;
-    index.current = 0;
-    setChapterIndex(0);
-    publish({
-      chapter: 0,
-      time: 0,
-      camera,
-      pointer: null,
-    });
     commit();
-    setStatus("idle");
+    setStatus(next);
+  };
+
+  const start = (audio: HTMLAudioElement) => {
+    audio.play().catch(() => {
+      if (playing.current && audio === audios.current[index.current]) {
+        halt("interrupted");
+      }
+    });
   };
 
   const onEnded = useEffectEvent(() => {
+    if (!playing.current) return;
     const next = index.current + 1;
     if (next >= audios.current.length) {
-      finish();
+      halt("ended");
       return;
     }
     switchChapter(next, 0);
-    audios.current[next]?.play();
+    const audio = audios.current[next];
+    if (audio) start(audio);
   });
 
   useEffect(() => {
@@ -142,6 +145,10 @@ function useDrivePlayer({
     };
   }, [manifest]);
 
+  useEffect(() => {
+    for (const audio of audios.current) audio.muted = muted;
+  }, [manifest, muted]);
+
   const tick = useEffectEvent(renderFrame);
 
   useEffect(() => {
@@ -156,50 +163,29 @@ function useDrivePlayer({
   const play = () => {
     const audio = audios.current[index.current];
     if (!audio || playing.current) return;
+    audio.currentTime = Math.max(0, audio.currentTime - REWIND_SECONDS);
     handoff.current = {
       from: committed.current,
       chapter: index.current,
       t0: audio.currentTime,
     };
     playing.current = true;
-    audio.play();
+    start(audio);
     renderFrame();
     setStatus("playing");
   };
-
-  const halt = (next: PlayerStatus) => {
-    audios.current[index.current]?.pause();
-    playing.current = false;
-    renderFrame();
-    commit();
-    setStatus(next);
-  };
-
-  const pause = () => halt("paused");
-
-  const toggle = () => (playing.current ? pause() : play());
 
   const interrupt = () => {
     if (playing.current) halt("interrupted");
   };
 
-  const stop = () => finish(committed.current);
-
-  const seek = (chapter: number, at: number) => {
-    switchChapter(chapter, at);
-    const audio = audios.current[chapter];
-    if (playing.current && audio?.paused) audio.play();
-    renderFrame();
-  };
-
-  const settle = () => {
-    if (!playing.current) commit();
-  };
-
-  const playChapter = (chapter: number) => {
-    seek(chapter, 0);
+  const replay = () => {
+    if (playing.current) return;
+    switchChapter(0, 0);
     play();
   };
+
+  const toggleMute = () => setMuted((m) => !m);
 
   const isPlaying = () => playing.current;
 
@@ -222,18 +208,14 @@ function useDrivePlayer({
   return {
     status,
     chapters,
-    chapterIndex,
     offsets,
     total,
     pointer,
+    muted,
     play,
-    pause,
-    toggle,
     interrupt,
-    stop,
-    seek,
-    settle,
-    playChapter,
+    replay,
+    toggleMute,
     isPlaying,
     subscribe,
   };

@@ -146,4 +146,85 @@ function Close({ className = "text-white" }: IconProps) {
   );
 }
 
-export { Hand, Zoom, ChevronDown, Sidebar, User, Play, Info, Close };
+function Replay({ className = "text-white" }: IconProps) {
+  return (
+    <svg
+      className={className}
+      width="16"
+      height="16"
+      viewBox="0 0 16 16"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M13.5 8A5.5 5.5 0 1 1 11.89 4.11"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M13.5 1.5V5H10"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+function Volume({ className = "text-white" }: IconProps) {
+  return (
+    <svg
+      className={className}
+      width="16"
+      height="16"
+      viewBox="0 0 16 16"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path d="M2 6H4.5L8 3V13L4.5 10H2V6Z" fill="currentColor" />
+      <path
+        d="M10.5 5.5C11.17 6.17 11.5 7.05 11.5 8C11.5 8.95 11.17 9.83 10.5 10.5M12.5 3.5C13.67 4.67 14.25 6.25 14.25 8C14.25 9.75 13.67 11.33 12.5 12.5"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
+
+function VolumeOff({ className = "text-white" }: IconProps) {
+  return (
+    <svg
+      className={className}
+      width="16"
+      height="16"
+      viewBox="0 0 16 16"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path d="M2 6H4.5L8 3V13L4.5 10H2V6Z" fill="currentColor" />
+      <path
+        d="M10.5 6L14 9.5M14 6L10.5 9.5"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
+
+export {
+  Hand,
+  Zoom,
+  ChevronDown,
+  Sidebar,
+  User,
+  Play,
+  Info,
+  Close,
+  Replay,
+  Volume,
+  VolumeOff,
+};

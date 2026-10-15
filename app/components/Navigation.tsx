@@ -1,6 +1,8 @@
 import type { ReactNode } from "react";
 import { DropdownButton } from "./MenuButton";
 
+const BOARD_TITLE = "Why hire Jake?";
+
 function ARBall({ className = "w-6 h-6" }) {
   return (
     <svg
@@ -34,7 +36,7 @@ function Navigation({ children }: { children?: ReactNode }) {
       <div className="flex space-x-6 items-center border border-shell-border bg-shell p-1 rounded-sm">
         <DropdownButton className="select-none">
           <ARBall />
-          <div>Simula_r Portfolio</div>
+          <div>{BOARD_TITLE}</div>
         </DropdownButton>
         {children}
       </div>
@@ -42,4 +44,4 @@ function Navigation({ children }: { children?: ReactNode }) {
   );
 }
 
-export { Navigation };
+export { Navigation, BOARD_TITLE };

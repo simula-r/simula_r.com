@@ -4,6 +4,7 @@ import {
   useCallback,
   useEffect,
   useEffectEvent,
+  useImperativeHandle,
   useLayoutEffect,
   useRef,
   useState,
@@ -17,7 +18,6 @@ import { definitionFor } from "@/app/elements/registry";
 import type { Camera, CanvasElementData } from "@/app/elements/types";
 import { CanvasSelection, type CanvasSelectionHandle } from "./CanvasSelection";
 import { CanvasItemSelection } from "./CanvasItemSelection";
-import { useCanvasInteraction } from "./useCanvasInteraction";
 
 type CanvasMode = "edit" | "view";
 
@@ -36,8 +36,8 @@ function Canvas({
   onUpdateElement,
   selectedIds = [],
   onSelectElement,
-  onInteract,
   paneRef,
+  ref,
   mode = "edit",
 }: {
   camera: Camera;
@@ -47,14 +47,14 @@ function Canvas({
   onUpdateElement?: (id: string, patch: Partial<CanvasElementData>) => void;
   selectedIds?: string[];
   onSelectElement?: (ids: string[]) => void;
-  onInteract?: () => void;
   paneRef?: Ref<HTMLDivElement>;
+  ref?: Ref<HTMLDivElement>;
   mode?: CanvasMode;
 }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const containerRect = useRef<DOMRect | null>(null);
 
-  useCanvasInteraction(containerRef, () => onInteract?.());
+  useImperativeHandle(ref, () => containerRef.current as HTMLDivElement, []);
 
   useEffect(() => {
     const node = containerRef.current;

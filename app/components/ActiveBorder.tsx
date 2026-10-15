@@ -1,8 +1,8 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, type Ref } from "react";
 import type { DrivePlayer } from "@/app/drive/useDrivePlayer";
-import { Play } from "./Icons";
+import { Volume, VolumeOff } from "./Icons";
 
 function formatTime(seconds: number) {
   const whole = Math.max(0, Math.floor(seconds));
@@ -47,19 +47,8 @@ function CornerRight() {
   );
 }
 
-function PauseIcon() {
-  return (
-    <svg className="w-4 h-4" viewBox="0 0 16 16" fill="currentColor">
-      <rect x="3" y="2" width="4" height="12" rx="1" />
-      <rect x="9" y="2" width="4" height="12" rx="1" />
-    </svg>
-  );
-}
-
 function ProgressSegments({ player }: { player: DrivePlayer }) {
-  const trackRef = useRef<HTMLDivElement>(null);
   const fills = useRef<(HTMLDivElement | null)[]>([]);
-  const scrubbing = useRef(false);
   const { subscribe, chapters } = player;
 
   useEffect(
@@ -79,52 +68,13 @@ function ProgressSegments({ player }: { player: DrivePlayer }) {
     [subscribe, chapters],
   );
 
-  const seekAt = (clientX: number) => {
-    const track = trackRef.current;
-    if (!track || player.total === 0) return;
-    const rect = track.getBoundingClientRect();
-    const fraction = Math.min(
-      1,
-      Math.max(0, (clientX - rect.left) / rect.width),
-    );
-    let remaining = fraction * player.total;
-    for (const [i, chapter] of player.chapters.entries()) {
-      const last = i === player.chapters.length - 1;
-      if (remaining < chapter.duration || last) {
-        player.seek(i, Math.min(remaining, chapter.duration));
-        return;
-      }
-      remaining -= chapter.duration;
-    }
-  };
-
   return (
-    <div
-      ref={trackRef}
-      className="flex items-center gap-2 w-80 h-4 cursor-pointer touch-none"
-      onPointerDown={(e) => {
-        e.currentTarget.setPointerCapture(e.pointerId);
-        scrubbing.current = true;
-        seekAt(e.clientX);
-      }}
-      onPointerMove={(e) => {
-        if (scrubbing.current) seekAt(e.clientX);
-      }}
-      onPointerUp={() => {
-        scrubbing.current = false;
-        player.settle();
-      }}
-      onPointerCancel={() => {
-        scrubbing.current = false;
-        player.settle();
-      }}
-    >
+    <div className="flex items-center gap-1 w-40 h-4">
       {chapters.map((chapter, i) => (
         <div
           key={chapter.id}
-          className="bg-white/50 relative rounded-sm h-2"
+          className="bg-white/50 relative rounded-sm h-1.5"
           style={{ flexGrow: chapter.duration }}
-          title={chapter.title}
         >
           <div
             ref={(node) => {
@@ -159,30 +109,38 @@ function ElapsedTime({ player }: { player: DrivePlayer }) {
   );
 }
 
-function ActiveBorder({ player }: { player: DrivePlayer }) {
-  if (player.status !== "playing" && player.status !== "paused") return null;
-  const chapter = player.chapters[player.chapterIndex];
+function ActiveBorder({
+  player,
+  hintRef,
+}: {
+  player: DrivePlayer;
+  hintRef?: Ref<HTMLDivElement>;
+}) {
+  if (player.status !== "playing") return null;
 
   return (
     <>
       <div className="absolute bottom-1 left-1/2 -translate-x-1/2 z-50">
-        <div className="relative bg-brand flex items-center gap-4 px-4 h-8 text-xs text-foreground font-mono rounded-t-lg select-none">
+        <div className="relative bg-brand flex items-center gap-4 pl-4 pr-2 h-8 text-xs text-foreground font-mono rounded-t-lg select-none">
           <CornerLeft />
-          <button
-            onClick={player.toggle}
-            className="w-6 h-6 grid place-items-center rounded-sm hover:bg-white/20"
-          >
-            {player.status === "playing" ? (
-              <PauseIcon />
-            ) : (
-              <Play className="w-4 h-4" />
-            )}
-          </button>
           <div className="whitespace-nowrap">Following a_r</div>
-          <div className="text-foreground/70">Chapter:</div>
-          <div className="whitespace-nowrap">{chapter?.title}</div>
+          <div ref={hintRef} className="whitespace-nowrap text-foreground/70">
+            Hold anywhere to take control
+          </div>
           <ProgressSegments player={player} />
           <ElapsedTime player={player} />
+          <button
+            onClick={player.toggleMute}
+            aria-label={player.muted ? "Unmute" : "Mute"}
+            aria-pressed={player.muted}
+            className="w-6 h-6 grid place-items-center rounded-sm hover:bg-white/20"
+          >
+            {player.muted ? (
+              <VolumeOff className="w-4 h-4" />
+            ) : (
+              <Volume className="w-4 h-4" />
+            )}
+          </button>
           <CornerRight />
         </div>
       </div>
@@ -191,4 +149,4 @@ function ActiveBorder({ player }: { player: DrivePlayer }) {
   );
 }
 
-export { ActiveBorder };
+export { ActiveBorder, formatTime };

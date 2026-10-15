@@ -1,42 +1,49 @@
 # Canvas TODO
 
+The board is the "Why hire Jake?" jam. See `docs/jam-content-spec.md` and `docs/jam-script.md`.
+
 ## Facts to fill (`{{...}}` in graph.json)
 
-- `work.m1.year`: {{yr}}
-- `work.m2.year`: {{yr}}
-- `work.m2.meta`: {{where}}
-- `work.m3.year`: {{yr}}
-- `work.m4.year`: {{yr}}
-- `work.m4.label`: {{Eng school}}
-- `work.m5.year`: {{yr}}
-- `work.m6.year`: {{yr}}
-- `work.m6.label`: {{SV startup}}
-- `work.m7.year`: {{yr}}
-- `work.m8.meta`: {{what I'm looking for}}
-- `work.facts`: ROLE    {{role}} / WHEN    {{dates}} / WHERE   San Francisco / REPO    ~75th most-starred on GitHub {{verify}}
-- `work.bullets`: — {{The biggest thing I shipped, in one line.}} / — {{The system I owned end to end.}} / — {{The number that moved.}}
-- `work.before`: BEFORE   {{SV startup}} · {{early startups}} · internships in design, video, print
-- `projects.c.link`: [play it ↗](https://{{url}})
-- `projects.w.title`: {{Winamp walker}}
-- `life.london.meta`: {{years}} · {{what I was doing}}
-- `life.dubai.meta`: {{years}} · {{what I was doing}}
-- `life.paris.meta`: {{cities}} · working out of a backpack
-- `life.san-francisco.meta`: {{years}} · ComfyUI, too much coffee
+Before recording:
+
+- `decision.contact`: {{email}}, {{linkedin}}, {{github}}, {{resume link}}. Once you have the URLs, make them `[label](url)` links. There's no `/resume.pdf` in `public/` yet.
+- `decision.looking.body`: {{role · location · start date}}
+- `evidence.comfy.facts`: {{role}}, {{dates}}, REPO ~75th most-starred on GitHub {{verify}}
+- `evidence.comfy.bullets`: {{The biggest thing I shipped, in one line.}} / {{The system I owned end to end.}} / {{The number that moved.}}
+- `evidence.cd.link`: [play it ↗](https://{{url}})
+- `evidence.walker.title`: {{Winamp walker}}
+- `context.engineering.body`: {{Eng school}}, {{SV startup}}
+- `docs/jam-script.md`, evidence block: {{one line on what you owned}} at ComfyUI
+
+Side zones:
+
+- `timeline.m1.year` … `timeline.m7.year`: {{yr}}
+- `timeline.m2.meta`: {{where}}
+- `timeline.m4.label`: {{Eng school}}
+- `timeline.m6.label`: {{SV startup}}
+- `places.london.meta`, `places.dubai.meta`: {{years}} · {{what I was doing}}
+- `places.europe.meta`: {{cities}}
+- `places.san-francisco.meta`: {{years}}
 
 ## Images to add when you have them
 
-- Compact Disc screenshots (projects, games column)
-- Winamp walker screenshots (replace `projects.winamp`, the Winamp reference shot)
-- Your own photos for each place in life & places
+- Compact Disc screenshots (`evidence`, claim 03). This is the biggest gap, because the games claim currently shows only references.
+- Winamp walker screenshots, to sit beside `evidence.walker.ref` (the Winamp reference shot)
+- A ComfyUI shot of something you designed, if `/canvas/work/comfyui.png` isn't yours
+- A screenshot or GIF of the editor at `/edit` for exhibit A (the editor is dev-only, so the board no longer links to it)
+- Your own photos for each place
 - Record player render for the music shelf
 
 ## Draft copy to rewrite in your voice
 
-- `thinking.*`: quote, five theses, why I build, BS / not BS
-- `start.letter`, `start.ar`
-- `work.m*`: timeline labels and meta
-- `inspiration.*`: picks and sticky reactions are filler
-- `life.*`: architecture picks and copy
+- `brief.*`: session details, agenda descriptions, the a_r sticky
+- `hook.*`: A1–A3, the placard and the terminal lines. Check every technical claim is still true after the jam-session UI lands (hold to take over, click a_r to resume).
+- `context.*`: cluster bullets, especially "Still sweats the 1px stuff" and "Graphics, games, tools, product"
+- `principles.*`: quote, five theses and BS / not BS. `principles.p5.b` changed from "Nobody uses a Figma file." to "Nobody uses a mockup." to keep Figma off the board.
+- `evidence.renderer.engine`: changed from "reverse-engineering Figma's C++ engine" to "a big design tool's C++ engine". Restore it if you're fine naming Figma there.
+- `decision.*`: options copy and the end sticky
+- `taste.*`: the picks and sticky reactions are filler
+- `places.*`: architecture picks and copy. `places.max.note` is kept verbatim from your edit ("Max is fat as fuck."). Your call whether it stays on a hiring board.
 
 ## Swap before deploy
 
