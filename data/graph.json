@@ -1,9 +1,9 @@
 {
   "version": 1,
   "camera": {
-    "x": 0,
-    "y": 0,
-    "zoom": 0.45
+    "zoom": 0.30000000000000004,
+    "x": -293.61000379888304,
+    "y": 336.56727419327063
   },
   "elements": [
     {
@@ -109,8 +109,8 @@
     {
       "id": "work.comfy",
       "type": "image",
-      "x": -850,
-      "y": -2983,
+      "x": -900,
+      "y": -3166.3334350585938,
       "src": "/canvas/work/comfyui.png",
       "width": 1300,
       "height": 493
@@ -118,8 +118,8 @@
     {
       "id": "projects.teapot",
       "type": "image",
-      "x": 3050,
-      "y": -617,
+      "x": 3065.714227585566,
+      "y": -570.6507888067335,
       "src": "/canvas/graphics/utah-teapot.png",
       "width": 900,
       "height": 506
@@ -127,8 +127,8 @@
     {
       "id": "projects.myst",
       "type": "image",
-      "x": 3775,
-      "y": -514,
+      "x": 3734.99989827474,
+      "y": -760.6666666666667,
       "src": "/canvas/games/myst.png",
       "width": 250,
       "height": 300
@@ -136,8 +136,8 @@
     {
       "id": "projects.jsr",
       "type": "image",
-      "x": 4080,
-      "y": -514,
+      "x": 4063.3333333333335,
+      "y": -754,
       "src": "/canvas/games/jet-set-radio.jpg",
       "width": 299,
       "height": 300
@@ -145,8 +145,8 @@
     {
       "id": "projects.winamp",
       "type": "image",
-      "x": 3750,
-      "y": 314,
+      "x": 3713.3333333333335,
+      "y": 100.66666666666666,
       "src": "/canvas/games/winamp.png",
       "width": 200,
       "height": 316
@@ -442,15 +442,15 @@
     {
       "id": "start.ar",
       "type": "sticky",
-      "x": 760,
-      "y": -230,
+      "x": 565.8334350585938,
+      "y": -498.3333206176758,
       "text": "hi from a_r,\nthe little face\nfollowing you"
     },
     {
       "id": "work.halves",
       "type": "sticky",
-      "x": -200,
-      "y": -3420,
+      "x": -1643.3333841959636,
+      "y": -3442.2220865885415,
       "text": "both halves:\ndesign school +\nreal engineering"
     },
     {
@@ -463,15 +463,15 @@
     {
       "id": "projects.g.pixels",
       "type": "sticky",
-      "x": 3360,
-      "y": 36,
+      "x": 3283.809465680804,
+      "y": 70.28571428571429,
       "text": "pixels are\nthe product"
     },
     {
       "id": "projects.c.look",
       "type": "sticky",
-      "x": 4410,
-      "y": -174,
+      "x": 4365.5556233723955,
+      "y": -176.2221883138021,
       "text": "I make the part\nof games you\nlook at"
     },
     {
@@ -944,7 +944,7 @@
     {
       "id": "projects.kicker",
       "type": "text",
-      "x": 2673,
+      "x": 2713.833282470703,
       "y": -1232,
       "text": "02 — PROJECTS",
       "font": "mono",
@@ -953,8 +953,8 @@
     {
       "id": "projects.title",
       "type": "text",
-      "x": 2905,
-      "y": -1142,
+      "x": 2897.5,
+      "y": -1147.8333587646484,
       "text": "Things I make",
       "font": "sans",
       "fontSize": 64
@@ -962,8 +962,8 @@
     {
       "id": "projects.dek",
       "type": "text",
-      "x": 3110,
-      "y": -1018,
+      "x": 3040,
+      "y": -1025.2221247355142,
       "text": "Graphics from first principles, games that are mostly art,\nand the board you're standing on.",
       "font": "sans",
       "fontSize": 24
@@ -971,8 +971,8 @@
     {
       "id": "projects.g.label",
       "type": "text",
-      "x": 2662,
-      "y": -304,
+      "x": 2684.3808942522323,
+      "y": -246.5396437872024,
       "text": "01 / GRAPHICS",
       "font": "mono",
       "fontSize": 12
@@ -980,8 +980,8 @@
     {
       "id": "projects.g.title",
       "type": "text",
-      "x": 2882,
-      "y": -254,
+      "x": 2837.238037109375,
+      "y": -142.57142857142856,
       "text": "A renderer, from scratch",
       "font": "sans",
       "fontSize": 32
@@ -989,8 +989,8 @@
     {
       "id": "projects.g.body",
       "type": "text",
-      "x": 2858,
-      "y": -148,
+      "x": 2821.809552873884,
+      "y": -51.80946568080357,
       "text": "I like knowing where every pixel comes from.\nSo I write the renderer in C and push bytes\ninto the framebuffer myself.",
       "font": "sans",
       "fontSize": 16
@@ -998,8 +998,8 @@
     {
       "id": "projects.g.code",
       "type": "text",
-      "x": 2806,
-      "y": 48,
+      "x": 2809.809552873884,
+      "y": 139.42857142857144,
       "text": "void blit(u32 *fb, int fbw, const u32 *src,\n          int w, int h, int dx, int dy) {\n  for (int y = 0; y < h; y++) {\n    u32 *row = fb + (dy + y) * fbw + dx;\n    const u32 *s = src + y * w;\n    for (int x = 0; x < w; x++)\n      if (s[x] >> 24) row[x] = s[x];\n  }\n}",
       "font": "mono",
       "fontSize": 12
@@ -1007,8 +1007,8 @@
     {
       "id": "projects.g.figma",
       "type": "text",
-      "x": 2864,
-      "y": 232,
+      "x": 2818.285714285714,
+      "y": 310.0951799665179,
       "text": "Also: reverse-engineering Figma's C++ engine,\njust to see how it stays that fast.",
       "font": "sans",
       "fontSize": 16
@@ -1025,8 +1025,8 @@
     {
       "id": "projects.c.label",
       "type": "text",
-      "x": 3698,
-      "y": -304,
+      "x": 3661.3333333333335,
+      "y": -517.3333333333334,
       "text": "02 / GAMES",
       "font": "mono",
       "fontSize": 12
@@ -1034,8 +1034,8 @@
     {
       "id": "projects.c.title",
       "type": "text",
-      "x": 3791,
-      "y": -254,
+      "x": 3754.3333333333335,
+      "y": -467.33333333333337,
       "text": "Compact Disc",
       "font": "sans",
       "fontSize": 32
@@ -1043,8 +1043,8 @@
     {
       "id": "projects.c.body",
       "type": "text",
-      "x": 3914,
-      "y": -164,
+      "x": 3877.3333333333335,
+      "y": -377.33333333333337,
       "text": "A web game where everything you see is 3D art\nI made: models, levels, lighting, the mood.",
       "font": "sans",
       "fontSize": 16
@@ -1052,8 +1052,8 @@
     {
       "id": "projects.c.link",
       "type": "text",
-      "x": 3700,
-      "y": -96,
+      "x": 3663.3333333333335,
+      "y": -309.33333333333337,
       "text": "[play it ↗](https://{{url}})",
       "font": "mono",
       "fontSize": 14
@@ -1061,8 +1061,8 @@
     {
       "id": "projects.w.title",
       "type": "text",
-      "x": 3849,
-      "y": 2,
+      "x": 3812.3333333333335,
+      "y": -211.33333333333337,
       "text": "{{Winamp walker}}",
       "font": "sans",
       "fontSize": 32
@@ -1070,8 +1070,8 @@
     {
       "id": "projects.w.body",
       "type": "text",
-      "x": 3908,
-      "y": 92,
+      "x": 3871.3333333333335,
+      "y": -121.33333333333334,
       "text": "A strange 3D walking simulator that lives\ninside a Winamp skin. All art, no apologies.",
       "font": "sans",
       "fontSize": 16
@@ -1079,8 +1079,8 @@
     {
       "id": "projects.w.ref",
       "type": "text",
-      "x": 3962,
-      "y": 318,
+      "x": 3925.3333333333335,
+      "y": 104.66666666666666,
       "text": "← the reference",
       "font": "mono",
       "fontSize": 12
@@ -1106,8 +1106,8 @@
     {
       "id": "projects.s.title",
       "type": "text",
-      "x": 4876,
-      "y": -254,
+      "x": 4849.3333740234375,
+      "y": -246,
       "text": "This whiteboard",
       "font": "sans",
       "fontSize": 32
@@ -1115,8 +1115,8 @@
     {
       "id": "projects.s.body",
       "type": "text",
-      "x": 4987,
-      "y": -148,
+      "x": 4944.7777099609375,
+      "y": -148.0001017252604,
       "text": "A DOM infinite canvas, an editor that saves to\none JSON file, and a tour that's camera keyframes\nriding an audio clock. Built from scratch.",
       "font": "sans",
       "fontSize": 16
@@ -1376,8 +1376,8 @@
     {
       "id": "inspiration.dek",
       "type": "text",
-      "x": -3390,
-      "y": 2508,
+      "x": -3487.7778116861978,
+      "y": 2502.4444274902344,
       "text": "Books, screens, cartoons, games, and whatever's on repeat.",
       "font": "sans",
       "fontSize": 24
@@ -1669,6 +1669,32 @@
       "text": "architecture is the design I can't ship (yet)",
       "font": "handwritten",
       "fontSize": 40
+    },
+    {
+      "id": "e77246cf-b7fe-493e-bcc6-db1e06a23db0",
+      "type": "text",
+      "x": -2227.5420454721566,
+      "y": -3523.521762071745,
+      "text": "Max is fat as fuck.",
+      "fontSize": 24,
+      "font": "handwritten"
+    },
+    {
+      "id": "9a68124b-979b-4d5a-a91f-679596ef4a14",
+      "type": "image",
+      "x": -2213.635713307056,
+      "y": -3308.2016684684627,
+      "src": "/uploads/7f45b781-67e7-4831-9dd5-658b19fb0b27.jpg",
+      "width": 480,
+      "height": 270
+    },
+    {
+      "id": "6425692d-9237-4096-ae68-71f672dd14a3",
+      "type": "text",
+      "x": 1111.6172315524518,
+      "y": -1524.768423685064,
+      "text": " design interviews are whiteboard exercises, so you're running one on yourself, live, in a tool you built.",
+      "fontSize": 64
     }
   ]
 }

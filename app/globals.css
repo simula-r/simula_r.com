@@ -3,6 +3,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --foreground-muted: #737373;
   --shellPlasticBg: #313131;
   --shellPlasticBorder: #383838;
   --shellPlasticHover: #3f3f3f;
@@ -12,6 +13,7 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-foreground-muted: var(--foreground-muted);
   --color-brand: #F8640F;
   --color-shell: var(--shellPlasticBg);
   --color-shell-border: var(--shellPlasticBorder);
@@ -26,6 +28,7 @@
   :root {
     --background: #232323;
     --foreground: #ededed;
+    --foreground-muted: #a1a1a1;
   }
 }
 

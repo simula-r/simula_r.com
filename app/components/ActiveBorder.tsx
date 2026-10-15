@@ -160,7 +160,7 @@ function ElapsedTime({ player }: { player: DrivePlayer }) {
 }
 
 function ActiveBorder({ player }: { player: DrivePlayer }) {
-  if (player.status === "idle") return null;
+  if (player.status !== "playing" && player.status !== "paused") return null;
   const chapter = player.chapters[player.chapterIndex];
 
   return (

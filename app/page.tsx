@@ -7,6 +7,7 @@ import { Navigation } from "./components/Navigation";
 import { SpotlightTour } from "./components/SpotlightTour";
 import { ActiveBorder } from "./components/ActiveBorder";
 import { FakeCursor } from "./components/FakeCursor";
+import { TourPaused } from "./components/TourPaused";
 import { loadDriveManifest } from "./drive/load";
 import { useDrivePlayer } from "./drive/useDrivePlayer";
 import type { DriveManifest } from "./drive/types";
@@ -51,7 +52,7 @@ export default function Home() {
     if (!player.isPlaying()) setCamera(update);
   };
 
-  const following = player.status !== "idle";
+  const following = player.status === "playing" || player.status === "paused";
   const pointer = player.pointer ?? RESTING_POINTER;
 
   return (
@@ -80,8 +81,11 @@ export default function Home() {
         onToggle={player.toggle}
         onSelectChapter={player.playChapter}
       />
-      <Instructions />
+      {/* <Instructions /> */}
       <ActiveBorder player={player} />
+      {player.status === "interrupted" && (
+        <TourPaused onResume={player.play} onClose={player.stop} />
+      )}
     </div>
   );
 }

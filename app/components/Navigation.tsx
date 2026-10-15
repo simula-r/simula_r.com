@@ -32,7 +32,7 @@ function Navigation({ children }: { children?: ReactNode }) {
   return (
     <div className="absolute p-4 top-0 left-0 z-10">
       <div className="flex space-x-6 items-center border border-shell-border bg-shell p-1 rounded-sm">
-        <DropdownButton>
+        <DropdownButton className="select-none">
           <ARBall />
           <div>Simula_r Portfolio</div>
         </DropdownButton>

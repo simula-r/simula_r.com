@@ -6,7 +6,7 @@ import type { Chapter, DriveManifest } from "./types";
 
 const HANDOFF_SECONDS = 0.4;
 
-type PlayerStatus = "idle" | "playing" | "paused";
+type PlayerStatus = "idle" | "playing" | "paused" | "interrupted";
 type Handoff = { from: Camera; chapter: number; t0: number };
 type DriveFrame = {
   chapter: number;
@@ -102,7 +102,7 @@ function useDrivePlayer({
     if (audio) audio.currentTime = at;
   };
 
-  const finish = () => {
+  const finish = (camera = frame.current?.camera ?? committed.current) => {
     audios.current[index.current]?.pause();
     playing.current = false;
     handoff.current = null;
@@ -111,7 +111,7 @@ function useDrivePlayer({
     publish({
       chapter: 0,
       time: 0,
-      camera: frame.current?.camera ?? committed.current,
+      camera,
       pointer: null,
     });
     commit();
@@ -167,19 +167,23 @@ function useDrivePlayer({
     setStatus("playing");
   };
 
-  const pause = () => {
+  const halt = (next: PlayerStatus) => {
     audios.current[index.current]?.pause();
     playing.current = false;
     renderFrame();
     commit();
-    setStatus("paused");
+    setStatus(next);
   };
+
+  const pause = () => halt("paused");
 
   const toggle = () => (playing.current ? pause() : play());
 
   const interrupt = () => {
-    if (playing.current) pause();
+    if (playing.current) halt("interrupted");
   };
+
+  const stop = () => finish(committed.current);
 
   const seek = (chapter: number, at: number) => {
     switchChapter(chapter, at);
@@ -226,6 +230,7 @@ function useDrivePlayer({
     pause,
     toggle,
     interrupt,
+    stop,
     seek,
     settle,
     playChapter,
