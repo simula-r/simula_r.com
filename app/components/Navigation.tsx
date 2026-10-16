@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import { DropdownButton } from "./MenuButton";
 
-const BOARD_TITLE = "Why hire Jake?";
+const BOARD_TITLE = "Jake's Dope Portfolio";
 
 function ARBall({ className = "w-6 h-6" }) {
   return (

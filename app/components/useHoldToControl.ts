@@ -15,18 +15,15 @@ function useHoldToControl(
   {
     enabled,
     onHold,
-    onNudge,
   }: {
     enabled: boolean;
     onHold: () => void;
-    onNudge: () => void;
   },
 ) {
   const [hold, setHold] = useState<Hold | null>(null);
   const active = useRef<{ pointerId: number; timer: number } | null>(null);
   const isEnabled = useEffectEvent(() => enabled);
   const complete = useEffectEvent(onHold);
-  const nudge = useEffectEvent(onNudge);
 
   const cancelHold = useEffectEvent(() => {
     const current = active.current;
@@ -63,7 +60,6 @@ function useHoldToControl(
         if (!swallowMenu) return;
         if (active.current) {
           cancelHold();
-          nudge();
           return;
         }
         begin(e);
@@ -88,14 +84,6 @@ function useHoldToControl(
         if (swallowMenu) e.preventDefault();
       },
       { signal },
-    );
-
-    node.addEventListener(
-      "wheel",
-      () => {
-        if (isEnabled()) nudge();
-      },
-      { capture: true, passive: true, signal },
     );
 
     return () => {

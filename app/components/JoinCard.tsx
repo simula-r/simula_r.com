@@ -1,70 +1,87 @@
 "use client";
 
-import { useState } from "react";
-import { formatTime } from "./ActiveBorder";
-
 function formatDuration(seconds: number) {
-  if (seconds < 60) return formatTime(seconds);
-  return `${Math.round(seconds / 60)} min`;
+  if (seconds < 120) return `${Math.round(seconds)}-second`;
+  return `${Math.round(seconds / 60)}-minute`;
 }
 
 function JoinCard({
   title,
   duration,
   ready,
+  name,
+  onNameChange,
   onJoin,
   onLookAround,
 }: {
   title: string;
   duration: number;
   ready: boolean;
-  onJoin: (name: string) => void;
-  onLookAround: (name: string) => void;
+  name: string;
+  onNameChange: (name: string) => void;
+  onJoin: () => void;
+  onLookAround: () => void;
 }) {
-  const [name, setName] = useState("");
+  const initial = (name.trim()[0] ?? "A").toUpperCase();
 
   return (
-    <div className="absolute inset-0 z-40 grid place-items-center p-4 bg-black/10 backdrop-blur-sm">
+    <div className="absolute inset-0 z-100 grid place-items-center p-4 bg-black/10 backdrop-blur-xs">
       <form
-        className="w-80 max-w-full flex flex-col gap-4 border border-shell-border bg-shell rounded-lg p-4 text-white"
+        className="w-[800px] max-w-full grid grid-cols-1 sm:grid-cols-[1fr_1fr] border-2 border-shell-border bg-shell rounded-xl overflow-hidden text-white shadow-2xl"
         onSubmit={(e) => {
           e.preventDefault();
-          if (ready) onJoin(name);
+          if (ready) onJoin();
         }}
       >
-        <div className="flex flex-col gap-1">
-          <div className="font-mono text-xs text-white/60">
-            a_r invited you to a jam
-          </div>
-          <h1 className="text-lg font-medium">{title}</h1>
-          <div className="font-mono text-xs text-white/60">
-            {ready ? `${formatDuration(duration)} · sound on` : "sound on"}
-          </div>
+        <div className="p-3 border-b sm:border-b-0 border-shell-border">
+          <div className="w-[410px] sm:h-full rounded-xl border-2 border-brand bg-shell-hover" />
         </div>
-        <input
-          autoFocus
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          placeholder="What should I call you?"
-          aria-label="What should I call you?"
-          maxLength={40}
-          className="h-8 px-2 rounded-md bg-shell-hover border border-shell-border font-mono text-xs text-white placeholder:text-white/40 outline-none focus:border-brand"
-        />
-        <div className="flex flex-col items-center gap-2">
-          <button
-            type="submit"
-            disabled={!ready}
-            className="w-full h-8 rounded-md bg-brand text-white font-mono text-xs disabled:opacity-60"
-          >
-            {ready ? "Join" : "Loading…"}
-          </button>
-          <button
-            type="button"
-            onClick={() => onLookAround(name)}
-            className="font-mono text-xs text-white/60 hover:text-white hover:underline"
-          >
-            just let me look around
-          </button>
+        <div className="flex flex-col justify-center gap-6 p-6 sm:p-8">
+          <div className="flex flex-col gap-2">
+            <div className="text-sm text-white/60">
+              Jake C. Schroeder invited you
+            </div>
+            <h1 className="text-3xl font-semibold tracking-tight">{title}</h1>
+            <div className="text-sm text-white/60">
+              {ready
+                ? `${formatDuration(duration)} session · Voice over`
+                : "guided session · audio on"}
+            </div>
+          </div>
+          <label className="flex flex-col gap-2">
+            <span className="text-sm font-medium text-white/80">
+              Display name
+            </span>
+            <div className="flex items-center gap-3 h-11 px-2 rounded-lg bg-shell-hover border border-shell-border focus-within:border-brand">
+              <span className="grid place-items-center size-7 shrink-0 rounded-full bg-shell-hover-2 text-xs font-semibold text-white">
+                {initial}
+              </span>
+              <input
+                autoFocus
+                value={name}
+                onChange={(e) => onNameChange(e.target.value)}
+                placeholder="Anonymous Hiring Manager"
+                maxLength={40}
+                className="flex-1 min-w-0 bg-transparent text-sm text-white placeholder:text-white/40 outline-none"
+              />
+            </div>
+          </label>
+          <div className="flex flex-col items-center gap-3">
+            <button
+              type="submit"
+              disabled={!ready}
+              className="w-full h-11 rounded-lg bg-brand text-white text-sm font-semibold hover:brightness-110 disabled:opacity-60"
+            >
+              {ready ? "Join session" : "Loading…"}
+            </button>
+            <button
+              type="button"
+              onClick={onLookAround}
+              className="text-sm text-white/60 hover:text-white"
+            >
+              Explore on my own
+            </button>
+          </div>
         </div>
       </form>
     </div>

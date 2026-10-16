@@ -1,8 +1,15 @@
 "use client";
 
-import { useEffect, useRef, type Ref } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { DrivePlayer } from "@/app/drive/useDrivePlayer";
-import { Volume, VolumeOff } from "./Icons";
+import {
+  Pause,
+  PauseCircle,
+  Play,
+  PlayCircle,
+  Volume,
+  VolumeMute,
+} from "./Icons";
 
 function formatTime(seconds: number) {
   const whole = Math.max(0, Math.floor(seconds));
@@ -48,7 +55,9 @@ function CornerRight() {
 }
 
 function ProgressSegments({ player }: { player: DrivePlayer }) {
+  const trackRef = useRef<HTMLDivElement>(null);
   const fills = useRef<(HTMLDivElement | null)[]>([]);
+  const scrubbing = useRef(false);
   const { subscribe, chapters } = player;
 
   useEffect(
@@ -62,25 +71,64 @@ function ProgressSegments({ player }: { player: DrivePlayer }) {
               : i > frame.chapter
                 ? 0
                 : Math.min(1, frame.time / chapters[i].duration);
-          node.style.width = `${fill * 100}%`;
+          node.style.transform = `scaleX(${fill})`;
         }
       }),
     [subscribe, chapters],
   );
 
+  const seekAt = (clientX: number) => {
+    const track = trackRef.current;
+    if (!track || player.total === 0) return;
+    const rect = track.getBoundingClientRect();
+    const fraction = Math.min(
+      1,
+      Math.max(0, (clientX - rect.left) / rect.width),
+    );
+    let remaining = fraction * player.total;
+    for (const [i, chapter] of chapters.entries()) {
+      const last = i === chapters.length - 1;
+      if (remaining < chapter.duration || last) {
+        player.seek(i, Math.min(remaining, chapter.duration));
+        return;
+      }
+      remaining -= chapter.duration;
+    }
+  };
+
+  const endScrub = () => {
+    scrubbing.current = false;
+    player.settle();
+  };
+
   return (
-    <div className="flex items-center gap-1 w-40 h-4">
+    <div
+      ref={trackRef}
+      className="w-[400px] flex items-center gap-1 h-full cursor-pointer touch-none"
+      onPointerDown={(e) => {
+        e.currentTarget.setPointerCapture(e.pointerId);
+        scrubbing.current = true;
+        seekAt(e.clientX);
+      }}
+      onPointerMove={(e) => {
+        if (scrubbing.current) seekAt(e.clientX);
+      }}
+      onPointerUp={endScrub}
+      onPointerCancel={endScrub}
+    >
       {chapters.map((chapter, i) => (
         <div
           key={chapter.id}
-          className="bg-white/50 relative rounded-sm h-1.5"
+          className="bg-white/50 relative overflow-hidden rounded-sm h-1.5"
           style={{ flexGrow: chapter.duration }}
+          title={chapter.title}
         >
           <div
             ref={(node) => {
               fills.current[i] = node;
             }}
-            className="absolute inset-y-0 left-0 bg-white rounded-sm"
+            className="absolute inset-0 origin-left bg-white"
+            style={{ transform: "scaleX(0)" }}
           />
         </div>
       ))}
@@ -97,7 +145,8 @@ function ElapsedTime({ player }: { player: DrivePlayer }) {
       subscribe((frame) => {
         const node = elapsedRef.current;
         if (!node) return;
-        node.textContent = formatTime((offsets[frame.chapter] ?? 0) + frame.time);
+        const text = formatTime((offsets[frame.chapter] ?? 0) + frame.time);
+        if (node.textContent !== text) node.textContent = text;
       }),
     [subscribe, offsets],
   );
@@ -109,24 +158,35 @@ function ElapsedTime({ player }: { player: DrivePlayer }) {
   );
 }
 
-function ActiveBorder({
-  player,
-  hintRef,
-}: {
-  player: DrivePlayer;
-  hintRef?: Ref<HTMLDivElement>;
-}) {
-  if (player.status !== "playing") return null;
+function ActiveBorder({ player }: { player: DrivePlayer }) {
+  const playing = player.status === "playing";
+  const active = playing || player.status === "paused";
+  const [present, setPresent] = useState(active);
+  if (active && !present) setPresent(true);
+  if (!present) return null;
+
+  const fade = `transition-opacity ease-[cubic-bezier(0.22,1,0.36,1)] starting:opacity-0 ${
+    active ? "opacity-100 duration-700" : "opacity-0 duration-300 pointer-events-none"
+  }`;
 
   return (
     <>
-      <div className="absolute bottom-1 left-1/2 -translate-x-1/2 z-50">
-        <div className="relative bg-brand flex items-center gap-4 pl-4 pr-2 h-8 text-xs text-foreground font-mono rounded-t-lg select-none">
+      <div
+        className={`absolute bottom-1 left-1/2 -translate-x-1/2 z-50 ${fade}`}
+      >
+        <div className="relative bg-brand flex items-center gap-4 px-2 h-10 text-xs text-foreground font-mono rounded-t-lg select-none">
           <CornerLeft />
-          <div className="whitespace-nowrap">Following a_r</div>
-          <div ref={hintRef} className="whitespace-nowrap text-foreground/70">
-            Hold anywhere to take control
-          </div>
+          <button
+            onClick={playing ? player.pause : player.play}
+            aria-label={playing ? "Pause" : "Play"}
+            className="w-6 h-6 grid place-items-center rounded-sm hover:bg-white/20"
+          >
+            {playing ? (
+              <Pause className="w-4.5 h-4.5" />
+            ) : (
+              <Play className="w-4.5 h-4.5" />
+            )}
+          </button>
           <ProgressSegments player={player} />
           <ElapsedTime player={player} />
           <button
@@ -136,17 +196,22 @@ function ActiveBorder({
             className="w-6 h-6 grid place-items-center rounded-sm hover:bg-white/20"
           >
             {player.muted ? (
-              <VolumeOff className="w-4 h-4" />
+              <VolumeMute className="w-5 h-5" />
             ) : (
-              <Volume className="w-4 h-4" />
+              <Volume className="w-5 h-5" />
             )}
           </button>
           <CornerRight />
         </div>
       </div>
-      <div className="absolute inset-0 border-4 border-brand pointer-events-none z-50" />
+      <div
+        className={`absolute inset-1 rounded-lg outline-solid outline-[length:100vmax] outline-brand pointer-events-none z-50 ${fade}`}
+        onTransitionEnd={(e) => {
+          if (e.target === e.currentTarget && !active) setPresent(false);
+        }}
+      />
     </>
   );
 }
 
-export { ActiveBorder, formatTime };
+export { ActiveBorder };

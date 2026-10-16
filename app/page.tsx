@@ -6,8 +6,11 @@ import { BOARD_TITLE, Navigation } from "./components/Navigation";
 import { SessionBar, type SessionPhase } from "./components/SessionBar";
 import { ActiveBorder } from "./components/ActiveBorder";
 import { FakeCursor } from "./components/FakeCursor";
+import { LobbyCursor } from "./components/LobbyCursor";
 import { JoinCard } from "./components/JoinCard";
 import { HoldRing } from "./components/HoldRing";
+import { HelpButton } from "./components/HelpButton";
+import { SourceLink } from "./components/SourceLink";
 import { useHoldToControl } from "./components/useHoldToControl";
 import { loadDriveManifest } from "./drive/load";
 import { useDrivePlayer } from "./drive/useDrivePlayer";
@@ -18,8 +21,6 @@ import { paneTransform, pointTransform } from "@/lib/camera";
 
 const SHOW_CURSOR = true;
 const RESTING_POINTER = { x: 100, y: 200 };
-const DRIFT_PX = 40;
-const DRIFT_MS = 6000;
 
 const graph = loadGraph();
 
@@ -42,12 +43,11 @@ export default function Home() {
   const canvasRef = useRef<HTMLDivElement>(null);
   const paneRef = useRef<HTMLDivElement>(null);
   const cursorRef = useRef<HTMLDivElement>(null);
-  const hintRef = useRef<HTMLDivElement>(null);
   const { subscribe, status } = player;
 
   const phase: SessionPhase = !joined
     ? "lobby"
-    : status === "playing"
+    : status === "playing" || status === "paused"
       ? "following"
       : status === "ended"
         ? "ended"
@@ -74,40 +74,12 @@ export default function Home() {
     [subscribe],
   );
 
-  const restCursor = useEffectEvent(() => {
-    const cursor = cursorRef.current;
-    if (!cursor || player.isPlaying()) return;
-    cursor.style.transform = pointTransform(
-      camera,
-      player.pointer ?? RESTING_POINTER,
-    );
-  });
-
-  useEffect(() => {
-    if (phase !== "lobby") return;
-    const cursor = cursorRef.current;
-    if (!cursor) return;
-    const origin = performance.now();
-    let request = requestAnimationFrame(function loop(now) {
-      const angle = ((now - origin) / DRIFT_MS) * 2 * Math.PI;
-      cursor.style.transform = pointTransform(camera, {
-        x: RESTING_POINTER.x + DRIFT_PX * Math.sin(angle),
-        y: RESTING_POINTER.y + (DRIFT_PX / 2) * Math.sin(2 * angle),
-      });
-      request = requestAnimationFrame(loop);
-    });
-    return () => {
-      cancelAnimationFrame(request);
-      restCursor();
-    };
-  }, [phase, camera]);
-
   const onSpace = useEffectEvent((e: KeyboardEvent) => {
     if (!joined || isTypingTarget(e.target)) return false;
-    if (status !== "playing" && status !== "interrupted") return false;
+    if (status === "idle" || status === "ended") return false;
     e.preventDefault();
     if (e.repeat) return true;
-    if (status === "playing") player.interrupt();
+    if (status === "playing") player.pause();
     else player.play();
     return true;
   });
@@ -136,39 +108,21 @@ export default function Home() {
     return () => controller.abort();
   }, []);
 
-  const pulseHint = () => {
-    const node = hintRef.current;
-    if (!node || node.getAnimations().length > 0) return;
-    node.animate(
-      [
-        { transform: "scale(1)" },
-        { transform: "scale(1.08)", color: "var(--foreground)" },
-        { transform: "scale(1)" },
-      ],
-      { duration: 600, easing: "ease-in-out" },
-    );
-  };
-
   const hold = useHoldToControl(canvasRef, {
-    enabled: status === "playing",
+    enabled: status === "playing" || status === "paused",
     onHold: player.interrupt,
-    onNudge: pulseHint,
   });
 
   const updateCamera = (update: (c: Camera) => Camera) => {
     if (!player.isPlaying()) setCamera(update);
   };
 
-  const join = (value: string) => {
+  const join = () => {
     player.play();
-    setName(value);
     setJoined(true);
   };
 
-  const lookAround = (value: string) => {
-    setName(value);
-    setJoined(true);
-  };
+  const lookAround = () => setJoined(true);
 
   const pointer = player.pointer ?? RESTING_POINTER;
   const chat =
@@ -183,12 +137,14 @@ export default function Home() {
       <Canvas
         ref={canvasRef}
         mode="view"
+        pannable={status !== "playing"}
         camera={camera}
         setCamera={updateCamera}
         paneRef={paneRef}
         elements={graph.elements}
       />
-      {SHOW_CURSOR && (
+      {SHOW_CURSOR && phase === "lobby" && <LobbyCursor />}
+      {SHOW_CURSOR && phase !== "lobby" && (
         <FakeCursor
           ref={cursorRef}
           camera={camera}
@@ -197,7 +153,8 @@ export default function Home() {
           name="a_r"
           chat={chat}
           onClick={
-            phase === "control" && status === "interrupted"
+            phase === "control" &&
+            (status === "interrupted" || status === "idle")
               ? player.play
               : undefined
           }
@@ -206,12 +163,13 @@ export default function Home() {
       <Navigation />
       <SessionBar
         phase={phase}
-        started={status !== "idle"}
-        name={visitor}
-        onPlay={player.play}
-        onReplay={player.replay}
+        player={player}
+        name={name.trim()}
+        onStart={join}
       />
-      <ActiveBorder player={player} hintRef={hintRef} />
+      <SourceLink />
+      <HelpButton />
+      <ActiveBorder player={player} />
       {hold && (
         <HoldRing
           key={hold.id}
@@ -225,6 +183,8 @@ export default function Home() {
           title={BOARD_TITLE}
           duration={player.total}
           ready={player.chapters.length > 0}
+          name={name}
+          onNameChange={setName}
           onJoin={join}
           onLookAround={lookAround}
         />

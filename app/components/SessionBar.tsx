@@ -1,22 +1,26 @@
 "use client";
 
 import type { ReactNode } from "react";
-import { Play, Replay } from "./Icons";
+import type { DrivePlayer } from "@/app/drive/useDrivePlayer";
+import { Gear, Pause, Play, Replay } from "./Icons";
 import { cn } from "@/lib/utils";
 
 type SessionPhase = "lobby" | "following" | "control" | "ended";
 
 function ActionButton({
   onClick,
+  disabled,
   children,
 }: {
   onClick: () => void;
+  disabled?: boolean;
   children: ReactNode;
 }) {
   return (
     <button
       onClick={onClick}
-      className="font-mono flex items-center space-x-2 text-xs h-8 px-2 rounded-md hover:bg-shell-hover select-none"
+      disabled={disabled}
+      className="font-mono flex items-center space-x-2 text-xs h-8 px-2 rounded-md select-none text-white bg-brand hover:brightness-110 disabled:opacity-60"
     >
       {children}
     </button>
@@ -25,56 +29,64 @@ function ActionButton({
 
 function SessionAction({
   phase,
-  started,
-  onPlay,
-  onReplay,
+  player,
+  onStart,
 }: {
   phase: SessionPhase;
-  started: boolean;
-  onPlay: () => void;
-  onReplay: () => void;
+  player: DrivePlayer;
+  onStart: () => void;
 }) {
   if (phase === "ended") {
     return (
-      <ActionButton onClick={onReplay}>
-        <Replay className="w-4 h-4" />
-        <div>Replay</div>
+      <ActionButton onClick={player.replay}>
+        <Replay className="w-4.5 h-4.5" />
+        <div>Replay sesh</div>
       </ActionButton>
     );
   }
-  if (phase !== "control") return null;
+  if (phase === "following") {
+    const playing = player.status === "playing";
+    return (
+      <ActionButton onClick={playing ? player.pause : player.play}>
+        {playing ? (
+          <Pause className="w-4.5 h-4.5" />
+        ) : (
+          <Play className="w-4.5 h-4.5" />
+        )}
+        <div>{playing ? "Pause sesh" : "Resume sesh"}</div>
+      </ActionButton>
+    );
+  }
+  const started = player.status !== "idle";
   return (
-    <ActionButton onClick={onPlay}>
-      <Play className="w-4 h-4" />
-      <div>{started ? "Resume tour" : "Start tour"}</div>
+    <ActionButton
+      disabled={player.chapters.length === 0}
+      onClick={phase === "lobby" ? onStart : player.play}
+    >
+      <Play className="w-4.5 h-4.5" />
+      <div>{started ? "Resume sesh" : "Start sesh"}</div>
     </ActionButton>
   );
 }
 
 function SessionBar({
   phase,
-  started,
+  player,
   name,
-  onPlay,
-  onReplay,
+  onStart,
+  onSettings,
 }: {
   phase: SessionPhase;
-  started: boolean;
+  player: DrivePlayer;
   name: string;
-  onPlay: () => void;
-  onReplay: () => void;
+  onStart: () => void;
+  onSettings?: () => void;
 }) {
   const following = phase === "following";
-  const hasAction = phase === "control" || phase === "ended";
 
   return (
-    <div className="absolute p-4 top-0 right-0 z-10">
-      <div
-        className={cn(
-          "flex items-center gap-4 border border-shell-border bg-shell p-1 rounded-lg",
-          !hasAction && "px-2",
-        )}
-      >
+    <div className="absolute p-4 top-0 right-0 z-50">
+      <div className="flex items-center gap-4 border border-shell-border bg-shell p-1 pl-2 rounded-lg">
         <div className="flex items-center -space-x-0.5 h-8">
           <div
             title="a_r"
@@ -88,20 +100,25 @@ function SessionBar({
             </div>
           </div>
           <div
-            title={name}
+            title={name || "Anonymous"}
             className="rounded-full border-2 border-transparent"
           >
-            <div className="w-6 h-6 text-white font-mono text-[11px] grid place-items-center rounded-full bg-linear-to-b from-[#5572A9] to-[#152033] select-none">
-              {name.charAt(0).toUpperCase()}
+            <div className="w-6 h-6 text-white font-semibold text-[11px] grid place-items-center rounded-full bg-shell-hover-2 select-none">
+              {(name.charAt(0) || "A").toUpperCase()}
             </div>
           </div>
         </div>
-        <SessionAction
-          phase={phase}
-          started={started}
-          onPlay={onPlay}
-          onReplay={onReplay}
-        />
+        <div className="flex items-center gap-2">
+          <SessionAction phase={phase} player={player} onStart={onStart} />
+          <button
+            type="button"
+            aria-label="Settings"
+            onClick={onSettings}
+            className="grid place-items-center w-8 h-8 rounded-md text-white hover:bg-shell-hover"
+          >
+            <Gear className="w-5 h-5" />
+          </button>
+        </div>
       </div>
     </div>
   );

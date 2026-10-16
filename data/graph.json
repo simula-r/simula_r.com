@@ -1,9 +1,9 @@
 {
   "version": 1,
   "camera": {
-    "x": 0,
-    "y": 123,
-    "zoom": 0.5
+    "zoom": 0.4,
+    "x": -7804.689419797881,
+    "y": 0.594703989181653
   },
   "elements": [
     {
@@ -1140,7 +1140,7 @@
       "type": "text",
       "x": 2927.3,
       "y": -124,
-      "text": "A tour that's data, not video.",
+      "text": "A sesh that's data, not video.",
       "font": "sans",
       "fontSize": 32
     },
@@ -1185,7 +1185,7 @@
       "type": "text",
       "x": 4056,
       "y": -203,
-      "text": "$ cat how-this-works.txt\n\n· playback is a pure function of time\n· zoom lerps in log space, feels linear\n· tours contain-fit to any screen\n· hold to take over, click a_r to resume\n· frames skip React, commit at rest\n· the CMS is one JSON file",
+      "text": "$ cat how-this-works.txt\n\n· playback is a pure function of time\n· zoom lerps in log space, feels linear\n· seshes contain-fit to any screen\n· hold to take over, click a_r to resume\n· frames skip React, commit at rest\n· the CMS is one JSON file",
       "font": "mono",
       "fontSize": 16
     },
@@ -2547,6 +2547,37 @@
       "text": "click a title\nto listen ↓",
       "font": "handwritten",
       "fontSize": 40
+    },
+    {
+      "id": "d1caedd8-d38a-4a34-9406-ecb4b2e8d05e",
+      "type": "sticky",
+      "x": 10225.045744396395,
+      "y": -1968.8605026971738,
+      "text": "WOdhaiohdahjdowajdoiajdiaojda"
+    },
+    {
+      "id": "c8140c09-692d-41df-a556-77943e7fc244",
+      "type": "text",
+      "x": 10676.355384463362,
+      "y": -1961.6344829740992,
+      "text": "Add text",
+      "fontSize": 64
+    },
+    {
+      "id": "e3db6d4e-5137-41e2-bcc1-a4326d614606",
+      "type": "sticky",
+      "x": 10511.593421572737,
+      "y": -1672.1106443859296,
+      "text": "New note"
+    },
+    {
+      "id": "c3d114b3-0132-4410-927c-dbd2af114dfd",
+      "type": "image",
+      "x": 11202.598815917976,
+      "y": -2067.877817547512,
+      "src": "/uploads/d4d13338-e308-46f3-9f6a-d2176b822c98.jpg",
+      "width": 480,
+      "height": 270
     }
   ]
 }

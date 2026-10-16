@@ -7,7 +7,7 @@ import type { Chapter, DriveManifest } from "./types";
 const HANDOFF_SECONDS = 0.6;
 const REWIND_SECONDS = 2;
 
-type PlayerStatus = "idle" | "playing" | "interrupted" | "ended";
+type PlayerStatus = "idle" | "playing" | "paused" | "interrupted" | "ended";
 type Handoff = { from: Camera; chapter: number; t0: number };
 type DriveFrame = {
   chapter: number;
@@ -175,8 +175,24 @@ function useDrivePlayer({
     setStatus("playing");
   };
 
+  const pause = () => {
+    if (playing.current) halt("paused");
+  };
+
   const interrupt = () => {
     if (playing.current) halt("interrupted");
+    else if (status === "paused") setStatus("interrupted");
+  };
+
+  const seek = (chapter: number, at: number) => {
+    switchChapter(chapter, at);
+    const audio = audios.current[chapter];
+    if (playing.current && audio?.paused) start(audio);
+    renderFrame();
+  };
+
+  const settle = () => {
+    if (!playing.current) commit();
   };
 
   const replay = () => {
@@ -213,7 +229,10 @@ function useDrivePlayer({
     pointer,
     muted,
     play,
+    pause,
     interrupt,
+    seek,
+    settle,
     replay,
     toggleMute,
     isPlaying,

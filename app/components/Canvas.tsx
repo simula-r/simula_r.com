@@ -39,6 +39,7 @@ function Canvas({
   paneRef,
   ref,
   mode = "edit",
+  pannable = true,
 }: {
   camera: Camera;
   setCamera: (update: (c: Camera) => Camera) => void;
@@ -50,6 +51,7 @@ function Canvas({
   paneRef?: Ref<HTMLDivElement>;
   ref?: Ref<HTMLDivElement>;
   mode?: CanvasMode;
+  pannable?: boolean;
 }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const containerRect = useRef<DOMRect | null>(null);
@@ -246,7 +248,7 @@ function Canvas({
         "absolute inset-0 z-0 w-full h-full overflow-hidden",
         isPanning
           ? "cursor-grabbing"
-          : mode === "view"
+          : mode === "view" && pannable
             ? "cursor-grab"
             : "cursor-default",
       )}
