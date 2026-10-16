@@ -9,8 +9,7 @@ import { FakeCursor } from "./components/FakeCursor";
 import { LobbyCursor } from "./components/LobbyCursor";
 import { JoinCard } from "./components/JoinCard";
 import { HoldRing } from "./components/HoldRing";
-import { HelpButton } from "./components/HelpButton";
-import { SourceLink } from "./components/SourceLink";
+import { SessionDock } from "./components/SessionDock";
 import { useHoldToControl } from "./components/useHoldToControl";
 import { loadDriveManifest } from "./drive/load";
 import { useDrivePlayer } from "./drive/useDrivePlayer";
@@ -167,8 +166,7 @@ export default function Home() {
         name={name.trim()}
         onStart={join}
       />
-      <SourceLink />
-      <HelpButton />
+      <SessionDock phase={phase} player={player} />
       <ActiveBorder player={player} />
       {hold && (
         <HoldRing
