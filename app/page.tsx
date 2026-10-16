@@ -17,7 +17,7 @@ import { useDrivePlayer } from "./drive/useDrivePlayer";
 import type { DriveManifest } from "./drive/types";
 import { loadGraph } from "./graph/load";
 import type { Camera } from "./elements/types";
-import { paneTransform, pointTransform } from "@/lib/camera";
+import { gridStyle, paneTransform, pointTransform } from "@/lib/camera";
 
 const SHOW_CURSOR = true;
 const RESTING_POINTER = { x: 100, y: 200 };
@@ -42,6 +42,7 @@ export default function Home() {
   const player = useDrivePlayer({ manifest, camera, setCamera });
   const canvasRef = useRef<HTMLDivElement>(null);
   const paneRef = useRef<HTMLDivElement>(null);
+  const gridRef = useRef<HTMLDivElement>(null);
   const cursorRef = useRef<HTMLDivElement>(null);
   const { subscribe, status } = player;
 
@@ -63,6 +64,8 @@ export default function Home() {
       subscribe((frame) => {
         const pane = paneRef.current;
         if (pane) pane.style.transform = paneTransform(frame.camera);
+        const grid = gridRef.current;
+        if (grid) Object.assign(grid.style, gridStyle(frame.camera));
         const cursor = cursorRef.current;
         if (cursor) {
           cursor.style.transform = pointTransform(
@@ -141,6 +144,7 @@ export default function Home() {
         camera={camera}
         setCamera={updateCamera}
         paneRef={paneRef}
+        gridRef={gridRef}
         elements={graph.elements}
       />
       {SHOW_CURSOR && phase === "lobby" && <LobbyCursor />}

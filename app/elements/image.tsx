@@ -100,7 +100,8 @@ function ImageCanvasElement({ element }: { element: ImageElementData }) {
   return (
     <div
       className={cn(
-        element.variant !== "bare" && "outline-8 outline-shell rounded-xl",
+        element.variant !== "bare" &&
+          "overflow-hidden rounded-control outline-8 outline-shell shadow-[0_0_0_9px_var(--shell-border),0_16px_40px_8px_rgb(0_0_0/0.4)]",
       )}
     >
       <Image

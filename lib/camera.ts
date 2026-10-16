@@ -38,6 +38,20 @@ function paneTransform(camera: Camera) {
   return `translate(${camera.x}px, ${camera.y}px) scale(${camera.zoom})`;
 }
 
+const GRID_SPACING = 24;
+const GRID_FADE_START = 8;
+const GRID_FADE_END = 16;
+
+function gridStyle(camera: Camera) {
+  const size = GRID_SPACING * camera.zoom;
+  const fade = (size - GRID_FADE_START) / (GRID_FADE_END - GRID_FADE_START);
+  return {
+    backgroundSize: `${size}px ${size}px`,
+    backgroundPosition: `calc(50% + ${camera.x}px) calc(50% + ${camera.y}px)`,
+    opacity: String(Math.min(1, Math.max(0, fade))),
+  };
+}
+
 function pointTransform(camera: Camera, point: Point) {
   return `translate(${point.x * camera.zoom + camera.x}px, ${point.y * camera.zoom + camera.y}px)`;
 }
@@ -50,5 +64,6 @@ export {
   mixCamera,
   paneTransform,
   pointTransform,
+  gridStyle,
 };
 export type { Point, Size };
