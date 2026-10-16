@@ -1,2613 +1,1743 @@
 {
   "version": 1,
   "camera": {
-    "zoom": 0.4,
-    "x": -5378.836751451827,
-    "y": -209.3830344548288
+    "zoom": 0.32,
+    "x": -320,
+    "y": 108.8
   },
   "elements": [
     {
-      "id": "brief.rule-top",
+      "id": "start.badge",
       "type": "image",
-      "x": 0,
-      "y": -440,
-      "src": "/canvas/accents/jam-rule-2300.svg",
-      "width": 2300,
-      "height": 4,
-      "variant": "bare"
-    },
-    {
-      "id": "brief.agenda.track",
-      "type": "image",
-      "x": 572,
-      "y": -105,
-      "src": "/canvas/accents/brief-agenda.svg",
-      "width": 24,
-      "height": 490,
-      "variant": "bare"
-    },
-    {
-      "id": "brief.rule-bottom",
-      "type": "image",
-      "x": 0,
-      "y": 230,
-      "src": "/canvas/accents/jam-rule-2300.svg",
-      "width": 2300,
-      "height": 4,
-      "variant": "bare"
-    },
-    {
-      "id": "spine.1-2",
-      "type": "image",
-      "x": 1900,
-      "y": -200,
-      "src": "/canvas/accents/jam-arrow.svg",
-      "width": 900,
-      "height": 40,
-      "variant": "bare"
-    },
-    {
-      "id": "hook.rule",
-      "type": "image",
-      "x": 3650,
-      "y": -450,
-      "src": "/canvas/accents/jam-rule-2000.svg",
-      "width": 2000,
-      "height": 4,
-      "variant": "bare"
-    },
-    {
-      "id": "hook.terminal",
-      "type": "image",
-      "x": 4200,
-      "y": -137,
-      "src": "/canvas/accents/projects-terminal.svg",
-      "width": 900,
-      "height": 506,
-      "variant": "bare"
-    },
-    {
-      "id": "hook.placard",
-      "type": "image",
-      "x": 4030,
-      "y": 245,
-      "src": "/canvas/accents/hook-placard.svg",
-      "width": 560,
-      "height": 170,
-      "variant": "bare"
-    },
-    {
-      "id": "spine.2-3",
-      "type": "image",
-      "x": 5450,
-      "y": -200,
-      "src": "/canvas/accents/jam-arrow.svg",
-      "width": 900,
-      "height": 40,
-      "variant": "bare"
-    },
-    {
-      "id": "context.rule",
-      "type": "image",
-      "x": 7250,
-      "y": -450,
-      "src": "/canvas/accents/jam-rule-2400.svg",
-      "width": 2400,
-      "height": 4,
-      "variant": "bare"
-    },
-    {
-      "id": "context.design.box",
-      "type": "image",
-      "x": 6410,
-      "y": -130,
-      "src": "/canvas/accents/context-cluster.svg",
-      "width": 720,
-      "height": 520,
-      "variant": "bare"
-    },
-    {
-      "id": "context.engineering.box",
-      "type": "image",
-      "x": 7250,
-      "y": -130,
-      "src": "/canvas/accents/context-cluster.svg",
-      "width": 720,
-      "height": 520,
-      "variant": "bare"
-    },
-    {
-      "id": "context.range.box",
-      "type": "image",
-      "x": 8090,
-      "y": -130,
-      "src": "/canvas/accents/context-cluster.svg",
-      "width": 720,
-      "height": 520,
-      "variant": "bare"
-    },
-    {
-      "id": "spine.3-4",
-      "type": "image",
-      "x": 9210,
-      "y": -200,
-      "src": "/canvas/accents/jam-arrow.svg",
-      "width": 900,
-      "height": 40,
-      "variant": "bare"
-    },
-    {
-      "id": "principles.rule",
-      "type": "image",
-      "x": 10950,
-      "y": -450,
-      "src": "/canvas/accents/jam-rule-2200.svg",
-      "width": 2200,
-      "height": 4,
-      "variant": "bare"
-    },
-    {
-      "id": "principles.bar",
-      "type": "image",
-      "x": 9854,
-      "y": -310,
-      "src": "/canvas/accents/thinking-bar.svg",
-      "width": 8,
-      "height": 160,
-      "variant": "bare"
-    },
-    {
-      "id": "principles.bs-divider",
-      "type": "image",
-      "x": 11697,
-      "y": -200,
-      "src": "/canvas/accents/thinking-bs-divider.svg",
-      "width": 4,
+      "x": 260,
+      "y": -1100,
+      "src": "/canvas/accents/board-start-here.svg",
+      "width": 640,
       "height": 220,
       "variant": "bare"
     },
     {
-      "id": "spine.4-5",
+      "id": "start.meta",
+      "type": "text",
+      "x": 1014,
+      "y": -1104,
+      "text": "PRODUCT JAM  ·  DESIGN ENGINEERING  ·  OWNER: JAKE SCHROEDER  ·  STATUS: READY",
+      "font": "mono",
+      "fontSize": 12,
+      "color": "subtle"
+    },
+    {
+      "id": "start.title",
+      "type": "text",
+      "x": 613,
+      "y": -832,
+      "text": "Why might Jake fit your team?",
+      "font": "sans",
+      "fontSize": 64
+    },
+    {
+      "id": "start.dek",
+      "type": "text",
+      "x": 440,
+      "y": -700,
+      "text": "A working board: one question, a thesis, some receipts,\nand a way to reach me at the end.",
+      "font": "sans",
+      "fontSize": 24,
+      "color": "muted"
+    },
+    {
+      "id": "start.question.label",
+      "type": "text",
+      "x": 13,
+      "y": -454,
+      "text": "QUESTION",
+      "font": "mono",
+      "fontSize": 12
+    },
+    {
+      "id": "start.question",
+      "type": "text",
+      "x": 239,
+      "y": -382,
+      "text": "What does a design engineer bring\na product team in the age of AI?",
+      "font": "sans",
+      "fontSize": 24
+    },
+    {
+      "id": "start.hypothesis.label",
+      "type": "text",
+      "x": 23,
+      "y": -280,
+      "text": "HYPOTHESIS",
+      "font": "mono",
+      "fontSize": 12
+    },
+    {
+      "id": "start.hypothesis",
+      "type": "text",
+      "x": 263,
+      "y": -208,
+      "text": "One person who is both halves closes\nthe gap AI just opened.",
+      "font": "sans",
+      "fontSize": 24
+    },
+    {
+      "id": "start.method.label",
+      "type": "text",
+      "x": 42,
+      "y": -106,
+      "text": "HOW WE'LL KNOW",
+      "font": "mono",
+      "fontSize": 12
+    },
+    {
+      "id": "start.method",
+      "type": "text",
+      "x": 247,
+      "y": -34,
+      "text": "Thesis → role → origin → receipts.\nYou decide.",
+      "font": "sans",
+      "fontSize": 24
+    },
+    {
+      "id": "start.tldr",
+      "type": "sticky",
+      "x": 222,
+      "y": 260,
+      "text": "TL;DR\nart kid →\nengineer →\ndesign engineer"
+    },
+    {
+      "id": "start.portfolio",
+      "type": "sticky",
+      "x": 484,
+      "y": 330,
+      "text": "p.s. this board\nis the portfolio"
+    },
+    {
+      "id": "start.time",
+      "type": "sticky",
+      "x": 798,
+      "y": 250,
+      "text": "~5 min.\nleft → right."
+    },
+    {
+      "id": "start.hero",
       "type": "image",
-      "x": 12750,
-      "y": -200,
-      "src": "/canvas/accents/jam-arrow.svg",
-      "width": 900,
+      "x": 1670,
+      "y": -220,
+      "src": "/canvas/placeholders/start.hero.svg",
+      "width": 860,
+      "height": 520
+    },
+    {
+      "id": "start.agenda",
+      "type": "text",
+      "x": 1428,
+      "y": 240,
+      "text": "AGENDA  ·  ~5 MIN\n\n01  The thesis\n02  The role\n03  Origin\n04  Receipts\n05  Right now\n06  Who I want to build with\n07  Say hi",
+      "font": "mono",
+      "fontSize": 14
+    },
+    {
+      "id": "start.go",
+      "type": "text",
+      "x": 1949,
+      "y": 374,
+      "text": "let's go →",
+      "font": "handwritten",
+      "fontSize": 40,
+      "color": "brand"
+    },
+    {
+      "id": "thesis.kicker",
+      "type": "text",
+      "x": 4349,
+      "y": -1302,
+      "text": "01 — THE THESIS",
+      "font": "mono",
+      "fontSize": 14
+    },
+    {
+      "id": "thesis.title",
+      "type": "text",
+      "x": 5020,
+      "y": -1212,
+      "text": "AI is the best paintbrush ever made.",
+      "font": "sans",
+      "fontSize": 64
+    },
+    {
+      "id": "thesis.dek",
+      "type": "text",
+      "x": 4574,
+      "y": -1072,
+      "text": "It took implementation time way down.\nIt didn't make anyone a painter.",
+      "font": "sans",
+      "fontSize": 24,
+      "color": "muted"
+    },
+    {
+      "id": "thesis.brushes",
+      "type": "image",
+      "x": 4576,
+      "y": -690,
+      "src": "/canvas/placeholders/thesis.brushes.svg",
+      "width": 620,
+      "height": 400
+    },
+    {
+      "id": "thesis.amplifies",
+      "type": "sticky",
+      "x": 5152,
+      "y": -750,
+      "text": "it amplifies\nskill"
+    },
+    {
+      "id": "thesis.mirrors",
+      "type": "sticky",
+      "x": 5440,
+      "y": -710,
+      "text": "it mirrors\nits operator"
+    },
+    {
+      "id": "thesis.dangerous",
+      "type": "sticky",
+      "x": 5739,
+      "y": -760,
+      "text": "useful.\nalso\ndangerous."
+    },
+    {
+      "id": "thesis.quote",
+      "type": "text",
+      "x": 5383,
+      "y": -406,
+      "text": "The best brushes in the world.\nOnly a few people know\nwhat to put on the canvas.",
+      "font": "sans",
+      "fontSize": 40
+    },
+    {
+      "id": "thesis.slop",
+      "type": "image",
+      "x": 4468,
+      "y": -240,
+      "src": "/canvas/placeholders/thesis.slop.svg",
+      "width": 440,
+      "height": 280
+    },
+    {
+      "id": "thesis.slop.cap",
+      "type": "text",
+      "x": 4425,
+      "y": -68,
+      "text": "↑ LOOKS FINE. FEELS LIKE NOTHING.",
+      "font": "mono",
+      "fontSize": 12
+    },
+    {
+      "id": "thesis.gap.label",
+      "type": "text",
+      "x": 6107,
+      "y": -874,
+      "text": "THE GAP",
+      "font": "mono",
+      "fontSize": 12
+    },
+    {
+      "id": "thesis.gap.designers",
+      "type": "sticky",
+      "x": 6223,
+      "y": -720,
+      "text": "designers can't\nship prod code"
+    },
+    {
+      "id": "thesis.gap.engineers",
+      "type": "sticky",
+      "x": 6533,
+      "y": -675,
+      "text": "engineers can't\nreally design"
+    },
+    {
+      "id": "thesis.gap.body",
+      "type": "text",
+      "x": 6297,
+      "y": -444,
+      "text": "So when a POC leaves decisions open,\nan engineer + an AI agent end up making them.",
+      "font": "sans",
+      "fontSize": 16,
+      "color": "muted"
+    },
+    {
+      "id": "thesis.gap.shift",
+      "type": "text",
+      "x": 6313,
+      "y": -314,
+      "text": "The bottleneck moved:\nimplementation → design.",
+      "font": "sans",
+      "fontSize": 32,
+      "color": "brand"
+    },
+    {
+      "id": "thesis.enter",
+      "type": "text",
+      "x": 6460,
+      "y": -172,
+      "text": "→ enter the design engineer",
+      "font": "handwritten",
+      "fontSize": 40
+    },
+    {
+      "id": "role.kicker",
+      "type": "text",
+      "x": 8466,
+      "y": -502,
+      "text": "02 — THE ROLE",
+      "font": "mono",
+      "fontSize": 14
+    },
+    {
+      "id": "role.title",
+      "type": "text",
+      "x": 9002,
+      "y": -412,
+      "text": "Where a design engineer sits.",
+      "font": "sans",
+      "fontSize": 64
+    },
+    {
+      "id": "role.dek",
+      "type": "text",
+      "x": 8668,
+      "y": -274,
+      "text": "Everyone in a product pod owns a piece.\nSomeone has to own how it feels.",
+      "font": "sans",
+      "fontSize": 24,
+      "color": "muted"
+    },
+    {
+      "id": "role.design.card",
+      "type": "image",
+      "x": 8621,
+      "y": 78,
+      "src": "/canvas/accents/board-card-480x260.svg",
+      "width": 480,
+      "height": 260,
+      "variant": "bare"
+    },
+    {
+      "id": "role.design.label",
+      "type": "text",
+      "x": 8478,
+      "y": -8,
+      "text": "PRODUCT DESIGN",
+      "font": "mono",
+      "fontSize": 12
+    },
+    {
+      "id": "role.design.head",
+      "type": "text",
+      "x": 8579,
+      "y": 42,
+      "text": "Sets the look & feel.",
+      "font": "sans",
+      "fontSize": 24
+    },
+    {
+      "id": "role.design.body",
+      "type": "text",
+      "x": 8518,
+      "y": 114,
+      "text": "Makes the big calls.\nOwns the vision.",
+      "font": "sans",
+      "fontSize": 16,
+      "color": "muted"
+    },
+    {
+      "id": "role.eng.card",
+      "type": "image",
+      "x": 9185,
+      "y": 6,
+      "src": "/canvas/accents/board-card-480x260.svg",
+      "width": 480,
+      "height": 260,
+      "variant": "bare"
+    },
+    {
+      "id": "role.eng.label",
+      "type": "text",
+      "x": 9028,
+      "y": -80,
+      "text": "ENGINEERING",
+      "font": "mono",
+      "fontSize": 12
+    },
+    {
+      "id": "role.eng.head",
+      "type": "text",
+      "x": 9103,
+      "y": -30,
+      "text": "Makes it robust.",
+      "font": "sans",
+      "fontSize": 24
+    },
+    {
+      "id": "role.eng.body",
+      "type": "text",
+      "x": 9124,
+      "y": 42,
+      "text": "Systems, scale, reliability.\nQuality under the hood.",
+      "font": "sans",
+      "fontSize": 16,
+      "color": "muted"
+    },
+    {
+      "id": "role.pe.card",
+      "type": "image",
+      "x": 9704,
+      "y": 78,
+      "src": "/canvas/accents/board-card-480x260.svg",
+      "width": 480,
+      "height": 260,
+      "variant": "bare"
+    },
+    {
+      "id": "role.pe.label",
+      "type": "text",
+      "x": 9585,
+      "y": -8,
+      "text": "PRODUCT ENGINEERING",
+      "font": "mono",
+      "fontSize": 12
+    },
+    {
+      "id": "role.pe.head",
+      "type": "text",
+      "x": 9646,
+      "y": 42,
+      "text": "Finds what matters.",
+      "font": "sans",
+      "fontSize": 24
+    },
+    {
+      "id": "role.pe.body",
+      "type": "text",
+      "x": 9606,
+      "y": 114,
+      "text": "Talks to customers.\nShips what moves ARR.",
+      "font": "sans",
+      "fontSize": 16,
+      "color": "muted"
+    },
+    {
+      "id": "role.de.card",
+      "type": "image",
+      "x": 9023,
+      "y": 395,
+      "src": "/canvas/accents/board-card-780x330-hi.svg",
+      "width": 780,
+      "height": 330,
+      "variant": "bare"
+    },
+    {
+      "id": "role.de.label",
+      "type": "text",
+      "x": 8739,
+      "y": 276,
+      "text": "DESIGN ENGINEER",
+      "font": "mono",
+      "fontSize": 12,
+      "color": "brand"
+    },
+    {
+      "id": "role.de.head",
+      "type": "text",
+      "x": 8848,
+      "y": 334,
+      "text": "Makes it premium.",
+      "font": "sans",
+      "fontSize": 32
+    },
+    {
+      "id": "role.de.body",
+      "type": "text",
+      "x": 8939,
+      "y": 432,
+      "text": "Solves the hard design problems. Works hand in hand\nwith product design, does product design, and ships\nfully production-grade frontend.",
+      "font": "sans",
+      "fontSize": 16,
+      "color": "muted"
+    },
+    {
+      "id": "role.de.note",
+      "type": "text",
+      "x": 9671,
+      "y": 312,
+      "text": "picks up what product\nand design put down",
+      "font": "handwritten",
+      "fontSize": 24,
+      "color": "brand"
+    },
+    {
+      "id": "role.practice.label",
+      "type": "text",
+      "x": 10165,
+      "y": -74,
+      "text": "IN PRACTICE",
+      "font": "mono",
+      "fontSize": 12
+    },
+    {
+      "id": "role.practice",
+      "type": "text",
+      "x": 10379,
+      "y": 66,
+      "text": "· Knows the render pipeline: layers, compositing,\n   no surprise reflow or layout recalc\n· Writes the CSS an agent can't be prompted into\n· Owns the component system, in Figma and in code\n   (shadcn registry, APIs agents can reason about)\n· Prototypes to find out what actually works\n· Fixes what's off directly in production",
+      "font": "sans",
+      "fontSize": 16
+    },
+    {
+      "id": "role.weight",
+      "type": "sticky",
+      "x": 11063,
+      "y": 260,
+      "text": "takes weight off\nhead of product\n+ designers"
+    },
+    {
+      "id": "role.spectrum",
+      "type": "image",
+      "x": 9793,
+      "y": 840,
+      "src": "/canvas/accents/board-spectrum-2500.svg",
+      "width": 2500,
       "height": 40,
       "variant": "bare"
     },
     {
-      "id": "evidence.rule",
-      "type": "image",
-      "x": 15050,
-      "y": -450,
-      "src": "/canvas/accents/jam-rule-3200.svg",
-      "width": 3200,
-      "height": 4,
-      "variant": "bare"
+      "id": "role.spectrum.0",
+      "type": "text",
+      "x": 8615,
+      "y": 900,
+      "text": "0s and 1s",
+      "font": "sans",
+      "fontSize": 24
     },
     {
-      "id": "spine.5-6",
-      "type": "image",
-      "x": 17350,
-      "y": -200,
-      "src": "/canvas/accents/jam-arrow.svg",
-      "width": 900,
-      "height": 40,
-      "variant": "bare"
+      "id": "role.spectrum.1",
+      "type": "text",
+      "x": 9049,
+      "y": 888,
+      "text": "compositors",
+      "font": "mono",
+      "fontSize": 12,
+      "color": "subtle"
     },
     {
-      "id": "decision.rule",
-      "type": "image",
-      "x": 19050,
-      "y": -450,
-      "src": "/canvas/accents/jam-rule-2000.svg",
-      "width": 2000,
-      "height": 4,
-      "variant": "bare"
+      "id": "role.spectrum.2",
+      "type": "text",
+      "x": 9545,
+      "y": 888,
+      "text": "rendering",
+      "font": "mono",
+      "fontSize": 12,
+      "color": "subtle"
     },
     {
-      "id": "decision.a.box",
-      "type": "image",
-      "x": 18070,
-      "y": -342,
-      "src": "/canvas/accents/decision-box.svg",
-      "width": 40,
-      "height": 40,
-      "variant": "bare"
+      "id": "role.spectrum.3",
+      "type": "text",
+      "x": 10041,
+      "y": 888,
+      "text": "React + CSS",
+      "font": "mono",
+      "fontSize": 12,
+      "color": "subtle"
     },
     {
-      "id": "decision.b.box",
-      "type": "image",
-      "x": 19070,
-      "y": -342,
-      "src": "/canvas/accents/decision-box-checked.svg",
-      "width": 40,
-      "height": 40,
-      "variant": "bare"
+      "id": "role.spectrum.4",
+      "type": "text",
+      "x": 10537,
+      "y": 888,
+      "text": "product design",
+      "font": "mono",
+      "fontSize": 12,
+      "color": "subtle"
     },
     {
-      "id": "decision.rule-mid",
-      "type": "image",
-      "x": 19050,
-      "y": -150,
-      "src": "/canvas/accents/jam-rule-2000.svg",
-      "width": 2000,
-      "height": 4,
-      "variant": "bare"
+      "id": "role.spectrum.5",
+      "type": "text",
+      "x": 10875,
+      "y": 900,
+      "text": "squishy business reqs",
+      "font": "sans",
+      "fontSize": 24
     },
     {
-      "id": "timeline.line",
-      "type": "image",
-      "x": 7250,
-      "y": -2300,
-      "src": "/canvas/accents/work-timeline.svg",
-      "width": 3000,
-      "height": 40,
-      "variant": "bare"
+      "id": "role.spectrum.note",
+      "type": "text",
+      "x": 9866,
+      "y": 768,
+      "text": "I live on the whole line.",
+      "font": "handwritten",
+      "fontSize": 40,
+      "color": "brand"
     },
     {
-      "id": "places.route",
-      "type": "image",
-      "x": 6626,
-      "y": 2220,
-      "src": "/canvas/accents/life-route.svg",
-      "width": 2251,
-      "height": 40,
-      "variant": "bare"
+      "id": "origin.kicker",
+      "type": "text",
+      "x": 13415,
+      "y": -1182,
+      "text": "03 — ORIGIN",
+      "font": "mono",
+      "fontSize": 14
     },
     {
-      "id": "taste.shelf1",
-      "type": "image",
-      "x": 10888,
-      "y": 2536,
-      "src": "/canvas/accents/inspiration-shelf1.svg",
-      "width": 2076,
-      "height": 4,
-      "variant": "bare"
+      "id": "origin.title",
+      "type": "text",
+      "x": 13747,
+      "y": -1092,
+      "text": "Art kid → engineer.",
+      "font": "sans",
+      "fontSize": 64
     },
     {
-      "id": "taste.shelf2",
-      "type": "image",
-      "x": 10874,
-      "y": 2916,
-      "src": "/canvas/accents/inspiration-shelf2.svg",
-      "width": 2047,
-      "height": 4,
-      "variant": "bare"
+      "id": "origin.dek",
+      "type": "text",
+      "x": 13795,
+      "y": -948,
+      "text": "Born 1999: the end of one era, the start of the next.\nI try to bring that era's soul into software.",
+      "font": "sans",
+      "fontSize": 24,
+      "color": "muted"
     },
     {
-      "id": "taste.shelf3",
+      "id": "origin.minecraft",
       "type": "image",
-      "x": 10852,
-      "y": 3256,
-      "src": "/canvas/accents/inspiration-shelf3.svg",
-      "width": 2003,
-      "height": 4,
-      "variant": "bare"
+      "x": 13522,
+      "y": -430,
+      "src": "/canvas/placeholders/origin.minecraft.svg",
+      "width": 360,
+      "height": 220
     },
     {
-      "id": "evidence.comfy.image",
+      "id": "origin.club-penguin",
       "type": "image",
-      "x": 14050,
-      "y": -52.5,
+      "x": 13892,
+      "y": -452,
+      "src": "/canvas/placeholders/origin.club-penguin.svg",
+      "width": 300,
+      "height": 220
+    },
+    {
+      "id": "origin.pc",
+      "type": "image",
+      "x": 14195,
+      "y": -435,
+      "src": "/canvas/placeholders/origin.pc.svg",
+      "width": 260,
+      "height": 220
+    },
+    {
+      "id": "origin.brochures",
+      "type": "image",
+      "x": 14519,
+      "y": -382,
+      "src": "/canvas/placeholders/origin.brochures.svg",
+      "width": 290,
+      "height": 220
+    },
+    {
+      "id": "origin.kids.cap",
+      "type": "text",
+      "x": 13633,
+      "y": -244,
+      "text": "↑ AGE 8  ·  PUTTING PIXELS ON SCREENS BECOMES THE OBSESSION",
+      "font": "mono",
+      "fontSize": 12
+    },
+    {
+      "id": "origin.license",
+      "type": "text",
+      "x": 15254,
+      "y": -216,
+      "text": "I already had a license to create.\nI needed to learn to engineer.",
+      "font": "handwritten",
+      "fontSize": 40,
+      "color": "brand"
+    },
+    {
+      "id": "origin.helios.label",
+      "type": "text",
+      "x": 13402,
+      "y": -17,
+      "text": "HELIOS  ·  AGE 13",
+      "font": "mono",
+      "fontSize": 12
+    },
+    {
+      "id": "origin.helios.head",
+      "type": "text",
+      "x": 13552,
+      "y": 33,
+      "text": "Dad's company put me to work.",
+      "font": "sans",
+      "fontSize": 24
+    },
+    {
+      "id": "origin.helios.body",
+      "type": "text",
+      "x": 13507,
+      "y": 103,
+      "text": "WordPress, PHP, a MediaWiki engine,\nmarketing pages, web apps.",
+      "font": "sans",
+      "fontSize": 16,
+      "color": "muted"
+    },
+    {
+      "id": "origin.helios.img",
+      "type": "image",
+      "x": 13530,
+      "y": 277,
+      "src": "/canvas/placeholders/origin.helios.img.svg",
+      "width": 420,
+      "height": 240
+    },
+    {
+      "id": "origin.app.label",
+      "type": "text",
+      "x": 13973,
+      "y": 7,
+      "text": "HIGH SCHOOL",
+      "font": "mono",
+      "fontSize": 12
+    },
+    {
+      "id": "origin.app.head",
+      "type": "text",
+      "x": 14120,
+      "y": 57,
+      "text": "Shipped an App Store app.",
+      "font": "sans",
+      "fontSize": 24
+    },
+    {
+      "id": "origin.app.body",
+      "type": "text",
+      "x": 14133,
+      "y": 127,
+      "text": "The only kid in school who had. Replaced\nour fitness score logger. Won an award.",
+      "font": "sans",
+      "fontSize": 16,
+      "color": "muted"
+    },
+    {
+      "id": "origin.app.img",
+      "type": "image",
+      "x": 14130,
+      "y": 301,
+      "src": "/canvas/placeholders/origin.app.img.svg",
+      "width": 420,
+      "height": 240
+    },
+    {
+      "id": "origin.parsons.label",
+      "type": "text",
+      "x": 14515,
+      "y": -25,
+      "text": "PARSONS",
+      "font": "mono",
+      "fontSize": 12
+    },
+    {
+      "id": "origin.parsons.head",
+      "type": "text",
+      "x": 14689,
+      "y": 25,
+      "text": "Fine art + graphic design.",
+      "font": "sans",
+      "fontSize": 24
+    },
+    {
+      "id": "origin.parsons.body",
+      "type": "text",
+      "x": 14684,
+      "y": 95,
+      "text": "Video, drawing, even furniture making.\nThe art school path, all of it.",
+      "font": "sans",
+      "fontSize": 16,
+      "color": "muted"
+    },
+    {
+      "id": "origin.parsons.img",
+      "type": "image",
+      "x": 14691,
+      "y": 269,
+      "src": "/canvas/placeholders/origin.parsons.img.svg",
+      "width": 420,
+      "height": 240
+    },
+    {
+      "id": "origin.depaul.label",
+      "type": "text",
+      "x": 15110,
+      "y": -39,
+      "text": "DEPAUL",
+      "font": "mono",
+      "fontSize": 12,
+      "color": "brand"
+    },
+    {
+      "id": "origin.depaul.head",
+      "type": "text",
+      "x": 15289,
+      "y": 11,
+      "text": "UX degree, CS on the side.",
+      "font": "sans",
+      "fontSize": 24
+    },
+    {
+      "id": "origin.depaul.body",
+      "type": "text",
+      "x": 15241,
+      "y": 81,
+      "text": "Hung out with the CS crowd.\nLearned to engineer for users.",
+      "font": "sans",
+      "fontSize": 16,
+      "color": "muted"
+    },
+    {
+      "id": "origin.depaul.img",
+      "type": "image",
+      "x": 15291,
+      "y": 255,
+      "src": "/canvas/placeholders/origin.depaul.img.svg",
+      "width": 420,
+      "height": 240
+    },
+    {
+      "id": "origin.cs",
+      "type": "sticky",
+      "x": 15906,
+      "y": -410,
+      "text": "CS fundamentals\n= pixels at the\nhighest level"
+    },
+    {
+      "id": "origin.building",
+      "type": "sticky",
+      "x": 15816,
+      "y": 470,
+      "text": "everyone said\nthey were\nbuilding.\nI actually was."
+    },
+    {
+      "id": "receipts.kicker",
+      "type": "text",
+      "x": 17739,
+      "y": -542,
+      "text": "04 — RECEIPTS",
+      "font": "mono",
+      "fontSize": 14
+    },
+    {
+      "id": "receipts.title",
+      "type": "text",
+      "x": 18067,
+      "y": -452,
+      "text": "Where I've done it.",
+      "font": "sans",
+      "fontSize": 64
+    },
+    {
+      "id": "receipts.dek",
+      "type": "text",
+      "x": 18227,
+      "y": -307,
+      "text": "Joined early (employee #3, #22, #26), worked directly with founders,\nand went wherever the product needed me.",
+      "font": "sans",
+      "fontSize": 24,
+      "color": "muted"
+    },
+    {
+      "id": "receipts.rh.label",
+      "type": "text",
+      "x": 17885,
+      "y": -114,
+      "text": "RIGHTHUB  ·  FOUNDING ENGINEER  ·  2018–2021",
+      "font": "mono",
+      "fontSize": 12
+    },
+    {
+      "id": "receipts.rh.head",
+      "type": "text",
+      "x": 18026,
+      "y": -56,
+      "text": "Zero to one, all the way to exit.",
+      "font": "sans",
+      "fontSize": 32
+    },
+    {
+      "id": "receipts.rh.facts",
+      "type": "text",
+      "x": 17892,
+      "y": 36,
+      "text": "EMPLOYEE  #3\nSTAGE     pre-seed → acquired by Anaqua\nWHERE     remote",
+      "font": "mono",
+      "fontSize": 14
+    },
+    {
+      "id": "receipts.rh.bullets",
+      "type": "text",
+      "x": 17967,
+      "y": 182,
+      "text": "· Architected the core product 0→1: Docket Engine\n   (the enterprise system of record) and RulesWiki\n· Built the public site + in-product feedback loops\n   that fed demand gen through acquisition\n· Worked with the CEO on direction, positioning, pivots",
+      "font": "sans",
+      "fontSize": 16
+    },
+    {
+      "id": "receipts.rh.docket",
+      "type": "image",
+      "x": 18004,
+      "y": 492,
+      "src": "/canvas/placeholders/receipts.rh.docket.svg",
+      "width": 660,
+      "height": 400
+    },
+    {
+      "id": "receipts.rh.helios",
+      "type": "sticky",
+      "x": 18363,
+      "y": 626,
+      "text": "Helios grew\nup into\nRightHub"
+    },
+    {
+      "id": "receipts.sf.label",
+      "type": "text",
+      "x": 18748,
+      "y": -84,
+      "text": "HOW I GOT TO SF",
+      "font": "mono",
+      "fontSize": 12
+    },
+    {
+      "id": "receipts.sf.body",
+      "type": "text",
+      "x": 18873,
+      "y": -10,
+      "text": "Theo's Discord, a few hundred people.\nPosted my work. Got scouted.\nFirst SF startup at 22.",
+      "font": "sans",
+      "fontSize": 16
+    },
+    {
+      "id": "receipts.sf.discord",
+      "type": "image",
+      "x": 18896,
+      "y": 200,
+      "src": "/canvas/placeholders/receipts.sf.discord.svg",
+      "width": 440,
+      "height": 280
+    },
+    {
+      "id": "receipts.sf.weeks",
+      "type": "sticky",
+      "x": 19023,
+      "y": 510,
+      "text": "80-hour weeks,\nSF + Dubai.\nworth it."
+    },
+    {
+      "id": "receipts.cd.label",
+      "type": "text",
+      "x": 18818,
+      "y": 826,
+      "text": "SIDE QUEST  ·  COMPACT DISC",
+      "font": "mono",
+      "fontSize": 12
+    },
+    {
+      "id": "receipts.cd.body",
+      "type": "text",
+      "x": 18928,
+      "y": 884,
+      "text": "A 3D escape room on my own WebGL/WASM engine.\nYears of Blender, environment art, PSX style.",
+      "font": "sans",
+      "fontSize": 16,
+      "color": "muted"
+    },
+    {
+      "id": "receipts.cd.img",
+      "type": "image",
+      "x": 18918,
+      "y": 1078,
+      "src": "/canvas/placeholders/receipts.cd.img.svg",
+      "width": 460,
+      "height": 280
+    },
+    {
+      "id": "receipts.ax.label",
+      "type": "text",
+      "x": 19551,
+      "y": -114,
+      "text": "AXIOM  ·  DESIGN ENGINEER  ·  2022–2025",
+      "font": "mono",
+      "fontSize": 12
+    },
+    {
+      "id": "receipts.ax.head",
+      "type": "text",
+      "x": 19652,
+      "y": -56,
+      "text": "Owned every public surface.",
+      "font": "sans",
+      "fontSize": 32
+    },
+    {
+      "id": "receipts.ax.facts",
+      "type": "text",
+      "x": 19543,
+      "y": 36,
+      "text": "EMPLOYEE  #22\nSTAGE     Series A observability\nWHERE     San Francisco / Dubai",
+      "font": "mono",
+      "fontSize": 14
+    },
+    {
+      "id": "receipts.ax.bullets",
+      "type": "text",
+      "x": 19689,
+      "y": 198,
+      "text": "· Day one: a broken marketing site, a direct line to the CEO,\n   and one directive: make every public surface better\n· Rebrand with the Head of Design, rolled out everywhere\n· PLG 0→1: Playground, Pricing v2, in-product feedback\n· Docs site, search, every integration, SOC 2\n· Ran the booth and demos at AWS re:Invent + Monitorama",
+      "font": "sans",
+      "fontSize": 16
+    },
+    {
+      "id": "receipts.ax.site",
+      "type": "image",
+      "x": 19754,
+      "y": 544,
+      "src": "/canvas/placeholders/receipts.ax.site.svg",
+      "width": 780,
+      "height": 440
+    },
+    {
+      "id": "receipts.ax.booth",
+      "type": "image",
+      "x": 20293,
+      "y": 120,
+      "src": "/canvas/placeholders/receipts.ax.booth.svg",
+      "width": 320,
+      "height": 220
+    },
+    {
+      "id": "receipts.ax.pricing",
+      "type": "image",
+      "x": 20383,
+      "y": 635,
+      "src": "/canvas/placeholders/receipts.ax.pricing.svg",
+      "width": 380,
+      "height": 250
+    },
+    {
+      "id": "receipts.ax.stat1",
+      "type": "text",
+      "x": 19437,
+      "y": 866,
+      "text": "10x",
+      "font": "sans",
+      "fontSize": 64,
+      "color": "brand"
+    },
+    {
+      "id": "receipts.ax.stat1.cap",
+      "type": "text",
+      "x": 19444,
+      "y": 954,
+      "text": "PLG CONVERSION",
+      "font": "mono",
+      "fontSize": 12
+    },
+    {
+      "id": "receipts.ax.stat2",
+      "type": "text",
+      "x": 19737,
+      "y": 866,
+      "text": "$1M",
+      "font": "sans",
+      "fontSize": 64,
+      "color": "brand"
+    },
+    {
+      "id": "receipts.ax.stat2.cap",
+      "type": "text",
+      "x": 19816,
+      "y": 954,
+      "text": "FIRST ARR, ON THE GTM I BUILT",
+      "font": "mono",
+      "fontSize": 12
+    },
+    {
+      "id": "receipts.ax.owner",
+      "type": "sticky",
+      "x": 20433,
+      "y": 938,
+      "text": "sole owner\nof all of it"
+    },
+    {
+      "id": "receipts.comfy.label",
+      "type": "text",
+      "x": 20917,
+      "y": -114,
+      "text": "COMFY  ·  DESIGN ENGINEER, MTS  ·  2025–NOW  ·  FEATURED",
+      "font": "mono",
+      "fontSize": 12,
+      "color": "brand"
+    },
+    {
+      "id": "receipts.comfy.head",
+      "type": "text",
+      "x": 20979,
+      "y": -56,
+      "text": "Shipped to millions. Moved ARR.",
+      "font": "sans",
+      "fontSize": 32
+    },
+    {
+      "id": "receipts.comfy.facts",
+      "type": "text",
+      "x": 20850,
+      "y": 36,
+      "text": "EMPLOYEE  #26\nUSERS     4M+ daily\nREPO      #75 most-starred on GitHub",
+      "font": "mono",
+      "fontSize": 14
+    },
+    {
+      "id": "receipts.comfy.nodes",
+      "type": "image",
+      "x": 21203,
+      "y": 317,
       "src": "/canvas/work/comfyui.png",
-      "width": 1200,
-      "height": 455
+      "width": 1100,
+      "height": 417
     },
     {
-      "id": "evidence.renderer.image",
+      "id": "receipts.comfy.nodes.cap",
+      "type": "text",
+      "x": 20940,
+      "y": 561,
+      "text": "↑ NODES 2.0, THE NEW CANVAS  ·  SWAP FOR A FRESH SCREENSHOT",
+      "font": "mono",
+      "fontSize": 12
+    },
+    {
+      "id": "receipts.comfy.stat1",
+      "type": "text",
+      "x": 20717,
+      "y": 676,
+      "text": "10x",
+      "font": "sans",
+      "fontSize": 64,
+      "color": "brand"
+    },
+    {
+      "id": "receipts.comfy.stat1.cap",
+      "type": "text",
+      "x": 20763,
+      "y": 764,
+      "text": "MORE PLUGINS PUBLISHED",
+      "font": "mono",
+      "fontSize": 12
+    },
+    {
+      "id": "receipts.comfy.stat2",
+      "type": "text",
+      "x": 21118,
+      "y": 676,
+      "text": "+15%",
+      "font": "sans",
+      "fontSize": 64,
+      "color": "brand"
+    },
+    {
+      "id": "receipts.comfy.stat2.cap",
+      "type": "text",
+      "x": 21162,
+      "y": 764,
+      "text": "ARR, FIRST ENTERPRISE DEAL",
+      "font": "mono",
+      "fontSize": 12
+    },
+    {
+      "id": "receipts.comfy.stat3",
+      "type": "text",
+      "x": 21497,
+      "y": 676,
+      "text": "50x",
+      "font": "sans",
+      "fontSize": 64,
+      "color": "brand"
+    },
+    {
+      "id": "receipts.comfy.stat3.cap",
+      "type": "text",
+      "x": 21557,
+      "y": 764,
+      "text": "PARTNER PROGRAM, 6 MONTHS",
+      "font": "mono",
+      "fontSize": 12
+    },
+    {
+      "id": "receipts.comfy.n2.label",
+      "type": "text",
+      "x": 21893,
+      "y": -114,
+      "text": "NODES 2.0",
+      "font": "mono",
+      "fontSize": 12
+    },
+    {
+      "id": "receipts.comfy.n2.body",
+      "type": "text",
+      "x": 22101,
+      "y": -56,
+      "text": "Beta → stable for millions. A new look and feel\non a rearchitected hybrid renderer.",
+      "font": "sans",
+      "fontSize": 16
+    },
+    {
+      "id": "receipts.comfy.n2.diagram",
+      "type": "text",
+      "x": 22061,
+      "y": 34,
+      "text": "DOM + CSS transforms   the new node UI\nCanvas 2D (Skia)       the original renderer\n                       kept in lockstep",
+      "font": "mono",
+      "fontSize": 12,
+      "color": "muted"
+    },
+    {
+      "id": "receipts.comfy.ws.label",
+      "type": "text",
+      "x": 22004,
+      "y": 130,
+      "text": "TEAM WORKSPACES + SHARED BILLING",
+      "font": "mono",
+      "fontSize": 12
+    },
+    {
+      "id": "receipts.comfy.ws.body",
+      "type": "text",
+      "x": 22143,
+      "y": 188,
+      "text": "Our #1 enterprise feature. Create, invite, collaborate,\nshare billing. Landed our first enterprise commitment.",
+      "font": "sans",
+      "fontSize": 16
+    },
+    {
+      "id": "receipts.comfy.ws.img",
       "type": "image",
-      "x": 15130,
-      "y": -70,
-      "src": "/canvas/graphics/utah-teapot.png",
+      "x": 22110,
+      "y": 385,
+      "src": "/canvas/placeholders/receipts.comfy.ws.img.svg",
+      "width": 520,
+      "height": 290
+    },
+    {
+      "id": "receipts.comfy.hub.label",
+      "type": "text",
+      "x": 21893,
+      "y": 586,
+      "text": "COMFY HUB",
+      "font": "mono",
+      "fontSize": 12
+    },
+    {
+      "id": "receipts.comfy.hub.body",
+      "type": "text",
+      "x": 22058,
+      "y": 644,
+      "text": "A public surface for sharing workflows.\nOur biggest GTM push to date.",
+      "font": "sans",
+      "fontSize": 16
+    },
+    {
+      "id": "receipts.comfy.hub.img",
+      "type": "image",
+      "x": 22110,
+      "y": 841,
+      "src": "/canvas/placeholders/receipts.comfy.hub.img.svg",
+      "width": 520,
+      "height": 290
+    },
+    {
+      "id": "receipts.comfy.pr",
+      "type": "sticky",
+      "x": 22583,
+      "y": -40,
+      "text": "design + code,\nsame PR"
+    },
+    {
+      "id": "receipts.refs",
+      "type": "sticky",
+      "x": 22553,
+      "y": 1040,
+      "text": "references\nhappily\nprovided"
+    },
+    {
+      "id": "now.kicker",
+      "type": "text",
+      "x": 25092,
+      "y": -1442,
+      "text": "05 — RIGHT NOW",
+      "font": "mono",
+      "fontSize": 14
+    },
+    {
+      "id": "now.title",
+      "type": "text",
+      "x": 25401,
+      "y": -1352,
+      "text": "Down to the metal.",
+      "font": "sans",
+      "fontSize": 64
+    },
+    {
+      "id": "now.dek",
+      "type": "text",
+      "x": 25389,
+      "y": -1252,
+      "text": "Graphics from first principles, in C and C++.",
+      "font": "sans",
+      "fontSize": 24,
+      "color": "muted"
+    },
+    {
+      "id": "now.body",
+      "type": "text",
+      "x": 25398,
+      "y": -1014,
+      "text": "Compositors. Blitting to the framebuffer.\nBasically 1970s graphics: the stuff that lets\na browser draw anything at all.",
+      "font": "sans",
+      "fontSize": 24
+    },
+    {
+      "id": "now.studio",
+      "type": "image",
+      "x": 25398,
+      "y": -693,
+      "src": "/canvas/placeholders/now.studio.svg",
+      "width": 720,
+      "height": 430
+    },
+    {
+      "id": "now.projects",
+      "type": "text",
+      "x": 26152,
+      "y": -982,
+      "text": "PROJECTS\n\nSIMULA_R STUDIO   Figma-style renderer, C++ → WASM/WebGPU\nSIMULA_R IDE      agent-driven Storybook for design systems\nSIMULA_R.COM      you're standing in it\nICENSOR           a local LLM that cleans up bad feeds",
+      "font": "mono",
+      "fontSize": 14
+    },
+    {
+      "id": "now.winamp.joke",
+      "type": "text",
+      "x": 26115,
+      "y": -656,
+      "text": "And the pride and joy:\na 3D Winamp.",
+      "font": "sans",
+      "fontSize": 40
+    },
+    {
+      "id": "now.winamp.game",
+      "type": "image",
+      "x": 26102,
+      "y": -380,
+      "src": "/canvas/placeholders/now.winamp.game.svg",
       "width": 560,
-      "height": 420
+      "height": 340
     },
     {
-      "id": "evidence.walker.ref",
+      "id": "now.winamp.ref",
       "type": "image",
-      "x": 15950,
-      "y": 278,
+      "x": 26542,
+      "y": -362,
       "src": "/canvas/games/winamp.png",
       "width": 200,
       "height": 316
     },
     {
-      "id": "evidence.heroes.myst",
-      "type": "image",
-      "x": 16200,
-      "y": 240,
-      "src": "/canvas/games/myst.png",
-      "width": 200,
-      "height": 240
+      "id": "now.winamp.ref.cap",
+      "type": "text",
+      "x": 26514,
+      "y": -174,
+      "text": "↑ THE REFERENCE",
+      "font": "mono",
+      "fontSize": 12
     },
     {
-      "id": "evidence.heroes.jsr",
-      "type": "image",
-      "x": 16460,
-      "y": 240.5,
-      "src": "/canvas/games/jet-set-radio.jpg",
-      "width": 240,
-      "height": 241
+      "id": "now.winamp.confused",
+      "type": "sticky",
+      "x": 26902,
+      "y": -630,
+      "text": "you're right\nto be\nconfused."
     },
     {
-      "id": "places.london",
-      "type": "image",
-      "x": 5785,
-      "y": 2500,
-      "src": "/canvas/life/london.jpg",
-      "width": 569,
-      "height": 320
+      "id": "who.kicker",
+      "type": "text",
+      "x": 29156,
+      "y": -622,
+      "text": "06 — WHO I WANT TO BUILD WITH",
+      "font": "mono",
+      "fontSize": 14
     },
     {
-      "id": "places.dubai",
-      "type": "image",
-      "x": 6371,
-      "y": 2500,
-      "src": "/canvas/life/dubai.jpg",
-      "width": 463,
-      "height": 320
+      "id": "who.title",
+      "type": "text",
+      "x": 29577,
+      "y": -532,
+      "text": "Teams people pick on taste.",
+      "font": "sans",
+      "fontSize": 64
     },
     {
-      "id": "places.europe",
-      "type": "image",
-      "x": 6928,
-      "y": 2500,
-      "src": "/canvas/life/paris.jpg",
-      "width": 512,
-      "height": 320
+      "id": "who.dek",
+      "type": "text",
+      "x": 29452,
+      "y": -396,
+      "text": "Teams that champion design champion their users.\nI want to help a team become the Linear of its category.",
+      "font": "sans",
+      "fontSize": 24,
+      "color": "muted"
     },
     {
-      "id": "places.san-francisco",
-      "type": "image",
-      "x": 7468,
-      "y": 2500,
-      "src": "/canvas/life/san-francisco.jpg",
-      "width": 427,
-      "height": 320
+      "id": "who.yes.label",
+      "type": "text",
+      "x": 29050,
+      "y": -194,
+      "text": "YES, PLEASE",
+      "font": "mono",
+      "fontSize": 12,
+      "color": "brand"
     },
     {
-      "id": "places.big-sur",
+      "id": "who.yes",
+      "type": "text",
+      "x": 29269,
+      "y": -20,
+      "text": "Ambitious, moving fast\nDesign-first, with room for craft\nTalks to users\nThinks from first principles\nSells to people who notice quality\nWants to define new patterns",
+      "font": "sans",
+      "fontSize": 24
+    },
+    {
+      "id": "who.no.label",
+      "type": "text",
+      "x": 30064,
+      "y": -164,
+      "text": "NOT FOR ME",
+      "font": "mono",
+      "fontSize": 12
+    },
+    {
+      "id": "who.no",
+      "type": "text",
+      "x": 30272,
+      "y": -38,
+      "text": "Product as a list of checkboxes\n\"Everyone just wants a chat box\"\n\"LGTM\" / \"good enough\"\nNever talks to users",
+      "font": "sans",
+      "fontSize": 24,
+      "color": "subtle"
+    },
+    {
+      "id": "who.care",
+      "type": "text",
+      "x": 30310,
+      "y": 234,
+      "text": "\"We give a shit,\nand you can feel it.\"",
+      "font": "handwritten",
+      "fontSize": 40,
+      "color": "brand"
+    },
+    {
+      "id": "who.admire.label",
+      "type": "text",
+      "x": 29063,
+      "y": 406,
+      "text": "TEAMS I ADMIRE",
+      "font": "mono",
+      "fontSize": 12
+    },
+    {
+      "id": "who.admire.1",
       "type": "image",
-      "x": 5777,
-      "y": 3100,
-      "src": "/canvas/life/big-sur.jpg",
-      "width": 553,
+      "x": 29174,
+      "y": 575,
+      "src": "/canvas/placeholders/who.admire.1.svg",
+      "width": 340,
+      "height": 220
+    },
+    {
+      "id": "who.admire.2",
+      "type": "image",
+      "x": 29532,
+      "y": 557,
+      "src": "/canvas/placeholders/who.admire.2.svg",
+      "width": 340,
+      "height": 220
+    },
+    {
+      "id": "who.admire.3",
+      "type": "image",
+      "x": 29896,
+      "y": 547,
+      "src": "/canvas/placeholders/who.admire.3.svg",
+      "width": 340,
+      "height": 220
+    },
+    {
+      "id": "who.graphics",
+      "type": "sticky",
+      "x": 30436,
+      "y": 500,
+      "text": "dream: push\nweb graphics\nfurther.\n(3D, please)"
+    },
+    {
+      "id": "contact.kicker",
+      "type": "text",
+      "x": 33128,
+      "y": -942,
+      "text": "07 — SAY HI",
+      "font": "mono",
+      "fontSize": 14
+    },
+    {
+      "id": "contact.title",
+      "type": "text",
+      "x": 33297,
+      "y": -852,
+      "text": "Let's talk.",
+      "font": "sans",
+      "fontSize": 64
+    },
+    {
+      "id": "contact.dek",
+      "type": "text",
+      "x": 33650,
+      "y": -711,
+      "text": "Always up for a good conversation about what you're building,\nhow you think about design engineering, or whether any of this resonated.",
+      "font": "sans",
+      "fontSize": 24,
+      "color": "muted"
+    },
+    {
+      "id": "contact.headshot",
+      "type": "image",
+      "x": 33253,
+      "y": -350,
+      "src": "/canvas/placeholders/contact.headshot.svg",
+      "width": 360,
       "height": 360
     },
     {
-      "id": "places.sierra",
-      "type": "image",
-      "x": 6201,
-      "y": 3100,
-      "src": "/canvas/life/sierra-nevada.jpg",
-      "width": 240,
-      "height": 360
+      "id": "contact.links.label",
+      "type": "text",
+      "x": 33527,
+      "y": -504,
+      "text": "FIND ME",
+      "font": "mono",
+      "fontSize": 12
     },
     {
-      "id": "places.fallingwater",
-      "type": "image",
-      "x": 7234,
-      "y": 3120,
-      "src": "/canvas/life/fallingwater.jpg",
-      "width": 305,
-      "height": 200
+      "id": "contact.links",
+      "type": "text",
+      "x": 33627,
+      "y": -394,
+      "text": "CALENDLY    {{calendly}}\nX           {{x}}\nLINKEDIN    {{linkedin}}\nGITHUB      {{github}}\nGAMEDEV X   {{gamedev x}}",
+      "font": "mono",
+      "fontSize": 16,
+      "color": "ink"
     },
     {
-      "id": "places.salk",
-      "type": "image",
-      "x": 7548,
-      "y": 3120,
-      "src": "/canvas/life/salk.jpg",
-      "width": 267,
-      "height": 200
+      "id": "contact.slot",
+      "type": "text",
+      "x": 33699,
+      "y": -268,
+      "text": "pick a slot, any slot ↑",
+      "font": "handwritten",
+      "fontSize": 24,
+      "color": "brand"
     },
     {
-      "id": "places.katsura",
+      "id": "contact.strip",
       "type": "image",
-      "x": 7910,
-      "y": 3120,
-      "src": "/canvas/life/katsura.jpg",
-      "width": 402,
-      "height": 200
+      "x": 34173,
+      "y": 60,
+      "src": "/canvas/accents/board-email-strip-2200.svg",
+      "width": 2200,
+      "height": 200,
+      "variant": "bare"
     },
     {
-      "id": "places.barcelona-pavilion",
-      "type": "image",
-      "x": 8289,
-      "y": 3120,
-      "src": "/canvas/life/barcelona-pavilion.jpg",
-      "width": 299,
-      "height": 200
+      "id": "contact.email.label",
+      "type": "text",
+      "x": 33137,
+      "y": 0,
+      "text": "EMAIL",
+      "font": "mono",
+      "fontSize": 12,
+      "color": "brand"
     },
     {
-      "id": "places.max",
-      "type": "image",
-      "x": 5150,
-      "y": 3140,
-      "src": "/uploads/7f45b781-67e7-4831-9dd5-658b19fb0b27.jpg",
-      "width": 480,
-      "height": 270
+      "id": "contact.email",
+      "type": "text",
+      "x": 34173,
+      "y": 68,
+      "text": "jakeschroeder8@gmail.com",
+      "font": "sans",
+      "fontSize": 64
     },
     {
-      "id": "taste.books.algernon",
-      "type": "image",
-      "x": 10100,
-      "y": 2390,
-      "src": "/canvas/shelf/algernon.jpg",
-      "width": 180,
-      "height": 260
-    },
-    {
-      "id": "taste.books.hitchhiker",
-      "type": "image",
-      "x": 10293,
-      "y": 2390,
-      "src": "/canvas/shelf/hitchhiker.jpg",
-      "width": 149,
-      "height": 260
-    },
-    {
-      "id": "taste.books.the-stand",
-      "type": "image",
-      "x": 10478,
-      "y": 2390,
-      "src": "/canvas/shelf/the-stand.png",
-      "width": 166,
-      "height": 260
-    },
-    {
-      "id": "taste.books.neuromancer",
-      "type": "image",
-      "x": 10668,
-      "y": 2390,
-      "src": "/canvas/shelf/neuromancer.jpg",
-      "width": 157,
-      "height": 260
-    },
-    {
-      "id": "taste.screen.matrix",
-      "type": "image",
-      "x": 11156,
-      "y": 2390,
-      "src": "/canvas/shelf/matrix.png",
-      "width": 180,
-      "height": 260
-    },
-    {
-      "id": "taste.screen.ghost-in-the-shell",
-      "type": "image",
-      "x": 11366,
-      "y": 2390,
-      "src": "/canvas/shelf/ghost-in-the-shell.jpg",
-      "width": 183,
-      "height": 260
-    },
-    {
-      "id": "taste.screen.x-files",
-      "type": "image",
-      "x": 11706,
-      "y": 2390,
-      "src": "/canvas/shelf/x-files.webp",
-      "width": 441,
-      "height": 260
-    },
-    {
-      "id": "taste.cartoons.spongebob",
-      "type": "image",
-      "x": 10218,
-      "y": 2790,
-      "src": "/canvas/shelf/spongebob.png",
-      "width": 416,
-      "height": 220
-    },
-    {
-      "id": "taste.cartoons.simpsons",
-      "type": "image",
-      "x": 10650,
-      "y": 2790,
-      "src": "/canvas/shelf/simpsons.png",
-      "width": 391,
-      "height": 220
-    },
-    {
-      "id": "taste.games.cod4",
-      "type": "image",
-      "x": 11241,
-      "y": 2790,
-      "src": "/canvas/shelf/cod4.jpg",
-      "width": 151,
-      "height": 220
-    },
-    {
-      "id": "taste.games.mw2",
-      "type": "image",
-      "x": 11420,
-      "y": 2790,
-      "src": "/canvas/shelf/mw2.png",
-      "width": 151,
-      "height": 220
-    },
-    {
-      "id": "taste.games.gw2",
-      "type": "image",
-      "x": 11615,
-      "y": 2790,
-      "src": "/canvas/shelf/gw2.png",
-      "width": 183,
-      "height": 220
-    },
-    {
-      "id": "taste.games.halo",
-      "type": "image",
-      "x": 11816,
-      "y": 2790,
-      "src": "/canvas/shelf/halo.jpg",
-      "width": 163,
-      "height": 220
-    },
-    {
-      "id": "taste.repeat.discovery",
-      "type": "image",
-      "x": 10100,
-      "y": 3150,
-      "src": "/canvas/music/discovery.jpg",
-      "width": 180,
-      "height": 180
-    },
-    {
-      "id": "taste.repeat.ok-computer",
-      "type": "image",
-      "x": 10308,
-      "y": 3150,
-      "src": "/canvas/music/ok-computer.png",
-      "width": 180,
-      "height": 180
-    },
-    {
-      "id": "taste.repeat.mhtrtc",
-      "type": "image",
-      "x": 10516,
-      "y": 3150,
-      "src": "/canvas/music/mhtrtc.jpg",
-      "width": 180,
-      "height": 180
-    },
-    {
-      "id": "taste.repeat.saw-85-92",
-      "type": "image",
-      "x": 10724,
-      "y": 3150,
-      "src": "/canvas/music/saw-85-92.png",
-      "width": 180,
-      "height": 180
-    },
-    {
-      "id": "taste.repeat.demon-days",
-      "type": "image",
-      "x": 10932,
-      "y": 3150,
-      "src": "/canvas/music/demon-days.png",
-      "width": 180,
-      "height": 180
-    },
-    {
-      "id": "taste.repeat.hybrid-theory",
-      "type": "image",
-      "x": 11140,
-      "y": 3150,
-      "src": "/canvas/music/hybrid-theory.jpg",
-      "width": 180,
-      "height": 180
-    },
-    {
-      "id": "taste.repeat.modal-soul",
-      "type": "image",
-      "x": 11348,
-      "y": 3150,
-      "src": "/canvas/music/modal-soul.jpg",
-      "width": 180,
-      "height": 180
-    },
-    {
-      "id": "taste.repeat.cross",
-      "type": "image",
-      "x": 11556,
-      "y": 3150,
-      "src": "/canvas/music/cross.jpg",
-      "width": 179,
-      "height": 180
-    },
-    {
-      "id": "taste.repeat.dive",
-      "type": "image",
-      "x": 11763,
-      "y": 3150,
-      "src": "/canvas/music/dive.jpg",
-      "width": 180,
-      "height": 180
-    },
-    {
-      "id": "brief.ar",
+      "id": "contact.end",
       "type": "sticky",
-      "x": 260,
-      "y": -170,
-      "text": "hi, I'm a_r.\nI'll drive.\nhold to steal\nthe wheel"
-    },
-    {
-      "id": "hook.zoom",
-      "type": "sticky",
-      "x": 4550,
-      "y": 250,
-      "text": "yes, you can\nzoom in on\nthis sticky"
-    },
-    {
-      "id": "context.halves",
-      "type": "sticky",
-      "x": 6830,
-      "y": 90,
-      "text": "both halves:\ndesign school +\nreal engineering"
-    },
-    {
-      "id": "context.years",
-      "type": "sticky",
-      "x": 8410,
-      "y": 90,
-      "text": "27 years of\npixels on\nscreens"
-    },
-    {
-      "id": "principles.loose",
-      "type": "sticky",
-      "x": 10628.8,
-      "y": -300,
-      "text": "opinions,\nloosely held"
-    },
-    {
-      "id": "evidence.comfy.same-pr",
-      "type": "sticky",
-      "x": 14620,
-      "y": -250,
-      "text": "design + code,\nsame PR"
-    },
-    {
-      "id": "evidence.renderer.pixels",
-      "type": "sticky",
-      "x": 15570,
-      "y": -90,
-      "text": "pixels are\nthe product"
-    },
-    {
-      "id": "decision.end",
-      "type": "sticky",
-      "x": 18710,
-      "y": 140,
+      "x": 35033,
+      "y": -390,
       "text": "you made it\nto the end.\nrespect."
     },
     {
-      "id": "places.family",
+      "id": "stray.lot.label",
+      "type": "text",
+      "x": 73,
+      "y": -2344,
+      "text": "PARKING LOT",
+      "font": "mono",
+      "fontSize": 12
+    },
+    {
+      "id": "stray.lot.receipts",
       "type": "sticky",
-      "x": 6531,
-      "y": 3280,
-      "text": "family >\neverything"
+      "x": 160,
+      "y": -2130,
+      "text": "too many\nreceipts?"
     },
     {
-      "id": "places.fengshui",
+      "id": "stray.lot.furniture",
       "type": "sticky",
-      "x": 8586,
-      "y": 3120,
-      "text": "feng shui is\nUX for rooms"
+      "x": 460,
+      "y": -2070,
+      "text": "mention the\nfurniture\nmaking?"
     },
     {
-      "id": "taste.mulder",
+      "id": "stray.lot.guestbook",
       "type": "sticky",
-      "x": 12126,
-      "y": 2390,
-      "text": "Mulder was\nright"
+      "x": 800,
+      "y": -2170,
+      "text": "guestbook\nidea →\nlater"
     },
     {
-      "id": "taste.cod",
-      "type": "sticky",
-      "x": 12097,
-      "y": 2790,
-      "text": "COD4 lobbies\nraised me"
-    },
-    {
-      "id": "brief.meta",
+      "id": "stray.lot.note",
       "type": "text",
-      "x": -876.4,
-      "y": -814,
-      "text": "JAM SESSION  ·  SIMULA_R.COM  ·  ONE CANDIDATE, ONE BOARD",
-      "font": "mono",
-      "fontSize": 12
-    },
-    {
-      "id": "brief.kicker",
-      "type": "text",
-      "x": -1071.6,
-      "y": -762,
-      "text": "01 — THE BRIEF",
-      "font": "mono",
-      "fontSize": 14
-    },
-    {
-      "id": "brief.title",
-      "type": "text",
-      "x": -843.4,
-      "y": -672,
-      "text": "Why hire Jake?",
-      "font": "sans",
-      "fontSize": 64
-    },
-    {
-      "id": "brief.problem.label",
-      "type": "text",
-      "x": -1068.4,
-      "y": -564,
-      "text": "PROBLEM STATEMENT",
-      "font": "mono",
-      "fontSize": 12
-    },
-    {
-      "id": "brief.problem",
-      "type": "text",
-      "x": -712.5,
-      "y": -514,
-      "text": "You need a design engineer. Here's the case.",
-      "font": "sans",
-      "fontSize": 32
-    },
-    {
-      "id": "brief.details.label",
-      "type": "text",
-      "x": -1078,
-      "y": -384,
-      "text": "SESSION DETAILS",
-      "font": "mono",
-      "fontSize": 12
-    },
-    {
-      "id": "brief.goal.label",
-      "type": "text",
-      "x": -1127.6,
-      "y": -330,
-      "text": "GOAL",
-      "font": "mono",
-      "fontSize": 14
-    },
-    {
-      "id": "brief.goal",
-      "type": "text",
-      "x": -536.9,
-      "y": -330,
-      "text": "Decide if Jake is your next design engineer.",
-      "font": "sans",
-      "fontSize": 24
-    },
-    {
-      "id": "brief.facilitator.label",
-      "type": "text",
-      "x": -1088.4,
-      "y": -240,
-      "text": "FACILITATOR",
-      "font": "mono",
-      "fontSize": 14
-    },
-    {
-      "id": "brief.facilitator",
-      "type": "text",
-      "x": -570.4,
-      "y": -240,
-      "text": "a_r, Jake's cursor. Jake does the voice.",
-      "font": "sans",
-      "fontSize": 24
-    },
-    {
-      "id": "brief.participants.label",
-      "type": "text",
-      "x": -1082.8,
-      "y": -150,
-      "text": "PARTICIPANTS",
-      "font": "mono",
-      "fontSize": 14
-    },
-    {
-      "id": "brief.participants",
-      "type": "text",
-      "x": -806.7,
-      "y": -150,
-      "text": "You. Hi.",
-      "font": "sans",
-      "fontSize": 24
-    },
-    {
-      "id": "brief.format.label",
-      "type": "text",
-      "x": -1116.4,
-      "y": -60,
-      "text": "FORMAT",
-      "font": "mono",
-      "fontSize": 14
-    },
-    {
-      "id": "brief.format",
-      "type": "text",
-      "x": -588.9,
-      "y": -60,
-      "text": "~3 min, narrated. Or wander, no rush.",
-      "font": "sans",
-      "fontSize": 24
-    },
-    {
-      "id": "brief.output.label",
-      "type": "text",
-      "x": -1116.4,
-      "y": 30,
-      "text": "OUTPUT",
-      "font": "mono",
-      "fontSize": 14
-    },
-    {
-      "id": "brief.output",
-      "type": "text",
-      "x": -653.2,
-      "y": 30,
-      "text": "One decision. See frame 06.",
-      "font": "sans",
-      "fontSize": 24
-    },
-    {
-      "id": "brief.agenda.label",
-      "type": "text",
-      "x": 641.6,
-      "y": -384,
-      "text": "AGENDA  ·  ~3 MIN",
-      "font": "mono",
-      "fontSize": 12
-    },
-    {
-      "id": "brief.agenda.01.n",
-      "type": "text",
-      "x": 621.2,
-      "y": -330,
-      "text": "01",
-      "font": "mono",
-      "fontSize": 14
-    },
-    {
-      "id": "brief.agenda.01.title",
-      "type": "text",
-      "x": 735.9,
-      "y": -330,
-      "text": "The brief",
-      "font": "sans",
-      "fontSize": 24
-    },
-    {
-      "id": "brief.agenda.01.desc",
-      "type": "text",
-      "x": 977.6,
-      "y": -327,
-      "text": "you are here",
-      "font": "mono",
-      "fontSize": 12
-    },
-    {
-      "id": "brief.agenda.02.n",
-      "type": "text",
-      "x": 621.2,
-      "y": -240,
-      "text": "02",
-      "font": "mono",
-      "fontSize": 14
-    },
-    {
-      "id": "brief.agenda.02.title",
-      "type": "text",
-      "x": 736.6,
-      "y": -240,
-      "text": "Exhibit A",
-      "font": "sans",
-      "fontSize": 24
-    },
-    {
-      "id": "brief.agenda.02.desc",
-      "type": "text",
-      "x": 996.8,
-      "y": -237,
-      "text": "the board itself",
-      "font": "mono",
-      "fontSize": 12
-    },
-    {
-      "id": "brief.agenda.03.n",
-      "type": "text",
-      "x": 621.2,
-      "y": -150,
-      "text": "03",
-      "font": "mono",
-      "fontSize": 14
-    },
-    {
-      "id": "brief.agenda.03.title",
-      "type": "text",
-      "x": 730.6,
-      "y": -150,
-      "text": "Context",
-      "font": "sans",
-      "fontSize": 24
-    },
-    {
-      "id": "brief.agenda.03.desc",
-      "type": "text",
-      "x": 992,
-      "y": -147,
-      "text": "who is this guy",
-      "font": "mono",
-      "fontSize": 12
-    },
-    {
-      "id": "brief.agenda.04.n",
-      "type": "text",
-      "x": 621.2,
-      "y": -60,
-      "text": "04",
-      "font": "mono",
-      "fontSize": 14
-    },
-    {
-      "id": "brief.agenda.04.title",
-      "type": "text",
-      "x": 743.4,
-      "y": -60,
-      "text": "Principles",
-      "font": "sans",
-      "fontSize": 24
-    },
-    {
-      "id": "brief.agenda.04.desc",
-      "type": "text",
-      "x": 982.4,
-      "y": -57,
-      "text": "how he thinks",
-      "font": "mono",
-      "fontSize": 12
-    },
-    {
-      "id": "brief.agenda.05.n",
-      "type": "text",
-      "x": 621.2,
-      "y": 30,
-      "text": "05",
-      "font": "mono",
-      "fontSize": 14
-    },
-    {
-      "id": "brief.agenda.05.title",
-      "type": "text",
-      "x": 737.6,
-      "y": 30,
-      "text": "Evidence",
-      "font": "sans",
-      "fontSize": 24
-    },
-    {
-      "id": "brief.agenda.05.desc",
-      "type": "text",
-      "x": 1001.6,
-      "y": 33,
-      "text": "claims + receipts",
-      "font": "mono",
-      "fontSize": 12
-    },
-    {
-      "id": "brief.agenda.06.n",
-      "type": "text",
-      "x": 621.2,
-      "y": 120,
-      "text": "06",
-      "font": "mono",
-      "fontSize": 14
-    },
-    {
-      "id": "brief.agenda.06.title",
-      "type": "text",
-      "x": 733.4,
-      "y": 120,
-      "text": "Decision",
-      "font": "sans",
-      "fontSize": 24
-    },
-    {
-      "id": "brief.agenda.06.desc",
-      "type": "text",
-      "x": 963.2,
-      "y": 123,
-      "text": "your move",
-      "font": "mono",
-      "fontSize": 12
-    },
-    {
-      "id": "brief.explore",
-      "type": "text",
-      "x": -780.4,
-      "y": 276,
-      "text": "OFF-AGENDA, FOR EXPLORERS:  full timeline  ·  places  ·  what shaped my taste",
-      "font": "mono",
-      "fontSize": 12
-    },
-    {
-      "id": "brief.controls",
-      "type": "text",
-      "x": -914.8,
-      "y": 312,
-      "text": "DRAG  pan     SCROLL  zoom     HOLD  take control",
-      "font": "mono",
-      "fontSize": 12
-    },
-    {
-      "id": "brief.go",
-      "type": "text",
-      "x": 1044.2,
-      "y": 294,
-      "text": "let's jam →",
+      "x": 1237,
+      "y": -1918,
+      "text": "(cut for time, keeping\nthem here anyway)",
       "font": "handwritten",
-      "fontSize": 40
-    },
-    {
-      "id": "spine.1-2.label",
-      "type": "text",
-      "x": 1560.4,
-      "y": -254,
-      "text": "NEXT  ·  02 — EXHIBIT A",
-      "font": "mono",
-      "fontSize": 12
-    },
-    {
-      "id": "hook.kicker",
-      "type": "text",
-      "x": 2728.4,
-      "y": -762,
-      "text": "02 — EXHIBIT A",
-      "font": "mono",
-      "fontSize": 14
-    },
-    {
-      "id": "hook.title",
-      "type": "text",
-      "x": 3196,
-      "y": -672,
-      "text": "You're standing in exhibit A.",
-      "font": "sans",
-      "fontSize": 64
-    },
-    {
-      "id": "hook.dek",
-      "type": "text",
-      "x": 3034.6,
-      "y": -538,
-      "text": "This isn't a slide deck or a video. It's an engine I built\nto present it: canvas, recorder, voice-synced cursor.",
-      "font": "sans",
-      "fontSize": 24
-    },
-    {
-      "id": "hook.meta-note",
-      "type": "text",
-      "x": 3915.2,
-      "y": -656,
-      "text": "meta, I know",
-      "font": "handwritten",
-      "fontSize": 40
-    },
-    {
-      "id": "hook.canvas.label",
-      "type": "text",
-      "x": 2722,
-      "y": -374,
-      "text": "A1 — THE CANVAS",
-      "font": "mono",
-      "fontSize": 12
-    },
-    {
-      "id": "hook.canvas.title",
-      "type": "text",
-      "x": 2955.5,
-      "y": -324,
-      "text": "An infinite canvas, in real DOM.",
-      "font": "sans",
-      "fontSize": 32
-    },
-    {
-      "id": "hook.canvas.body",
-      "type": "text",
-      "x": 2868.2,
-      "y": -250,
-      "text": "Pan, zoom, edit. Every word here is real text,\nand one JSON file is the whole CMS.",
-      "font": "sans",
-      "fontSize": 16
-    },
-    {
-      "id": "hook.recorder.label",
-      "type": "text",
-      "x": 2731.6,
-      "y": -174,
-      "text": "A2 — THE RECORDER",
-      "font": "mono",
-      "fontSize": 12
-    },
-    {
-      "id": "hook.recorder.title",
-      "type": "text",
-      "x": 2927.3,
-      "y": -124,
-      "text": "A sesh that's data, not video.",
-      "font": "sans",
-      "fontSize": 32
-    },
-    {
-      "id": "hook.recorder.body",
-      "type": "text",
-      "x": 2894.2,
-      "y": -50,
-      "text": "I drive the camera while I talk. It saves keyframes\non an audio clock and replays at any screen size.",
-      "font": "sans",
-      "fontSize": 16
-    },
-    {
-      "id": "hook.cursor.label",
-      "type": "text",
-      "x": 2722,
-      "y": 26,
-      "text": "A3 — THE CURSOR",
-      "font": "mono",
-      "fontSize": 12
-    },
-    {
-      "id": "hook.cursor.title",
-      "type": "text",
-      "x": 2839.6,
-      "y": 76,
-      "text": "a_r is me, replayed.",
-      "font": "sans",
-      "fontSize": 32
-    },
-    {
-      "id": "hook.cursor.body",
-      "type": "text",
-      "x": 2867.3,
-      "y": 150,
-      "text": "Hold anywhere and he hands you the wheel.\nClick him and he picks up where he left off.",
-      "font": "sans",
-      "fontSize": 16
-    },
-    {
-      "id": "hook.terminal.text",
-      "type": "text",
-      "x": 4056,
-      "y": -203,
-      "text": "$ cat how-this-works.txt\n\n· playback is a pure function of time\n· zoom lerps in log space, feels linear\n· seshes contain-fit to any screen\n· hold to take over, click a_r to resume\n· frames skip React, commit at rest\n· the CMS is one JSON file",
-      "font": "mono",
-      "fontSize": 16
-    },
-    {
-      "id": "hook.placard.text",
-      "type": "text",
-      "x": 3948,
-      "y": 236,
-      "text": "EXHIBIT A\nsimula_r.com, the board you're on\nTypeScript, React, Next, the DOM\nOne designer-engineer, from scratch\nPlease touch.",
-      "font": "mono",
-      "fontSize": 12
-    },
-    {
-      "id": "spine.2-3.label",
-      "type": "text",
-      "x": 5100.8,
-      "y": -254,
-      "text": "NEXT  ·  03 — CONTEXT",
-      "font": "mono",
-      "fontSize": 12
-    },
-    {
-      "id": "context.kicker",
-      "type": "text",
-      "x": 6117.2,
-      "y": -762,
-      "text": "03 — CONTEXT",
-      "font": "mono",
-      "fontSize": 14
-    },
-    {
-      "id": "context.title",
-      "type": "text",
-      "x": 6374.9,
-      "y": -672,
-      "text": "Who is this guy?",
-      "font": "sans",
-      "fontSize": 64
-    },
-    {
-      "id": "context.dek",
-      "type": "text",
-      "x": 6498.8,
-      "y": -538,
-      "text": "Research before solutions. Design school, real engineering,\nand 1999 → now across London, Dubai, Europe and California.",
-      "font": "sans",
-      "fontSize": 24
-    },
-    {
-      "id": "context.to-timeline",
-      "type": "text",
-      "x": 8378,
-      "y": -764,
-      "text": "↑ FULL TIMELINE",
-      "font": "mono",
-      "fontSize": 12
-    },
-    {
-      "id": "context.design.label",
-      "type": "text",
-      "x": 6166.8,
-      "y": -339,
-      "text": "CLUSTER — DESIGN",
-      "font": "mono",
-      "fontSize": 12
-    },
-    {
-      "id": "context.design.head",
-      "type": "text",
-      "x": 6251.1,
-      "y": -287,
-      "text": "Trained as a designer.",
-      "font": "sans",
-      "fontSize": 24
-    },
-    {
-      "id": "context.design.body",
-      "type": "text",
-      "x": 6257.4,
-      "y": -172,
-      "text": "· Parsons, design school\n· First paid gig: business cards\n· Internships in design, video, print\n· Still sweats the 1px stuff",
-      "font": "sans",
-      "fontSize": 16
-    },
-    {
-      "id": "context.engineering.label",
-      "type": "text",
-      "x": 7030.8,
-      "y": -339,
-      "text": "CLUSTER — ENGINEERING",
-      "font": "mono",
-      "fontSize": 12
-    },
-    {
-      "id": "context.engineering.head",
-      "type": "text",
-      "x": 7134.6,
-      "y": -287,
-      "text": "Then learned the other half.",
-      "font": "sans",
-      "fontSize": 24
-    },
-    {
-      "id": "context.engineering.body",
-      "type": "text",
-      "x": 7125.7,
-      "y": -172,
-      "text": "· {{Eng school}}: SWE + UX\n· Early startups, logo to prod deploy\n· {{SV startup}}: London · Dubai · Europe\n· ComfyUI, San Francisco",
-      "font": "sans",
-      "fontSize": 16
-    },
-    {
-      "id": "context.range.label",
-      "type": "text",
-      "x": 7842,
-      "y": -339,
-      "text": "CLUSTER — RANGE",
-      "font": "mono",
-      "fontSize": 12
-    },
-    {
-      "id": "context.range.head",
-      "type": "text",
-      "x": 7857,
-      "y": -287,
-      "text": "1999 → now.",
-      "font": "sans",
-      "fontSize": 24
-    },
-    {
-      "id": "context.range.body",
-      "type": "text",
-      "x": 7981.3,
-      "y": -172,
-      "text": "· First computer in 1999, first opinions too\n· Graphics, games, tools, product\n· London → Dubai → Europe → California\n· Home: California, near family + mountains",
-      "font": "sans",
-      "fontSize": 16
-    },
-    {
-      "id": "context.to-places",
-      "type": "text",
-      "x": 6088.4,
-      "y": 316,
-      "text": "↓ PLACES",
-      "font": "mono",
-      "fontSize": 12
-    },
-    {
-      "id": "spine.3-4.label",
-      "type": "text",
-      "x": 8875.2,
-      "y": -254,
-      "text": "NEXT  ·  04 — PRINCIPLES",
-      "font": "mono",
-      "fontSize": 12
-    },
-    {
-      "id": "principles.kicker",
-      "type": "text",
-      "x": 9934,
-      "y": -762,
-      "text": "04 — PRINCIPLES",
-      "font": "mono",
-      "fontSize": 14
-    },
-    {
-      "id": "principles.title",
-      "type": "text",
-      "x": 10190.3,
-      "y": -672,
-      "text": "Design principles",
-      "font": "sans",
-      "fontSize": 64
-    },
-    {
-      "id": "principles.dek",
-      "type": "text",
-      "x": 10232.3,
-      "y": -538,
-      "text": "Every good jam sets principles before solutions.\nThese are mine, for design engineering in the AI era.",
-      "font": "sans",
-      "fontSize": 24
-    },
-    {
-      "id": "principles.quote",
-      "type": "text",
-      "x": 10159.4,
-      "y": -310,
-      "text": "AI made average free.\nTaste is the moat.",
-      "font": "sans",
-      "fontSize": 40
-    },
-    {
-      "id": "principles.p1.n",
-      "type": "text",
-      "x": 9869.2,
-      "y": -122,
-      "text": "01",
-      "font": "mono",
-      "fontSize": 24
-    },
-    {
-      "id": "principles.p1.a",
-      "type": "text",
-      "x": 10159.7,
-      "y": -122,
-      "text": "Taste is the bottleneck now.",
-      "font": "sans",
-      "fontSize": 24
-    },
-    {
-      "id": "principles.p1.b",
-      "type": "text",
-      "x": 10184.1,
-      "y": -82,
-      "text": "Generation is cheap. Knowing what's good isn't.",
-      "font": "sans",
-      "fontSize": 16
-    },
-    {
-      "id": "principles.p2.n",
-      "type": "text",
-      "x": 9869.2,
-      "y": -2,
-      "text": "02",
-      "font": "mono",
-      "fontSize": 24
-    },
-    {
-      "id": "principles.p2.a",
-      "type": "text",
-      "x": 10100.1,
-      "y": -2,
-      "text": "The handoff is dead.",
-      "font": "sans",
-      "fontSize": 24
-    },
-    {
-      "id": "principles.p2.b",
-      "type": "text",
-      "x": 10182.1,
-      "y": 38,
-      "text": "Mocks thrown over a wall lose half their intent.",
-      "font": "sans",
-      "fontSize": 16
-    },
-    {
-      "id": "principles.p3.n",
-      "type": "text",
-      "x": 9869.2,
-      "y": 118,
-      "text": "03",
-      "font": "mono",
-      "fontSize": 24
-    },
-    {
-      "id": "principles.p3.a",
-      "type": "text",
-      "x": 10189.8,
-      "y": 118,
-      "text": "Design engineers close the loop.",
-      "font": "sans",
-      "fontSize": 24
-    },
-    {
-      "id": "principles.p3.b",
-      "type": "text",
-      "x": 10198.7,
-      "y": 158,
-      "text": "Feel it, find what's wrong, fix it in the real material.",
-      "font": "sans",
-      "fontSize": 16
-    },
-    {
-      "id": "principles.p4.n",
-      "type": "text",
-      "x": 9869.2,
-      "y": 238,
-      "text": "04",
-      "font": "mono",
-      "fontSize": 24
-    },
-    {
-      "id": "principles.p4.a",
-      "type": "text",
-      "x": 10206.3,
-      "y": 238,
-      "text": "Product engineering ate the mock.",
-      "font": "sans",
-      "fontSize": 24
-    },
-    {
-      "id": "principles.p4.b",
-      "type": "text",
-      "x": 10169.9,
-      "y": 278,
-      "text": "The prototype is the product now, so craft it.",
-      "font": "sans",
-      "fontSize": 16
-    },
-    {
-      "id": "principles.p5.n",
-      "type": "text",
-      "x": 9869.2,
-      "y": 358,
-      "text": "05",
-      "font": "mono",
-      "fontSize": 24
-    },
-    {
-      "id": "principles.p5.a",
-      "type": "text",
-      "x": 10089.1,
-      "y": 358,
-      "text": "Ship the real thing.",
-      "font": "sans",
-      "fontSize": 24
-    },
-    {
-      "id": "principles.p5.b",
-      "type": "text",
-      "x": 10067.9,
-      "y": 398,
-      "text": "Nobody uses a mockup.",
-      "font": "sans",
-      "fontSize": 16
-    },
-    {
-      "id": "principles.bs.title",
-      "type": "text",
-      "x": 11415.5,
-      "y": -358,
-      "text": "BS / not BS",
-      "font": "sans",
-      "fontSize": 32
-    },
-    {
-      "id": "principles.bs",
-      "type": "text",
-      "x": 11428.8,
-      "y": -212,
-      "text": "BS\n\nvelocity theater\nmocks nobody builds\n\"AI will replace taste\"\nmeetings about meetings",
-      "font": "mono",
-      "fontSize": 14
-    },
-    {
-      "id": "principles.notbs",
-      "type": "text",
-      "x": 11868.8,
-      "y": -212,
-      "text": "NOT BS\n\nshipping\nreading the source\nsweating 1px\nsmall teams, big swings",
-      "font": "mono",
-      "fontSize": 14
-    },
-    {
-      "id": "principles.argue",
-      "type": "text",
-      "x": 11441.9,
-      "y": -6,
-      "text": "(argue with me)",
-      "font": "handwritten",
-      "fontSize": 40
-    },
-    {
-      "id": "principles.to-taste",
-      "type": "text",
-      "x": 9955.6,
-      "y": 486,
-      "text": "↓ WHAT SHAPED MY TASTE",
-      "font": "mono",
-      "fontSize": 12
-    },
-    {
-      "id": "spine.4-5.label",
-      "type": "text",
-      "x": 12405.6,
-      "y": -254,
-      "text": "NEXT  ·  05 — EVIDENCE",
-      "font": "mono",
-      "fontSize": 12
-    },
-    {
-      "id": "evidence.kicker",
-      "type": "text",
-      "x": 13522.8,
-      "y": -762,
-      "text": "05 — EVIDENCE",
-      "font": "mono",
-      "fontSize": 14
-    },
-    {
-      "id": "evidence.title",
-      "type": "text",
-      "x": 13872.3,
-      "y": -672,
-      "text": "Claims, with receipts.",
-      "font": "sans",
-      "fontSize": 64
-    },
-    {
-      "id": "evidence.dek",
-      "type": "text",
-      "x": 13797.5,
-      "y": -538,
-      "text": "Anyone can put \"design engineer\" on a resume.\nHere's the proof, strongest first.",
-      "font": "sans",
-      "fontSize": 24
-    },
-    {
-      "id": "evidence.comfy.label",
-      "type": "text",
-      "x": 13550.8,
-      "y": -384,
-      "text": "CLAIM 01  ·  FEATURED",
-      "font": "mono",
-      "fontSize": 12
-    },
-    {
-      "id": "evidence.comfy.claim",
-      "type": "text",
-      "x": 13833.7,
-      "y": -334,
-      "text": "I design and ship real product, at scale.",
-      "font": "sans",
-      "fontSize": 32
-    },
-    {
-      "id": "evidence.comfy.name",
-      "type": "text",
-      "x": 13514.7,
-      "y": 233,
-      "text": "ComfyUI",
-      "font": "sans",
-      "fontSize": 24
-    },
-    {
-      "id": "evidence.comfy.facts",
-      "type": "text",
-      "x": 13713.2,
-      "y": 322,
-      "text": "ROLE    {{role}}\nWHEN    {{dates}}\nWHERE   San Francisco\nREPO    ~75th most-starred on GitHub {{verify}}",
-      "font": "mono",
-      "fontSize": 14
-    },
-    {
-      "id": "evidence.comfy.bullets",
-      "type": "text",
-      "x": 14309.8,
-      "y": 314,
-      "text": "— {{The biggest thing I shipped, in one line.}}\n— {{The system I owned end to end.}}\n— {{The number that moved.}}",
-      "font": "sans",
-      "fontSize": 16
-    },
-    {
-      "id": "evidence.comfy.link",
-      "type": "text",
-      "x": 14134.8,
-      "y": 398,
-      "text": "[github ↗](https://github.com/comfyanonymous/ComfyUI)",
-      "font": "mono",
-      "fontSize": 14
-    },
-    {
-      "id": "evidence.renderer.label",
-      "type": "text",
-      "x": 14888.4,
-      "y": -384,
-      "text": "CLAIM 02",
-      "font": "mono",
-      "fontSize": 12
-    },
-    {
-      "id": "evidence.renderer.claim",
-      "type": "text",
-      "x": 15224.7,
-      "y": -334,
-      "text": "I know where every pixel comes from.",
-      "font": "sans",
-      "fontSize": 32
-    },
-    {
-      "id": "evidence.renderer.title",
-      "type": "text",
-      "x": 15031.7,
-      "y": 198,
-      "text": "A renderer, from scratch",
-      "font": "sans",
-      "fontSize": 24
-    },
-    {
-      "id": "evidence.renderer.body",
-      "type": "text",
-      "x": 15067.2,
-      "y": 258,
-      "text": "I write the renderer in C and push bytes into\nthe framebuffer myself.",
-      "font": "sans",
-      "fontSize": 16
-    },
-    {
-      "id": "evidence.renderer.code",
-      "type": "text",
-      "x": 15056.4,
-      "y": 418,
-      "text": "void blit(u32 *fb, int fbw, const u32 *src,\n          int w, int h, int dx, int dy) {\n  for (int y = 0; y < h; y++) {\n    u32 *row = fb + (dy + y) * fbw + dx;\n    const u32 *s = src + y * w;\n    for (int x = 0; x < w; x++)\n      if (s[x] >> 24) row[x] = s[x];\n  }\n}",
-      "font": "mono",
-      "fontSize": 12
-    },
-    {
-      "id": "evidence.renderer.engine",
-      "type": "text",
-      "x": 15129.4,
-      "y": 576,
-      "text": "Also: reverse-engineering a big design tool's C++ engine,\njust to see how it stays that fast.",
-      "font": "sans",
-      "fontSize": 16
-    },
-    {
-      "id": "evidence.games.label",
-      "type": "text",
-      "x": 15888.4,
-      "y": -384,
-      "text": "CLAIM 03",
-      "font": "mono",
-      "fontSize": 12
-    },
-    {
-      "id": "evidence.games.claim",
-      "type": "text",
-      "x": 16097.9,
-      "y": -302,
-      "text": "I make the part of games\nyou look at.",
-      "font": "sans",
-      "fontSize": 32
-    },
-    {
-      "id": "evidence.cd.title",
-      "type": "text",
-      "x": 15953.9,
-      "y": -202,
-      "text": "Compact Disc",
-      "font": "sans",
-      "fontSize": 24
-    },
-    {
-      "id": "evidence.cd.body",
-      "type": "text",
-      "x": 16085.3,
-      "y": -144,
-      "text": "A web game where everything you see is 3D art\nI made: models, levels, lighting, the mood.",
-      "font": "sans",
-      "fontSize": 16
-    },
-    {
-      "id": "evidence.cd.link",
-      "type": "text",
-      "x": 15900.4,
-      "y": -87,
-      "text": "[play it ↗](https://{{url}})",
-      "font": "mono",
-      "fontSize": 14
-    },
-    {
-      "id": "evidence.walker.title",
-      "type": "text",
-      "x": 15990.3,
-      "y": -12,
-      "text": "{{Winamp walker}}",
-      "font": "sans",
-      "fontSize": 24
-    },
-    {
-      "id": "evidence.walker.body",
-      "type": "text",
-      "x": 16058.4,
-      "y": 46,
-      "text": "A strange 3D walking simulator that lives\ninside a Winamp skin. All art, no apologies.",
-      "font": "sans",
-      "fontSize": 16
-    },
-    {
-      "id": "evidence.walker.ref.cap",
-      "type": "text",
-      "x": 15922,
-      "y": 466,
-      "text": "↑ the reference",
-      "font": "mono",
-      "fontSize": 12
-    },
-    {
-      "id": "evidence.heroes.cap",
-      "type": "text",
-      "x": 16205.6,
-      "y": 396,
-      "text": "↑ art direction heroes",
-      "font": "mono",
-      "fontSize": 12
-    },
-    {
-      "id": "spine.5-6.label",
-      "type": "text",
-      "x": 17005.6,
-      "y": -254,
-      "text": "NEXT  ·  06 — DECISION",
-      "font": "mono",
-      "fontSize": 12
-    },
-    {
-      "id": "decision.kicker",
-      "type": "text",
-      "x": 18122.8,
-      "y": -762,
-      "text": "06 — DECISION",
-      "font": "mono",
-      "fontSize": 14
-    },
-    {
-      "id": "decision.title",
-      "type": "text",
-      "x": 18267.6,
-      "y": -672,
-      "text": "Your move.",
-      "font": "sans",
-      "fontSize": 64
-    },
-    {
-      "id": "decision.dek",
-      "type": "text",
-      "x": 18420.8,
-      "y": -562,
-      "text": "Every jam ends in a decision. I made this one easy.",
-      "font": "sans",
-      "fontSize": 24
-    },
-    {
-      "id": "decision.a.label",
-      "type": "text",
-      "x": 18158.4,
-      "y": -384,
-      "text": "OPTION A",
-      "font": "mono",
-      "fontSize": 12
-    },
-    {
-      "id": "decision.a.title",
-      "type": "text",
-      "x": 18252.9,
-      "y": -336,
-      "text": "Keep looking.",
-      "font": "sans",
-      "fontSize": 32
-    },
-    {
-      "id": "decision.a.body",
-      "type": "text",
-      "x": 18322.1,
-      "y": -262,
-      "text": "Post the role again. Read more portfolios\nthat are just PDFs.",
-      "font": "sans",
-      "fontSize": 16
-    },
-    {
-      "id": "decision.b.label",
-      "type": "text",
-      "x": 19235.2,
-      "y": -384,
-      "text": "OPTION B  ·  RECOMMENDED",
-      "font": "mono",
-      "fontSize": 12
-    },
-    {
-      "id": "decision.b.title",
-      "type": "text",
-      "x": 19219.1,
-      "y": -336,
-      "text": "Hire Jake.",
-      "font": "sans",
-      "fontSize": 32
-    },
-    {
-      "id": "decision.b.body",
-      "type": "text",
-      "x": 19332.1,
-      "y": -262,
-      "text": "One hire, both halves: the designer and the\nengineer, same PR, no handoff.",
-      "font": "sans",
-      "fontSize": 16
-    },
-    {
-      "id": "decision.contact.label",
-      "type": "text",
-      "x": 18083.6,
-      "y": -94,
-      "text": "CONTACT",
-      "font": "mono",
-      "fontSize": 12
-    },
-    {
-      "id": "decision.contact.title",
-      "type": "text",
-      "x": 18178.2,
-      "y": -16,
-      "text": "Say hi.",
-      "font": "sans",
-      "fontSize": 64
-    },
-    {
-      "id": "decision.contact",
-      "type": "text",
-      "x": 18210,
-      "y": 138,
-      "text": "EMAIL     {{email}}\nLINKEDIN  {{linkedin}}\nGITHUB    {{github}}\nRESUME    {{resume link}}",
-      "font": "mono",
-      "fontSize": 16
-    },
-    {
-      "id": "decision.signature",
-      "type": "text",
-      "x": 18370,
-      "y": 274,
-      "text": "— jake",
-      "font": "handwritten",
-      "fontSize": 40
-    },
-    {
-      "id": "decision.looking.title",
-      "type": "text",
-      "x": 19199,
-      "y": -82,
-      "text": "What I'm looking for",
-      "font": "sans",
-      "fontSize": 24
-    },
-    {
-      "id": "decision.looking.body",
-      "type": "text",
-      "x": 19280.3,
-      "y": 42,
-      "text": "Work that's hard and real: a team with actual\ninitiative, building something that should exist.\nThat's where the interesting problems are, and\nwhere craft actually matters.\n\n{{role · location · start date}}",
-      "font": "sans",
-      "fontSize": 16
-    },
-    {
-      "id": "decision.explore",
-      "type": "text",
-      "x": 18410,
-      "y": 436,
-      "text": "STILL HERE? THE OFF-AGENDA ZONES ABOVE AND BELOW THE JAM ARE FOR EXPLORERS.",
-      "font": "mono",
-      "fontSize": 12
-    },
-    {
-      "id": "timeline.kicker",
-      "type": "text",
-      "x": 5895.6,
-      "y": -2742,
-      "text": "OFF-AGENDA — FULL TIMELINE",
-      "font": "mono",
-      "fontSize": 14
-    },
-    {
-      "id": "timeline.title",
-      "type": "text",
-      "x": 5973.4,
-      "y": -2652,
-      "text": "1999 → now",
-      "font": "sans",
-      "fontSize": 64
-    },
-    {
-      "id": "timeline.dek",
-      "type": "text",
-      "x": 6114.9,
-      "y": -2518,
-      "text": "Twenty-seven years of putting pixels on screens.\nThe latest stretch: ComfyUI, in San Francisco.",
-      "font": "sans",
-      "fontSize": 24
-    },
-    {
-      "id": "timeline.m0.year",
-      "type": "text",
-      "x": 5810,
-      "y": -2352,
-      "text": "1999",
-      "font": "mono",
-      "fontSize": 14
-    },
-    {
-      "id": "timeline.m0.label",
-      "type": "text",
-      "x": 5810,
-      "y": -2246,
-      "text": "Press start",
-      "font": "sans",
-      "fontSize": 16
-    },
-    {
-      "id": "timeline.m0.meta",
-      "type": "text",
-      "x": 5810,
-      "y": -2212,
-      "text": "first computer, first opinions",
-      "font": "mono",
-      "fontSize": 12
-    },
-    {
-      "id": "timeline.m1.year",
-      "type": "text",
-      "x": 6165,
-      "y": -2352,
-      "text": "{{yr}}",
-      "font": "mono",
-      "fontSize": 14
-    },
-    {
-      "id": "timeline.m1.label",
-      "type": "text",
-      "x": 6165,
-      "y": -2246,
-      "text": "Business cards",
-      "font": "sans",
-      "fontSize": 16
-    },
-    {
-      "id": "timeline.m1.meta",
-      "type": "text",
-      "x": 6165,
-      "y": -2212,
-      "text": "first paid design gig",
-      "font": "mono",
-      "fontSize": 12
-    },
-    {
-      "id": "timeline.m2.year",
-      "type": "text",
-      "x": 6520,
-      "y": -2352,
-      "text": "{{yr}}",
-      "font": "mono",
-      "fontSize": 14
-    },
-    {
-      "id": "timeline.m2.label",
-      "type": "text",
-      "x": 6520,
-      "y": -2246,
-      "text": "Video + internships",
-      "font": "sans",
-      "fontSize": 16
-    },
-    {
-      "id": "timeline.m2.meta",
-      "type": "text",
-      "x": 6520,
-      "y": -2212,
-      "text": "{{where}}",
-      "font": "mono",
-      "fontSize": 12
-    },
-    {
-      "id": "timeline.m3.year",
-      "type": "text",
-      "x": 6875,
-      "y": -2352,
-      "text": "{{yr}}",
-      "font": "mono",
-      "fontSize": 14
-    },
-    {
-      "id": "timeline.m3.label",
-      "type": "text",
-      "x": 6875,
-      "y": -2246,
-      "text": "Parsons",
-      "font": "sans",
-      "fontSize": 16
-    },
-    {
-      "id": "timeline.m3.meta",
-      "type": "text",
-      "x": 6875,
-      "y": -2212,
-      "text": "design school",
-      "font": "mono",
-      "fontSize": 12
-    },
-    {
-      "id": "timeline.m4.year",
-      "type": "text",
-      "x": 7230,
-      "y": -2352,
-      "text": "{{yr}}",
-      "font": "mono",
-      "fontSize": 14
-    },
-    {
-      "id": "timeline.m4.label",
-      "type": "text",
-      "x": 7230,
-      "y": -2246,
-      "text": "{{Eng school}}",
-      "font": "sans",
-      "fontSize": 16
-    },
-    {
-      "id": "timeline.m4.meta",
-      "type": "text",
-      "x": 7230,
-      "y": -2212,
-      "text": "SWE + UX",
-      "font": "mono",
-      "fontSize": 12
-    },
-    {
-      "id": "timeline.m5.year",
-      "type": "text",
-      "x": 7585,
-      "y": -2352,
-      "text": "{{yr}}",
-      "font": "mono",
-      "fontSize": 14
-    },
-    {
-      "id": "timeline.m5.label",
-      "type": "text",
-      "x": 7585,
-      "y": -2246,
-      "text": "Early startups",
-      "font": "sans",
-      "fontSize": 16
-    },
-    {
-      "id": "timeline.m5.meta",
-      "type": "text",
-      "x": 7585,
-      "y": -2212,
-      "text": "logo to prod deploy",
-      "font": "mono",
-      "fontSize": 12
-    },
-    {
-      "id": "timeline.m6.year",
-      "type": "text",
-      "x": 7940,
-      "y": -2352,
-      "text": "{{yr}}",
-      "font": "mono",
-      "fontSize": 14
-    },
-    {
-      "id": "timeline.m6.label",
-      "type": "text",
-      "x": 7940,
-      "y": -2246,
-      "text": "{{SV startup}}",
-      "font": "sans",
-      "fontSize": 16
-    },
-    {
-      "id": "timeline.m6.meta",
-      "type": "text",
-      "x": 7940,
-      "y": -2212,
-      "text": "London · Dubai · Europe",
-      "font": "mono",
-      "fontSize": 12
-    },
-    {
-      "id": "timeline.m7.year",
-      "type": "text",
-      "x": 8295,
-      "y": -2352,
-      "text": "{{yr}}",
-      "font": "mono",
-      "fontSize": 14
-    },
-    {
-      "id": "timeline.m7.label",
-      "type": "text",
-      "x": 8295,
-      "y": -2246,
-      "text": "ComfyUI",
-      "font": "sans",
-      "fontSize": 16
-    },
-    {
-      "id": "timeline.m7.meta",
-      "type": "text",
-      "x": 8295,
-      "y": -2212,
-      "text": "San Francisco",
-      "font": "mono",
-      "fontSize": 12
-    },
-    {
-      "id": "timeline.m8.year",
-      "type": "text",
-      "x": 8650,
-      "y": -2352,
-      "text": "2026",
-      "font": "mono",
-      "fontSize": 14
-    },
-    {
-      "id": "timeline.m8.label",
-      "type": "text",
-      "x": 8650,
-      "y": -2246,
-      "text": "What's next",
-      "font": "sans",
-      "fontSize": 16
-    },
-    {
-      "id": "timeline.m8.meta",
-      "type": "text",
-      "x": 8650,
-      "y": -2212,
-      "text": "your team? see 06",
-      "font": "mono",
-      "fontSize": 12
-    },
-    {
-      "id": "timeline.cards",
-      "type": "text",
-      "x": 6420.5,
-      "y": -2126,
-      "text": "(ask me about the business cards)",
-      "font": "handwritten",
-      "fontSize": 40
-    },
-    {
-      "id": "timeline.back",
-      "type": "text",
-      "x": 5855.6,
-      "y": -1944,
-      "text": "↓ BACK TO 03 — CONTEXT",
-      "font": "mono",
-      "fontSize": 12
-    },
-    {
-      "id": "places.kicker",
-      "type": "text",
-      "x": 5656.4,
-      "y": 1818,
-      "text": "OFF-AGENDA — PLACES",
-      "font": "mono",
-      "fontSize": 14
-    },
-    {
-      "id": "places.title",
-      "type": "text",
-      "x": 5682.1,
-      "y": 1908,
-      "text": "Places",
-      "font": "sans",
-      "fontSize": 64
-    },
-    {
-      "id": "places.dek",
-      "type": "text",
-      "x": 6025,
-      "y": 2018,
-      "text": "London, Dubai, a startup across Europe, then home to California.",
-      "font": "sans",
-      "fontSize": 24
-    },
-    {
-      "id": "places.london.coord",
-      "type": "text",
-      "x": 5785,
-      "y": 2286,
-      "text": "51.51°N  0.13°W",
-      "font": "mono",
-      "fontSize": 12
-    },
-    {
-      "id": "places.london.name",
-      "type": "text",
-      "x": 5553,
-      "y": 2718,
-      "text": "London",
-      "font": "sans",
-      "fontSize": 24
-    },
-    {
-      "id": "places.london.meta",
-      "type": "text",
-      "x": 5654,
-      "y": 2766,
-      "text": "{{years}} · {{what I was doing}}",
-      "font": "mono",
-      "fontSize": 12
-    },
-    {
-      "id": "places.dubai.coord",
-      "type": "text",
-      "x": 6371,
-      "y": 2286,
-      "text": "25.20°N  55.27°E",
-      "font": "mono",
-      "fontSize": 12
-    },
-    {
-      "id": "places.dubai.name",
-      "type": "text",
-      "x": 6183,
-      "y": 2718,
-      "text": "Dubai",
-      "font": "sans",
-      "fontSize": 24
-    },
-    {
-      "id": "places.dubai.meta",
-      "type": "text",
-      "x": 6293,
-      "y": 2766,
-      "text": "{{years}} · {{what I was doing}}",
-      "font": "mono",
-      "fontSize": 12
-    },
-    {
-      "id": "places.europe.coord",
-      "type": "text",
-      "x": 6928,
-      "y": 2286,
-      "text": "48.86°N  2.35°E",
-      "font": "mono",
-      "fontSize": 12
-    },
-    {
-      "id": "places.europe.name",
-      "type": "text",
-      "x": 6848,
-      "y": 2718,
-      "text": "Europe, w/ a startup",
-      "font": "sans",
-      "fontSize": 24
-    },
-    {
-      "id": "places.europe.meta",
-      "type": "text",
-      "x": 6854,
-      "y": 2766,
-      "text": "{{cities}} · working out of a backpack",
-      "font": "mono",
-      "fontSize": 12
-    },
-    {
-      "id": "places.san-francisco.coord",
-      "type": "text",
-      "x": 7468,
-      "y": 2286,
-      "text": "37.77°N  122.42°W",
-      "font": "mono",
-      "fontSize": 12
-    },
-    {
-      "id": "places.san-francisco.name",
-      "type": "text",
-      "x": 7368,
-      "y": 2718,
-      "text": "San Francisco",
-      "font": "sans",
-      "fontSize": 24
-    },
-    {
-      "id": "places.san-francisco.meta",
-      "type": "text",
-      "x": 7427,
-      "y": 2766,
-      "text": "{{years}} · ComfyUI, too much coffee",
-      "font": "mono",
-      "fontSize": 12
-    },
-    {
-      "id": "places.home.title",
-      "type": "text",
-      "x": 6428,
-      "y": 2956,
-      "text": "Home",
-      "font": "sans",
-      "fontSize": 32
-    },
-    {
-      "id": "places.home.body",
-      "type": "text",
-      "x": 6598,
-      "y": 3062,
-      "text": "California, close to family, close to\nmountains. Someday: a small old cabin\nin the woods.",
-      "font": "sans",
-      "fontSize": 16
-    },
-    {
-      "id": "places.spaces.title",
-      "type": "text",
-      "x": 7151,
-      "y": 2956,
-      "text": "Spaces",
-      "font": "sans",
-      "fontSize": 32
-    },
-    {
-      "id": "places.fallingwater.cap",
-      "type": "text",
-      "x": 7182,
-      "y": 3256,
-      "text": "Fallingwater · Wright",
-      "font": "mono",
-      "fontSize": 12
-    },
-    {
-      "id": "places.salk.cap",
-      "type": "text",
-      "x": 7515,
-      "y": 3256,
-      "text": "Salk Institute · Kahn",
-      "font": "mono",
-      "fontSize": 12
-    },
-    {
-      "id": "places.katsura.cap",
-      "type": "text",
-      "x": 7771,
-      "y": 3256,
-      "text": "Katsura Villa",
-      "font": "mono",
-      "fontSize": 12
-    },
-    {
-      "id": "places.barcelona-pavilion.cap",
-      "type": "text",
-      "x": 8259,
-      "y": 3256,
-      "text": "Barcelona Pavilion · Mies",
-      "font": "mono",
-      "fontSize": 12
-    },
-    {
-      "id": "places.arch.note",
-      "type": "text",
-      "x": 7513,
-      "y": 3344,
-      "text": "architecture is the design I can't ship (yet)",
-      "font": "handwritten",
-      "fontSize": 40
-    },
-    {
-      "id": "places.max.note",
-      "type": "text",
-      "x": 5150,
-      "y": 2940,
-      "text": "Max is fat as fuck.",
       "fontSize": 24,
-      "font": "handwritten"
+      "color": "muted"
     },
     {
-      "id": "taste.kicker",
+      "id": "stray.version",
       "type": "text",
-      "x": 10034.8,
-      "y": 1818,
-      "text": "OFF-AGENDA — WHAT SHAPED MY TASTE",
+      "x": 78,
+      "y": 1248,
+      "text": "v3  ·  last edited by jake  ·  2:14am",
       "font": "mono",
-      "fontSize": 14
+      "fontSize": 12,
+      "color": "subtle"
     },
     {
-      "id": "taste.title",
+      "id": "stray.screenshot",
       "type": "text",
-      "x": 10296,
-      "y": 1908,
-      "text": "What shaped my taste",
-      "font": "sans",
-      "fontSize": 64
-    },
-    {
-      "id": "taste.dek",
-      "type": "text",
-      "x": 10291.2,
-      "y": 2018,
-      "text": "Books, screens, cartoons, games, and whatever's on repeat.",
-      "font": "sans",
-      "fontSize": 24
-    },
-    {
-      "id": "taste.books.label",
-      "type": "text",
-      "x": 9878,
-      "y": 2508,
-      "text": "BOOKS",
-      "font": "mono",
-      "fontSize": 14
-    },
-    {
-      "id": "taste.screen.label",
-      "type": "text",
-      "x": 10940,
-      "y": 2508,
-      "text": "SCREEN",
-      "font": "mono",
-      "fontSize": 14
-    },
-    {
-      "id": "taste.cartoons.label",
-      "type": "text",
-      "x": 9895,
-      "y": 2888,
-      "text": "CARTOONS",
-      "font": "mono",
-      "fontSize": 14
-    },
-    {
-      "id": "taste.games.label",
-      "type": "text",
-      "x": 11033,
-      "y": 2888,
-      "text": "GAMES",
-      "font": "mono",
-      "fontSize": 14
-    },
-    {
-      "id": "taste.repeat.label",
-      "type": "text",
-      "x": 9900,
-      "y": 3228,
-      "text": "ON REPEAT",
-      "font": "mono",
-      "fontSize": 14
-    },
-    {
-      "id": "taste.tracks0",
-      "type": "text",
-      "x": 10212,
-      "y": 3330,
-      "text": "▶ [Daft Punk — Discovery](https://open.spotify.com/search/Daft%20Punk%20Discovery)\n▶ [Radiohead — OK Computer](https://open.spotify.com/search/Radiohead%20OK%20Computer)\n▶ [Boards of Canada — Music Has the Right …](https://open.spotify.com/search/Boards%20of%20Canada%20Music%20Has%20the%20Right%20to%20Children)",
-      "font": "mono",
-      "fontSize": 12
-    },
-    {
-      "id": "taste.tracks1",
-      "type": "text",
-      "x": 10823,
-      "y": 3330,
-      "text": "▶ [Aphex Twin — Selected Ambient Wor…](https://open.spotify.com/search/Aphex%20Twin%20Selected%20Ambient%20Works%2085%E2%80%9392)\n▶ [Gorillaz — Demon Days](https://open.spotify.com/search/Gorillaz%20Demon%20Days)\n▶ [Linkin Park — Hybrid Theory](https://open.spotify.com/search/Linkin%20Park%20Hybrid%20Theory)",
-      "font": "mono",
-      "fontSize": 12
-    },
-    {
-      "id": "taste.tracks2",
-      "type": "text",
-      "x": 11396,
-      "y": 3330,
-      "text": "▶ [Nujabes — Modal Soul](https://open.spotify.com/search/Nujabes%20Modal%20Soul)\n▶ [Justice — †](https://open.spotify.com/search/Justice%20%E2%80%A0)\n▶ [Tycho — Dive](https://open.spotify.com/search/Tycho%20Dive)",
-      "font": "mono",
-      "fontSize": 12
-    },
-    {
-      "id": "taste.listen",
-      "type": "text",
-      "x": 12038,
-      "y": 3214,
-      "text": "click a title\nto listen ↓",
+      "x": 5471,
+      "y": 236,
+      "text": "(this is the part people screenshot)",
       "font": "handwritten",
-      "fontSize": 40
+      "fontSize": 24,
+      "color": "muted"
     },
     {
-      "id": "d1caedd8-d38a-4a34-9406-ecb4b2e8d05e",
-      "type": "sticky",
-      "x": 10225.045744396395,
-      "y": -1968.8605026971736,
-      "text": "WOdhaiohdahjdowajdoiajdiaojda"
-    },
-    {
-      "id": "c8140c09-692d-41df-a556-77943e7fc244",
-      "type": "text",
-      "x": 10676.355384463362,
-      "y": -1961.6344829740992,
-      "text": "Add text",
-      "fontSize": 64
-    },
-    {
-      "id": "e3db6d4e-5137-41e2-bcc1-a4326d614606",
-      "type": "sticky",
-      "x": 10511.593421572736,
-      "y": -1672.1106443859296,
-      "text": "New note"
-    },
-    {
-      "id": "c3d114b3-0132-4410-927c-dbd2af114dfd",
+      "id": "stray.teapot",
       "type": "image",
-      "x": 11202.598815917976,
-      "y": -2067.877817547512,
-      "src": "/uploads/d4d13338-e308-46f3-9f6a-d2176b822c98.jpg",
-      "width": 480,
-      "height": 270
+      "x": 10766,
+      "y": 1606,
+      "src": "/canvas/graphics/utah-teapot.png",
+      "width": 420,
+      "height": 315
     },
     {
-      "id": "5baa4154-df7c-4897-be30-50efc41caf22",
-      "type": "sticky",
-      "x": 20340.612506200432,
-      "y": -52.45887199281091,
-      "text": "New note"
-    },
-    {
-      "id": "5b83c22b-36b5-43dc-bfee-67cd614530b0",
+      "id": "stray.teapot.cap",
       "type": "text",
-      "x": 20023.721908943688,
-      "y": 110.05029175773169,
-      "text": "Add text"
+      "x": 10695,
+      "y": 1794,
+      "text": "EVERY RENDERER'S FIRST TEAPOT",
+      "font": "mono",
+      "fontSize": 12
     },
     {
-      "id": "7ae557bd-27d7-4085-8b35-85a72092e7aa",
-      "type": "image",
-      "x": 20722.981094734703,
-      "y": -750.48677014548,
-      "src": "/uploads/5d92f875-52a3-49d1-b95f-21876c9fb20d.png",
-      "width": 350,
-      "height": 480
-    },
-    {
-      "id": "0c151cec-22b7-4508-8668-0fd703883758",
+      "id": "stray.penguin",
       "type": "sticky",
-      "x": 12240.425237394214,
-      "y": 409.7075861370719,
-      "text": "New note"
+      "x": 15020,
+      "y": -1720,
+      "text": "Club Penguin\nmod drama.\nask me."
+    },
+    {
+      "id": "stray.heroes.label",
+      "type": "text",
+      "x": 20058,
+      "y": 1654,
+      "text": "ART DIRECTION HEROES",
+      "font": "mono",
+      "fontSize": 12
+    },
+    {
+      "id": "stray.heroes.myst",
+      "type": "image",
+      "x": 20087,
+      "y": 1828,
+      "src": "/canvas/games/myst.png",
+      "width": 250,
+      "height": 300
+    },
+    {
+      "id": "stray.heroes.jsr",
+      "type": "image",
+      "x": 20412,
+      "y": 1869,
+      "src": "/canvas/games/jet-set-radio.jpg",
+      "width": 300,
+      "height": 301
+    },
+    {
+      "id": "stray.heroes.more",
+      "type": "sticky",
+      "x": 20812,
+      "y": 1778,
+      "text": "more on\nrequest"
+    },
+    {
+      "id": "stray.trailer",
+      "type": "text",
+      "x": 25404,
+      "y": -1802,
+      "text": "TODO: record the 3D Winamp trailer",
+      "font": "mono",
+      "fontSize": 14,
+      "color": "subtle"
+    },
+    {
+      "id": "stray.nothing",
+      "type": "text",
+      "x": 36343,
+      "y": 888,
+      "text": "nothing to see here",
+      "font": "handwritten",
+      "fontSize": 24,
+      "color": "muted"
+    },
+    {
+      "id": "stray.found",
+      "type": "sticky",
+      "x": 37373,
+      "y": 1460,
+      "text": "ok you\nfound it.\nhi."
     }
   ]
 }

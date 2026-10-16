@@ -74,19 +74,17 @@ function JoinCard({
               className={cn(RISE, "mt-2 text-ui text-ink-2 text-pretty")}
               style={rise(1)}
             >
-              An experiment: my portfolio as a guided session on the kind of
-              board you already work in, so you can watch how I think instead
-              of skimming a resume. No tldraw, no Excalidraw. Every pixel is
-              custom, built just for this, because I love infinite canvases and
-              any excuse to show off the craft behind them. Hope you enjoy
-              it.{" "}
+              My portfolio, as a guided walk across an infinite canvas: less
+              resume, more how I think. Built from scratch (no tldraw, no
+              Excalidraw) because canvases are my favorite excuse to show
+              off.{" "}
               <a
                 href={SOURCE_URL}
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center gap-0.5 font-medium text-ink underline decoration-ink-4 underline-offset-2 hover:decoration-brand outline-none focus-visible:ring-2 focus-visible:ring-brand rounded-xs"
               >
-                Read the source
+                Source
                 <ArrowUpRight className="size-3 text-ink-3" />
               </a>
             </p>

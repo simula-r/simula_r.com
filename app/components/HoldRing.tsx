@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { EASE_IN_OUT, EASE_OUT, MOTION } from "@/lib/motion";
+import { HINT_MS } from "./useHoldToControl";
 
 const SIZE = 36;
 const STROKE = 3;
@@ -18,12 +19,14 @@ function HoldRing({
   y,
   duration,
   done = false,
+  hint = false,
 }: {
   pointerId: number | null;
   x: number;
   y: number;
   duration: number;
   done?: boolean;
+  hint?: boolean;
 }) {
   const ringRef = useRef<HTMLDivElement>(null);
   const svgRef = useRef<SVGSVGElement>(null);
@@ -105,6 +108,26 @@ function HoldRing({
     };
   }, [done]);
 
+  useEffect(() => {
+    if (!hint) return;
+    for (const animation of fillRef.current?.getAnimations() ?? []) {
+      animation.reverse();
+    }
+    const options = {
+      duration: MOTION.base,
+      delay: HINT_MS - MOTION.base,
+      easing: EASE_OUT,
+      fill: "forwards",
+    } as const;
+    const animations = [
+      svgRef.current?.animate([{ opacity: 1 }, { opacity: 0 }], options),
+      labelRef.current?.animate([{ opacity: 1 }, { opacity: 0 }], options),
+    ];
+    return () => {
+      for (const animation of animations) animation?.cancel();
+    };
+  }, [hint]);
+
   return (
     <div
       ref={ringRef}
@@ -143,7 +166,7 @@ function HoldRing({
         ref={labelRef}
         className="absolute bottom-full left-1/2 -translate-x-1/2 mb-1 rounded-control px-1.5 py-0.5 text-ui font-semibold text-on-brand whitespace-nowrap bg-brand"
       >
-        Take control
+        Hold to take control
       </div>
     </div>
   );

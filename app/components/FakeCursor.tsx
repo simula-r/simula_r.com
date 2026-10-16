@@ -110,6 +110,7 @@ function FakeCursor({
             d="M1 1L1 18L5.5 13.5L8.5 21L11.5 19.8L8.5 12.5L15 12.5L1 1Z"
             className="fill-brand"
             stroke="white"
+            strokeOpacity={0.9}
             strokeWidth="1"
             strokeLinejoin="round"
           />

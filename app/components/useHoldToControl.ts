@@ -9,6 +9,7 @@ import { MOTION } from "@/lib/motion";
 
 const HOLD_MS = 700;
 const WHEEL_HOLD_MS = 490;
+const HINT_MS = 1400;
 
 type Hold = {
   id: number;
@@ -17,6 +18,7 @@ type Hold = {
   y: number;
   duration: number;
   done?: boolean;
+  hint?: boolean;
 };
 
 function useHoldToControl(
@@ -30,9 +32,11 @@ function useHoldToControl(
   },
 ) {
   const [hold, setHold] = useState<Hold | null>(null);
-  const active = useRef<{ pointerId: number | null; timer: number } | null>(
-    null,
-  );
+  const active = useRef<{
+    id: number;
+    pointerId: number | null;
+    timer: number;
+  } | null>(null);
   const isEnabled = useEffectEvent(() => enabled);
   const complete = useEffectEvent(onHold);
 
@@ -42,6 +46,19 @@ function useHoldToControl(
     window.clearTimeout(current.timer);
     active.current = null;
     setHold(null);
+  });
+
+  const hintHold = useEffectEvent(() => {
+    const current = active.current;
+    if (!current) return;
+    window.clearTimeout(current.timer);
+    active.current = null;
+    const { id } = current;
+    setHold((hold) => hold && { ...hold, hint: true });
+    window.setTimeout(
+      () => setHold((hold) => (hold?.id === id ? null : hold)),
+      HINT_MS,
+    );
   });
 
   useEffect(() => {
@@ -69,7 +86,7 @@ function useHoldToControl(
           MOTION.fast,
         );
       }, duration);
-      active.current = { pointerId, timer };
+      active.current = { id, pointerId, timer };
       setHold({ id, pointerId, x, y, duration });
     };
 
@@ -97,7 +114,7 @@ function useHoldToControl(
     );
 
     const release = (e: PointerEvent) => {
-      if (active.current?.pointerId === e.pointerId) cancelHold();
+      if (active.current?.pointerId === e.pointerId) hintHold();
     };
 
     window.addEventListener("pointerup", release, { capture: true, signal });
@@ -129,5 +146,5 @@ function useHoldToControl(
   return enabled || hold?.done ? hold : null;
 }
 
-export { useHoldToControl };
+export { useHoldToControl, HINT_MS };
 export type { Hold };

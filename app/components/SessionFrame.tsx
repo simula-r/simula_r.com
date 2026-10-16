@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState, type RefObject } from "react";
 import type { DrivePlayer } from "@/app/drive/useDrivePlayer";
 import type { SessionPhase } from "./SessionBar";
-import { Pause, Play, Replay, Volume, VolumeMute } from "./Icons";
+import { HandPalm, Pause, Play, Replay, Volume, VolumeMute } from "./Icons";
 import { cn } from "@/lib/utils";
 
 const ACTION_LABELS = ["Start sesh", "Resume sesh", "Replay sesh"];
@@ -224,6 +224,15 @@ function Controls({ player }: { player: DrivePlayer }) {
         ) : (
           <Volume className="w-5 h-5" />
         )}
+      </button>
+      <div className="w-px h-5 -mx-1.5 bg-on-brand/25" />
+      <button
+        onClick={player.interrupt}
+        aria-label="Explore"
+        title="Explore (or press and hold anywhere on the board)"
+        className="size-7 grid place-items-center rounded-control hover:bg-on-brand/10 active:bg-on-brand/20 outline-none focus-visible:ring-2 focus-visible:ring-on-brand"
+      >
+        <HandPalm className="size-4.5" />
       </button>
     </div>
   );

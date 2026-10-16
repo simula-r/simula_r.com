@@ -125,6 +125,14 @@ export default function Home() {
     return true;
   });
 
+  const onEscape = useEffectEvent((e: KeyboardEvent) => {
+    if (status !== "playing" && status !== "paused") return;
+    if (e.target instanceof Element && e.target.closest('[role="menu"]')) {
+      return;
+    }
+    player.interrupt();
+  });
+
   useEffect(() => {
     const controller = new AbortController();
     const { signal } = controller;
@@ -132,6 +140,7 @@ export default function Home() {
     window.addEventListener(
       "keydown",
       (e) => {
+        if (e.key === "Escape") onEscape(e);
         if (e.code !== "Space") return;
         handled = onSpace(e);
       },
@@ -223,6 +232,7 @@ export default function Home() {
           pointerId={hold.pointerId}
           duration={hold.duration}
           done={hold.done}
+          hint={hold.hint}
           x={hold.x}
           y={hold.y}
         />
