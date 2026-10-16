@@ -1,1743 +1,913 @@
 {
   "version": 1,
   "camera": {
-    "zoom": 0.32,
-    "x": -320,
-    "y": 108.8
+    "zoom": 0.8999999999999999,
+    "x": -11668.913875757931,
+    "y": -1314.894598671141
   },
   "elements": [
     {
-      "id": "start.badge",
+      "id": "vfZypjgZ7hDovzmAD7l8e",
       "type": "image",
-      "x": 260,
-      "y": -1100,
-      "src": "/canvas/accents/board-start-here.svg",
-      "width": 640,
-      "height": 220,
-      "variant": "bare"
-    },
-    {
-      "id": "start.meta",
-      "type": "text",
-      "x": 1014,
-      "y": -1104,
-      "text": "PRODUCT JAM  ·  DESIGN ENGINEERING  ·  OWNER: JAKE SCHROEDER  ·  STATUS: READY",
-      "font": "mono",
-      "fontSize": 12,
-      "color": "subtle"
-    },
-    {
-      "id": "start.title",
-      "type": "text",
-      "x": 613,
-      "y": -832,
-      "text": "Why might Jake fit your team?",
-      "font": "sans",
-      "fontSize": 64
-    },
-    {
-      "id": "start.dek",
-      "type": "text",
-      "x": 440,
-      "y": -700,
-      "text": "A working board: one question, a thesis, some receipts,\nand a way to reach me at the end.",
-      "font": "sans",
-      "fontSize": 24,
-      "color": "muted"
-    },
-    {
-      "id": "start.question.label",
-      "type": "text",
-      "x": 13,
-      "y": -454,
-      "text": "QUESTION",
-      "font": "mono",
-      "fontSize": 12
-    },
-    {
-      "id": "start.question",
-      "type": "text",
-      "x": 239,
-      "y": -382,
-      "text": "What does a design engineer bring\na product team in the age of AI?",
-      "font": "sans",
-      "fontSize": 24
-    },
-    {
-      "id": "start.hypothesis.label",
-      "type": "text",
-      "x": 23,
-      "y": -280,
-      "text": "HYPOTHESIS",
-      "font": "mono",
-      "fontSize": 12
-    },
-    {
-      "id": "start.hypothesis",
-      "type": "text",
-      "x": 263,
-      "y": -208,
-      "text": "One person who is both halves closes\nthe gap AI just opened.",
-      "font": "sans",
-      "fontSize": 24
-    },
-    {
-      "id": "start.method.label",
-      "type": "text",
-      "x": 42,
-      "y": -106,
-      "text": "HOW WE'LL KNOW",
-      "font": "mono",
-      "fontSize": 12
-    },
-    {
-      "id": "start.method",
-      "type": "text",
-      "x": 247,
-      "y": -34,
-      "text": "Thesis → role → origin → receipts.\nYou decide.",
-      "font": "sans",
-      "fontSize": 24
-    },
-    {
-      "id": "start.tldr",
-      "type": "sticky",
-      "x": 222,
-      "y": 260,
-      "text": "TL;DR\nart kid →\nengineer →\ndesign engineer"
-    },
-    {
-      "id": "start.portfolio",
-      "type": "sticky",
-      "x": 484,
-      "y": 330,
-      "text": "p.s. this board\nis the portfolio"
-    },
-    {
-      "id": "start.time",
-      "type": "sticky",
-      "x": 798,
-      "y": 250,
-      "text": "~5 min.\nleft → right."
-    },
-    {
-      "id": "start.hero",
-      "type": "image",
-      "x": 1670,
-      "y": -220,
-      "src": "/canvas/placeholders/start.hero.svg",
+      "x": 929.33,
+      "y": 582,
+      "src": "/canvas/excalidraw/966f2d44d1c64557df1c2010b385a60408c863f2.png",
       "width": 860,
-      "height": 520
-    },
-    {
-      "id": "start.agenda",
-      "type": "text",
-      "x": 1428,
-      "y": 240,
-      "text": "AGENDA  ·  ~5 MIN\n\n01  The thesis\n02  The role\n03  Origin\n04  Receipts\n05  Right now\n06  Who I want to build with\n07  Say hi",
-      "font": "mono",
-      "fontSize": 14
-    },
-    {
-      "id": "start.go",
-      "type": "text",
-      "x": 1949,
-      "y": 374,
-      "text": "let's go →",
-      "font": "handwritten",
-      "fontSize": 40,
-      "color": "brand"
-    },
-    {
-      "id": "thesis.kicker",
-      "type": "text",
-      "x": 4349,
-      "y": -1302,
-      "text": "01 — THE THESIS",
-      "font": "mono",
-      "fontSize": 14
-    },
-    {
-      "id": "thesis.title",
-      "type": "text",
-      "x": 5020,
-      "y": -1212,
-      "text": "AI is the best paintbrush ever made.",
-      "font": "sans",
-      "fontSize": 64
-    },
-    {
-      "id": "thesis.dek",
-      "type": "text",
-      "x": 4574,
-      "y": -1072,
-      "text": "It took implementation time way down.\nIt didn't make anyone a painter.",
-      "font": "sans",
-      "fontSize": 24,
-      "color": "muted"
-    },
-    {
-      "id": "thesis.brushes",
-      "type": "image",
-      "x": 4576,
-      "y": -690,
-      "src": "/canvas/placeholders/thesis.brushes.svg",
-      "width": 620,
-      "height": 400
-    },
-    {
-      "id": "thesis.amplifies",
-      "type": "sticky",
-      "x": 5152,
-      "y": -750,
-      "text": "it amplifies\nskill"
-    },
-    {
-      "id": "thesis.mirrors",
-      "type": "sticky",
-      "x": 5440,
-      "y": -710,
-      "text": "it mirrors\nits operator"
-    },
-    {
-      "id": "thesis.dangerous",
-      "type": "sticky",
-      "x": 5739,
-      "y": -760,
-      "text": "useful.\nalso\ndangerous."
-    },
-    {
-      "id": "thesis.quote",
-      "type": "text",
-      "x": 5383,
-      "y": -406,
-      "text": "The best brushes in the world.\nOnly a few people know\nwhat to put on the canvas.",
-      "font": "sans",
-      "fontSize": 40
-    },
-    {
-      "id": "thesis.slop",
-      "type": "image",
-      "x": 4468,
-      "y": -240,
-      "src": "/canvas/placeholders/thesis.slop.svg",
-      "width": 440,
-      "height": 280
-    },
-    {
-      "id": "thesis.slop.cap",
-      "type": "text",
-      "x": 4425,
-      "y": -68,
-      "text": "↑ LOOKS FINE. FEELS LIKE NOTHING.",
-      "font": "mono",
-      "fontSize": 12
-    },
-    {
-      "id": "thesis.gap.label",
-      "type": "text",
-      "x": 6107,
-      "y": -874,
-      "text": "THE GAP",
-      "font": "mono",
-      "fontSize": 12
-    },
-    {
-      "id": "thesis.gap.designers",
-      "type": "sticky",
-      "x": 6223,
-      "y": -720,
-      "text": "designers can't\nship prod code"
-    },
-    {
-      "id": "thesis.gap.engineers",
-      "type": "sticky",
-      "x": 6533,
-      "y": -675,
-      "text": "engineers can't\nreally design"
-    },
-    {
-      "id": "thesis.gap.body",
-      "type": "text",
-      "x": 6297,
-      "y": -444,
-      "text": "So when a POC leaves decisions open,\nan engineer + an AI agent end up making them.",
-      "font": "sans",
-      "fontSize": 16,
-      "color": "muted"
-    },
-    {
-      "id": "thesis.gap.shift",
-      "type": "text",
-      "x": 6313,
-      "y": -314,
-      "text": "The bottleneck moved:\nimplementation → design.",
-      "font": "sans",
-      "fontSize": 32,
-      "color": "brand"
-    },
-    {
-      "id": "thesis.enter",
-      "type": "text",
-      "x": 6460,
-      "y": -172,
-      "text": "→ enter the design engineer",
-      "font": "handwritten",
-      "fontSize": 40
-    },
-    {
-      "id": "role.kicker",
-      "type": "text",
-      "x": 8466,
-      "y": -502,
-      "text": "02 — THE ROLE",
-      "font": "mono",
-      "fontSize": 14
-    },
-    {
-      "id": "role.title",
-      "type": "text",
-      "x": 9002,
-      "y": -412,
-      "text": "Where a design engineer sits.",
-      "font": "sans",
-      "fontSize": 64
-    },
-    {
-      "id": "role.dek",
-      "type": "text",
-      "x": 8668,
-      "y": -274,
-      "text": "Everyone in a product pod owns a piece.\nSomeone has to own how it feels.",
-      "font": "sans",
-      "fontSize": 24,
-      "color": "muted"
-    },
-    {
-      "id": "role.design.card",
-      "type": "image",
-      "x": 8621,
-      "y": 78,
-      "src": "/canvas/accents/board-card-480x260.svg",
-      "width": 480,
-      "height": 260,
-      "variant": "bare"
-    },
-    {
-      "id": "role.design.label",
-      "type": "text",
-      "x": 8478,
-      "y": -8,
-      "text": "PRODUCT DESIGN",
-      "font": "mono",
-      "fontSize": 12
-    },
-    {
-      "id": "role.design.head",
-      "type": "text",
-      "x": 8579,
-      "y": 42,
-      "text": "Sets the look & feel.",
-      "font": "sans",
-      "fontSize": 24
-    },
-    {
-      "id": "role.design.body",
-      "type": "text",
-      "x": 8518,
-      "y": 114,
-      "text": "Makes the big calls.\nOwns the vision.",
-      "font": "sans",
-      "fontSize": 16,
-      "color": "muted"
-    },
-    {
-      "id": "role.eng.card",
-      "type": "image",
-      "x": 9185,
-      "y": 6,
-      "src": "/canvas/accents/board-card-480x260.svg",
-      "width": 480,
-      "height": 260,
-      "variant": "bare"
-    },
-    {
-      "id": "role.eng.label",
-      "type": "text",
-      "x": 9028,
-      "y": -80,
-      "text": "ENGINEERING",
-      "font": "mono",
-      "fontSize": 12
-    },
-    {
-      "id": "role.eng.head",
-      "type": "text",
-      "x": 9103,
-      "y": -30,
-      "text": "Makes it robust.",
-      "font": "sans",
-      "fontSize": 24
-    },
-    {
-      "id": "role.eng.body",
-      "type": "text",
-      "x": 9124,
-      "y": 42,
-      "text": "Systems, scale, reliability.\nQuality under the hood.",
-      "font": "sans",
-      "fontSize": 16,
-      "color": "muted"
-    },
-    {
-      "id": "role.pe.card",
-      "type": "image",
-      "x": 9704,
-      "y": 78,
-      "src": "/canvas/accents/board-card-480x260.svg",
-      "width": 480,
-      "height": 260,
-      "variant": "bare"
-    },
-    {
-      "id": "role.pe.label",
-      "type": "text",
-      "x": 9585,
-      "y": -8,
-      "text": "PRODUCT ENGINEERING",
-      "font": "mono",
-      "fontSize": 12
-    },
-    {
-      "id": "role.pe.head",
-      "type": "text",
-      "x": 9646,
-      "y": 42,
-      "text": "Finds what matters.",
-      "font": "sans",
-      "fontSize": 24
-    },
-    {
-      "id": "role.pe.body",
-      "type": "text",
-      "x": 9606,
-      "y": 114,
-      "text": "Talks to customers.\nShips what moves ARR.",
-      "font": "sans",
-      "fontSize": 16,
-      "color": "muted"
-    },
-    {
-      "id": "role.de.card",
-      "type": "image",
-      "x": 9023,
-      "y": 395,
-      "src": "/canvas/accents/board-card-780x330-hi.svg",
-      "width": 780,
-      "height": 330,
-      "variant": "bare"
-    },
-    {
-      "id": "role.de.label",
-      "type": "text",
-      "x": 8739,
-      "y": 276,
-      "text": "DESIGN ENGINEER",
-      "font": "mono",
-      "fontSize": 12,
-      "color": "brand"
-    },
-    {
-      "id": "role.de.head",
-      "type": "text",
-      "x": 8848,
-      "y": 334,
-      "text": "Makes it premium.",
-      "font": "sans",
-      "fontSize": 32
-    },
-    {
-      "id": "role.de.body",
-      "type": "text",
-      "x": 8939,
-      "y": 432,
-      "text": "Solves the hard design problems. Works hand in hand\nwith product design, does product design, and ships\nfully production-grade frontend.",
-      "font": "sans",
-      "fontSize": 16,
-      "color": "muted"
-    },
-    {
-      "id": "role.de.note",
-      "type": "text",
-      "x": 9671,
-      "y": 312,
-      "text": "picks up what product\nand design put down",
-      "font": "handwritten",
-      "fontSize": 24,
-      "color": "brand"
-    },
-    {
-      "id": "role.practice.label",
-      "type": "text",
-      "x": 10165,
-      "y": -74,
-      "text": "IN PRACTICE",
-      "font": "mono",
-      "fontSize": 12
-    },
-    {
-      "id": "role.practice",
-      "type": "text",
-      "x": 10379,
-      "y": 66,
-      "text": "· Knows the render pipeline: layers, compositing,\n   no surprise reflow or layout recalc\n· Writes the CSS an agent can't be prompted into\n· Owns the component system, in Figma and in code\n   (shadcn registry, APIs agents can reason about)\n· Prototypes to find out what actually works\n· Fixes what's off directly in production",
-      "font": "sans",
-      "fontSize": 16
-    },
-    {
-      "id": "role.weight",
-      "type": "sticky",
-      "x": 11063,
-      "y": 260,
-      "text": "takes weight off\nhead of product\n+ designers"
-    },
-    {
-      "id": "role.spectrum",
-      "type": "image",
-      "x": 9793,
-      "y": 840,
-      "src": "/canvas/accents/board-spectrum-2500.svg",
-      "width": 2500,
-      "height": 40,
-      "variant": "bare"
-    },
-    {
-      "id": "role.spectrum.0",
-      "type": "text",
-      "x": 8615,
-      "y": 900,
-      "text": "0s and 1s",
-      "font": "sans",
-      "fontSize": 24
-    },
-    {
-      "id": "role.spectrum.1",
-      "type": "text",
-      "x": 9049,
-      "y": 888,
-      "text": "compositors",
-      "font": "mono",
-      "fontSize": 12,
-      "color": "subtle"
-    },
-    {
-      "id": "role.spectrum.2",
-      "type": "text",
-      "x": 9545,
-      "y": 888,
-      "text": "rendering",
-      "font": "mono",
-      "fontSize": 12,
-      "color": "subtle"
-    },
-    {
-      "id": "role.spectrum.3",
-      "type": "text",
-      "x": 10041,
-      "y": 888,
-      "text": "React + CSS",
-      "font": "mono",
-      "fontSize": 12,
-      "color": "subtle"
-    },
-    {
-      "id": "role.spectrum.4",
-      "type": "text",
-      "x": 10537,
-      "y": 888,
-      "text": "product design",
-      "font": "mono",
-      "fontSize": 12,
-      "color": "subtle"
-    },
-    {
-      "id": "role.spectrum.5",
-      "type": "text",
-      "x": 10875,
-      "y": 900,
-      "text": "squishy business reqs",
-      "font": "sans",
-      "fontSize": 24
-    },
-    {
-      "id": "role.spectrum.note",
-      "type": "text",
-      "x": 9866,
-      "y": 768,
-      "text": "I live on the whole line.",
-      "font": "handwritten",
-      "fontSize": 40,
-      "color": "brand"
-    },
-    {
-      "id": "origin.kicker",
-      "type": "text",
-      "x": 13415,
-      "y": -1182,
-      "text": "03 — ORIGIN",
-      "font": "mono",
-      "fontSize": 14
-    },
-    {
-      "id": "origin.title",
-      "type": "text",
-      "x": 13747,
-      "y": -1092,
-      "text": "Art kid → engineer.",
-      "font": "sans",
-      "fontSize": 64
-    },
-    {
-      "id": "origin.dek",
-      "type": "text",
-      "x": 13795,
-      "y": -948,
-      "text": "Born 1999: the end of one era, the start of the next.\nI try to bring that era's soul into software.",
-      "font": "sans",
-      "fontSize": 24,
-      "color": "muted"
-    },
-    {
-      "id": "origin.minecraft",
-      "type": "image",
-      "x": 13522,
-      "y": -430,
-      "src": "/canvas/placeholders/origin.minecraft.svg",
-      "width": 360,
-      "height": 220
-    },
-    {
-      "id": "origin.club-penguin",
-      "type": "image",
-      "x": 13892,
-      "y": -452,
-      "src": "/canvas/placeholders/origin.club-penguin.svg",
-      "width": 300,
-      "height": 220
-    },
-    {
-      "id": "origin.pc",
-      "type": "image",
-      "x": 14195,
-      "y": -435,
-      "src": "/canvas/placeholders/origin.pc.svg",
-      "width": 260,
-      "height": 220
-    },
-    {
-      "id": "origin.brochures",
-      "type": "image",
-      "x": 14519,
-      "y": -382,
-      "src": "/canvas/placeholders/origin.brochures.svg",
-      "width": 290,
-      "height": 220
-    },
-    {
-      "id": "origin.kids.cap",
-      "type": "text",
-      "x": 13633,
-      "y": -244,
-      "text": "↑ AGE 8  ·  PUTTING PIXELS ON SCREENS BECOMES THE OBSESSION",
-      "font": "mono",
-      "fontSize": 12
-    },
-    {
-      "id": "origin.license",
-      "type": "text",
-      "x": 15254,
-      "y": -216,
-      "text": "I already had a license to create.\nI needed to learn to engineer.",
-      "font": "handwritten",
-      "fontSize": 40,
-      "color": "brand"
-    },
-    {
-      "id": "origin.helios.label",
-      "type": "text",
-      "x": 13402,
-      "y": -17,
-      "text": "HELIOS  ·  AGE 13",
-      "font": "mono",
-      "fontSize": 12
-    },
-    {
-      "id": "origin.helios.head",
-      "type": "text",
-      "x": 13552,
-      "y": 33,
-      "text": "Dad's company put me to work.",
-      "font": "sans",
-      "fontSize": 24
-    },
-    {
-      "id": "origin.helios.body",
-      "type": "text",
-      "x": 13507,
-      "y": 103,
-      "text": "WordPress, PHP, a MediaWiki engine,\nmarketing pages, web apps.",
-      "font": "sans",
-      "fontSize": 16,
-      "color": "muted"
-    },
-    {
-      "id": "origin.helios.img",
-      "type": "image",
-      "x": 13530,
-      "y": 277,
-      "src": "/canvas/placeholders/origin.helios.img.svg",
-      "width": 420,
-      "height": 240
-    },
-    {
-      "id": "origin.app.label",
-      "type": "text",
-      "x": 13973,
-      "y": 7,
-      "text": "HIGH SCHOOL",
-      "font": "mono",
-      "fontSize": 12
-    },
-    {
-      "id": "origin.app.head",
-      "type": "text",
-      "x": 14120,
-      "y": 57,
-      "text": "Shipped an App Store app.",
-      "font": "sans",
-      "fontSize": 24
-    },
-    {
-      "id": "origin.app.body",
-      "type": "text",
-      "x": 14133,
-      "y": 127,
-      "text": "The only kid in school who had. Replaced\nour fitness score logger. Won an award.",
-      "font": "sans",
-      "fontSize": 16,
-      "color": "muted"
-    },
-    {
-      "id": "origin.app.img",
-      "type": "image",
-      "x": 14130,
-      "y": 301,
-      "src": "/canvas/placeholders/origin.app.img.svg",
-      "width": 420,
-      "height": 240
-    },
-    {
-      "id": "origin.parsons.label",
-      "type": "text",
-      "x": 14515,
-      "y": -25,
-      "text": "PARSONS",
-      "font": "mono",
-      "fontSize": 12
-    },
-    {
-      "id": "origin.parsons.head",
-      "type": "text",
-      "x": 14689,
-      "y": 25,
-      "text": "Fine art + graphic design.",
-      "font": "sans",
-      "fontSize": 24
-    },
-    {
-      "id": "origin.parsons.body",
-      "type": "text",
-      "x": 14684,
-      "y": 95,
-      "text": "Video, drawing, even furniture making.\nThe art school path, all of it.",
-      "font": "sans",
-      "fontSize": 16,
-      "color": "muted"
-    },
-    {
-      "id": "origin.parsons.img",
-      "type": "image",
-      "x": 14691,
-      "y": 269,
-      "src": "/canvas/placeholders/origin.parsons.img.svg",
-      "width": 420,
-      "height": 240
-    },
-    {
-      "id": "origin.depaul.label",
-      "type": "text",
-      "x": 15110,
-      "y": -39,
-      "text": "DEPAUL",
-      "font": "mono",
-      "fontSize": 12,
-      "color": "brand"
-    },
-    {
-      "id": "origin.depaul.head",
-      "type": "text",
-      "x": 15289,
-      "y": 11,
-      "text": "UX degree, CS on the side.",
-      "font": "sans",
-      "fontSize": 24
-    },
-    {
-      "id": "origin.depaul.body",
-      "type": "text",
-      "x": 15241,
-      "y": 81,
-      "text": "Hung out with the CS crowd.\nLearned to engineer for users.",
-      "font": "sans",
-      "fontSize": 16,
-      "color": "muted"
-    },
-    {
-      "id": "origin.depaul.img",
-      "type": "image",
-      "x": 15291,
-      "y": 255,
-      "src": "/canvas/placeholders/origin.depaul.img.svg",
-      "width": 420,
-      "height": 240
-    },
-    {
-      "id": "origin.cs",
-      "type": "sticky",
-      "x": 15906,
-      "y": -410,
-      "text": "CS fundamentals\n= pixels at the\nhighest level"
-    },
-    {
-      "id": "origin.building",
-      "type": "sticky",
-      "x": 15816,
-      "y": 470,
-      "text": "everyone said\nthey were\nbuilding.\nI actually was."
-    },
-    {
-      "id": "receipts.kicker",
-      "type": "text",
-      "x": 17739,
-      "y": -542,
-      "text": "04 — RECEIPTS",
-      "font": "mono",
-      "fontSize": 14
-    },
-    {
-      "id": "receipts.title",
-      "type": "text",
-      "x": 18067,
-      "y": -452,
-      "text": "Where I've done it.",
-      "font": "sans",
-      "fontSize": 64
-    },
-    {
-      "id": "receipts.dek",
-      "type": "text",
-      "x": 18227,
-      "y": -307,
-      "text": "Joined early (employee #3, #22, #26), worked directly with founders,\nand went wherever the product needed me.",
-      "font": "sans",
-      "fontSize": 24,
-      "color": "muted"
-    },
-    {
-      "id": "receipts.rh.label",
-      "type": "text",
-      "x": 17885,
-      "y": -114,
-      "text": "RIGHTHUB  ·  FOUNDING ENGINEER  ·  2018–2021",
-      "font": "mono",
-      "fontSize": 12
-    },
-    {
-      "id": "receipts.rh.head",
-      "type": "text",
-      "x": 18026,
-      "y": -56,
-      "text": "Zero to one, all the way to exit.",
-      "font": "sans",
-      "fontSize": 32
-    },
-    {
-      "id": "receipts.rh.facts",
-      "type": "text",
-      "x": 17892,
-      "y": 36,
-      "text": "EMPLOYEE  #3\nSTAGE     pre-seed → acquired by Anaqua\nWHERE     remote",
-      "font": "mono",
-      "fontSize": 14
-    },
-    {
-      "id": "receipts.rh.bullets",
-      "type": "text",
-      "x": 17967,
-      "y": 182,
-      "text": "· Architected the core product 0→1: Docket Engine\n   (the enterprise system of record) and RulesWiki\n· Built the public site + in-product feedback loops\n   that fed demand gen through acquisition\n· Worked with the CEO on direction, positioning, pivots",
-      "font": "sans",
-      "fontSize": 16
-    },
-    {
-      "id": "receipts.rh.docket",
-      "type": "image",
-      "x": 18004,
-      "y": 492,
-      "src": "/canvas/placeholders/receipts.rh.docket.svg",
-      "width": 660,
-      "height": 400
-    },
-    {
-      "id": "receipts.rh.helios",
-      "type": "sticky",
-      "x": 18363,
-      "y": 626,
-      "text": "Helios grew\nup into\nRightHub"
-    },
-    {
-      "id": "receipts.sf.label",
-      "type": "text",
-      "x": 18748,
-      "y": -84,
-      "text": "HOW I GOT TO SF",
-      "font": "mono",
-      "fontSize": 12
-    },
-    {
-      "id": "receipts.sf.body",
-      "type": "text",
-      "x": 18873,
-      "y": -10,
-      "text": "Theo's Discord, a few hundred people.\nPosted my work. Got scouted.\nFirst SF startup at 22.",
-      "font": "sans",
-      "fontSize": 16
-    },
-    {
-      "id": "receipts.sf.discord",
-      "type": "image",
-      "x": 18896,
-      "y": 200,
-      "src": "/canvas/placeholders/receipts.sf.discord.svg",
-      "width": 440,
-      "height": 280
-    },
-    {
-      "id": "receipts.sf.weeks",
-      "type": "sticky",
-      "x": 19023,
-      "y": 510,
-      "text": "80-hour weeks,\nSF + Dubai.\nworth it."
-    },
-    {
-      "id": "receipts.cd.label",
-      "type": "text",
-      "x": 18818,
-      "y": 826,
-      "text": "SIDE QUEST  ·  COMPACT DISC",
-      "font": "mono",
-      "fontSize": 12
-    },
-    {
-      "id": "receipts.cd.body",
-      "type": "text",
-      "x": 18928,
-      "y": 884,
-      "text": "A 3D escape room on my own WebGL/WASM engine.\nYears of Blender, environment art, PSX style.",
-      "font": "sans",
-      "fontSize": 16,
-      "color": "muted"
-    },
-    {
-      "id": "receipts.cd.img",
-      "type": "image",
-      "x": 18918,
-      "y": 1078,
-      "src": "/canvas/placeholders/receipts.cd.img.svg",
-      "width": 460,
-      "height": 280
-    },
-    {
-      "id": "receipts.ax.label",
-      "type": "text",
-      "x": 19551,
-      "y": -114,
-      "text": "AXIOM  ·  DESIGN ENGINEER  ·  2022–2025",
-      "font": "mono",
-      "fontSize": 12
-    },
-    {
-      "id": "receipts.ax.head",
-      "type": "text",
-      "x": 19652,
-      "y": -56,
-      "text": "Owned every public surface.",
-      "font": "sans",
-      "fontSize": 32
-    },
-    {
-      "id": "receipts.ax.facts",
-      "type": "text",
-      "x": 19543,
-      "y": 36,
-      "text": "EMPLOYEE  #22\nSTAGE     Series A observability\nWHERE     San Francisco / Dubai",
-      "font": "mono",
-      "fontSize": 14
-    },
-    {
-      "id": "receipts.ax.bullets",
-      "type": "text",
-      "x": 19689,
-      "y": 198,
-      "text": "· Day one: a broken marketing site, a direct line to the CEO,\n   and one directive: make every public surface better\n· Rebrand with the Head of Design, rolled out everywhere\n· PLG 0→1: Playground, Pricing v2, in-product feedback\n· Docs site, search, every integration, SOC 2\n· Ran the booth and demos at AWS re:Invent + Monitorama",
-      "font": "sans",
-      "fontSize": 16
-    },
-    {
-      "id": "receipts.ax.site",
-      "type": "image",
-      "x": 19754,
-      "y": 544,
-      "src": "/canvas/placeholders/receipts.ax.site.svg",
-      "width": 780,
-      "height": 440
-    },
-    {
-      "id": "receipts.ax.booth",
-      "type": "image",
-      "x": 20293,
-      "y": 120,
-      "src": "/canvas/placeholders/receipts.ax.booth.svg",
-      "width": 320,
-      "height": 220
-    },
-    {
-      "id": "receipts.ax.pricing",
-      "type": "image",
-      "x": 20383,
-      "y": 635,
-      "src": "/canvas/placeholders/receipts.ax.pricing.svg",
-      "width": 380,
-      "height": 250
-    },
-    {
-      "id": "receipts.ax.stat1",
-      "type": "text",
-      "x": 19437,
-      "y": 866,
-      "text": "10x",
-      "font": "sans",
-      "fontSize": 64,
-      "color": "brand"
-    },
-    {
-      "id": "receipts.ax.stat1.cap",
-      "type": "text",
-      "x": 19444,
-      "y": 954,
-      "text": "PLG CONVERSION",
-      "font": "mono",
-      "fontSize": 12
-    },
-    {
-      "id": "receipts.ax.stat2",
-      "type": "text",
-      "x": 19737,
-      "y": 866,
-      "text": "$1M",
-      "font": "sans",
-      "fontSize": 64,
-      "color": "brand"
-    },
-    {
-      "id": "receipts.ax.stat2.cap",
-      "type": "text",
-      "x": 19816,
-      "y": 954,
-      "text": "FIRST ARR, ON THE GTM I BUILT",
-      "font": "mono",
-      "fontSize": 12
-    },
-    {
-      "id": "receipts.ax.owner",
-      "type": "sticky",
-      "x": 20433,
-      "y": 938,
-      "text": "sole owner\nof all of it"
-    },
-    {
-      "id": "receipts.comfy.label",
-      "type": "text",
-      "x": 20917,
-      "y": -114,
-      "text": "COMFY  ·  DESIGN ENGINEER, MTS  ·  2025–NOW  ·  FEATURED",
-      "font": "mono",
-      "fontSize": 12,
-      "color": "brand"
-    },
-    {
-      "id": "receipts.comfy.head",
-      "type": "text",
-      "x": 20979,
-      "y": -56,
-      "text": "Shipped to millions. Moved ARR.",
-      "font": "sans",
-      "fontSize": 32
-    },
-    {
-      "id": "receipts.comfy.facts",
-      "type": "text",
-      "x": 20850,
-      "y": 36,
-      "text": "EMPLOYEE  #26\nUSERS     4M+ daily\nREPO      #75 most-starred on GitHub",
-      "font": "mono",
-      "fontSize": 14
-    },
-    {
-      "id": "receipts.comfy.nodes",
-      "type": "image",
-      "x": 21203,
-      "y": 317,
-      "src": "/canvas/work/comfyui.png",
-      "width": 1100,
-      "height": 417
-    },
-    {
-      "id": "receipts.comfy.nodes.cap",
-      "type": "text",
-      "x": 20940,
-      "y": 561,
-      "text": "↑ NODES 2.0, THE NEW CANVAS  ·  SWAP FOR A FRESH SCREENSHOT",
-      "font": "mono",
-      "fontSize": 12
-    },
-    {
-      "id": "receipts.comfy.stat1",
-      "type": "text",
-      "x": 20717,
-      "y": 676,
-      "text": "10x",
-      "font": "sans",
-      "fontSize": 64,
-      "color": "brand"
-    },
-    {
-      "id": "receipts.comfy.stat1.cap",
-      "type": "text",
-      "x": 20763,
-      "y": 764,
-      "text": "MORE PLUGINS PUBLISHED",
-      "font": "mono",
-      "fontSize": 12
-    },
-    {
-      "id": "receipts.comfy.stat2",
-      "type": "text",
-      "x": 21118,
-      "y": 676,
-      "text": "+15%",
-      "font": "sans",
-      "fontSize": 64,
-      "color": "brand"
-    },
-    {
-      "id": "receipts.comfy.stat2.cap",
-      "type": "text",
-      "x": 21162,
-      "y": 764,
-      "text": "ARR, FIRST ENTERPRISE DEAL",
-      "font": "mono",
-      "fontSize": 12
-    },
-    {
-      "id": "receipts.comfy.stat3",
-      "type": "text",
-      "x": 21497,
-      "y": 676,
-      "text": "50x",
-      "font": "sans",
-      "fontSize": 64,
-      "color": "brand"
-    },
-    {
-      "id": "receipts.comfy.stat3.cap",
-      "type": "text",
-      "x": 21557,
-      "y": 764,
-      "text": "PARTNER PROGRAM, 6 MONTHS",
-      "font": "mono",
-      "fontSize": 12
-    },
-    {
-      "id": "receipts.comfy.n2.label",
-      "type": "text",
-      "x": 21893,
-      "y": -114,
-      "text": "NODES 2.0",
-      "font": "mono",
-      "fontSize": 12
-    },
-    {
-      "id": "receipts.comfy.n2.body",
-      "type": "text",
-      "x": 22101,
-      "y": -56,
-      "text": "Beta → stable for millions. A new look and feel\non a rearchitected hybrid renderer.",
-      "font": "sans",
-      "fontSize": 16
-    },
-    {
-      "id": "receipts.comfy.n2.diagram",
-      "type": "text",
-      "x": 22061,
-      "y": 34,
-      "text": "DOM + CSS transforms   the new node UI\nCanvas 2D (Skia)       the original renderer\n                       kept in lockstep",
-      "font": "mono",
-      "fontSize": 12,
-      "color": "muted"
-    },
-    {
-      "id": "receipts.comfy.ws.label",
-      "type": "text",
-      "x": 22004,
-      "y": 130,
-      "text": "TEAM WORKSPACES + SHARED BILLING",
-      "font": "mono",
-      "fontSize": 12
-    },
-    {
-      "id": "receipts.comfy.ws.body",
-      "type": "text",
-      "x": 22143,
-      "y": 188,
-      "text": "Our #1 enterprise feature. Create, invite, collaborate,\nshare billing. Landed our first enterprise commitment.",
-      "font": "sans",
-      "fontSize": 16
-    },
-    {
-      "id": "receipts.comfy.ws.img",
-      "type": "image",
-      "x": 22110,
-      "y": 385,
-      "src": "/canvas/placeholders/receipts.comfy.ws.img.svg",
-      "width": 520,
-      "height": 290
-    },
-    {
-      "id": "receipts.comfy.hub.label",
-      "type": "text",
-      "x": 21893,
-      "y": 586,
-      "text": "COMFY HUB",
-      "font": "mono",
-      "fontSize": 12
-    },
-    {
-      "id": "receipts.comfy.hub.body",
-      "type": "text",
-      "x": 22058,
-      "y": 644,
-      "text": "A public surface for sharing workflows.\nOur biggest GTM push to date.",
-      "font": "sans",
-      "fontSize": 16
-    },
-    {
-      "id": "receipts.comfy.hub.img",
-      "type": "image",
-      "x": 22110,
-      "y": 841,
-      "src": "/canvas/placeholders/receipts.comfy.hub.img.svg",
-      "width": 520,
-      "height": 290
-    },
-    {
-      "id": "receipts.comfy.pr",
-      "type": "sticky",
-      "x": 22583,
-      "y": -40,
-      "text": "design + code,\nsame PR"
-    },
-    {
-      "id": "receipts.refs",
-      "type": "sticky",
-      "x": 22553,
-      "y": 1040,
-      "text": "references\nhappily\nprovided"
-    },
-    {
-      "id": "now.kicker",
-      "type": "text",
-      "x": 25092,
-      "y": -1442,
-      "text": "05 — RIGHT NOW",
-      "font": "mono",
-      "fontSize": 14
-    },
-    {
-      "id": "now.title",
-      "type": "text",
-      "x": 25401,
-      "y": -1352,
-      "text": "Down to the metal.",
-      "font": "sans",
-      "fontSize": 64
-    },
-    {
-      "id": "now.dek",
-      "type": "text",
-      "x": 25389,
-      "y": -1252,
-      "text": "Graphics from first principles, in C and C++.",
-      "font": "sans",
-      "fontSize": 24,
-      "color": "muted"
-    },
-    {
-      "id": "now.body",
-      "type": "text",
-      "x": 25398,
-      "y": -1014,
-      "text": "Compositors. Blitting to the framebuffer.\nBasically 1970s graphics: the stuff that lets\na browser draw anything at all.",
-      "font": "sans",
-      "fontSize": 24
-    },
-    {
-      "id": "now.studio",
-      "type": "image",
-      "x": 25398,
-      "y": -693,
-      "src": "/canvas/placeholders/now.studio.svg",
-      "width": 720,
       "height": 430
     },
     {
-      "id": "now.projects",
+      "id": "aiYHLS8KICScbTy95AMB5",
       "type": "text",
-      "x": 26152,
-      "y": -982,
-      "text": "PROJECTS\n\nSIMULA_R STUDIO   Figma-style renderer, C++ → WASM/WebGPU\nSIMULA_R IDE      agent-driven Storybook for design systems\nSIMULA_R.COM      you're standing in it\nICENSOR           a local LLM that cleans up bad feeds",
-      "font": "mono",
-      "fontSize": 14
-    },
-    {
-      "id": "now.winamp.joke",
-      "type": "text",
-      "x": 26115,
-      "y": -656,
-      "text": "And the pride and joy:\na 3D Winamp.",
-      "font": "sans",
-      "fontSize": 40
-    },
-    {
-      "id": "now.winamp.game",
-      "type": "image",
-      "x": 26102,
-      "y": -380,
-      "src": "/canvas/placeholders/now.winamp.game.svg",
-      "width": 560,
-      "height": 340
-    },
-    {
-      "id": "now.winamp.ref",
-      "type": "image",
-      "x": 26542,
-      "y": -362,
-      "src": "/canvas/games/winamp.png",
-      "width": 200,
-      "height": 316
-    },
-    {
-      "id": "now.winamp.ref.cap",
-      "type": "text",
-      "x": 26514,
-      "y": -174,
-      "text": "↑ THE REFERENCE",
-      "font": "mono",
-      "fontSize": 12
-    },
-    {
-      "id": "now.winamp.confused",
-      "type": "sticky",
-      "x": 26902,
-      "y": -630,
-      "text": "you're right\nto be\nconfused."
-    },
-    {
-      "id": "who.kicker",
-      "type": "text",
-      "x": 29156,
-      "y": -622,
-      "text": "06 — WHO I WANT TO BUILD WITH",
-      "font": "mono",
-      "fontSize": 14
-    },
-    {
-      "id": "who.title",
-      "type": "text",
-      "x": 29577,
-      "y": -532,
-      "text": "Teams people pick on taste.",
-      "font": "sans",
-      "fontSize": 64
-    },
-    {
-      "id": "who.dek",
-      "type": "text",
-      "x": 29452,
-      "y": -396,
-      "text": "Teams that champion design champion their users.\nI want to help a team become the Linear of its category.",
-      "font": "sans",
-      "fontSize": 24,
-      "color": "muted"
-    },
-    {
-      "id": "who.yes.label",
-      "type": "text",
-      "x": 29050,
-      "y": -194,
-      "text": "YES, PLEASE",
-      "font": "mono",
-      "fontSize": 12,
-      "color": "brand"
-    },
-    {
-      "id": "who.yes",
-      "type": "text",
-      "x": 29269,
-      "y": -20,
-      "text": "Ambitious, moving fast\nDesign-first, with room for craft\nTalks to users\nThinks from first principles\nSells to people who notice quality\nWants to define new patterns",
-      "font": "sans",
-      "fontSize": 24
-    },
-    {
-      "id": "who.no.label",
-      "type": "text",
-      "x": 30064,
-      "y": -164,
-      "text": "NOT FOR ME",
-      "font": "mono",
-      "fontSize": 12
-    },
-    {
-      "id": "who.no",
-      "type": "text",
-      "x": 30272,
-      "y": -38,
-      "text": "Product as a list of checkboxes\n\"Everyone just wants a chat box\"\n\"LGTM\" / \"good enough\"\nNever talks to users",
-      "font": "sans",
-      "fontSize": 24,
-      "color": "subtle"
-    },
-    {
-      "id": "who.care",
-      "type": "text",
-      "x": 30310,
-      "y": 234,
-      "text": "\"We give a shit,\nand you can feel it.\"",
+      "x": 910.79,
+      "y": 239.03,
+      "text": "Hey, I'm Jake (a_r)",
       "font": "handwritten",
-      "fontSize": 40,
-      "color": "brand"
+      "fontSize": 15
     },
     {
-      "id": "who.admire.label",
+      "id": "_F01Q-Iznpxmf-GBe_Q8b",
       "type": "text",
-      "x": 29063,
-      "y": 406,
-      "text": "TEAMS I ADMIRE",
-      "font": "mono",
-      "fontSize": 12
-    },
-    {
-      "id": "who.admire.1",
-      "type": "image",
-      "x": 29174,
-      "y": 575,
-      "src": "/canvas/placeholders/who.admire.1.svg",
-      "width": 340,
-      "height": 220
-    },
-    {
-      "id": "who.admire.2",
-      "type": "image",
-      "x": 29532,
-      "y": 557,
-      "src": "/canvas/placeholders/who.admire.2.svg",
-      "width": 340,
-      "height": 220
-    },
-    {
-      "id": "who.admire.3",
-      "type": "image",
-      "x": 29896,
-      "y": 547,
-      "src": "/canvas/placeholders/who.admire.3.svg",
-      "width": 340,
-      "height": 220
-    },
-    {
-      "id": "who.graphics",
-      "type": "sticky",
-      "x": 30436,
-      "y": 500,
-      "text": "dream: push\nweb graphics\nfurther.\n(3D, please)"
-    },
-    {
-      "id": "contact.kicker",
-      "type": "text",
-      "x": 33128,
-      "y": -942,
-      "text": "07 — SAY HI",
-      "font": "mono",
-      "fontSize": 14
-    },
-    {
-      "id": "contact.title",
-      "type": "text",
-      "x": 33297,
-      "y": -852,
-      "text": "Let's talk.",
-      "font": "sans",
-      "fontSize": 64
-    },
-    {
-      "id": "contact.dek",
-      "type": "text",
-      "x": 33650,
-      "y": -711,
-      "text": "Always up for a good conversation about what you're building,\nhow you think about design engineering, or whether any of this resonated.",
-      "font": "sans",
-      "fontSize": 24,
-      "color": "muted"
-    },
-    {
-      "id": "contact.headshot",
-      "type": "image",
-      "x": 33253,
-      "y": -350,
-      "src": "/canvas/placeholders/contact.headshot.svg",
-      "width": 360,
-      "height": 360
-    },
-    {
-      "id": "contact.links.label",
-      "type": "text",
-      "x": 33527,
-      "y": -504,
-      "text": "FIND ME",
-      "font": "mono",
-      "fontSize": 12
-    },
-    {
-      "id": "contact.links",
-      "type": "text",
-      "x": 33627,
-      "y": -394,
-      "text": "CALENDLY    {{calendly}}\nX           {{x}}\nLINKEDIN    {{linkedin}}\nGITHUB      {{github}}\nGAMEDEV X   {{gamedev x}}",
-      "font": "mono",
-      "fontSize": 16,
-      "color": "ink"
-    },
-    {
-      "id": "contact.slot",
-      "type": "text",
-      "x": 33699,
-      "y": -268,
-      "text": "pick a slot, any slot ↑",
+      "x": 928.6,
+      "y": 298.17,
+      "text": "A Design Engineer based in the Bay Area passionate about putting pixels on the screen\nfor users at companies that value what I value.",
       "font": "handwritten",
-      "fontSize": 24,
-      "color": "brand"
+      "fontSize": 10
     },
     {
-      "id": "contact.strip",
+      "id": "RuQ1i9OoaVDY7jheHxGk_",
       "type": "image",
-      "x": 34173,
-      "y": 60,
-      "src": "/canvas/accents/board-email-strip-2200.svg",
-      "width": 2200,
-      "height": 200,
+      "x": 1030.46,
+      "y": 210.79,
+      "src": "/canvas/excalidraw/RuQ1i9OoaVDY7jheHxGk_.svg",
+      "width": 65.22,
+      "height": 62.34,
       "variant": "bare"
     },
     {
-      "id": "contact.email.label",
-      "type": "text",
-      "x": 33137,
-      "y": 0,
-      "text": "EMAIL",
-      "font": "mono",
-      "fontSize": 12,
-      "color": "brand"
+      "id": "h3hLCmQgDfKH0-k_1ANCo",
+      "type": "image",
+      "x": 630.16,
+      "y": 60.71,
+      "src": "/canvas/excalidraw/h3hLCmQgDfKH0-k_1ANCo.svg",
+      "width": 134.49,
+      "height": 71.24,
+      "variant": "bare"
     },
     {
-      "id": "contact.email",
+      "id": "RVG7FUPjClYY9d1eN5GzQ",
       "type": "text",
-      "x": 34173,
-      "y": 68,
+      "x": 1098.43,
+      "y": 196.64,
+      "text": "What is with the a_r?",
+      "font": "handwritten",
+      "fontSize": 7
+    },
+    {
+      "id": "PIZmLw9TeWHRXcXv2rqi6",
+      "type": "text",
+      "x": 559.73,
+      "y": 28.99,
+      "text": "What is this whole thing?\nLike... did you make this?\nLike... Why?",
+      "font": "handwritten",
+      "fontSize": 7
+    },
+    {
+      "id": "5yz7racxcYvCU1Xh9V9Eg",
+      "type": "text",
+      "x": 924.56,
+      "y": 825.27,
+      "text": "og sentry.io background iykyk",
+      "font": "handwritten",
+      "fontSize": 8
+    },
+    {
+      "id": "qij9xUy1vfbPduBFAaAvq",
+      "type": "text",
+      "x": 914.74,
+      "y": 100.7,
+      "text": "Start HERE",
+      "font": "handwritten",
+      "fontSize": 44
+    },
+    {
+      "id": "GSnPBEbbDJNGjfH4tQtWd",
+      "type": "text",
+      "x": 919.84,
+      "y": 1354.96,
+      "text": "Ok so... first up why Design Engineer?",
+      "font": "handwritten",
+      "fontSize": 21
+    },
+    {
+      "id": "-engtwpU4pFkLJtT3iX9Y",
+      "type": "text",
+      "x": 2723.1,
+      "y": 1661.83,
+      "text": "Theres a lot more to it but you can see the reason DE is more important than ever...",
+      "font": "handwritten",
+      "fontSize": 15
+    },
+    {
+      "id": "SllpS7kpZOoRnnPC7ynXM",
+      "type": "text",
+      "x": 976.05,
+      "y": 1829.37,
+      "text": "Eng can't be expected to design.",
+      "font": "handwritten",
+      "fontSize": 15
+    },
+    {
+      "id": "5mXdjsq2dAwhjvlbMLfOv",
+      "type": "text",
+      "x": 1004.58,
+      "y": 1870.41,
+      "text": "Product Design can't be expected to ship production code",
+      "font": "handwritten",
+      "fontSize": 15
+    },
+    {
+      "id": "MK-06Qb2EpbV9XNlv2Bdi",
+      "type": "sticky",
+      "x": 609.93,
+      "y": 1557.58,
+      "text": "AI shifted the bottleneck"
+    },
+    {
+      "id": "EAnehC-i7e32FUoCNOKLB",
+      "type": "sticky",
+      "x": 4346,
+      "y": 1356.36,
+      "text": "Design Fundamentals"
+    },
+    {
+      "id": "nb22QHDGHGhtguPlV2H6O",
+      "type": "sticky",
+      "x": 8992.89,
+      "y": 1254.38,
+      "text": "Has a product that is meant to be premium."
+    },
+    {
+      "id": "TOMGqfCaZI6Y3jiBf_8uD",
+      "type": "sticky",
+      "x": 9095.73,
+      "y": 1923.77,
+      "text": "Knows how to set a pace."
+    },
+    {
+      "id": "voCfIaMOztL49Xy1ZtvxX",
+      "type": "sticky",
+      "x": 9306.57,
+      "y": 1258.37,
+      "text": "You are ambitious in the right domains."
+    },
+    {
+      "id": "kE1n3TZu6yOmWTNxu4UCz",
+      "type": "sticky",
+      "x": 9459.66,
+      "y": 1917.99,
+      "text": "Transparent"
+    },
+    {
+      "id": "Z1aU5YKnv8ErqbC4ZV9rg",
+      "type": "sticky",
+      "x": 9624.36,
+      "y": 1256.87,
+      "text": "You can speak openly and honestly about the state of your AI strategy."
+    },
+    {
+      "id": "IXtQ-LZrlRNyOePj31HUZ",
+      "type": "sticky",
+      "x": 4754.45,
+      "y": 1348.97,
+      "text": "CS Fundamentals"
+    },
+    {
+      "id": "BoXwI7xK1gocaFVKJqgC5",
+      "type": "sticky",
+      "x": 4765.37,
+      "y": 2181.43,
+      "text": "Father was a tech entrepreneur.\n\nGrandfather was one also."
+    },
+    {
+      "id": "ZwsghbTO-wkFrp1ZoCjRh",
+      "type": "sticky",
+      "x": 5139.35,
+      "y": 1356.32,
+      "text": "7+ Years at SV/SF startups pre seed - Series B"
+    },
+    {
+      "id": "8C1QyBtTC6fboMem4Ib-t",
+      "type": "sticky",
+      "x": 921.69,
+      "y": 1559.8,
+      "text": "POCs leave design decisions open"
+    },
+    {
+      "id": "YNeOkEv9QOKFF06JiqnPz",
+      "type": "sticky",
+      "x": 1232.47,
+      "y": 1565.71,
+      "text": "I close that gap"
+    },
+    {
+      "id": "zruD6uAXmVqIVY4KN2XMs",
+      "type": "image",
+      "x": 2728.53,
+      "y": 1525.76,
+      "src": "/canvas/excalidraw/zruD6uAXmVqIVY4KN2XMs.svg",
+      "width": 1220.11,
+      "height": 48,
+      "variant": "bare"
+    },
+    {
+      "id": "3dswkeA-j7N_EoMz1ZfSY",
+      "type": "image",
+      "x": 1414.01,
+      "y": 1517.9,
+      "src": "/canvas/excalidraw/3dswkeA-j7N_EoMz1ZfSY.svg",
+      "width": 108.08,
+      "height": 68.65,
+      "variant": "bare"
+    },
+    {
+      "id": "bgyJU3WOclk-Tvr1HhxV_",
+      "type": "text",
+      "x": 1556.47,
+      "y": 1477.58,
+      "text": "Iteration speed",
+      "font": "handwritten",
+      "fontSize": 15
+    },
+    {
+      "id": "zfANc2AljUDZOknPk0GOZ",
+      "type": "text",
+      "x": 1637.39,
+      "y": 1513.5,
+      "text": "Solutions best arrived at in code",
+      "font": "handwritten",
+      "fontSize": 15
+    },
+    {
+      "id": "RaJdflqsepvRy4dBK_Zh9",
+      "type": "text",
+      "x": 1596.01,
+      "y": 1549.89,
+      "text": "Accuracy during handoffs",
+      "font": "handwritten",
+      "fontSize": 15
+    },
+    {
+      "id": "vlPdxaW0ESz4pkp3QKEaq",
+      "type": "text",
+      "x": 1629.96,
+      "y": 1590.97,
+      "text": "Design system code maintenance",
+      "font": "handwritten",
+      "fontSize": 15
+    },
+    {
+      "id": "rJKWsjtvrWMI0m10eQeD9",
+      "type": "text",
+      "x": 1648.99,
+      "y": 1631.91,
+      "text": "Production/scalability code practice",
+      "font": "handwritten",
+      "fontSize": 15
+    },
+    {
+      "id": "UzzyxTI2YMvbW01tWaR_P",
+      "type": "image",
+      "x": 393.4,
+      "y": 1658.17,
+      "src": "/canvas/excalidraw/UzzyxTI2YMvbW01tWaR_P.svg",
+      "width": 95.22,
+      "height": 70.76,
+      "variant": "bare"
+    },
+    {
+      "id": "2-O26zU5mpX4TfpLIwmpc",
+      "type": "text",
+      "x": 317.02,
+      "y": 1719.92,
+      "text": "Eng is no longer the bottleneck.",
+      "font": "handwritten",
+      "fontSize": 15
+    },
+    {
+      "id": "n8W3cSOU409hcxzgeYfUf",
+      "type": "text",
+      "x": 324.25,
+      "y": 1760.87,
+      "text": "Product Judgement is the scarciest resource.",
+      "font": "handwritten",
+      "fontSize": 15
+    },
+    {
+      "id": "JAnfT-5cd3ufzZjCLPGk9",
+      "type": "text",
+      "x": 4734.25,
+      "y": 1105.7,
+      "text": "And why Jake?",
+      "font": "handwritten",
+      "fontSize": 32
+    },
+    {
+      "id": "JzANxmrtEsioswS8z599F",
+      "type": "text",
+      "x": 4067.43,
+      "y": 1160.34,
+      "text": "Went to Parsons School of Design\nRated #1 in the country.",
+      "font": "handwritten",
+      "fontSize": 15
+    },
+    {
+      "id": "cEBCm_ekegAXvpKpapCVD",
+      "type": "text",
+      "x": 3987.14,
+      "y": 1330.84,
+      "text": "Started in graphic design, video editing,\nillustration, animation, 3D modeling, etc.",
+      "font": "handwritten",
+      "fontSize": 15
+    },
+    {
+      "id": "Sjnp7ThNXK67RK45WTIbz",
+      "type": "text",
+      "x": 3963.09,
+      "y": 1480.89,
+      "text": "Started in graphic design, video editing,\nillustration, animation, 3D modeling, etc.",
+      "font": "handwritten",
+      "fontSize": 15
+    },
+    {
+      "id": "rhh9dTR_NlUZvXpHlQ1EE",
+      "type": "text",
+      "x": 4775.3,
+      "y": 1612.71,
+      "text": "Transferred to Depaul CDM\nto study engineering proper.",
+      "font": "handwritten",
+      "fontSize": 15
+    },
+    {
+      "id": "MdlMWA3D6DOTNcCodeQDx",
+      "type": "text",
+      "x": 4748.37,
+      "y": 1990.55,
+      "text": "Also important... I gew up in the business side of this pursuit.",
+      "font": "handwritten",
+      "fontSize": 15
+    },
+    {
+      "id": "0TwflYu5Htid1HdUNyZ8h",
+      "type": "text",
+      "x": 4803.74,
+      "y": 2404.66,
+      "text": "A lot of my early dinner table conversations were around business,\ntech, employee contracts, failure, ROI, etc. etc. and that got the\nindustry in me from a very early age. It is a lifestyle.",
+      "font": "handwritten",
+      "fontSize": 15
+    },
+    {
+      "id": "4_hHHtCUjBZVevlQ4uBBY",
+      "type": "text",
+      "x": 4428.54,
+      "y": 1598.32,
+      "text": "It's a good question.",
+      "font": "handwritten",
+      "fontSize": 15
+    },
+    {
+      "id": "3e8ZVPLafXpa5h2bvbWGc",
+      "type": "text",
+      "x": 5556.2,
+      "y": 1334.11,
+      "text": "Got scouted my last year in a \nwell known youtubers private Discord",
+      "font": "handwritten",
+      "fontSize": 15
+    },
+    {
+      "id": "ljjBrC1t2WQtuNZyMv-HD",
+      "type": "text",
+      "x": 5551.05,
+      "y": 1456.76,
+      "text": "Righthub Employee #3 -> Acquisition",
+      "font": "handwritten",
+      "fontSize": 15
+    },
+    {
+      "id": "30-dFGfvCQE549J8AY-0K",
+      "type": "text",
+      "x": 5516.94,
+      "y": 1501.61,
+      "text": "Axiom Employee #22 Series A",
+      "font": "handwritten",
+      "fontSize": 15
+    },
+    {
+      "id": "VK8NOLdCZfhEjKA9Kc9WE",
+      "type": "text",
+      "x": 5493.01,
+      "y": 1548.68,
+      "text": "ComfyUI #26 Series A-B",
+      "font": "handwritten",
+      "fontSize": 15
+    },
+    {
+      "id": "qWeSJb1FLbd4BafoeAJp9",
+      "type": "text",
+      "x": 5542.27,
+      "y": 1186.92,
+      "text": "Have always had the mentality that\nstartups are more fun... more intense...\nbut more fun!",
+      "font": "handwritten",
+      "fontSize": 15
+    },
+    {
+      "id": "jltpuZugQM6B5PoARJMi6",
+      "type": "text",
+      "x": 4544.03,
+      "y": 1493.89,
+      "text": "Why change?",
+      "font": "handwritten",
+      "fontSize": 15
+    },
+    {
+      "id": "gW7tt0rgM01zTUXzbxWJn",
+      "type": "image",
+      "x": 931.87,
+      "y": 1748.48,
+      "src": "/canvas/excalidraw/gW7tt0rgM01zTUXzbxWJn.svg",
+      "width": 80.28,
+      "height": 113.52,
+      "variant": "bare"
+    },
+    {
+      "id": "3NDIusHpX6v1MHQAsr2s-",
+      "type": "image",
+      "x": 4125.2,
+      "y": 1248.81,
+      "src": "/canvas/excalidraw/3NDIusHpX6v1MHQAsr2s-.svg",
+      "width": 124.63,
+      "height": 102.2,
+      "variant": "bare"
+    },
+    {
+      "id": "lDy9e2tAM4AtiGZHy55f1",
+      "type": "image",
+      "x": 4752.84,
+      "y": 1528.93,
+      "src": "/canvas/excalidraw/lDy9e2tAM4AtiGZHy55f1.svg",
+      "width": 49.41,
+      "height": 117.18,
+      "variant": "bare"
+    },
+    {
+      "id": "lWAtIKh2E9bXETSOieGKq",
+      "type": "image",
+      "x": 4550.05,
+      "y": 1368.3,
+      "src": "/canvas/excalidraw/lWAtIKh2E9bXETSOieGKq.svg",
+      "width": 128.6,
+      "height": 48,
+      "variant": "bare"
+    },
+    {
+      "id": "Oqsp9n4mjlsGBpzcZXSwS",
+      "type": "image",
+      "x": 4942.8,
+      "y": 1363.79,
+      "src": "/canvas/excalidraw/Oqsp9n4mjlsGBpzcZXSwS.svg",
+      "width": 128.6,
+      "height": 48,
+      "variant": "bare"
+    },
+    {
+      "id": "S1ISOyicHgQ_3Ghh_pck4",
+      "type": "image",
+      "x": 4540.46,
+      "y": 1425.01,
+      "src": "/canvas/excalidraw/S1ISOyicHgQ_3Ghh_pck4.svg",
+      "width": 69.57,
+      "height": 113.15,
+      "variant": "bare"
+    },
+    {
+      "id": "4wUwgnIjAl0xIck3TijAt",
+      "type": "image",
+      "x": 4492.42,
+      "y": 1544.46,
+      "src": "/canvas/excalidraw/4wUwgnIjAl0xIck3TijAt.svg",
+      "width": 78.6,
+      "height": 94.75,
+      "variant": "bare"
+    },
+    {
+      "id": "NMeeNQCQMzf35u9mMuNH9",
+      "type": "image",
+      "x": 5314.69,
+      "y": 1235.54,
+      "src": "/canvas/excalidraw/NMeeNQCQMzf35u9mMuNH9.svg",
+      "width": 82.99,
+      "height": 77.27,
+      "variant": "bare"
+    },
+    {
+      "id": "r4NyuLHSeGdXYQMbHJhiC",
+      "type": "image",
+      "x": 4744.39,
+      "y": 1342.86,
+      "src": "/canvas/excalidraw/r4NyuLHSeGdXYQMbHJhiC.svg",
+      "width": 2407.1,
+      "height": 1016.71,
+      "variant": "bare"
+    },
+    {
+      "id": "-RxflcCG_qOGYlnkjclbv",
+      "type": "image",
+      "x": 5327.12,
+      "y": 1344.43,
+      "src": "/canvas/excalidraw/-RxflcCG_qOGYlnkjclbv.svg",
+      "width": 99.81,
+      "height": 72.7,
+      "variant": "bare"
+    },
+    {
+      "id": "grqvEeK7Xgj24_Zrujm5G",
+      "type": "text",
+      "x": 7163.11,
+      "y": 1366.21,
+      "text": "Now you know how I define the role. You know I am posed for the job. Now let's talk about you.",
+      "font": "handwritten",
+      "fontSize": 15
+    },
+    {
+      "id": "FvOcwMLHyk8_8csSAbpnJ",
+      "type": "text",
+      "x": 11558.11,
+      "y": 1572.62,
+      "text": "If this felt compelling to you and if you need someone with my expertise, let's connect!",
+      "font": "handwritten",
+      "fontSize": 15
+    },
+    {
+      "id": "Q0KCFfzNdR_BWNm_KyA7n",
+      "type": "image",
+      "x": 7131.55,
+      "y": 1491.7,
+      "src": "/canvas/excalidraw/Q0KCFfzNdR_BWNm_KyA7n.svg",
+      "width": 1220.11,
+      "height": 48,
+      "variant": "bare"
+    },
+    {
+      "id": "KbsEw_LUnCeS8C-rb0NXN",
+      "type": "image",
+      "x": 11542.29,
+      "y": 1484.62,
+      "src": "/canvas/excalidraw/KbsEw_LUnCeS8C-rb0NXN.svg",
+      "width": 1220.11,
+      "height": 48,
+      "variant": "bare"
+    },
+    {
+      "id": "v6vU_rlVEe2i-Y10mwjKm",
+      "type": "text",
+      "x": 7125.81,
+      "y": 1627.04,
+      "text": "Let's take a brief look into my past work for a sec.",
+      "font": "handwritten",
+      "fontSize": 15
+    },
+    {
+      "id": "K6hxAP7HGQMXoZupqCLQf",
+      "type": "text",
+      "x": 9355.93,
+      "y": 941.69,
+      "text": "If you or anyone you know meets this criteria hmu.",
+      "font": "handwritten",
+      "fontSize": 15
+    },
+    {
+      "id": "K_VJg6bc9vegyyKlHm2B2",
+      "type": "text",
+      "x": 9356.08,
+      "y": 888.28,
+      "text": "Who I want to work with.",
+      "font": "handwritten",
+      "fontSize": 22
+    },
+    {
+      "id": "lwjfUe9hsbehWmbYn9zH8",
+      "type": "text",
+      "x": 12958.21,
+      "y": 1346.08,
+      "text": "Connect with me on socials, or drop me an email.",
+      "font": "handwritten",
+      "fontSize": 21
+    },
+    {
+      "id": "OPTO5NiEl-agR6kYWRSiO",
+      "type": "text",
+      "x": 8739.05,
+      "y": 1435.16,
+      "text": "Not all products should make their product quality\npart of their moat.",
+      "font": "handwritten",
+      "fontSize": 15
+    },
+    {
+      "id": "zv5_PHRU1QQwu1P6-MdDk",
+      "type": "text",
+      "x": 9409.43,
+      "y": 1508.57,
+      "text": "Being ambitious for the sake of being\nambitious is just treading water...",
+      "font": "handwritten",
+      "fontSize": 15
+    },
+    {
+      "id": "KqcdYdGXsCkPuOSx2uUNf",
+      "type": "text",
+      "x": 10078.43,
+      "y": 1410.75,
+      "text": "I love LLMs and I use them to generate a lot of things.\nIncluding code, images, plain text etc.",
+      "font": "handwritten",
+      "fontSize": 15
+    },
+    {
+      "id": "FlpWojqnuaY41V3zdZTUw",
+      "type": "text",
+      "x": 10072.46,
+      "y": 1474.88,
+      "text": "But... I am also an engineer.",
+      "font": "handwritten",
+      "fontSize": 15
+    },
+    {
+      "id": "YmPcRLvSV-IkCd1kA12e2",
+      "type": "text",
+      "x": 10064.85,
+      "y": 1510.75,
+      "text": "and... an actual deisgner.",
+      "font": "handwritten",
+      "fontSize": 15
+    },
+    {
+      "id": "2auk3RZj5zeDo6xwzp-n_",
+      "type": "text",
+      "x": 10073.54,
+      "y": 1577.05,
+      "text": "Let's focus more on what it is we are shipping and less about\nhow we built it please.",
+      "font": "handwritten",
+      "fontSize": 15
+    },
+    {
+      "id": "wI4igcLrYLlZOLiG-1AIf",
+      "type": "text",
+      "x": 9432.61,
+      "y": 1581.02,
+      "text": "I am huge believer of beating the averages.\n(Don't know what that entails? DM me.)",
+      "font": "handwritten",
+      "fontSize": 15
+    },
+    {
+      "id": "1ew2oKhf5SZJ1jrcoAXOr",
+      "type": "text",
+      "x": 8745.92,
+      "y": 1501.72,
+      "text": "Product quality is less about the product itself and more of a\ntranslation of care for the users.",
+      "font": "handwritten",
+      "fontSize": 15
+    },
+    {
+      "id": "BazyIEcB-GHurZOJIf8MO",
+      "type": "text",
+      "x": 8759.93,
+      "y": 1575.15,
+      "text": "If you are truly talking to customers, and truly want to offer delight,\ndesign and quality are table stakes.",
+      "font": "handwritten",
+      "fontSize": 15
+    },
+    {
+      "id": "kByKUvZIC3VXcEohlfnft",
+      "type": "text",
+      "x": 8766.72,
+      "y": 2110.32,
+      "text": "In this era, time to market is important.\nBut also making coherent decisions is important.\nThat comes with experience.",
+      "font": "handwritten",
+      "fontSize": 15
+    },
+    {
+      "id": "vfzQSJrH8DB1MVdKQ4cv0",
+      "type": "text",
+      "x": 9831.66,
+      "y": 2075.42,
+      "text": "Everyone needs a little something different.\nI thrive in transparency. The more is shared,\nthe more I can better decisions.",
+      "font": "handwritten",
+      "fontSize": 15
+    },
+    {
+      "id": "tvz0GzDeTUZpTVUn3V9Sz",
+      "type": "text",
+      "x": 8781.94,
+      "y": 2206.5,
+      "text": "I deeply value orgs that know how to set a correct\ninformed pace. And I have no qualms about crunch...\nonly if it has no good reason.",
+      "font": "handwritten",
+      "fontSize": 15
+    },
+    {
+      "id": "SCJd1npr-WRtRdP6528hX",
+      "type": "text",
+      "x": 7100.28,
+      "y": 2577.61,
+      "text": "Here are my receipts so to speak.",
+      "font": "handwritten",
+      "fontSize": 15
+    },
+    {
+      "id": "hQxr7BxvTAINX7meZngIy",
+      "type": "text",
+      "x": 7097.31,
+      "y": 2625.01,
+      "text": "And the projects I am most passionate about.",
+      "font": "handwritten",
+      "fontSize": 15
+    },
+    {
+      "id": "SanKtATVJuyBtrxflaJL1",
+      "type": "image",
+      "x": 8778.2,
+      "y": 1347.26,
+      "src": "/canvas/excalidraw/SanKtATVJuyBtrxflaJL1.svg",
+      "width": 86.89,
+      "height": 87.43,
+      "variant": "bare"
+    },
+    {
+      "id": "W87UCzRyiNnqjWU7_4-kB",
+      "type": "image",
+      "x": 8863.27,
+      "y": 1974.18,
+      "src": "/canvas/excalidraw/W87UCzRyiNnqjWU7_4-kB.svg",
+      "width": 129.89,
+      "height": 110.95,
+      "variant": "bare"
+    },
+    {
+      "id": "IEyE0AojJYOXDuXb8NQOU",
+      "type": "image",
+      "x": 9657.74,
+      "y": 1965.08,
+      "src": "/canvas/excalidraw/IEyE0AojJYOXDuXb8NQOU.svg",
+      "width": 87.39,
+      "height": 95.63,
+      "variant": "bare"
+    },
+    {
+      "id": "TCugViY7sDoScVUyROJjK",
+      "type": "image",
+      "x": 9351.02,
+      "y": 1435.16,
+      "src": "/canvas/excalidraw/TCugViY7sDoScVUyROJjK.svg",
+      "width": 70.29,
+      "height": 100.95,
+      "variant": "bare"
+    },
+    {
+      "id": "yTO7P_goyltFuDgENFU-R",
+      "type": "image",
+      "x": 9815.95,
+      "y": 1333.81,
+      "src": "/canvas/excalidraw/yTO7P_goyltFuDgENFU-R.svg",
+      "width": 103.44,
+      "height": 76.49,
+      "variant": "bare"
+    },
+    {
+      "id": "odyRoJ7H5g7TMG05IrdaE",
+      "type": "image",
+      "x": 7114.6,
+      "y": 1488.42,
+      "src": "/canvas/excalidraw/odyRoJ7H5g7TMG05IrdaE.svg",
+      "width": 487.78,
+      "height": 146.38,
+      "variant": "bare"
+    },
+    {
+      "id": "e7-iaR4-WqrnsjipTt6dq",
+      "type": "image",
+      "x": 7103.63,
+      "y": 2128.15,
+      "src": "/canvas/excalidraw/e7-iaR4-WqrnsjipTt6dq.svg",
+      "width": 48,
+      "height": 708.22,
+      "variant": "bare"
+    },
+    {
+      "id": "WgtuYMrAtYmhcI4GcVvHd",
+      "type": "text",
+      "x": 6227.97,
+      "y": 2948.99,
+      "text": "Employee #3 @Righthub.",
+      "font": "handwritten",
+      "fontSize": 15
+    },
+    {
+      "id": "rG1Z9sAmGPWCSQM9Ew2Cj",
+      "type": "text",
+      "x": 7099.1,
+      "y": 3356.31,
+      "text": "Passion Projects.",
+      "font": "handwritten",
+      "fontSize": 15
+    },
+    {
+      "id": "VRPipo48fBN1grUqxrvD1",
+      "type": "text",
+      "x": 7116.47,
+      "y": 2960.27,
+      "text": "Employee #22 @Axiom.",
+      "font": "handwritten",
+      "fontSize": 15
+    },
+    {
+      "id": "h-ljEQL4j636KqeerK6-4",
+      "type": "text",
+      "x": 7865.76,
+      "y": 2965.07,
+      "text": "Employee #26 @ComfyUI.",
+      "font": "handwritten",
+      "fontSize": 15
+    },
+    {
+      "id": "pZZh5nr_wRVAEIoT8RZy3",
+      "type": "text",
+      "x": 12801.44,
+      "y": 1498.56,
+      "text": "x.com/schrudmeister",
+      "font": "handwritten",
+      "fontSize": 15
+    },
+    {
+      "id": "VxAKSLQIwHBFFp6yzqhoC",
+      "type": "text",
+      "x": 13088.1,
+      "y": 1496.77,
+      "text": "linkedin.com/in/jake-schroeder/",
+      "font": "handwritten",
+      "fontSize": 15
+    },
+    {
+      "id": "C40UsM3PigRJR9tG12vHI",
+      "type": "text",
+      "x": 12963.6,
+      "y": 1668.58,
       "text": "jakeschroeder8@gmail.com",
-      "font": "sans",
-      "fontSize": 64
-    },
-    {
-      "id": "contact.end",
-      "type": "sticky",
-      "x": 35033,
-      "y": -390,
-      "text": "you made it\nto the end.\nrespect."
-    },
-    {
-      "id": "stray.lot.label",
-      "type": "text",
-      "x": 73,
-      "y": -2344,
-      "text": "PARKING LOT",
-      "font": "mono",
-      "fontSize": 12
-    },
-    {
-      "id": "stray.lot.receipts",
-      "type": "sticky",
-      "x": 160,
-      "y": -2130,
-      "text": "too many\nreceipts?"
-    },
-    {
-      "id": "stray.lot.furniture",
-      "type": "sticky",
-      "x": 460,
-      "y": -2070,
-      "text": "mention the\nfurniture\nmaking?"
-    },
-    {
-      "id": "stray.lot.guestbook",
-      "type": "sticky",
-      "x": 800,
-      "y": -2170,
-      "text": "guestbook\nidea →\nlater"
-    },
-    {
-      "id": "stray.lot.note",
-      "type": "text",
-      "x": 1237,
-      "y": -1918,
-      "text": "(cut for time, keeping\nthem here anyway)",
       "font": "handwritten",
-      "fontSize": 24,
-      "color": "muted"
+      "fontSize": 37
     },
     {
-      "id": "stray.version",
-      "type": "text",
-      "x": 78,
-      "y": 1248,
-      "text": "v3  ·  last edited by jake  ·  2:14am",
-      "font": "mono",
-      "fontSize": 12,
-      "color": "subtle"
+      "id": "uWcF2DNA0fndbHm_l_s1I",
+      "type": "image",
+      "x": 5325.68,
+      "y": 1445.44,
+      "src": "/canvas/excalidraw/uWcF2DNA0fndbHm_l_s1I.svg",
+      "width": 96.17,
+      "height": 82.69,
+      "variant": "bare"
     },
     {
-      "id": "stray.screenshot",
+      "id": "xpV-kYx1GuqHKkl7qE9Qx",
+      "type": "image",
+      "x": 7067.04,
+      "y": 3039.81,
+      "src": "/canvas/excalidraw/xpV-kYx1GuqHKkl7qE9Qx.svg",
+      "width": 2238.31,
+      "height": 1147.83,
+      "variant": "bare"
+    },
+    {
+      "id": "3nsOwiV8NFpLFFwFA6P2I",
       "type": "text",
-      "x": 5471,
-      "y": 236,
-      "text": "(this is the part people screenshot)",
+      "x": 7064.24,
+      "y": 3017.19,
+      "text": "COMING SOON",
       "font": "handwritten",
-      "fontSize": 24,
-      "color": "muted"
+      "fontSize": 79
     },
     {
-      "id": "stray.teapot",
+      "id": "pFnxkQUlHXKamXAjm5rwc",
       "type": "image",
-      "x": 10766,
-      "y": 1606,
-      "src": "/canvas/graphics/utah-teapot.png",
-      "width": 420,
-      "height": 315
+      "x": 367.6,
+      "y": 40.45,
+      "src": "/canvas/excalidraw/9b1cfd71fb1958ee500f555dc6dd4bf4d91db00c.png",
+      "width": 224.99,
+      "height": 158.9
     },
     {
-      "id": "stray.teapot.cap",
-      "type": "text",
-      "x": 10695,
-      "y": 1794,
-      "text": "EVERY RENDERER'S FIRST TEAPOT",
-      "font": "mono",
-      "fontSize": 12
-    },
-    {
-      "id": "stray.penguin",
-      "type": "sticky",
-      "x": 15020,
-      "y": -1720,
-      "text": "Club Penguin\nmod drama.\nask me."
-    },
-    {
-      "id": "stray.heroes.label",
-      "type": "text",
-      "x": 20058,
-      "y": 1654,
-      "text": "ART DIRECTION HEROES",
-      "font": "mono",
-      "fontSize": 12
-    },
-    {
-      "id": "stray.heroes.myst",
+      "id": "hMsEHPAOEhsyJnJWJzDDH",
       "type": "image",
-      "x": 20087,
-      "y": 1828,
-      "src": "/canvas/games/myst.png",
-      "width": 250,
-      "height": 300
-    },
-    {
-      "id": "stray.heroes.jsr",
-      "type": "image",
-      "x": 20412,
-      "y": 1869,
-      "src": "/canvas/games/jet-set-radio.jpg",
-      "width": 300,
-      "height": 301
-    },
-    {
-      "id": "stray.heroes.more",
-      "type": "sticky",
-      "x": 20812,
-      "y": 1778,
-      "text": "more on\nrequest"
-    },
-    {
-      "id": "stray.trailer",
-      "type": "text",
-      "x": 25404,
-      "y": -1802,
-      "text": "TODO: record the 3D Winamp trailer",
-      "font": "mono",
-      "fontSize": 14,
-      "color": "subtle"
-    },
-    {
-      "id": "stray.nothing",
-      "type": "text",
-      "x": 36343,
-      "y": 888,
-      "text": "nothing to see here",
-      "font": "handwritten",
-      "fontSize": 24,
-      "color": "muted"
-    },
-    {
-      "id": "stray.found",
-      "type": "sticky",
-      "x": 37373,
-      "y": 1460,
-      "text": "ok you\nfound it.\nhi."
+      "x": 912.3,
+      "y": 1070.23,
+      "src": "/canvas/excalidraw/hMsEHPAOEhsyJnJWJzDDH.svg",
+      "width": 48,
+      "height": 408.85,
+      "variant": "bare"
     }
   ]
 }

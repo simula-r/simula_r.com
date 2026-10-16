@@ -144,6 +144,7 @@ const imageDefinition: ElementDefinition<ImageElementData> = {
   kind: "image",
   label: "Image",
   editable: false,
+  resizable: true,
   Icon: ImageSidebarIcon,
   Preview: ImagePreviewElement,
   Render: ImageCanvasElement,

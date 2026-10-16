@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Schibsted_Grotesk, Shantell_Sans } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
@@ -41,8 +41,28 @@ const shantellSans = Shantell_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Simula_r",
-  description: "Welcome to Simula_r's whiteboard.",
+  title: "Simula_r — Jake, Design Engineer",
+  description:
+    "Jake (a_r) is a Design Engineer in the Bay Area. Take a guided tour of the whiteboard, or hold to take the wheel and explore it yourself.",
+  applicationName: "Simula_r",
+  authors: [{ name: "Jake" }],
+  openGraph: {
+    title: "Simula_r — Jake, Design Engineer",
+    description:
+      "A guided, live-narrated whiteboard tour by Jake (a_r), a Bay Area Design Engineer.",
+    siteName: "Simula_r",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Simula_r — Jake, Design Engineer",
+    description:
+      "A guided, live-narrated whiteboard tour by Jake (a_r), a Bay Area Design Engineer.",
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#262422",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

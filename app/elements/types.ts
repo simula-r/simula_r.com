@@ -36,6 +36,7 @@ type ElementDefinition<T extends CanvasElementData> = {
   kind: T["type"];
   label: string;
   editable: boolean;
+  resizable?: boolean;
   Icon: ComponentType;
   Preview: ComponentType;
   Render: ComponentType<{ element: T }>;

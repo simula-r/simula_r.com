@@ -17,7 +17,17 @@ import { CanvasItem, type CanvasItemInteraction } from "./CanvasItem";
 import { definitionFor } from "@/app/elements/registry";
 import type { Camera, CanvasElementData } from "@/app/elements/types";
 import { CanvasSelection, type CanvasSelectionHandle } from "./CanvasSelection";
-import { CanvasItemSelection } from "./CanvasItemSelection";
+import {
+  CanvasItemSelection,
+  previewSelectionBox,
+  type ResizeHandlers,
+} from "./CanvasItemSelection";
+import {
+  cornerCursor,
+  resizeRect,
+  type ResizeCorner,
+  type ResizeRect,
+} from "@/lib/resize";
 
 type CanvasMode = "edit" | "view";
 
@@ -141,6 +151,21 @@ function Canvas({
     ? definitionFor(toolbarElement).Toolbar
     : undefined;
   const toolbarId = toolbarElement?.id;
+  const resizeId =
+    toolbarElement && definitionFor(toolbarElement).resizable
+      ? toolbarElement.id
+      : undefined;
+  const resizeBoxNode = useRef<HTMLDivElement>(null);
+  const itemResize = useRef<{
+    id: string;
+    corner: ResizeCorner;
+    node: HTMLDivElement;
+    start: ResizeRect;
+    rect: ResizeRect;
+    startX: number;
+    startY: number;
+  } | null>(null);
+  const itemResizeFrame = useRef<number | null>(null);
   const getToolbarAnchor = useCallback(
     () => (toolbarId ? (itemNodes.current.get(toolbarId) ?? null) : null),
     [toolbarId],
@@ -241,6 +266,88 @@ function Canvas({
     }
     if (drag) resetDragTransforms(drag.nodes);
     itemDrag.current = null;
+  };
+
+  const applyResizePreview = () => {
+    itemResizeFrame.current = null;
+    const resize = itemResize.current;
+    if (!resize) return;
+    const { start, rect, node } = resize;
+    const cx = rect.x - start.x;
+    const cy = rect.y - start.y;
+    const sx = rect.width / start.width;
+    const sy = rect.height / start.height;
+    node.style.transform = `translate(-50%, -50%) translate(${cx}px, ${cy}px) scale(${sx}, ${sy})`;
+    previewSelectionBox(resizeBoxNode.current, rect, camera.zoom);
+  };
+
+  const finishItemResize = () => {
+    const resize = itemResize.current;
+    if (itemResizeFrame.current != null) {
+      cancelAnimationFrame(itemResizeFrame.current);
+      itemResizeFrame.current = null;
+    }
+    itemResize.current = null;
+    const container = containerRef.current;
+    if (container) container.style.cursor = "";
+    if (!resize) return null;
+    resize.node.style.transform = "translate(-50%, -50%)";
+    delete resize.node.dataset.dragging;
+    return resize;
+  };
+
+  const resizeHandlers: ResizeHandlers = {
+    onResizeStart: (corner, clientX, clientY) => {
+      if (!resizeId) return;
+      const node = itemNodes.current.get(resizeId);
+      const element = elements.find((el) => el.id === resizeId);
+      const size = selectedSizes.get(resizeId);
+      if (!node || !element || !size) return;
+      setEditingId(null);
+      node.dataset.dragging = "";
+      const container = containerRef.current;
+      if (container) container.style.cursor = cornerCursor(corner);
+      const start = { x: element.x, y: element.y, ...size };
+      itemResize.current = {
+        id: resizeId,
+        corner,
+        node,
+        start,
+        rect: start,
+        startX: clientX,
+        startY: clientY,
+      };
+    },
+    onResizeMove: (clientX, clientY, free) => {
+      const resize = itemResize.current;
+      if (!resize) return;
+      resize.rect = resizeRect(
+        resize.start,
+        resize.corner,
+        (clientX - resize.startX) / camera.zoom,
+        (clientY - resize.startY) / camera.zoom,
+        free,
+      );
+      if (itemResizeFrame.current == null) {
+        itemResizeFrame.current = requestAnimationFrame(applyResizePreview);
+      }
+    },
+    onResizeEnd: () => {
+      const resize = finishItemResize();
+      if (!resize) return;
+      const { start, rect } = resize;
+      if (rect.width === start.width && rect.height === start.height) {
+        previewSelectionBox(resizeBoxNode.current, start, camera.zoom);
+        return;
+      }
+      onUpdateElement?.(resize.id, rect);
+    },
+    onResizeCancel: () => {
+      const resize = finishItemResize();
+      if (resize) {
+        previewSelectionBox(resizeBoxNode.current, resize.start, camera.zoom);
+      }
+    },
   };
 
   return (
@@ -349,6 +456,9 @@ function Canvas({
             selectedIds={selectedIds}
             selectedSizes={selectedSizes}
             dragNodeRef={selectionDragNode}
+            resizeId={resizeId}
+            resize={resizeHandlers}
+            resizeBoxRef={resizeBoxNode}
           />
           <CanvasSelection
             ref={marqueeRef}
