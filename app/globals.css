@@ -37,8 +37,6 @@
   --sticky-fold: #e0ba55;
   --sticky-edge: #d4ad4a;
   --on-sticky: #2e2410;
-
-  --canvas-dot: #36322f;
 }
 
 @theme inline {
@@ -94,10 +92,6 @@
   --font-mono: var(--font-berkeley-mono);
   --font-handwritten: var(--font-shantell-sans);
   --font-handwritten--font-variation-settings: "INFM" 70, "BNCE" 35;
-}
-
-@utility canvas-grid {
-  background-image: radial-gradient(circle, var(--canvas-dot) 1px, transparent 1.5px);
 }
 
 body {

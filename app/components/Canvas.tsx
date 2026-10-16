@@ -12,7 +12,7 @@ import {
 } from "react";
 import { flushSync } from "react-dom";
 import { cn } from "@/lib/utils";
-import { gridStyle, paneTransform } from "@/lib/camera";
+import { paneTransform } from "@/lib/camera";
 import { CanvasItem, type CanvasItemInteraction } from "./CanvasItem";
 import { definitionFor } from "@/app/elements/registry";
 import type { Camera, CanvasElementData } from "@/app/elements/types";
@@ -39,7 +39,6 @@ function Canvas({
   selectedIds = [],
   onSelectElement,
   paneRef,
-  gridRef,
   ref,
   mode = "edit",
   pannable = true,
@@ -52,7 +51,6 @@ function Canvas({
   selectedIds?: string[];
   onSelectElement?: (ids: string[]) => void;
   paneRef?: Ref<HTMLDivElement>;
-  gridRef?: Ref<HTMLDivElement>;
   ref?: Ref<HTMLDivElement>;
   mode?: CanvasMode;
   pannable?: boolean;
@@ -290,12 +288,6 @@ function Canvas({
         setIsPanning(false);
       }}
     >
-      <div
-        ref={gridRef}
-        aria-hidden
-        className="canvas-grid absolute inset-0 pointer-events-none"
-        style={gridStyle(camera)}
-      />
       <div
         ref={paneRef}
         id="transform-pane"
