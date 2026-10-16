@@ -101,7 +101,7 @@ const CanvasSelection = forwardRef<
     <div className="absolute inset-0 overflow-visible pointer-events-none">
       <div
         ref={boxRef}
-        className="absolute left-0 top-0 origin-top-left bg-[rgba(59,130,246,0.15)] will-change-transform"
+        className="absolute left-0 top-0 origin-top-left bg-selection/15 will-change-transform"
         style={{ width: BOX_SIZE, height: BOX_SIZE, transform: "scale(0, 0)" }}
       />
     </div>

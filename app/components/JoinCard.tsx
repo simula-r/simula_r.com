@@ -33,7 +33,7 @@ function JoinCard({
           if (ready) onJoin();
         }}
       >
-        <div className="p-3 border-b sm:border-b-0 border-shell-border">
+        <div className="p-1 border-b sm:border-b-0 border-shell-border">
           <div className="w-[410px] sm:h-full rounded-panel border-2 border-brand bg-shell-inset" />
         </div>
         <div className="flex flex-col justify-center gap-6 p-6 sm:p-8">

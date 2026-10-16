@@ -4,7 +4,8 @@ type Camera = { x: number; y: number; zoom: number };
 
 type ElementBase = { id: string; x: number; y: number };
 type TextFont = "handwritten" | "mono" | "sans";
-type TextStyle = { font?: TextFont; fontSize?: number };
+type TextColor = "ink" | "muted" | "subtle" | "brand" | "visitor";
+type TextStyle = { font?: TextFont; fontSize?: number; color?: TextColor };
 type StickyElementData = ElementBase & { type: "sticky"; text: string };
 type TextElementData = ElementBase & TextStyle & { type: "text"; text: string };
 type ImageElementData = ElementBase & {
@@ -54,5 +55,6 @@ export type {
   ElementOf,
   ElementDefinition,
   TextFont,
+  TextColor,
   TextStyle,
 };

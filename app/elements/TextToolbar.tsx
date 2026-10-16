@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/popover";
 import { cn } from "@/lib/utils";
 import type { TextElementData } from "./types";
-import { TEXT_FONTS, TEXT_SIZES } from "./textStyle";
+import { TEXT_COLORS, TEXT_FONTS, TEXT_SIZES, colorOption } from "./textStyle";
 
 const TOOLBAR_GAP = 12;
 const TOOLBAR_ATTR = "data-text-toolbar";
@@ -182,6 +182,37 @@ function TextToolbar({
                 }}
               >
                 {size}pt
+              </ToolbarItem>
+            ))
+          }
+        </ToolbarPopover>
+        <div className="w-px h-8 bg-shell-border" />
+        <ToolbarPopover
+          label="Text color"
+          trigger={
+            <div
+              className={cn(
+                "size-3.5 rounded-full ring-1 ring-shell-border-strong",
+                colorOption(element).swatchClassName,
+              )}
+            />
+          }
+        >
+          {(close) =>
+            TEXT_COLORS.map((color) => (
+              <ToolbarItem
+                key={color.value}
+                selected={colorOption(element).value === color.value}
+                className="gap-2"
+                onSelect={() => {
+                  onChange({ color: color.value });
+                  close();
+                }}
+              >
+                <span
+                  className={cn("size-3 rounded-full", color.swatchClassName)}
+                />
+                {color.label}
               </ToolbarItem>
             ))
           }

@@ -7,14 +7,18 @@ import { cn } from "@/lib/utils";
 
 type SessionPhase = "lobby" | "following" | "control" | "ended";
 
+const ACTION_LABELS = ["Start sesh", "Resume sesh", "Pause sesh", "Replay sesh"];
+
 function ActionButton({
   onClick,
   disabled,
-  children,
+  icon,
+  label,
 }: {
   onClick: () => void;
   disabled?: boolean;
-  children: ReactNode;
+  icon: ReactNode;
+  label: string;
 }) {
   return (
     <button
@@ -22,7 +26,19 @@ function ActionButton({
       disabled={disabled}
       className="flex items-center gap-1.5 text-ui font-semibold h-8 pl-2 pr-2.5 rounded-control select-none text-on-brand bg-brand shadow-bevel hover:bg-brand-hover active:bg-brand-pressed outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 focus-visible:ring-offset-shell disabled:bg-shell-active disabled:text-ink-3 disabled:shadow-none"
     >
-      {children}
+      {icon}
+      <span className="grid">
+        {ACTION_LABELS.map((l) => (
+          <span
+            key={l}
+            aria-hidden
+            className="invisible col-start-1 row-start-1"
+          >
+            {l}
+          </span>
+        ))}
+        <span className="col-start-1 row-start-1">{label}</span>
+      </span>
     </button>
   );
 }
@@ -38,23 +54,23 @@ function SessionAction({
 }) {
   if (phase === "ended") {
     return (
-      <ActionButton onClick={player.replay}>
-        <Replay className="size-4" />
-        <div>Replay sesh</div>
-      </ActionButton>
+      <ActionButton
+        onClick={player.replay}
+        icon={<Replay className="size-4" />}
+        label="Replay sesh"
+      />
     );
   }
   if (phase === "following") {
     const playing = player.status === "playing";
     return (
-      <ActionButton onClick={playing ? player.pause : player.play}>
-        {playing ? (
-          <Pause className="size-4" />
-        ) : (
-          <Play className="size-4" />
-        )}
-        <div>{playing ? "Pause sesh" : "Resume sesh"}</div>
-      </ActionButton>
+      <ActionButton
+        onClick={playing ? player.pause : player.play}
+        icon={
+          playing ? <Pause className="size-4" /> : <Play className="size-4" />
+        }
+        label={playing ? "Pause sesh" : "Resume sesh"}
+      />
     );
   }
   const started = player.status !== "idle";
@@ -62,10 +78,9 @@ function SessionAction({
     <ActionButton
       disabled={player.chapters.length === 0}
       onClick={phase === "lobby" ? onStart : player.play}
-    >
-      <Play className="size-4" />
-      <div>{started ? "Resume sesh" : "Start sesh"}</div>
-    </ActionButton>
+      icon={<Play className="size-4" />}
+      label={started ? "Resume sesh" : "Start sesh"}
+    />
   );
 }
 

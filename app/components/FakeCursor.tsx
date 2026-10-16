@@ -17,7 +17,7 @@ function ChatBubble({ text }: { text: string }) {
   }, [shown, text]);
 
   return (
-    <div className="w-max max-w-60 rounded-panel rounded-tl-sm px-2.5 py-1.5 text-ui-md font-medium text-on-brand bg-brand break-words whitespace-pre-wrap">
+    <div className="w-max max-w-60 rounded-panel rounded-tl-sm px-2 py-1.5 text-ui font-semibold text-on-brand bg-brand break-words whitespace-pre-wrap">
       {text.slice(0, shown)}
     </div>
   );

@@ -24,17 +24,19 @@ function HelpButton() {
   return (
     <div className="absolute p-4 bottom-0 right-0 z-10">
       <Popover>
-        <PopoverTrigger
-          aria-label="Help"
-          className="grid place-items-center size-8 border border-shell-border bg-shell shadow-panel rounded-panel text-ink-2 hover:text-ink hover:bg-shell-hover data-[state=open]:bg-shell-active data-[state=open]:text-ink outline-none focus-visible:ring-2 focus-visible:ring-brand"
-        >
-          <Question className="size-4.5" />
-        </PopoverTrigger>
+        <div className="p-1 border border-shell-border bg-shell shadow-panel rounded-panel">
+          <PopoverTrigger
+            aria-label="Help"
+            className="grid place-items-center size-8 rounded-control text-ink-2 hover:text-ink hover:bg-shell-hover data-[state=open]:bg-shell-active data-[state=open]:text-ink outline-none focus-visible:ring-2 focus-visible:ring-brand"
+          >
+            <Question className="size-4.5" />
+          </PopoverTrigger>
+        </div>
         <PopoverContent
           side="top"
           align="start"
           sideOffset={8}
-          className="w-80 p-4 rounded-dialog border-shell-border bg-shell text-ink shadow-dialog"
+          className="w-80 p-4 rounded-panel border-shell-border bg-shell text-ink shadow-dialog"
         >
           <div className="flex items-center gap-3">
             <ARBall className="size-8 shrink-0" />

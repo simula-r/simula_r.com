@@ -21,7 +21,7 @@ function ImageIconSVG({ className }: { className?: string }) {
       <g clipPath="url(#clip0_138_498)">
         <path
           d="M55.44 0H5.04C2.25648 0 0 2.25648 0 5.04V40.32C0 43.1035 2.25648 45.36 5.04 45.36H55.44C58.2235 45.36 60.48 43.1035 60.48 40.32V5.04C60.48 2.25648 58.2235 0 55.44 0Z"
-          fill="#353535"
+          className="fill-shell-active"
         />
         <mask
           id="mask0_138_498"

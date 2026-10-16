@@ -20,7 +20,7 @@ function parseLine(line: string, lineIndex: number): ReactNode[] {
         href={href}
         target="_blank"
         rel="noreferrer"
-        className="pointer-events-auto underline"
+        className="pointer-events-auto text-brand-ink underline decoration-brand-ink/40 underline-offset-[0.2em] hover:decoration-brand-ink"
       >
         {label}
       </a>,

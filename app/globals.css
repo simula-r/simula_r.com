@@ -20,9 +20,9 @@
   --ink-3: #9c958e;
   --ink-4: #6e6862;
 
-  --brand: #f3541a;
-  --brand-hover: #ff6a33;
-  --brand-pressed: #dd4510;
+  --brand: #f5622d;
+  --brand-hover: #ff7440;
+  --brand-pressed: #e04f17;
   --brand-ink: #ff7a4a;
   --on-brand: #140802;
 
@@ -30,6 +30,13 @@
   --on-visitor: #140f2b;
 
   --danger: #ff5c8a;
+
+  --selection: #4c8dff;
+
+  --sticky: #f2cf70;
+  --sticky-fold: #e0ba55;
+  --sticky-edge: #d4ad4a;
+  --on-sticky: #2e2410;
 }
 
 @theme inline {
@@ -55,6 +62,11 @@
   --color-visitor: var(--visitor);
   --color-on-visitor: var(--on-visitor);
   --color-danger: var(--danger);
+  --color-selection: var(--selection);
+  --color-sticky: var(--sticky);
+  --color-sticky-fold: var(--sticky-fold);
+  --color-sticky-edge: var(--sticky-edge);
+  --color-on-sticky: var(--on-sticky);
 
   --shadow-panel: inset 0 1px 0 0 var(--shell-highlight), 0 1px 2px rgb(0 0 0 / 0.3), 0 4px 12px rgb(0 0 0 / 0.18);
   --shadow-bevel: inset 0 1px 0 0 rgb(255 255 255 / 0.2);

@@ -7,7 +7,7 @@ const EDGE_LENGTH = 4096;
 const EDGE_THICKNESS = 4;
 
 const EDGE_CLASS =
-  "absolute left-0 top-0 origin-top-left bg-[#3b82f6] will-change-transform";
+  "absolute left-0 top-0 origin-top-left bg-selection will-change-transform";
 
 const HORIZONTAL_EDGE = { width: EDGE_LENGTH, height: EDGE_THICKNESS };
 const VERTICAL_EDGE = { width: EDGE_THICKNESS, height: EDGE_LENGTH };
