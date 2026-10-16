@@ -2,13 +2,13 @@ const SOURCE_URL = "https://github.com/simula-r/simula_r.com";
 
 function SourceLink() {
   return (
-    <div className="absolute bottom-0 left-0 p-4 z-10 font-mono text-[11px] text-[#777777]">
-      Custom Canvas Engine ·{" "}
+    <div className="absolute bottom-0 left-0 p-4 z-10 font-mono text-[11px] text-foreground-muted">
+      Jake's Custom Canvas Engine ·{" "}
       <a
         href={SOURCE_URL}
         target="_blank"
         rel="noopener noreferrer"
-        className="inline-flex items-center gap-0.5 hover:text-[#AAAAAA]"
+        className="inline-flex items-center gap-0.5 underline-offset-2 hover:text-foreground hover:underline"
       >
         Source
         <svg

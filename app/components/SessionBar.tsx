@@ -20,7 +20,7 @@ function ActionButton({
     <button
       onClick={onClick}
       disabled={disabled}
-      className="font-mono flex items-center space-x-2 text-xs h-8 px-2 rounded-md select-none text-white bg-brand hover:brightness-110 disabled:opacity-60"
+      className="flex items-center gap-1.5 text-ui font-semibold h-8 pl-2 pr-2.5 rounded-control select-none text-on-brand bg-brand shadow-bevel hover:bg-brand-hover active:bg-brand-pressed outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 focus-visible:ring-offset-shell disabled:bg-shell-active disabled:text-ink-3 disabled:shadow-none"
     >
       {children}
     </button>
@@ -39,7 +39,7 @@ function SessionAction({
   if (phase === "ended") {
     return (
       <ActionButton onClick={player.replay}>
-        <Replay className="w-4.5 h-4.5" />
+        <Replay className="size-4" />
         <div>Replay sesh</div>
       </ActionButton>
     );
@@ -49,9 +49,9 @@ function SessionAction({
     return (
       <ActionButton onClick={playing ? player.pause : player.play}>
         {playing ? (
-          <Pause className="w-4.5 h-4.5" />
+          <Pause className="size-4" />
         ) : (
-          <Play className="w-4.5 h-4.5" />
+          <Play className="size-4" />
         )}
         <div>{playing ? "Pause sesh" : "Resume sesh"}</div>
       </ActionButton>
@@ -63,7 +63,7 @@ function SessionAction({
       disabled={player.chapters.length === 0}
       onClick={phase === "lobby" ? onStart : player.play}
     >
-      <Play className="w-4.5 h-4.5" />
+      <Play className="size-4" />
       <div>{started ? "Resume sesh" : "Start sesh"}</div>
     </ActionButton>
   );
@@ -83,27 +83,38 @@ function SessionBar({
   onSettings?: () => void;
 }) {
   const following = phase === "following";
+  const startable = !following && player.chapters.length > 0;
+  const handleHostClick = () => {
+    if (phase === "ended") player.replay();
+    else if (phase === "lobby") onStart();
+    else if (phase === "control") player.play();
+  };
 
   return (
     <div className="absolute p-4 top-0 right-0 z-50">
-      <div className="flex items-center gap-4 border border-shell-border bg-shell p-1 pl-2 rounded-lg">
+      <div className="flex items-center gap-3 border border-shell-border bg-shell text-ink shadow-panel p-1 pl-2 rounded-panel">
         <div className="flex items-center -space-x-0.5 h-8">
-          <div
+          <button
+            type="button"
             title="a_r"
+            aria-label={phase === "ended" ? "Replay sesh" : "Start sesh"}
+            onClick={handleHostClick}
+            disabled={!startable}
             className={cn(
-              "rounded-full border-2 border-transparent",
-              following && "border-brand",
+              "rounded-full border-2 border-shell focus-visible:ring-2 focus-visible:ring-brand",
+              following && "outline-2 outline-brand",
+              startable && "cursor-pointer hover:outline-2 hover:outline-brand/50",
             )}
           >
-            <div className="w-6 h-6 text-black font-bold grid place-items-center rounded-full bg-linear-to-b from-[#D9D9D9] to-[#676767] text-[11px] pb-2 select-none">
+            <div className="size-6 font-mono font-bold text-[10px] tracking-tighter text-on-brand grid place-items-center rounded-full bg-brand select-none">
               a_r
             </div>
-          </div>
+          </button>
           <div
             title={name || "Anonymous"}
-            className="rounded-full border-2 border-transparent"
+            className="rounded-full border-2 border-shell"
           >
-            <div className="w-6 h-6 text-white font-semibold text-[11px] grid place-items-center rounded-full bg-shell-hover-2 select-none">
+            <div className="size-6 font-bold text-ui text-on-visitor grid place-items-center rounded-full bg-visitor select-none">
               {(name.charAt(0) || "A").toUpperCase()}
             </div>
           </div>
@@ -114,9 +125,9 @@ function SessionBar({
             type="button"
             aria-label="Settings"
             onClick={onSettings}
-            className="grid place-items-center w-8 h-8 rounded-md text-white hover:bg-shell-hover"
+            className="grid place-items-center size-8 rounded-control text-ink-2 hover:text-ink hover:bg-shell-hover active:bg-shell-active outline-none focus-visible:ring-2 focus-visible:ring-brand"
           >
-            <Gear className="w-5 h-5" />
+            <Gear className="size-4.5" />
           </button>
         </div>
       </div>

@@ -17,7 +17,7 @@ function ChatBubble({ text }: { text: string }) {
   }, [shown, text]);
 
   return (
-    <div className="w-max max-w-60 rounded-xl rounded-tl-sm px-3 py-1.5 text-xs font-mono text-white bg-brand break-words whitespace-pre-wrap">
+    <div className="w-max max-w-60 rounded-panel rounded-tl-sm px-2.5 py-1.5 text-ui-md font-medium text-on-brand bg-brand break-words whitespace-pre-wrap">
       {text.slice(0, shown)}
     </div>
   );
@@ -83,7 +83,7 @@ function FakeCursor({
         <div className="absolute left-4 top-7 flex flex-col items-start gap-1">
           <div
             className={cn(
-              "rounded-md px-2 py-0.5 text-xs font-mono font-medium text-white whitespace-nowrap bg-brand",
+              "rounded-control px-1.5 py-0.5 font-mono text-ui font-bold text-on-brand whitespace-nowrap bg-brand",
               clickable && "group-hover:ring-2 group-hover:ring-brand/40",
             )}
           >

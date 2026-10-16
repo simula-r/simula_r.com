@@ -7,6 +7,7 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { Question } from "./Icons";
+import { ARBall } from "./Navigation";
 
 const SOURCE_URL = "https://github.com/simula-r/simula_r.com";
 
@@ -25,36 +26,36 @@ function HelpButton() {
       <Popover>
         <PopoverTrigger
           aria-label="Help"
-          className="grid place-items-center w-8 h-8 border border-shell-border bg-shell rounded-lg hover:bg-shell-hover data-[state=open]:bg-shell-hover"
+          className="grid place-items-center size-8 border border-shell-border bg-shell shadow-panel rounded-panel text-ink-2 hover:text-ink hover:bg-shell-hover data-[state=open]:bg-shell-active data-[state=open]:text-ink outline-none focus-visible:ring-2 focus-visible:ring-brand"
         >
-          <Question className="w-5 h-5 text-[#AAAAAA]" />
+          <Question className="size-4.5" />
         </PopoverTrigger>
         <PopoverContent
           side="top"
           align="start"
           sideOffset={8}
-          className="w-80 p-5 rounded-xl border-shell-border bg-shell text-[#EDEDED] font-sans shadow-xl"
+          className="w-80 p-4 rounded-dialog border-shell-border bg-shell text-ink shadow-dialog"
         >
           <div className="flex items-center gap-3">
-            <div className="size-9 shrink-0 rounded-full bg-[radial-gradient(circle_at_35%_30%,#FFB27A,#F8640F_45%,#B83A00)]" />
+            <ARBall className="size-8 shrink-0" />
             <div className="min-w-0">
-              <div className="text-base font-semibold text-white">Simula_r</div>
-              <div className="font-mono text-xs text-[#888888]">
+              <div className="text-ui-lg font-semibold text-ink">Simula_r</div>
+              <div className="font-mono text-ui-sm text-ink-3">
                 v0.1 · by Jake C. Schroeder
               </div>
             </div>
           </div>
-          <p className="mt-4 text-sm leading-relaxed text-[#DDDDDD]">
+          <p className="mt-3 text-ui-md text-ink-2">
             A whiteboard I built from scratch for this portfolio. No whiteboard
             library, no site builder.
           </p>
-          <dl className="mt-4 grid grid-cols-[auto_1fr] gap-x-6 gap-y-2 text-sm">
+          <dl className="mt-3 grid grid-cols-[auto_1fr] gap-x-4 gap-y-1.5 text-ui-md">
             {FEATURES.map(([term, detail]) => (
               <div key={term} className="contents">
-                <dt className="font-mono text-xs leading-5 text-[#888888]">
+                <dt className="font-mono text-ui-sm leading-5 text-ink-3">
                   {term}
                 </dt>
-                <dd className="text-[#DDDDDD]">{detail}</dd>
+                <dd className="text-ink-2">{detail}</dd>
               </div>
             ))}
           </dl>
@@ -62,7 +63,7 @@ function HelpButton() {
             href={SOURCE_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-5 flex items-center justify-center gap-1 h-10 rounded-lg border border-shell-border text-sm font-medium text-white hover:bg-shell-hover"
+            className="mt-4 flex items-center justify-center gap-1 h-8 rounded-control border border-shell-border-strong text-ui font-medium text-ink hover:bg-shell-hover active:bg-shell-active outline-none focus-visible:ring-2 focus-visible:ring-brand"
           >
             View source on GitHub
             <svg
@@ -78,7 +79,7 @@ function HelpButton() {
               <path d="M7 17L17 7M8 7h9v9" />
             </svg>
           </a>
-          <label className="mt-4 flex items-center justify-between text-sm text-[#888888] cursor-pointer">
+          <label className="mt-3 flex items-center justify-between text-ui font-medium text-ink-2 cursor-pointer">
             Show internals
             <button
               type="button"
@@ -86,12 +87,12 @@ function HelpButton() {
               aria-checked={internals}
               onClick={() => setInternals((on) => !on)}
               className={`relative h-6 w-11 rounded-full transition-colors ${
-                internals ? "bg-brand" : "bg-shell-hover-2"
+                internals ? "bg-ink" : "bg-shell-border-strong"
               }`}
             >
               <span
-                className={`absolute top-1 left-1 size-4 rounded-full bg-white transition-transform ${
-                  internals ? "translate-x-5" : ""
+                className={`absolute top-1 left-1 size-4 rounded-full transition-transform ${
+                  internals ? "translate-x-5 bg-shell" : "bg-ink-2"
                 }`}
               />
             </button>

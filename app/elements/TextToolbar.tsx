@@ -15,11 +15,11 @@ const TOOLBAR_GAP = 12;
 const TOOLBAR_ATTR = "data-text-toolbar";
 
 const TRIGGER_CLASS =
-  "h-8 w-8 grid place-items-center hover:bg-shell-hover data-[state=open]:bg-shell-hover";
+  "size-8 grid place-items-center rounded-control hover:bg-shell-hover data-[state=open]:bg-shell-active";
 const CONTENT_CLASS =
-  "w-auto min-w-28 p-1 rounded-sm border border-shell-border bg-shell text-xs text-white shadow-md";
+  "w-auto min-w-28 p-1 rounded-panel border border-shell-border bg-shell text-ui text-ink shadow-dialog";
 const ITEM_CLASS =
-  "w-full h-8 px-2 flex items-center rounded-sm text-left hover:bg-shell-hover focus-visible:bg-shell-hover outline-none aria-pressed:bg-shell-hover-2";
+  "w-full h-8 px-2 flex items-center rounded-control text-left hover:bg-shell-hover focus-visible:bg-shell-hover outline-none aria-pressed:bg-shell-active";
 
 function isInTextToolbar(node: EventTarget | null) {
   return node instanceof Element && node.closest(`[${TOOLBAR_ATTR}]`) !== null;
@@ -137,7 +137,7 @@ function TextToolbar({
       aria-label="Text formatting"
       onPointerDown={(e) => e.stopPropagation()}
       onMouseDown={(e) => e.preventDefault()}
-      className="fixed left-0 top-0 z-40 h-10 px-1 flex items-center rounded-sm border text-xs text-white bg-shell border-shell-border select-none"
+      className="fixed left-0 top-0 z-40 h-10 px-1 flex items-center rounded-panel border text-ui text-ink bg-shell border-shell-border shadow-panel select-none"
     >
       <div className="flex items-center gap-4">
         <ToolbarPopover

@@ -20,8 +20,8 @@ function EditNavigation({
         disabled={disabled}
         aria-label={sidebarOpen ? "Hide sidebar" : "Show sidebar"}
         aria-pressed={sidebarOpen}
-        className={`h-8 w-8 rounded-sm grid place-items-center hover:bg-shell-hover disabled:opacity-40 disabled:pointer-events-none ${
-          sidebarOpen ? "bg-shell-hover" : ""
+        className={`size-8 rounded-control grid place-items-center text-ink-2 hover:text-ink hover:bg-shell-hover disabled:text-ink-4 disabled:pointer-events-none outline-none focus-visible:ring-2 focus-visible:ring-brand ${
+          sidebarOpen ? "bg-shell-active text-ink" : ""
         }`}
       >
         <Sidebar className="w-4 h-4" />

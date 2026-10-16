@@ -137,7 +137,7 @@ export default function Home() {
       <Canvas
         ref={canvasRef}
         mode="view"
-        pannable={status !== "playing"}
+        pannable={phase === "control" || phase === "ended"}
         camera={camera}
         setCamera={updateCamera}
         paneRef={paneRef}

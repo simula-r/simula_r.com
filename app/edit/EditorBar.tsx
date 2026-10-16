@@ -31,7 +31,7 @@ type Recorder = {
 };
 
 const BUTTON_CLASS =
-  "h-8 px-3 rounded-md hover:bg-shell-hover disabled:opacity-50 select-none";
+  "h-8 px-2.5 rounded-control text-ui font-medium text-ink hover:bg-shell-hover active:bg-shell-active disabled:text-ink-4 disabled:hover:bg-transparent outline-none focus-visible:ring-2 focus-visible:ring-brand select-none";
 
 function EditorBar({
   saveStatus,
@@ -54,15 +54,15 @@ function EditorBar({
 
   return (
     <div className="absolute p-4 top-0 right-0 z-10">
-      <div className="flex items-center space-x-3 border border-shell-border bg-shell p-1 rounded-sm font-mono text-xs">
+      <div className="flex items-center gap-1 border border-shell-border bg-shell text-ink shadow-panel p-1 rounded-panel">
         <div
           className={cn(
-            "pl-2 flex items-center gap-2 select-none",
-            failed ? "text-brand" : "text-white/60",
+            "pl-2 pr-1 flex items-center gap-2 font-mono text-ui-sm select-none",
+            failed ? "text-danger" : "text-ink-2",
           )}
         >
           {status === "recording" && (
-            <div className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
+            <div className="w-2 h-2 rounded-full bg-danger animate-pulse" />
           )}
           {label}
           {active && ` · Chapter ${recorder.chapterCount + 1}`}

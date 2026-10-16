@@ -119,7 +119,7 @@ function ProgressSegments({ player }: { player: DrivePlayer }) {
       {chapters.map((chapter, i) => (
         <div
           key={chapter.id}
-          className="bg-white/50 relative overflow-hidden rounded-sm h-1.5"
+          className="bg-on-brand/25 relative overflow-hidden rounded-full h-1.5"
           style={{ flexGrow: chapter.duration }}
           title={chapter.title}
         >
@@ -127,7 +127,7 @@ function ProgressSegments({ player }: { player: DrivePlayer }) {
             ref={(node) => {
               fills.current[i] = node;
             }}
-            className="absolute inset-0 origin-left bg-white"
+            className="absolute inset-0 origin-left bg-on-brand"
             style={{ transform: "scaleX(0)" }}
           />
         </div>
@@ -174,17 +174,17 @@ function ActiveBorder({ player }: { player: DrivePlayer }) {
       <div
         className={`absolute bottom-1 left-1/2 -translate-x-1/2 z-50 ${fade}`}
       >
-        <div className="relative bg-brand flex items-center gap-4 px-2 h-10 text-xs text-foreground font-mono rounded-t-lg select-none">
+        <div className="relative bg-brand flex items-center gap-4 px-2 h-10 font-mono text-ui font-bold text-on-brand rounded-t-panel select-none">
           <CornerLeft />
           <button
             onClick={playing ? player.pause : player.play}
             aria-label={playing ? "Pause" : "Play"}
-            className="w-6 h-6 grid place-items-center rounded-sm hover:bg-white/20"
+            className="size-7 grid place-items-center rounded-control hover:bg-on-brand/10 active:bg-on-brand/20 outline-none focus-visible:ring-2 focus-visible:ring-on-brand"
           >
             {playing ? (
-              <Pause className="w-4.5 h-4.5" />
+              <Pause className="size-4.5" />
             ) : (
-              <Play className="w-4.5 h-4.5" />
+              <Play className="size-4.5" />
             )}
           </button>
           <ProgressSegments player={player} />
@@ -193,7 +193,7 @@ function ActiveBorder({ player }: { player: DrivePlayer }) {
             onClick={player.toggleMute}
             aria-label={player.muted ? "Unmute" : "Mute"}
             aria-pressed={player.muted}
-            className="w-6 h-6 grid place-items-center rounded-sm hover:bg-white/20"
+            className="size-7 grid place-items-center rounded-control hover:bg-on-brand/10 active:bg-on-brand/20 outline-none focus-visible:ring-2 focus-visible:ring-on-brand"
           >
             {player.muted ? (
               <VolumeMute className="w-5 h-5" />
@@ -205,7 +205,7 @@ function ActiveBorder({ player }: { player: DrivePlayer }) {
         </div>
       </div>
       <div
-        className={`absolute inset-1 rounded-lg outline-solid outline-[length:100vmax] outline-brand pointer-events-none z-50 ${fade}`}
+        className={`absolute inset-1 rounded-panel outline-solid outline-[length:100vmax] outline-brand pointer-events-none z-50 ${fade}`}
         onTransitionEnd={(e) => {
           if (e.target === e.currentTarget && !active) setPresent(false);
         }}

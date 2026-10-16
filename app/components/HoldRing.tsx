@@ -108,7 +108,7 @@ function HoldRing({
       </svg>
       <div
         ref={labelRef}
-        className="absolute bottom-full left-1/2 -translate-x-1/2 mb-1 rounded-md px-2 py-0.5 text-xs font-mono font-medium text-white whitespace-nowrap bg-brand"
+        className="absolute bottom-full left-1/2 -translate-x-1/2 mb-1 rounded-control px-1.5 py-0.5 text-ui font-semibold text-on-brand whitespace-nowrap bg-brand"
       >
         Take control
       </div>

@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { Geist, Reenie_Beanie } from "next/font/google";
+import { Schibsted_Grotesk, Shantell_Sans } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const schibstedGrotesk = Schibsted_Grotesk({
+  variable: "--font-schibsted-grotesk",
   subsets: ["latin"],
 });
 
@@ -34,10 +34,10 @@ const berkeleyMono = localFont({
   ],
 });
 
-const reenieBeanie = Reenie_Beanie({
-  variable: "--font-reenie-beanie",
+const shantellSans = Shantell_Sans({
+  variable: "--font-shantell-sans",
   subsets: ["latin"],
-  weight: "400",
+  axes: ["BNCE", "INFM"],
 });
 
 export const metadata: Metadata = {
@@ -49,7 +49,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${berkeleyMono.variable} ${reenieBeanie.variable} h-full w-full antialiased`}
+      className={`${schibstedGrotesk.variable} ${berkeleyMono.variable} ${shantellSans.variable} h-full w-full antialiased`}
     >
       <body className="w-full h-full">{children}</body>
     </html>

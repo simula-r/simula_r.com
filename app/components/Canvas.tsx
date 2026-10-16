@@ -24,8 +24,10 @@ type CanvasMode = "edit" | "view";
 const MOUSE_BUTTON_LEFT = 0;
 const MOUSE_BUTTON_MIDDLE = 1;
 
-function panButtonForMode(mode: CanvasMode) {
-  return mode === "view" ? MOUSE_BUTTON_LEFT : MOUSE_BUTTON_MIDDLE;
+function panButtonsForMode(mode: CanvasMode) {
+  return mode === "view"
+    ? [MOUSE_BUTTON_LEFT, MOUSE_BUTTON_MIDDLE]
+    : [MOUSE_BUTTON_MIDDLE];
 }
 
 function Canvas({
@@ -107,7 +109,7 @@ function Canvas({
   }, []);
 
   const pan = useRef<{ x: number; y: number } | null>(null);
-  const panButton = panButtonForMode(mode);
+  const panButtons = panButtonsForMode(mode);
   const [isPanning, setIsPanning] = useState(false);
   const [editingId, setEditingId] = useState<string | null>(null);
   const [selectedSizes, setSelectedSizes] = useState(
@@ -260,7 +262,7 @@ function Canvas({
           marqueeRef.current?.start(e.clientX, e.clientY);
           return;
         }
-        if (e.button !== panButton) return;
+        if (!panButtons.includes(e.button) || !pannable) return;
         e.preventDefault();
         e.currentTarget.setPointerCapture(e.pointerId);
         pan.current = { x: e.clientX, y: e.clientY };
