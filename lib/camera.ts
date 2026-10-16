@@ -23,14 +23,20 @@ function fitCamera(camera: Camera, recorded: Size, viewport: Size): Camera {
     viewport.width / recorded.width,
     viewport.height / recorded.height,
   );
-  return { x: camera.x * scale, y: camera.y * scale, zoom: camera.zoom * scale };
+  return {
+    x: camera.x * scale,
+    y: camera.y * scale,
+    zoom: camera.zoom * scale,
+  };
 }
 
 function mixCamera(a: Camera, b: Camera, k: number): Camera {
   return {
     x: a.x + (b.x - a.x) * k,
     y: a.y + (b.y - a.y) * k,
-    zoom: Math.exp(Math.log(a.zoom) + (Math.log(b.zoom) - Math.log(a.zoom)) * k),
+    zoom: Math.exp(
+      Math.log(a.zoom) + (Math.log(b.zoom) - Math.log(a.zoom)) * k,
+    ),
   };
 }
 
@@ -38,8 +44,19 @@ function paneTransform(camera: Camera) {
   return `translate(${camera.x}px, ${camera.y}px) scale(${camera.zoom})`;
 }
 
+function projectPoint(camera: Camera, point: Point): Point {
+  return {
+    x: point.x * camera.zoom + camera.x,
+    y: point.y * camera.zoom + camera.y,
+  };
+}
+
+function screenTransform(point: Point) {
+  return `translate(${point.x}px, ${point.y}px)`;
+}
+
 function pointTransform(camera: Camera, point: Point) {
-  return `translate(${point.x * camera.zoom + camera.x}px, ${point.y * camera.zoom + camera.y}px)`;
+  return screenTransform(projectPoint(camera, point));
 }
 
 export {
@@ -50,5 +67,7 @@ export {
   mixCamera,
   paneTransform,
   pointTransform,
+  projectPoint,
+  screenTransform,
 };
 export type { Point, Size };

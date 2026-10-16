@@ -37,6 +37,14 @@
   --sticky-fold: #e0ba55;
   --sticky-edge: #d4ad4a;
   --on-sticky: #2e2410;
+
+  --motion-instant: 100ms;
+  --motion-fast: 150ms;
+  --motion-base: 250ms;
+  --motion-medium: 350ms;
+  --motion-slow: 500ms;
+  --motion-scenic: 700ms;
+  --motion-stagger: 40ms;
 }
 
 @theme inline {
@@ -72,6 +80,10 @@
   --shadow-bevel: inset 0 1px 0 0 rgb(255 255 255 / 0.2);
   --shadow-dialog: inset 0 1px 0 0 var(--shell-highlight), 0 24px 64px -12px rgb(0 0 0 / 0.6);
 
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in: cubic-bezier(0.55, 0, 1, 0.45);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+
   --radius-control: 6px;
   --radius-panel: 10px;
   --radius-dialog: 14px;
@@ -102,4 +114,13 @@ body {
   font-size: var(--text-ui);
   line-height: var(--text-ui--line-height);
   letter-spacing: var(--text-ui--letter-spacing);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    transition-delay: 0ms !important;
+    transition-duration: var(--motion-fast) !important;
+  }
 }

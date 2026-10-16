@@ -1,15 +1,12 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { HOLD_MS } from "./useHoldToControl";
+import { EASE_IN_OUT, EASE_OUT, MOTION } from "@/lib/motion";
 
 const SIZE = 36;
 const STROKE = 3;
 const RADIUS = (SIZE - STROKE) / 2;
 const CIRCUMFERENCE = 2 * Math.PI * RADIUS;
-const FILL_EASING = "cubic-bezier(0.65, 0, 0.35, 1)";
-const ENTER_EASING = "cubic-bezier(0.22, 1, 0.36, 1)";
-const ENTER_MS = 320;
 
 function ringTransform(x: number, y: number) {
   return `translate(${x - SIZE / 2}px, ${y - SIZE / 2}px)`;
@@ -19,10 +16,14 @@ function HoldRing({
   pointerId,
   x,
   y,
+  duration,
+  done = false,
 }: {
-  pointerId: number;
+  pointerId: number | null;
   x: number;
   y: number;
+  duration: number;
+  done?: boolean;
 }) {
   const ringRef = useRef<HTMLDivElement>(null);
   const svgRef = useRef<SVGSVGElement>(null);
@@ -33,14 +34,14 @@ function HoldRing({
     const animations = [
       fillRef.current?.animate(
         [{ strokeDashoffset: CIRCUMFERENCE }, { strokeDashoffset: 0 }],
-        { duration: HOLD_MS, easing: FILL_EASING, fill: "forwards" },
+        { duration, easing: EASE_IN_OUT, fill: "forwards" },
       ),
       svgRef.current?.animate(
         [
           { opacity: 0, transform: "scale(0.6)" },
           { opacity: 1, transform: "scale(1)" },
         ],
-        { duration: ENTER_MS, easing: ENTER_EASING, fill: "backwards" },
+        { duration: MOTION.medium, easing: EASE_OUT, fill: "backwards" },
       ),
       labelRef.current?.animate(
         [
@@ -48,9 +49,9 @@ function HoldRing({
           { opacity: 1, transform: "translateY(0) scale(1)" },
         ],
         {
-          duration: ENTER_MS,
-          delay: 60,
-          easing: ENTER_EASING,
+          duration: MOTION.medium,
+          delay: MOTION.stagger,
+          easing: EASE_OUT,
           fill: "backwards",
         },
       ),
@@ -60,7 +61,11 @@ function HoldRing({
       "pointermove",
       (e) => {
         const ring = ringRef.current;
-        if (ring && e.pointerId === pointerId) {
+        const tracked =
+          pointerId === null
+            ? e.pointerType === "mouse"
+            : e.pointerId === pointerId;
+        if (ring && tracked) {
           ring.style.transform = ringTransform(e.clientX, e.clientY);
         }
       },
@@ -70,7 +75,35 @@ function HoldRing({
       controller.abort();
       for (const animation of animations) animation?.cancel();
     };
-  }, [pointerId]);
+  }, [pointerId, duration]);
+
+  useEffect(() => {
+    if (!done) return;
+    const options = {
+      duration: MOTION.fast,
+      easing: EASE_OUT,
+      fill: "forwards",
+    } as const;
+    const animations = [
+      svgRef.current?.animate(
+        [
+          { opacity: 1, transform: "scale(1)" },
+          { opacity: 0, transform: "scale(1.25)" },
+        ],
+        options,
+      ),
+      labelRef.current?.animate(
+        [
+          { opacity: 1, transform: "translateY(0)" },
+          { opacity: 0, transform: "translateY(-4px)" },
+        ],
+        options,
+      ),
+    ];
+    return () => {
+      for (const animation of animations) animation?.cancel();
+    };
+  }, [done]);
 
   return (
     <div

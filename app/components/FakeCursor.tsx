@@ -7,17 +7,47 @@ import { cn } from "@/lib/utils";
 
 const TYPE_MS = 30;
 
-function ChatBubble({ text }: { text: string }) {
+function ChatBubble({
+  text,
+  delay,
+  leaving,
+  onLeft,
+}: {
+  text: string;
+  delay: number;
+  leaving: boolean;
+  onLeft: () => void;
+}) {
   const [shown, setShown] = useState(0);
 
   useEffect(() => {
     if (shown >= text.length) return;
-    const timer = window.setTimeout(() => setShown(shown + 1), TYPE_MS);
+    const timer = window.setTimeout(
+      () => setShown(shown + 1),
+      shown === 0 ? delay : TYPE_MS,
+    );
     return () => window.clearTimeout(timer);
-  }, [shown, text]);
+  }, [shown, text, delay]);
+
+  const unseen = shown === 0;
+  useEffect(() => {
+    if (unseen && leaving) onLeft();
+  }, [unseen, leaving, onLeft]);
+
+  if (unseen) return null;
 
   return (
-    <div className="w-max max-w-60 rounded-panel rounded-tl-sm px-2 py-1.5 text-ui font-semibold text-on-brand bg-brand break-words whitespace-pre-wrap">
+    <div
+      className={cn(
+        "w-max max-w-60 rounded-panel rounded-tl-sm px-2 py-1.5 text-ui font-semibold text-on-brand bg-brand break-words whitespace-pre-wrap origin-top-left transition-[opacity,scale] starting:opacity-0 starting:scale-90",
+        leaving
+          ? "opacity-0 scale-95 ease-in duration-(--motion-instant)"
+          : "ease-out duration-(--motion-fast)",
+      )}
+      onTransitionEnd={(e) => {
+        if (e.target === e.currentTarget && leaving) onLeft();
+      }}
+    >
       {text.slice(0, shown)}
     </div>
   );
@@ -29,6 +59,7 @@ function FakeCursor({
   y,
   name,
   chat,
+  chatDelay = 0,
   onClick,
   ref,
 }: {
@@ -38,9 +69,12 @@ function FakeCursor({
   y: number;
   name: string;
   chat?: string;
+  chatDelay?: number;
   onClick?: () => void;
 }) {
   const clickable = Boolean(onClick);
+  const [said, setSaid] = useState(chat);
+  if (chat && chat !== said) setSaid(chat);
 
   return (
     <div
@@ -89,7 +123,15 @@ function FakeCursor({
           >
             {name}
           </div>
-          {chat && <ChatBubble key={chat} text={chat} />}
+          {said && (
+            <ChatBubble
+              key={said}
+              text={said}
+              delay={chatDelay}
+              leaving={!chat}
+              onLeft={() => setSaid(undefined)}
+            />
+          )}
         </div>
       </div>
     </div>

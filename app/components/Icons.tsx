@@ -1,3 +1,5 @@
+import type { ReactNode } from "react";
+
 interface IconProps {
   className?: string;
 }
@@ -310,6 +312,64 @@ function Gear({ className = "text-white" }: IconProps) {
   );
 }
 
+function Stroke({
+  className,
+  children,
+}: IconProps & { children: ReactNode }) {
+  return (
+    <svg
+      className={className}
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinejoin="round"
+      strokeLinecap="round"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      {children}
+    </svg>
+  );
+}
+
+function Mic({ className = "text-white" }: IconProps) {
+  return (
+    <Stroke className={className}>
+      <rect x="9" y="2.75" width="6" height="11.5" rx="3" />
+      <path d="M5.25 11a6.75 6.75 0 0 0 13.5 0M12 17.75v3.5" />
+    </Stroke>
+  );
+}
+
+function Code({ className = "text-white" }: IconProps) {
+  return (
+    <Stroke className={className}>
+      <path d="M8 6.5 2.5 12 8 17.5M16 6.5l5.5 5.5-5.5 5.5M13.5 4l-3 16" />
+    </Stroke>
+  );
+}
+
+function Branch({ className = "text-white" }: IconProps) {
+  return (
+    <Stroke className={className}>
+      <circle cx="6" cy="5.5" r="2.25" />
+      <circle cx="6" cy="18.5" r="2.25" />
+      <circle cx="18" cy="7.5" r="2.25" />
+      <path d="M6 7.75v8.5M18 9.75c0 3.5-2.5 5-6 5H8.25" />
+    </Stroke>
+  );
+}
+
+function ArrowUpRight({ className = "text-white" }: IconProps) {
+  return (
+    <Stroke className={className}>
+      <path d="M7 17 17 7M8 7h9v9" />
+    </Stroke>
+  );
+}
+
 export {
   Hand,
   Zoom,
@@ -328,4 +388,8 @@ export {
   QuestionCircle,
   Question,
   Gear,
+  Mic,
+  Code,
+  Branch,
+  ArrowUpRight,
 };

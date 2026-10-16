@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useEffectEvent, useRef, useState } from "react";
 import type { Camera } from "@/app/elements/types";
 import { fitCamera, mixCamera, windowSize, type Point } from "@/lib/camera";
+import { easeInOut } from "@/lib/motion";
 import { sampleCamera, samplePointer } from "./sample";
 import type { Chapter, DriveManifest } from "./types";
 
@@ -28,10 +29,6 @@ function createAudio(chapter: Chapter) {
   }
   audio.load();
   return audio;
-}
-
-function easeInOut(k: number) {
-  return k < 0.5 ? 2 * k * k : 1 - (-2 * k + 2) ** 2 / 2;
 }
 
 function useDrivePlayer({

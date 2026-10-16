@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, type RefObject } from "react";
 import type { Camera } from "@/app/elements/types";
 import { pointTransform, windowSize, type Point } from "@/lib/camera";
 import { FakeCursor } from "./FakeCursor";
@@ -66,14 +66,20 @@ function sample(seconds: number): Point {
   };
 }
 
-function LobbyCursor() {
+function LobbyCursor({
+  positionRef,
+}: {
+  positionRef?: RefObject<Point | null>;
+}) {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const node = ref.current;
     if (!node) return;
     const place = (seconds: number) => {
-      node.style.transform = pointTransform(SCREEN, sample(seconds));
+      const point = sample(seconds);
+      node.style.transform = pointTransform(SCREEN, point);
+      if (positionRef) positionRef.current = point;
     };
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       place(0);
@@ -85,7 +91,7 @@ function LobbyCursor() {
       request = requestAnimationFrame(loop);
     });
     return () => cancelAnimationFrame(request);
-  }, []);
+  }, [positionRef]);
 
   return <FakeCursor ref={ref} camera={SCREEN} x={0} y={0} name="a_r" />;
 }

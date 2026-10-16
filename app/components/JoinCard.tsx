@@ -1,21 +1,28 @@
 "use client";
 
-function formatDuration(seconds: number) {
-  if (seconds < 120) return `${Math.round(seconds)}-second`;
-  return `${Math.round(seconds / 60)}-minute`;
+import { useState, type CSSProperties } from "react";
+import { cn } from "@/lib/utils";
+import { ArrowUpRight } from "./Icons";
+import { SOURCE_URL } from "./Navigation";
+
+const RISE =
+  "transition-[opacity,translate] ease-out duration-(--motion-medium) delay-[calc(200ms+var(--i)*var(--motion-stagger))] starting:opacity-0 starting:translate-y-1";
+
+function rise(i: number) {
+  return { "--i": i } as CSSProperties;
 }
 
 function JoinCard({
+  open,
   title,
-  duration,
   ready,
   name,
   onNameChange,
   onJoin,
   onLookAround,
 }: {
+  open: boolean;
   title: string;
-  duration: number;
   ready: boolean;
   name: string;
   onNameChange: (name: string) => void;
@@ -23,11 +30,30 @@ function JoinCard({
   onLookAround: () => void;
 }) {
   const initial = (name.trim()[0] ?? "A").toUpperCase();
+  const [present, setPresent] = useState(open);
+  if (open && !present) setPresent(true);
+  if (!present) return null;
 
   return (
-    <div className="absolute inset-0 z-100 grid place-items-center p-4 bg-black/30 backdrop-blur-xs">
+    <div
+      inert={!open}
+      className={cn(
+        "absolute inset-0 z-100 grid place-items-center p-4 bg-black/30 backdrop-blur-xs transition-opacity starting:opacity-0",
+        open
+          ? "opacity-100 ease-out duration-(--motion-base)"
+          : "opacity-0 ease-in duration-(--motion-medium) delay-60",
+      )}
+      onTransitionEnd={(e) => {
+        if (e.target === e.currentTarget && !open) setPresent(false);
+      }}
+    >
       <form
-        className="w-[800px] max-w-full grid grid-cols-1 sm:grid-cols-[1fr_1fr] border border-shell-border bg-shell rounded-dialog overflow-hidden text-ink shadow-dialog"
+        className={cn(
+          "w-[800px] max-w-full grid grid-cols-1 sm:grid-cols-[1fr_1fr] border border-shell-border bg-shell rounded-dialog overflow-hidden text-ink shadow-dialog transition-[opacity,translate,scale] starting:opacity-0 starting:translate-y-2 starting:scale-98",
+          open
+            ? "ease-out duration-(--motion-medium) delay-120"
+            : "opacity-0 scale-98 ease-in duration-200",
+        )}
         onSubmit={(e) => {
           e.preventDefault();
           if (ready) onJoin();
@@ -36,51 +62,70 @@ function JoinCard({
         <div className="p-1 border-b sm:border-b-0 border-shell-border">
           <div className="w-[410px] sm:h-full rounded-panel border-2 border-brand bg-shell-inset" />
         </div>
-        <div className="flex flex-col justify-center gap-6 p-6 sm:p-8">
-          <div className="flex flex-col gap-1.5">
-            <div className="text-ui text-ink-2">
-              Jake C. Schroeder invited you
-            </div>
-            <h1 className="text-ui-title font-semibold">{title}</h1>
-            <div className="font-mono text-ui-sm text-ink-3">
-              {ready
-                ? `${formatDuration(duration)} session · Voice over`
-                : "guided session · audio on"}
-            </div>
+        <div className="flex flex-col justify-center gap-8 p-6 sm:p-8">
+          <div className="flex flex-col">
+            <h1
+              className={cn(RISE, "text-ui-title font-semibold")}
+              style={rise(0)}
+            >
+              {title}
+            </h1>
+            <p
+              className={cn(RISE, "mt-2 text-ui text-ink-2 text-pretty")}
+              style={rise(1)}
+            >
+              An experiment: my portfolio as a guided session on the kind of
+              board you already work in, so you can watch how I think instead
+              of skimming a resume. No tldraw, no Excalidraw. Every pixel is
+              custom, built just for this, because I love infinite canvases and
+              any excuse to show off the craft behind them. Hope you enjoy
+              it.{" "}
+              <a
+                href={SOURCE_URL}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-0.5 font-medium text-ink underline decoration-ink-4 underline-offset-2 hover:decoration-brand outline-none focus-visible:ring-2 focus-visible:ring-brand rounded-xs"
+              >
+                Read the source
+                <ArrowUpRight className="size-3 text-ink-3" />
+              </a>
+            </p>
           </div>
-          <label className="flex flex-col gap-1.5">
-            <span className="text-ui font-medium text-ink-2">
-              Display name
-            </span>
-            <div className="flex items-center gap-2 h-9 px-1.5 rounded-control bg-shell-inset border border-shell-border-strong focus-within:border-brand focus-within:ring-3 focus-within:ring-brand/20">
-              <span className="grid place-items-center size-6 shrink-0 rounded-full bg-visitor text-ui font-semibold text-on-visitor">
-                {initial}
+          <div className="flex flex-col gap-4">
+            <label className={cn(RISE, "flex flex-col gap-2")} style={rise(2)}>
+              <span className="text-ui font-medium text-ink-2">
+                Display name
               </span>
-              <input
-                autoFocus
-                value={name}
-                onChange={(e) => onNameChange(e.target.value)}
-                placeholder="Anonymous Hiring Manager"
-                maxLength={40}
-                className="flex-1 min-w-0 bg-transparent text-ui text-ink placeholder:text-ink-3 caret-brand outline-none"
-              />
+              <div className="flex items-center gap-2 h-9 px-1.5 rounded-control bg-shell-inset border border-shell-border-strong focus-within:border-brand focus-within:ring-3 focus-within:ring-brand/20">
+                <span className="grid place-items-center size-6 shrink-0 rounded-full bg-visitor text-ui font-semibold text-on-visitor">
+                  {initial}
+                </span>
+                <input
+                  autoFocus
+                  value={name}
+                  onChange={(e) => onNameChange(e.target.value)}
+                  placeholder="Anonymous Hiring Manager"
+                  maxLength={40}
+                  className="flex-1 min-w-0 bg-transparent text-ui text-ink placeholder:text-ink-3 caret-brand outline-none"
+                />
+              </div>
+            </label>
+            <div className={cn(RISE, "flex flex-col gap-2")} style={rise(3)}>
+              <button
+                type="submit"
+                disabled={!ready}
+                className="w-full h-9 rounded-control bg-brand text-on-brand text-ui font-semibold shadow-bevel hover:bg-brand-hover active:bg-brand-pressed outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 focus-visible:ring-offset-shell disabled:bg-shell-active disabled:text-ink-3 disabled:shadow-none"
+              >
+                {ready ? "Join session" : "Loading…"}
+              </button>
+              <button
+                type="button"
+                onClick={onLookAround}
+                className="w-full h-9 rounded-control text-ui font-medium text-ink-2 hover:text-ink hover:bg-shell-hover active:bg-shell-active outline-none focus-visible:ring-2 focus-visible:ring-brand"
+              >
+                Explore on my own
+              </button>
             </div>
-          </label>
-          <div className="flex flex-col gap-1">
-            <button
-              type="submit"
-              disabled={!ready}
-              className="w-full h-9 rounded-control bg-brand text-on-brand text-ui font-semibold shadow-bevel hover:bg-brand-hover active:bg-brand-pressed outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 focus-visible:ring-offset-shell disabled:bg-shell-active disabled:text-ink-3 disabled:shadow-none"
-            >
-              {ready ? "Join session" : "Loading…"}
-            </button>
-            <button
-              type="button"
-              onClick={onLookAround}
-              className="w-full h-9 rounded-control text-ui font-medium text-ink-2 hover:text-ink hover:bg-shell-hover active:bg-shell-active outline-none focus-visible:ring-2 focus-visible:ring-brand"
-            >
-              Explore on my own
-            </button>
           </div>
         </div>
       </form>

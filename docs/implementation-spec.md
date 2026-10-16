@@ -58,10 +58,10 @@ New `app/components/JoinCard.tsx`, rendered by `app/page.tsx` while phase is lob
 Today any drag or wheel during playback interrupts immediately (`useCanvasInteraction`). Replace that, **only while status is `playing`**, with a deliberate hold:
 
 - New `app/components/useHoldToControl.ts` (or extend `useCanvasInteraction` if that's cleaner; follow its AbortController + capture-listener pattern).
-- Pointer down on the canvas (any button, mouse or touch) starts a hold of `HOLD_MS = 800`. Releasing or cancelling before it completes cancels the hold. Moving the pointer does **not** cancel it: a drag while following just doesn't pan (camera updates are already dropped while playing).
+- Pointer down on the canvas (any button, mouse or touch) starts a hold of `HOLD_MS = 700`. Releasing or cancelling before it completes cancels the hold. Moving the pointer does **not** cancel it: a drag while following just doesn't pan until the hold completes, then the pan continues from the committed camera.
 - When the hold completes, call `player.interrupt()`. If the pointer is still down and moving, the existing delta-based Canvas pan should continue naturally from the committed camera. Confirm this works.
 - New `app/components/HoldRing.tsx`: a ring at the pointer position that fills over `HOLD_MS` (SVG `stroke-dashoffset`, brand color, about 36px). It disappears on cancel or completion.
-- Wheel or pinch while playing does nothing to the tour. It pulses the bottom bar's hint text for attention.
+- Wheel or pinch while following (playing or paused) starts a short hold of `WHEEL_HOLD_MS = 490` that completes on its own, so one or two scroll notches take control. The ring appears at the cursor. On completion, `player.interrupt()`, and further scrolling zooms.
 - Suppress the context menu during the hold so a right button or long-press works.
 - **Space** on `window`: `playing` → `interrupt()`, `interrupted` → `play()`. Ignore when focus is in an input or textarea, and ignore in the lobby.
 - Outside `playing`, canvas interaction behaves exactly as it does today.
@@ -132,4 +132,4 @@ The existing `following` flag (border, a_r avatar ring) keeps its meaning: statu
 
 - `npm run lint` and `npm run build` pass.
 - Walking through the flow table above by hand has every transition and every listed UI state reachable, with no leftover chapter menu, info button, TourPaused toast or Instructions.
-- A quick click or an accidental drag during the tour does not stop it. A ~0.8s hold does, and the ring shows progress.
+- A quick click or accidental drag during the tour does not stop it. A ~0.7s hold or a scroll does, and the ring shows progress.

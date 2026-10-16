@@ -5,10 +5,19 @@ import {
   useState,
   type RefObject,
 } from "react";
+import { MOTION } from "@/lib/motion";
 
-const HOLD_MS = 800;
+const HOLD_MS = 700;
+const WHEEL_HOLD_MS = 490;
 
-type Hold = { id: number; pointerId: number; x: number; y: number };
+type Hold = {
+  id: number;
+  pointerId: number | null;
+  x: number;
+  y: number;
+  duration: number;
+  done?: boolean;
+};
 
 function useHoldToControl(
   ref: RefObject<HTMLElement | null>,
@@ -21,7 +30,9 @@ function useHoldToControl(
   },
 ) {
   const [hold, setHold] = useState<Hold | null>(null);
-  const active = useRef<{ pointerId: number; timer: number } | null>(null);
+  const active = useRef<{ pointerId: number | null; timer: number } | null>(
+    null,
+  );
   const isEnabled = useEffectEvent(() => enabled);
   const complete = useEffectEvent(onHold);
 
@@ -42,15 +53,24 @@ function useHoldToControl(
     let swallowMenu = false;
     let nextId = 0;
 
-    const begin = (e: PointerEvent) => {
+    const begin = (
+      pointerId: number | null,
+      x: number,
+      y: number,
+      duration: number,
+    ) => {
       const id = ++nextId;
       const timer = window.setTimeout(() => {
         active.current = null;
-        setHold(null);
+        setHold((current) => current && { ...current, done: true });
         complete();
-      }, HOLD_MS);
-      active.current = { pointerId: e.pointerId, timer };
-      setHold({ id, pointerId: e.pointerId, x: e.clientX, y: e.clientY });
+        window.setTimeout(
+          () => setHold((current) => (current?.id === id ? null : current)),
+          MOTION.fast,
+        );
+      }, duration);
+      active.current = { pointerId, timer };
+      setHold({ id, pointerId, x, y, duration });
     };
 
     node.addEventListener(
@@ -62,9 +82,18 @@ function useHoldToControl(
           cancelHold();
           return;
         }
-        begin(e);
+        begin(e.pointerId, e.clientX, e.clientY, HOLD_MS);
       },
       { capture: true, signal },
+    );
+
+    node.addEventListener(
+      "wheel",
+      (e) => {
+        if (!isEnabled() || active.current) return;
+        begin(null, e.clientX, e.clientY, WHEEL_HOLD_MS);
+      },
+      { capture: true, passive: true, signal },
     );
 
     const release = (e: PointerEvent) => {
@@ -97,8 +126,8 @@ function useHoldToControl(
     return () => cancelHold();
   }, [enabled]);
 
-  return enabled ? hold : null;
+  return enabled || hold?.done ? hold : null;
 }
 
-export { useHoldToControl, HOLD_MS };
+export { useHoldToControl };
 export type { Hold };
