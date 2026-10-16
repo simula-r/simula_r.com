@@ -26,9 +26,13 @@ function useHoldToControl(
   {
     enabled,
     onHold,
+    onBegin,
+    onCancel,
   }: {
     enabled: boolean;
     onHold: () => void;
+    onBegin: (duration: number) => void;
+    onCancel: () => void;
   },
 ) {
   const [hold, setHold] = useState<Hold | null>(null);
@@ -39,12 +43,15 @@ function useHoldToControl(
   } | null>(null);
   const isEnabled = useEffectEvent(() => enabled);
   const complete = useEffectEvent(onHold);
+  const started = useEffectEvent(onBegin);
+  const cancelled = useEffectEvent(onCancel);
 
   const cancelHold = useEffectEvent(() => {
     const current = active.current;
     if (!current) return;
     window.clearTimeout(current.timer);
     active.current = null;
+    cancelled();
     setHold(null);
   });
 
@@ -53,6 +60,7 @@ function useHoldToControl(
     if (!current) return;
     window.clearTimeout(current.timer);
     active.current = null;
+    cancelled();
     const { id } = current;
     setHold((hold) => hold && { ...hold, hint: true });
     window.setTimeout(
@@ -87,6 +95,7 @@ function useHoldToControl(
         );
       }, duration);
       active.current = { id, pointerId, timer };
+      started(duration);
       setHold({ id, pointerId, x, y, duration });
     };
 

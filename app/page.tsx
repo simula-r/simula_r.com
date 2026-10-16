@@ -177,6 +177,8 @@ export default function Home() {
   const hold = useHoldToControl(canvasRef, {
     enabled: status === "playing" || status === "paused",
     onHold: player.interrupt,
+    onBegin: player.duck,
+    onCancel: player.unduck,
   });
 
   const updateCamera = (update: (c: Camera) => Camera) => {

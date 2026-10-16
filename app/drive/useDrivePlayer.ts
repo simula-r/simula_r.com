@@ -1,4 +1,10 @@
-import { useCallback, useEffect, useEffectEvent, useRef, useState } from "react";
+import {
+  useCallback,
+  useEffect,
+  useEffectEvent,
+  useRef,
+  useState,
+} from "react";
 import type { Camera } from "@/app/elements/types";
 import { fitCamera, mixCamera, windowSize, type Point } from "@/lib/camera";
 import { easeInOut } from "@/lib/motion";
@@ -7,6 +13,8 @@ import type { Chapter, DriveManifest } from "./types";
 
 const HANDOFF_SECONDS = 0.6;
 const REWIND_SECONDS = 2;
+const FADE_OUT_SECONDS = 0.4;
+const FADE_IN_SECONDS = 0.5;
 
 type PlayerStatus = "idle" | "playing" | "paused" | "interrupted" | "ended";
 type Handoff = { from: Camera; chapter: number; t0: number };
@@ -17,6 +25,8 @@ type DriveFrame = {
   pointer: Point | null;
 };
 type FrameListener = (frame: DriveFrame) => void;
+type Mixer = { context: AudioContext; gains: Map<HTMLAudioElement, GainNode> };
+type Fade = { audio: HTMLAudioElement; at: number; timer: number };
 
 function createAudio(chapter: Chapter) {
   const audio = document.createElement("audio");
@@ -29,6 +39,41 @@ function createAudio(chapter: Chapter) {
   }
   audio.load();
   return audio;
+}
+
+function createMixer(audios: HTMLAudioElement[]): Mixer {
+  const context = new AudioContext();
+  const gains = new Map<HTMLAudioElement, GainNode>();
+  for (const audio of audios) {
+    const gain = context.createGain();
+    context
+      .createMediaElementSource(audio)
+      .connect(gain)
+      .connect(context.destination);
+    gains.set(audio, gain);
+  }
+  return { context, gains };
+}
+
+function setGain(gain: GainNode, value: number) {
+  const now = gain.context.currentTime;
+  gain.gain.cancelScheduledValues(now);
+  gain.gain.setValueAtTime(value, now);
+}
+
+function easeGain(gain: GainNode, to: number, seconds: number) {
+  const now = gain.context.currentTime;
+  const from = gain.gain.value;
+  if (seconds <= 0) {
+    setGain(gain, to);
+    return;
+  }
+  const curve = Float32Array.from(
+    { length: 64 },
+    (_, i) => from + (to - from) * easeInOut(i / 63),
+  );
+  gain.gain.cancelScheduledValues(now);
+  gain.gain.setValueCurveAtTime(curve, now, seconds);
 }
 
 function useDrivePlayer({
@@ -50,6 +95,8 @@ function useDrivePlayer({
   const playing = useRef(false);
   const frame = useRef<DriveFrame | null>(null);
   const listeners = useRef(new Set<FrameListener>());
+  const mixer = useRef<Mixer | null>(null);
+  const fade = useRef<Fade | null>(null);
 
   useEffect(() => {
     committed.current = camera;
@@ -91,7 +138,69 @@ function useDrivePlayer({
     setPointer(current.pointer);
   };
 
+  const resumeFade = (audio: HTMLAudioElement) => {
+    const active = fade.current;
+    if (active?.audio !== audio) return false;
+    fade.current = null;
+    window.clearTimeout(active.timer);
+    return true;
+  };
+
+  const settleFade = () => {
+    const active = fade.current;
+    if (!active) return;
+    fade.current = null;
+    window.clearTimeout(active.timer);
+    active.audio.pause();
+    active.audio.currentTime = active.at;
+    const gain = mixer.current?.gains.get(active.audio);
+    if (gain) setGain(gain, 1);
+  };
+
+  const fadeOut = (audio: HTMLAudioElement | undefined) => {
+    settleFade();
+    if (!audio) return;
+    const gain = mixer.current?.gains.get(audio);
+    if (!gain || audio.paused) {
+      audio.pause();
+      return;
+    }
+    const seconds = FADE_OUT_SECONDS * gain.gain.value;
+    easeGain(gain, 0, seconds);
+    fade.current = {
+      audio,
+      at: audio.currentTime,
+      timer: window.setTimeout(settleFade, seconds * 1000),
+    };
+  };
+
+  const fadeIn = (audio: HTMLAudioElement) => {
+    if (!mixer.current) mixer.current = createMixer(audios.current);
+    const { context, gains } = mixer.current;
+    if (context.state === "suspended") context.resume();
+    const gain = gains.get(audio);
+    if (!gain) return;
+    if (!resumeFade(audio)) setGain(gain, 0);
+    easeGain(gain, 1, FADE_IN_SECONDS);
+  };
+
+  const currentGain = () =>
+    playing.current
+      ? mixer.current?.gains.get(audios.current[index.current])
+      : undefined;
+
+  const duck = (ms: number) => {
+    const gain = currentGain();
+    if (gain) easeGain(gain, 0, ms / 1000);
+  };
+
+  const unduck = () => {
+    const gain = currentGain();
+    if (gain) easeGain(gain, 1, FADE_IN_SECONDS * (1 - gain.gain.value));
+  };
+
   const switchChapter = (next: number, at: number) => {
+    settleFade();
     if (next !== index.current) audios.current[index.current]?.pause();
     index.current = next;
     handoff.current = null;
@@ -100,7 +209,7 @@ function useDrivePlayer({
   };
 
   const halt = (next: PlayerStatus) => {
-    audios.current[index.current]?.pause();
+    fadeOut(audios.current[index.current]);
     playing.current = false;
     renderFrame();
     handoff.current = null;
@@ -134,6 +243,9 @@ function useDrivePlayer({
     for (const audio of elements) audio.addEventListener("ended", onEnded);
     audios.current = elements;
     return () => {
+      settleFade();
+      mixer.current?.context.close();
+      mixer.current = null;
       for (const audio of elements) {
         audio.pause();
         audio.removeEventListener("ended", onEnded);
@@ -160,7 +272,12 @@ function useDrivePlayer({
   const play = () => {
     const audio = audios.current[index.current];
     if (!audio || playing.current) return;
-    audio.currentTime = Math.max(0, audio.currentTime - REWIND_SECONDS);
+    const resuming = fade.current?.audio === audio;
+    fadeIn(audio);
+    settleFade();
+    if (!resuming && status === "interrupted") {
+      audio.currentTime = Math.max(0, audio.currentTime - REWIND_SECONDS);
+    }
     handoff.current = {
       from: committed.current,
       chapter: index.current,
@@ -228,6 +345,8 @@ function useDrivePlayer({
     play,
     pause,
     interrupt,
+    duck,
+    unduck,
     seek,
     settle,
     replay,
