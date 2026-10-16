@@ -121,7 +121,7 @@ function SessionBar({
               startable && "cursor-pointer hover:outline-2 hover:outline-brand/50",
             )}
           >
-            <div className="size-6 font-mono font-bold text-[10px] tracking-tighter text-on-brand grid place-items-center rounded-full bg-brand select-none">
+            <div className="size-6 font-mono font-bold text-ui-sm tracking-tighter text-on-brand grid place-items-center rounded-full bg-brand select-none">
               a_r
             </div>
           </button>
@@ -129,7 +129,7 @@ function SessionBar({
             title={name || "Anonymous"}
             className="rounded-full border-2 border-shell"
           >
-            <div className="size-6 font-bold text-ui text-on-visitor grid place-items-center rounded-full bg-visitor select-none">
+            <div className="size-6 font-semibold text-ui text-on-visitor grid place-items-center rounded-full bg-visitor select-none">
               {(name.charAt(0) || "A").toUpperCase()}
             </div>
           </div>

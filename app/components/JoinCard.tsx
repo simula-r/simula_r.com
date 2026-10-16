@@ -38,7 +38,7 @@ function JoinCard({
         </div>
         <div className="flex flex-col justify-center gap-6 p-6 sm:p-8">
           <div className="flex flex-col gap-1.5">
-            <div className="text-ui-md text-ink-2">
+            <div className="text-ui text-ink-2">
               Jake C. Schroeder invited you
             </div>
             <h1 className="text-ui-title font-semibold">{title}</h1>
@@ -53,7 +53,7 @@ function JoinCard({
               Display name
             </span>
             <div className="flex items-center gap-2 h-9 px-1.5 rounded-control bg-shell-inset border border-shell-border-strong focus-within:border-brand focus-within:ring-3 focus-within:ring-brand/20">
-              <span className="grid place-items-center size-6 shrink-0 rounded-full bg-visitor text-ui font-bold text-on-visitor">
+              <span className="grid place-items-center size-6 shrink-0 rounded-full bg-visitor text-ui font-semibold text-on-visitor">
                 {initial}
               </span>
               <input
@@ -62,7 +62,7 @@ function JoinCard({
                 onChange={(e) => onNameChange(e.target.value)}
                 placeholder="Anonymous Hiring Manager"
                 maxLength={40}
-                className="flex-1 min-w-0 bg-transparent text-ui-md text-ink placeholder:text-ink-3 caret-brand outline-none"
+                className="flex-1 min-w-0 bg-transparent text-ui text-ink placeholder:text-ink-3 caret-brand outline-none"
               />
             </div>
           </label>
@@ -70,14 +70,14 @@ function JoinCard({
             <button
               type="submit"
               disabled={!ready}
-              className="w-full h-9 rounded-control bg-brand text-on-brand text-ui-md font-semibold shadow-bevel hover:bg-brand-hover active:bg-brand-pressed outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 focus-visible:ring-offset-shell disabled:bg-shell-active disabled:text-ink-3 disabled:shadow-none"
+              className="w-full h-9 rounded-control bg-brand text-on-brand text-ui font-semibold shadow-bevel hover:bg-brand-hover active:bg-brand-pressed outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 focus-visible:ring-offset-shell disabled:bg-shell-active disabled:text-ink-3 disabled:shadow-none"
             >
               {ready ? "Join session" : "Loading…"}
             </button>
             <button
               type="button"
               onClick={onLookAround}
-              className="w-full h-9 rounded-control text-ui-md font-medium text-ink-2 hover:text-ink hover:bg-shell-hover active:bg-shell-active outline-none focus-visible:ring-2 focus-visible:ring-brand"
+              className="w-full h-9 rounded-control text-ui font-medium text-ink-2 hover:text-ink hover:bg-shell-hover active:bg-shell-active outline-none focus-visible:ring-2 focus-visible:ring-brand"
             >
               Explore on my own
             </button>

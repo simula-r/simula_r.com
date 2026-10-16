@@ -78,15 +78,16 @@
 
   --text-ui-sm: 11px;
   --text-ui-sm--line-height: 16px;
+  --text-ui-sm--letter-spacing: 0.005em;
   --text-ui: 12px;
   --text-ui--line-height: 16px;
-  --text-ui-md: 13px;
-  --text-ui-md--line-height: 20px;
-  --text-ui-lg: 15px;
+  --text-ui--letter-spacing: 0em;
+  --text-ui-lg: 13px;
   --text-ui-lg--line-height: 20px;
-  --text-ui-title: 22px;
-  --text-ui-title--line-height: 28px;
-  --text-ui-title--letter-spacing: -0.02em;
+  --text-ui-lg--letter-spacing: -0.0025em;
+  --text-ui-title: 15px;
+  --text-ui-title--line-height: 20px;
+  --text-ui-title--letter-spacing: -0.01em;
 
   --font-sans: var(--font-schibsted-grotesk);
   --font-mono: var(--font-berkeley-mono);
@@ -98,4 +99,7 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans);
+  font-size: var(--text-ui);
+  line-height: var(--text-ui--line-height);
+  letter-spacing: var(--text-ui--letter-spacing);
 }

@@ -144,8 +144,8 @@ function TextToolbar({
           label="Font"
           trigger={
             <div className="flex items-center gap-0.5">
-              <div className="text-xs font-handwritten">A</div>
-              <div className="text-xs font-sans">b</div>
+              <div className="text-ui font-handwritten">A</div>
+              <div className="text-ui font-sans">b</div>
             </div>
           }
         >
@@ -168,7 +168,7 @@ function TextToolbar({
         <div className="w-px h-8 bg-shell-border" />
         <ToolbarPopover
           label="Font size"
-          trigger={<div className="text-xs font-mono">T</div>}
+          trigger={<div className="text-ui font-mono">T</div>}
         >
           {(close) =>
             TEXT_SIZES.map((size) => (

@@ -2,7 +2,7 @@ const SOURCE_URL = "https://github.com/simula-r/simula_r.com";
 
 function SourceLink() {
   return (
-    <div className="absolute bottom-0 left-0 p-4 z-10 font-mono text-[11px] text-foreground-muted">
+    <div className="absolute bottom-0 left-0 p-4 z-10 font-mono text-ui-sm text-foreground-muted">
       Jake's Custom Canvas Engine ·{" "}
       <a
         href={SOURCE_URL}

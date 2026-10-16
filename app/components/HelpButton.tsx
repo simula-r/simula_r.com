@@ -47,14 +47,14 @@ function HelpButton() {
               </div>
             </div>
           </div>
-          <p className="mt-3 text-ui-md text-ink-2">
+          <p className="mt-3 text-ui text-ink-2">
             A whiteboard I built from scratch for this portfolio. No whiteboard
             library, no site builder.
           </p>
-          <dl className="mt-3 grid grid-cols-[auto_1fr] gap-x-4 gap-y-1.5 text-ui-md">
+          <dl className="mt-3 grid grid-cols-[auto_1fr] gap-x-4 gap-y-1.5 text-ui">
             {FEATURES.map(([term, detail]) => (
               <div key={term} className="contents">
-                <dt className="font-mono text-ui-sm leading-5 text-ink-3">
+                <dt className="font-mono text-ui-sm text-ink-3">
                   {term}
                 </dt>
                 <dd className="text-ink-2">{detail}</dd>
