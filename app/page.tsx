@@ -14,6 +14,7 @@ import { SessionFrame } from "./components/SessionFrame";
 import { FakeCursor } from "./components/FakeCursor";
 import { JoinCard } from "./components/JoinCard";
 import { HoldRing } from "./components/HoldRing";
+import { DeviceGate } from "./components/DeviceGate";
 import { useHoldToControl } from "./components/useHoldToControl";
 import { loadDriveManifest } from "./drive/load";
 import { useDrivePlayer } from "./drive/useDrivePlayer";
@@ -267,6 +268,7 @@ export default function Home() {
         onJoin={join}
         onLookAround={lookAround}
       />
+      <DeviceGate />
     </div>
   );
 }

@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant handheld (@media ((hover: none) and (pointer: coarse)) or (max-width: 767px));
+
 :root {
   color-scheme: dark;
 
