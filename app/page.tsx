@@ -12,7 +12,6 @@ import { BOARD_TITLE, Navigation } from "./components/Navigation";
 import { SessionBar, type SessionPhase } from "./components/SessionBar";
 import { SessionFrame } from "./components/SessionFrame";
 import { FakeCursor } from "./components/FakeCursor";
-import { LobbyCursor } from "./components/LobbyCursor";
 import { JoinCard } from "./components/JoinCard";
 import { HoldRing } from "./components/HoldRing";
 import { useHoldToControl } from "./components/useHoldToControl";
@@ -22,10 +21,12 @@ import type { DriveManifest } from "./drive/types";
 import { loadGraph } from "./graph/load";
 import type { Camera } from "./elements/types";
 import {
+  fitCamera,
   paneTransform,
   projectPoint,
   screenTransform,
   type Point,
+  windowSize,
 } from "@/lib/camera";
 import { easeInOut, prefersReducedMotion } from "@/lib/motion";
 
@@ -48,6 +49,7 @@ function glidePoint(glide: Glide | null, target: Point, now: number) {
 }
 
 const graph = loadGraph();
+const initialCamera = graph.start?.camera ?? graph.camera;
 
 function isTypingTarget(target: EventTarget | null) {
   if (!(target instanceof HTMLElement)) return false;
@@ -60,7 +62,7 @@ function isTypingTarget(target: EventTarget | null) {
 }
 
 export default function Home() {
-  const [camera, setCamera] = useState<Camera>(graph.camera);
+  const [camera, setCamera] = useState<Camera>(initialCamera);
   const [manifest, setManifest] = useState<DriveManifest | null>(null);
   const [joined, setJoined] = useState(false);
   const [name, setName] = useState("");
@@ -68,7 +70,7 @@ export default function Home() {
   const canvasRef = useRef<HTMLDivElement>(null);
   const paneRef = useRef<HTMLDivElement>(null);
   const cursorRef = useRef<HTMLDivElement>(null);
-  const lobbyPoint = useRef<Point | null>(null);
+  const previewRef = useRef<HTMLDivElement>(null);
   const glide = useRef<Glide | null>(null);
   const { subscribe, status } = player;
 
@@ -80,6 +82,19 @@ export default function Home() {
         ? "ended"
         : "control";
   const visitor = name.trim() || "Guest";
+
+  useEffect(() => {
+    const start = graph.start;
+    if (joined || !start) return;
+    const fit = () =>
+      setCamera(fitCamera(start.camera, start.viewport, windowSize()));
+    const request = requestAnimationFrame(fit);
+    window.addEventListener("resize", fit);
+    return () => {
+      cancelAnimationFrame(request);
+      window.removeEventListener("resize", fit);
+    };
+  }, [joined]);
 
   useEffect(() => {
     loadDriveManifest().then(setManifest);
@@ -168,8 +183,16 @@ export default function Home() {
   };
 
   const join = () => {
-    if (lobbyPoint.current && !prefersReducedMotion()) {
-      glide.current = { from: lobbyPoint.current, t0: performance.now() };
+    const preview = previewRef.current?.getBoundingClientRect();
+    if (preview && preview.width > 0 && !prefersReducedMotion()) {
+      const { width, height } = windowSize();
+      glide.current = {
+        from: {
+          x: preview.left + preview.width / 2 - width / 2,
+          y: preview.top + preview.height / 2 - height / 2,
+        },
+        t0: performance.now(),
+      };
     }
     player.play();
     setJoined(true);
@@ -196,9 +219,6 @@ export default function Home() {
         paneRef={paneRef}
         elements={graph.elements}
       />
-      {SHOW_CURSOR && phase === "lobby" && (
-        <LobbyCursor positionRef={lobbyPoint} />
-      )}
       {SHOW_CURSOR && phase !== "lobby" && (
         <FakeCursor
           ref={cursorRef}
@@ -240,6 +260,7 @@ export default function Home() {
       <JoinCard
         open={phase === "lobby"}
         title={BOARD_TITLE}
+        previewRef={previewRef}
         ready={player.chapters.length > 0}
         name={name}
         onNameChange={setName}

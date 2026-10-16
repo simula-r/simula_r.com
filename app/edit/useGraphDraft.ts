@@ -32,7 +32,12 @@ function useGraphDraft(initial: Graph) {
     setElements((els) => els.filter((el) => !removing.has(el.id)));
   };
 
-  const graph: Graph = { version: GRAPH_VERSION, camera, elements };
+  const graph: Graph = {
+    version: GRAPH_VERSION,
+    camera,
+    start: initial.start,
+    elements,
+  };
 
   return {
     camera,

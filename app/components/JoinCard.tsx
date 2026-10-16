@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, type CSSProperties } from "react";
+import { useState, type CSSProperties, type Ref } from "react";
 import { cn } from "@/lib/utils";
 import { ArrowUpRight } from "./Icons";
 import { SOURCE_URL } from "./Navigation";
@@ -15,6 +15,7 @@ function rise(i: number) {
 function JoinCard({
   open,
   title,
+  previewRef,
   ready,
   name,
   onNameChange,
@@ -23,6 +24,7 @@ function JoinCard({
 }: {
   open: boolean;
   title: string;
+  previewRef?: Ref<HTMLDivElement>;
   ready: boolean;
   name: string;
   onNameChange: (name: string) => void;
@@ -60,7 +62,24 @@ function JoinCard({
         }}
       >
         <div className="p-1 border-b sm:border-b-0 border-shell-border">
-          <div className="w-[410px] sm:h-full rounded-panel border-2 border-brand bg-shell-inset" />
+          <div
+            ref={previewRef}
+            className="relative aspect-video sm:aspect-auto sm:h-full rounded-panel border-2 border-brand bg-shell-inset overflow-hidden isolate"
+          >
+            <video
+              src="/chrome_DW9jeDVRGf.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
+              disablePictureInPicture
+              disableRemotePlayback
+              preload="auto"
+              aria-hidden
+              tabIndex={-1}
+              className="absolute inset-0 size-full object-cover scale-120 pointer-events-none"
+            />
+          </div>
         </div>
         <div className="flex flex-col justify-center gap-8 p-6 sm:p-8">
           <div className="flex flex-col">
