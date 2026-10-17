@@ -47,7 +47,7 @@ function SessionBar({
             className={cn(
               "rounded-full border-2 border-shell outline-2 outline-transparent transition-[outline-color] ease-out duration-(--motion-base) focus-visible:ring-2 focus-visible:ring-brand",
               following && "outline-brand delay-650",
-              startable && "cursor-pointer hover:outline-brand/50",
+              startable && "hover:outline-brand/50",
             )}
           >
             <div className="size-6 font-mono font-semibold text-ui-sm tracking-tighter text-on-brand grid place-items-center rounded-full bg-brand select-none">

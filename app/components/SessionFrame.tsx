@@ -107,7 +107,7 @@ function ProgressSegments({ player }: { player: DrivePlayer }) {
   return (
     <div
       ref={trackRef}
-      className="w-[400px] flex items-center gap-1 h-full cursor-pointer touch-none"
+      className="w-[400px] flex items-center gap-1 h-full touch-none"
       onPointerDown={(e) => {
         e.currentTarget.setPointerCapture(e.pointerId);
         scrubbing.current = true;

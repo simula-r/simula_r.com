@@ -1,6 +1,6 @@
 "use client";
 
-import type { ComponentType, ReactNode } from "react";
+import type { ReactNode } from "react";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -10,41 +10,12 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import pkg from "@/package.json";
 import { DropdownButton } from "./MenuButton";
-import { ArrowUpRight, Branch, Code, Hand, Info, Mic } from "./Icons";
+import { ArrowUpRight, GitHub, Info } from "./Icons";
 
 const BOARD_TITLE = "Jake's Dope Portfolio";
 const REPO = "simula-r/simula_r.com";
 const SOURCE_URL = `https://github.com/${REPO}`;
-const DEPENDENCY_COUNT = Object.keys(pkg.dependencies).length;
-
-const HIGHLIGHTS: {
-  icon: ComponentType<{ className?: string }>;
-  title: string;
-  detail: string;
-  file: string;
-}[] = [
-  {
-    icon: Mic,
-    title: "The tour is one live take",
-    detail: "Voice, cursor and camera recorded together",
-    file: "app/drive/useDriveRecorder.ts",
-  },
-  {
-    icon: Hand,
-    title: "Hold to take the wheel",
-    detail: "Interrupt anytime, click my cursor to resume",
-    file: "app/components/useHoldToControl.ts",
-  },
-  {
-    icon: Code,
-    title: "No canvas library",
-    detail: "Camera, culling and input are hand-rolled",
-    file: "app/components/Canvas.tsx",
-  },
-];
-
 function ARBall({ className = "size-5" }) {
   return (
     <svg
@@ -65,13 +36,11 @@ function ExternalItem({
   children: ReactNode;
 }) {
   return (
-    <DropdownMenuItem asChild>
-      <a
-        href={href}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="group h-auto items-start gap-3 py-2"
-      >
+    <DropdownMenuItem
+      asChild
+      className="group h-auto items-start gap-3 py-2 cursor-pointer"
+    >
+      <a href={href} target="_blank" rel="noopener noreferrer">
         {children}
         <ArrowUpRight className="size-3.5 mt-0.5 ml-auto shrink-0 text-ink-4 opacity-0 transition-opacity group-data-highlighted:opacity-100" />
       </a>
@@ -83,11 +52,8 @@ function About() {
   return (
     <div className="flex items-center gap-3 p-2 pb-3">
       <ARBall className="size-8 shrink-0" />
-      <div className="min-w-0">
-        <div className="text-ui-lg font-semibold text-ink">Simula_r</div>
-        <div className="text-ui-sm text-ink-3">
-          A canvas I built to make my case
-        </div>
+      <div className="min-w-0 text-ui-lg font-semibold text-ink">
+        Simula_r <span className="font-normal text-ink-3">(Jake)</span>
       </div>
     </div>
   );
@@ -129,23 +95,21 @@ function Navigation({ children }: { children?: ReactNode }) {
           </DropdownMenuTrigger>
           <DropdownMenuContent align="start" alignOffset={-5} className="w-80">
             <About />
-            {HIGHLIGHTS.map(({ icon: Icon, title, detail, file }) => (
-              <ExternalItem key={file} href={`${SOURCE_URL}/blob/master/${file}`}>
-                <Icon className="size-4 mt-0.5 shrink-0 text-ink-3 group-data-highlighted:text-brand" />
-                <div className="min-w-0">
-                  <div className="text-ink">{title}</div>
-                  <div className="text-ui-sm text-ink-3">{detail}</div>
-                </div>
-              </ExternalItem>
-            ))}
+            <p className="px-2 pb-3 text-ui-sm text-ink-2 text-pretty">
+              An infinite canvas with a narrated tour of my work. Sit back and
+              watch, or hold anywhere to take the controls and explore on your
+              own.
+            </p>
+            <p className="px-2 pb-3 text-ui-sm text-ink-2 text-pretty">
+              No tldraw, no Excalidraw, mostly because that&apos;s overkill.
+              Did build my own editor tho.
+            </p>
             <DropdownMenuSeparator />
             <ExternalItem href={SOURCE_URL}>
-              <Branch className="size-4 mt-0.5 shrink-0 text-ink-3 group-data-highlighted:text-ink" />
+              <GitHub className="size-4 mt-0.5 shrink-0 text-ink-3 group-data-highlighted:text-ink" />
               <div className="min-w-0">
                 <div className="font-mono text-ui-sm text-ink">{REPO}</div>
-                <div className="text-ui-sm text-ink-3">
-                  Read the source · {DEPENDENCY_COUNT} dependencies
-                </div>
+                <div className="text-ui-sm text-ink-3">Read the source</div>
               </div>
             </ExternalItem>
           </DropdownMenuContent>
